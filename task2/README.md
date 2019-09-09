@@ -1,14 +1,13 @@
 English | [简体中文](./README.zh-CN.md)
 
 <h1 align="center">Minist handwritten digits</h1>
+<div align="center">
 
-<div align="center">Tutorial and Code</div>
+Tutorial and Code
 
+![python-version](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue)![country](https://img.shields.io/badge/Country-China-red)
 
-
-![python-version](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue)
-
-
+</div>
 
 ## 1、minist data set preparation
 

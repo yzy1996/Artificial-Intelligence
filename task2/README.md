@@ -5,7 +5,7 @@ English | [简体中文](./README.zh-CN.md)
 
 Tutorial and Code
 
-![python-version](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue)![country](https://img.shields.io/badge/Country-China-red)
+![python-version](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue)![country](https://img.shields.io/badge/country-China-red)
 
 </div>
 

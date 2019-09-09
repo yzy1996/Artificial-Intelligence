@@ -5,7 +5,7 @@
 
 教程和代码
 
-![python-version](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue)![Country](https://img.shields.io/badge/Country-China-red)
+![python-version](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue)![Country](https://img.shields.io/badge/country-China-red)
 
 </div>
 
@@ -21,7 +21,7 @@
 
 这些文件不是任何标准图像格式。 你必须编写自己的（非常简单的）程序来阅读它们。
 
-我给你一个参考[代码]())。
+我给你一个参考[代码]()。
 
 ## 2、利用scikit-learn库来做
 

@@ -1,6 +1,16 @@
-# 手写数字
+English | [简体中文](./README.zh-CN.md)
 
-## 1、minist数据集准备
+<h1 align="center">Minist handwritten digits</h1>
+
+<div align="center">Tutorial and Code</div>
+
+
+
+![python-version](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue)
+
+
+
+## 1、minist data set preparation
 
 First download from the [website](http://yann.lecun.com/exdb/mnist/).
 

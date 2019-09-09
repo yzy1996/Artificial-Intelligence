@@ -5,7 +5,7 @@
 
 教程和代码
 
-![python-version](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue)
+![python-version](https://img.shields.io/badge/python-3.6%20%7C%203.7-blue)![Country](https://img.shields.io/badge/Country-China-red)
 
 </div>
 
@@ -26,4 +26,3 @@
 ## 2、利用scikit-learn库来做
 
 ## 3、自己动手丰衣足食
-

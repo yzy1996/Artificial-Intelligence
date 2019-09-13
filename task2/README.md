@@ -1,7 +1,8 @@
 English | [简体中文](./README.zh-CN.md)
 
-<h1 align="center">Minist handwritten digits</h1>
+<h1 align="center">Mnist handwritten digits</h1>
 <div align="center">
+
 
 Tutorial and Code
 
@@ -9,9 +10,9 @@ Tutorial and Code
 
 </div>
 
-## 1、minist data set preparation
+## Mnist data set preparation
 
-First download from the [website](http://yann.lecun.com/exdb/mnist/).
+First download from the [website](http://yann.lecun.com/exdb/mnist/) and uncompress.
 
 We will get four files including training set images\labels and test set images \labels.
 
@@ -23,6 +24,19 @@ These files are not in any standard image format. You have to write your own (ve
 
 I give you an reference [code]().
 
-## 2、利用scikit-learn库来做
+## Using scikit-learn package
 
-## 3、自己动手丰衣足食
+### Installing 
+
+
+```
+pip install scikit-learn
+```
+
+### Usage
+
+
+
+
+
+## Without scikit-learn package

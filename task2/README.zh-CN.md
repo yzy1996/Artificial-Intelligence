@@ -9,7 +9,7 @@
 
 </div>
 
-## 1、minist 数据集准备
+## mnist 数据集准备
 
 首先从[网站](http://yann.lecun.com/exdb/mnist/)下载
 
@@ -23,6 +23,6 @@
 
 我给你一个参考[代码]()。
 
-## 2、利用scikit-learn库来做
+## 利用scikit-learn库来做
 
-## 3、自己动手丰衣足食
+## 自己动手丰衣足食

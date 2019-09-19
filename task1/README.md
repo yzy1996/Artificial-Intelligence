@@ -52,6 +52,82 @@
 
 
 
+
+
+# 多维正态分布（multivariate normal distribution）
+
+我们先看一维的正态分布：
+$$
+N\left(x| \mu, \sigma^{2}\right)=\frac{1}{\sqrt{2 \pi} \sigma} \exp \left(-\frac{1}{2 \sigma^{2}}(x-\mu)^{2}\right)
+$$
+大家都没问题哈！
+
+
+
+x 是 d 维的向量， $\Sigma$ 是 x 的协方差矩阵
+$$
+N(x | u, \Sigma)=\frac{1}{(2 \pi)^{d/2}{|\Sigma|^{1 / 2}}} \exp \left[-\frac{1}{2}(x- u)^{T} \Sigma^{-1}(x-u)\right]
+$$
+
+
+# 迹
+
+相似矩阵的迹都相等
+
+
+
+### 矩阵特征值之和等于矩阵的迹
+
+矩阵A的特征方程如下：
+
+$\operatorname{det}(\lambda I-A)=\left|\begin{array}{cccc}{\lambda-a_{11}} & {-a_{12}} & {\dots} & {-a_{1 n}} \\ {-a_{21}} & {\lambda-a_{22}} & {\dots} & {-a_{2 n}} \\ {\dots} & {\dots} & {\dots} & {\dots} \\ {-a_{n 1}} & {-a_{n 2}} & {\dots} & {\lambda-a_{n n}}\end{array}\right|$
+
+行列式展开，如果想要 $\lambda^{n-1}$ 这一项，只有 $\left(\lambda-a_{11}\right)\left(\lambda-a_{22}\right) \ldots\left(\lambda-a_{n n}\right)$ ，
+
+那么可以得到 $\lambda^{n-1}$ 的系数为 $-\left(a_{11}+a_{12}+\ldots+a_{n n}\right)$ ，
+
+上面的特征方程又可以写为特征值的形式 $\operatorname{det}(\lambda I-A)=\left(\lambda-\lambda_{1}\right)\left(\lambda-\lambda_{2}\right) \ldots\left(\lambda-\lambda_{n}\right)$ ，
+
+$\lambda^{n-1}$ 这一项的系数又恰好是 $-\left(\lambda_{1}+\lambda_{2}+\ldots+\lambda_{n}\right)$ 
+
+所以 $\operatorname{tr}(A)=\sum_{k=1}^{n} \lambda_{k}$
+
+
+
+# 参数估计
+
+## 最大似然估计
+
+### 例子
+
+> 问：一个不透明的袋中有黑白两种球，数量和比例都不知道。现在我们随机从袋中取球，一共取了100次，有70次是白球。问白球的比例是多少？
+
+> 答：
+
+## 贝叶斯估计
+
+在最大似然估计的例子中，如果样本数量不够多，其实存在着很大的问题
+
+> 一个最
+
+贝叶斯估计要解决的不是如何估计参数，而是用来估计新测量数据出现的概率，对于新出现的数据 $x_i$
+
+
+
+### 计算步骤
+
+1、计算后验概率 $p(\theta|D)$
+
+根据贝叶斯定理，
+
+ ## 最大后验估计
+
+
+
+
+
+
+
 ## 参考
 
 推荐一篇非常强大的文章 [链接](http://www.math.wm.edu/~leemis/2008amstat.pdf)

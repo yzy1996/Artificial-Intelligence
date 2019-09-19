@@ -98,11 +98,54 @@ $\lambda^{n-1}$ 这一项的系数又恰好是 $-\left(\lambda_{1}+\lambda_{2}+\
 
 ## 最大似然估计
 
-### 例子
+用已知的样本值去估计某一概率分布模型的参数值。
+$$
+L\left(\theta | x_{1}, x_{2}, \cdots, x_{n}\right)=f\left(x_{1}, x_{2}, \cdots, x_{n} | \theta\right)=\prod f\left(x_{i} | \theta\right)
+$$
+
+$$
+\ln L\left(\theta | x_{1}, x_{2}, \cdots, x_{n}\right)=\sum_{i=1}^{n} f\left(x_{i} | \theta\right)
+$$
+
+### 推导
+
+#### 伯努利分布（Bernoulli）
+
+每一个样本的概率可以表示为：$p^{x}(1-p)^{1-x}$ ，$x=0 or 1 $  ，$p$是成功的概率
+
+我们现在有n个样本，$D = \{ x_1, x_2,...,x_n \}$ ，把要估计的成功概率 $p$ 记为参数 $\theta$ 
+
+写出对数最大似然估计表达式：
+$$
+\begin{align}
+L(\theta)&=\sum_{i=1}^{n}\log{p(x_i|\theta)} \\
+  &= \sum_{i=1}^{n}\log{\theta^{x_i}(1-\theta)^{1-x_i}} \\
+  &= \sum_{i=1}^{n}x_i \log{\theta}+(1-x_i)\log(1-\theta) \\
+  &= (\sum_{i=1}^{n}x_i)\log{\theta}+(\sum_{i=1}^{n}(1-x_i))\log{(1-\theta)} \\
+  &= m\log{\theta} + (n-m)\log(1-\theta)
+\end{align}
+$$
+对 $L(\theta)$ 进行求导，解得 $\theta = \frac{1}{n}\sum_{i=1}^{n}x_i$
+
+#### 例子
 
 > 问：一个不透明的袋中有黑白两种球，数量和比例都不知道。现在我们随机从袋中取球，一共取了100次，有70次是白球。问白球的比例是多少？
 
-> 答：
+> 答：显然这是一个二项分布的模型，那么假设二项分布的参数 袋中白球 的概率为 $\theta$，黑球则为 $(1-\theta)$ 。样本为 $D = \{ x_1, x_2, x_3,...,x_{100} \}$ 
+>
+> 写出似然函数：$p(D|\theta) = \prod_{k=0}^{100} p(x_k|\theta)={\theta}^{70}(1-\theta)^{30}$
+>
+> 求出上面似然函数最大时的 $\theta$ 值，(求对数再求导) ，得到 $\theta = 0.7$
+
+
+
+#### 计算步骤
+
+1. 选择参数模型（伯努利、高斯），设参数为 $\theta$
+2. 获得样本数据  $D = \{ x_1, x_2, x_3,...,x_{n} \}$ 
+3. 运用最大似然公式求解
+
+
 
 ## 贝叶斯估计
 

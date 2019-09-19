@@ -104,7 +104,7 @@ L\left(\theta | x_{1}, x_{2}, \cdots, x_{n}\right)=f\left(x_{1}, x_{2}, \cdots, 
 $$
 
 $$
-\ln L\left(\theta | x_{1}, x_{2}, \cdots, x_{n}\right)=\sum_{i=1}^{n} f\left(x_{i} | \theta\right)
+l(\theta) = \ln L\left(\theta | x_{1}, x_{2}, \cdots, x_{n}\right)=\sum_{i=1}^{n} f\left(x_{i} | \theta\right)
 $$
 
 ### 推导
@@ -118,7 +118,7 @@ $$
 写出对数最大似然估计表达式：
 $$
 \begin{align}
-L(\theta)&=\sum_{i=1}^{n}\log{p(x_i|\theta)} \\
+l(\theta)&=\sum_{i=1}^{n}\log{p(x_i|\theta)} \\
   &= \sum_{i=1}^{n}\log{\theta^{x_i}(1-\theta)^{1-x_i}} \\
   &= \sum_{i=1}^{n}x_i \log{\theta}+(1-x_i)\log(1-\theta) \\
   &= (\sum_{i=1}^{n}x_i)\log{\theta}+(\sum_{i=1}^{n}(1-x_i))\log{(1-\theta)} \\
@@ -126,6 +126,10 @@ L(\theta)&=\sum_{i=1}^{n}\log{p(x_i|\theta)} \\
 \end{align}
 $$
 对 $L(\theta)$ 进行求导，解得 $\theta = \frac{1}{n}\sum_{i=1}^{n}x_i$
+
+#### 正态分布（Gaussian）
+
+
 
 #### 例子
 

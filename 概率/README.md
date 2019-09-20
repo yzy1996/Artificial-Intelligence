@@ -14,13 +14,9 @@
 
 **PMF**是针对离散随机变量而言的，是随机变量在各特定取值上的概率
 
-
-
-
-
 > 例如抛骰子，每一面朝上的概率都是1/6，那么表示出的PMF就是：
 >
-> [](https://latex.codecogs.com/gif.latex?f_{X}(x)=\left\{\begin{array}{l}{\frac{1}{6} \text { if } x \in\{1,2,3,4,5,6\}} \\ {0 \text { if } x \notin\{1,2,3,4,5,6\}}\end{array}\right.​)
+> $f_{X}(x)=\left\{\begin{array}{l}{\frac{1}{6} \text { if } x \in\{1,2,3,4,5,6\}} \\ {0 \text { if } x \notin\{1,2,3,4,5,6\}}\end{array}\right.$
 
 
 

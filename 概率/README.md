@@ -173,9 +173,38 @@ $$
 
 MLE简单又客观，但是过分的客观有时会导致过拟合(Over fitting)。在样本点很少的情况下，MLE的效果并不好
 
-贝叶斯估计最要命的问题是，实际应用场景中的先验概率不是那么好求，很多都是拍脑袋决定的。一旦是拍脑袋决定的，这玩意自然就不准
+> 一个最简单的例子就是，一个伯努利模型，我们知道通过最大似然估计得到的先验值为 $\frac{1}{N}\sum_{i=1}^{N}{x_i}$ ，那如果实验过程中，全部出现1或者0，那么估计出的参数显然是不对的
 
-> 一个最简单的例子就是，一个伯努利模型，我们知道通过最大似然估计得到的先验值为 $\frac{1}{N}\sum_{i=1}^{N}{x_i}$ ，那如果实验过程中，
+而贝叶斯估计是要估计在先验和观测同时存在的情况下，后验概率的分布情况
+
+根据贝叶斯定理：
+$$
+P(\theta | D)=\frac{P(D | \theta) P(\theta)}{\int_{\Theta} P(D | \theta) P(\theta) d \theta}
+$$
+我们现在需要知道先验 $P(\theta)$ ，如果这些先验十分复杂，那么上式很难求解，所以一般会选择共轭先验。二项分布参数的共轭先验是Beta分布，所以假设 $\theta$ 服从 $P(\theta) \sim \operatorname{Beta}(\alpha, \beta)$ ，Beta分布的概率密度公式为：
+$$
+f(x ; \alpha, \beta)=\frac{1}{B(\alpha, \beta)} x^{\alpha-1}(1-x)^{\beta-1}
+$$
+那么之前的后验表达式就可以写作：
+$$
+\begin{aligned} P(\theta | X) 
+&=\frac{P(X | \theta) P(\theta)}{\int_{\Theta} P(X | \theta) P(\theta) d \theta} \\ 
+&=\frac{\theta^{6}(1-\theta)^{4} \frac{-(-\theta)^{\beta-1}}{B(\alpha, \beta)}}{\int_{\Theta} \theta^{6}(1-\theta)^{4} \frac{B(\alpha, \beta)}{B(\alpha, \beta)}} \\ 
+&=\frac{\theta^{\alpha+6-1}(1-\theta)^{\beta+4-1}}{\int_{\Theta} \theta^{\alpha+6-1}(1-\theta)^{\beta+4-1} d \theta} \\ 
+&=\frac{\theta^{\alpha+6-1}(1-\theta)^{\beta+4-1}}{B(\alpha+6-1, \beta+4-1)} \\ &=\operatorname{Beta}(\theta | \alpha+6-1, \beta+4-1) \\ 
+&=\operatorname{Beta}(\theta | \alpha+6, \beta+4) \end{aligned}
+$$
+这样我们就得到了 $\theta$ 的一个更加准确的分布，这比MLE估计出来的一个值要更加可靠，如果要得到一个值，我们可以用这个分布的期望作为 $\theta$ 的一个值，Beta分布的数学期望为：$\frac{\alpha}{\alpha+\beta}$  ，所以得到 $\hat{\theta}=$ 
+
+补充：二项分布参数的共轭先验是Beta分布，多项式分布参数的共轭先验是Dirichlet分布，指数分布参数的共轭先验是Gamma分布，⾼斯分布均值的共轭先验是另⼀个⾼斯分布，泊松分布的共轭先验是Gamma分布。
+
+贝叶斯估计存在的一个问题是，实际应用场景中的先验概率不是那么好求，很多都是拍脑袋决定的。一旦是拍脑袋决定的，自然就不准了。
+
+
+
+
+
+
 
 贝叶斯估计要解决的不是如何估计参数，而是用来估计新测量数据出现的概率，对于新出现的数据 $x_i$ :
 $$
@@ -191,7 +220,7 @@ $$
 
 ### 计算步骤
 
-1、计算后验概率 $p(\theta|D)$
+1、计算后验概率 $P(\theta|D)$
 
 根据贝叶斯定理：
 $$
@@ -216,6 +245,22 @@ Maximum A Posteriori Estimation
 
 
 ## 概率派和贝叶斯派
+
+
+
+
+
+
+
+## 举例
+
+> 问：一个不透明的袋中有黑白两种球，数量和比例都不知道。现在我们随机从袋中取球，一共取了100次，有70次是白球。问白球的比例是多少？
+
+> 答：显然这是一个二项分布的模型，那么假设二项分布的参数 袋中白球 的概率为 $\theta$，黑球则为 $(1-\theta)$ 。样本为 $D = \{ x_1, x_2, x_3,...,x_{100} \}$ 
+>
+> 写出似然函数：$p(D|\theta) = \prod_{k=0}^{100} p(x_k|\theta)={\theta}^{70}(1-\theta)^{30}$
+>
+> 求出上面似然函数最大时的 $\theta$ 值，(求对数再求导) ，得到 $\theta = 0.7$
 
 
 

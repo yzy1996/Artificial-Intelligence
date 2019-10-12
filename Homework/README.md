@@ -7,13 +7,13 @@
 
 This is the homework of Machine Learning class
 
-![python-version](https://img.shields.io/badge/python-3.7-blue)![country](https://img.shields.io/badge/country-China-red)
+![matlab-version](https://img.shields.io/badge/matlab-2019b-blue)![country](https://img.shields.io/badge/country-China-red)
 
 </div>
 
 ## Code
 
-The file mixture_poisson.m corresponds to PS4.5
+1、The file <u>mixture_poisson.m</u> corresponds to PS4.5
 
 ### Usage
 

@@ -7,13 +7,13 @@ English](./README.md) | 简体中文
 
 这里是机器学习课的作业
 
-![python-version](https://img.shields.io/badge/python-3.7-blue)![Country](https://img.shields.io/badge/country-China-red)
+![matlab-version](https://img.shields.io/badge/matlab-2019b-blue)![Country](https://img.shields.io/badge/country-China-red)
 
 </div>
 
 ## 代码
 
-文件 mixture_poisson.m 对应PS4.5
+1、文件 <u>mixture_poisson.m</u> 对应PS4.5
 
 ### 使用
 

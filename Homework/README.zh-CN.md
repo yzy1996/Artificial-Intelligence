@@ -23,11 +23,11 @@
 
 输出 $lambda_k$ 和对应的 $\pi_k$
 
-![](C:\Users\zhiyuyang4\AppData\Roaming\Typora\typora-user-images\1570866317359.png)
+![](https://img-blog.csdnimg.cn/20191012155910125.png)
 
 绘制收敛效果图
 
-<img src="C:\Users\zhiyuyang4\Desktop\mp.svg" alt="mp" style="zoom:70%;" />
+<img src="https://img-blog.csdnimg.cn/20191012155806189.jpg" alt="mp" style="zoom:70%;" />
 
 ## 问题和答案
 

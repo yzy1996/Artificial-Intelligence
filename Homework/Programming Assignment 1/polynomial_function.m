@@ -39,7 +39,7 @@ f = [zeros(1,6) ones(1,n)]';
 A = [-Phi' -eye(n);Phi' -eye(n)];
 b = [-sampy sampy]';
 x = linprog(f,A,b);
-theta4 = x(1:6)
+theta4 = x(1:6);
 plot(polyx,polyval(flipud(theta4),polyx),'black')
 
 %% Bayesian regression

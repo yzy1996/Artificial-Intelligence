@@ -11,15 +11,29 @@
 
 </div>
 
-## 混合泊松分布
+## 代码
 
-文件 mixture_poisson.m
-
-### 安装 
-
-```
-pip install scikit-learn
-```
+文件 mixture_poisson.m 对应PS4.5
 
 ### 使用
+
+修改指定的**子模型数量K**和**迭代次数iteration**，运行
+
+### 结果
+
+输出 $lambda_k$ 和对应的 $\pi_k$
+
+![](C:\Users\zhiyuyang4\AppData\Roaming\Typora\typora-user-images\1570866317359.png)
+
+绘制收敛效果图
+
+<img src="C:\Users\zhiyuyang4\Desktop\mp.svg" alt="mp" style="zoom:70%;" />
+
+## 问题和答案
+
+
+
+## 编程作业
+
+ 
 

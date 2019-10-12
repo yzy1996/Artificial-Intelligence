@@ -7,7 +7,7 @@ English](./README.md) | 简体中文
 
 这里是机器学习课的作业
 
-![matlab-version](https://img.shields.io/badge/matlab-2019b-blue)![Country](https://img.shields.io/badge/country-China-red)
+![matlab-version](https://img.shields.io/badge/matlab-2019b-blue) ![Country](https://img.shields.io/badge/country-China-red)
 
 </div>
 

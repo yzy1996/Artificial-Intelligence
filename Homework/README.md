@@ -7,7 +7,7 @@
 
 This is the homework of Machine Learning class
 
-![matlab-version](https://img.shields.io/badge/matlab-2019b-blue)![country](https://img.shields.io/badge/country-China-red)
+![matlab-version](https://img.shields.io/badge/matlab-2019b-blue) ![country](https://img.shields.io/badge/country-China-red)
 
 </div>
 

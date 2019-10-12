@@ -21,13 +21,13 @@ Modify the specified number of submodels **K** and iteration times **iteration**
 
 ### Result
 
-output $lambda_k$ corresponding $\pi_k$
+output $\lambda_k$ corresponding $\pi_k$
 
 ![](https://img-blog.csdnimg.cn/20191012155910125.png)
 
 Drawing a convergence diagram
 
-<img src="https://img-blog.csdnimg.cn/20191012155806189.jpg" alt="mp" style="zoom:70%;" />
+<img src="https://img-blog.csdnimg.cn/20191012155806189.jpg" width="40%">
 
 ## Problem Set and  Answer
 

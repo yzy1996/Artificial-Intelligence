@@ -1,4 +1,4 @@
-[English](./README.md) | 简体中文
+English](./README.md) | 简体中文
 
 <h1 align="center">作业</h1>
 <div align="center">
@@ -27,11 +27,7 @@
 
 绘制收敛效果图
 
-![](https://img-blog.csdnimg.cn/20191012155806189.jpg =50x)
-
-
-
-<img src="https://img-blog.csdnimg.cn/20191012155806189.jpg" width="50%">
+<img src="https://img-blog.csdnimg.cn/20191012155806189.jpg" width="40%">
 
 
 

@@ -23,11 +23,11 @@ Modify the specified number of submodels **K** and iteration times **iteration**
 
 output $lambda_k$ corresponding $\pi_k$
 
-![](C:\Users\zhiyuyang4\AppData\Roaming\Typora\typora-user-images\1570866317359.png)
+![](https://img-blog.csdnimg.cn/20191012155910125.png)
 
 Drawing a convergence diagram
 
-<img src="C:\Users\zhiyuyang4\Desktop\mp.svg" alt="mp" style="zoom:70%;" />
+<img src="https://img-blog.csdnimg.cn/20191012155806189.jpg" alt="mp" style="zoom:70%;" />
 
 ## Problem Set and  Answer
 

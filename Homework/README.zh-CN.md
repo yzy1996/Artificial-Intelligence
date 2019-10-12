@@ -29,6 +29,12 @@
 
 ![](https://img-blog.csdnimg.cn/20191012155806189.jpg =50x)
 
+
+
+<img src="https://img-blog.csdnimg.cn/20191012155806189.jpg" width="50%">
+
+
+
 ## 问题和答案
 
 

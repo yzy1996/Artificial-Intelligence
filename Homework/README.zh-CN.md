@@ -21,7 +21,7 @@
 
 ### 结果
 
-输出 $lambda_k$ 和对应的 $\pi_k$
+输出 $\lambda_k$ 和对应的 $\pi_k$
 
 ![](https://img-blog.csdnimg.cn/20191012155910125.png)
 

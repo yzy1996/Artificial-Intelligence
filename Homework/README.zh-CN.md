@@ -27,7 +27,7 @@
 
 绘制收敛效果图
 
-<img src="https://img-blog.csdnimg.cn/20191012155806189.jpg" alt="mp" style="zoom:70%;" />
+![](https://img-blog.csdnimg.cn/20191012155806189.jpg =50x)
 
 ## 问题和答案
 

@@ -57,8 +57,8 @@ def robust_regression(x,y,k):
     a2 = np.hstack((X,-np.mat(np.identity(n))))
     A = np.vstack((a1,a2))
     b = np.vstack((-Y,Y)).reshape(-1,1)
-    x0_bounds=x1_bounds=x2_bounds=x3_bounds=x4_bounds=x5_bounds = (-5, 5)
-    res = optimize.linprog(f,A,b,bounds=[x0_bounds, x1_bounds,x2_bounds,x3_bounds,x4_bounds,x5_bounds])
+    bounds=(None)
+    res = optimize.linprog(f,A,b,bounds)
     return res
 
 def Bayesian_regression(x,y,k,alpha):

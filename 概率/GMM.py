@@ -3,4 +3,4 @@
 使用多个高斯模型来拟合数据分布
 '''
 
-import numpy
+import numpy as np

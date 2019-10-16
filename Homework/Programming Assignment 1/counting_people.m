@@ -4,80 +4,99 @@ main
 function main
 
 count_data = load('count_data.mat');
-trainx = count_data.trainx;
-trainy = count_data.trainy;
+trainx = count_data.trainx;  %9*400
+trainy = count_data.trainy;  %400*1
 testx = count_data.testx;
-testy = count_data.testy;
+testy = count_data.testy; 
 
-[m, n] = size(trainx);
 err = zeros(2,5);
-Phi = trainx;
-K = m - 1;
+Phi = mytrans(trainx);
+[m, n] = size(Phi);
+K = m-1;
+
 %%
 figure
+subplot(2,3,1)
 hold on
 grid on
 plot(testy,'.')
 
-theta1 =myls;
-plot(testx'*theta1,'.')
+theta1 =myls
+plot(mytrans(testx)'*theta1,'.')
 hold off 
 err(1,1) = mymse(theta1);
 err(2,1) = mymae(theta1);
 %%
-figure
+subplot(2,3,2)
 hold on
 grid on
 plot(testy,'.')
 
 theta2 = myrls;
-plot(testx'*theta2,'.')
+plot(mytrans(testx)'*theta2,'.')
 hold off 
 err(1,2) = mymse(theta2);
 err(2,2) = mymae(theta2);
 %%
-figure
+subplot(2,3,3)
 hold on
 grid on
 plot(testy,'.')
 
 theta3 = mylasso;
-plot(testx'*theta3,'.')
+plot(mytrans(testx)'*theta3,'.')
 hold off 
 err(1,3) = mymse(theta3);
 err(2,3) = mymae(theta3);
 %%
-figure
+subplot(2,3,4)
 hold on
 grid on
 plot(testy,'.')
 
 theta4 = myrr;
-plot(testx'*theta4,'.')
+plot(mytrans(testx)'*theta4,'.')
 hold off 
 err(1,4) = mymse(theta4);
 err(2,4) = mymae(theta4);
 %%
-figure
+subplot(2,3,5)
 hold on
 grid on
 plot(testy,'.')
 
 theta5 = mybr;
-plot(testx'*theta5,'.')
+plot(mytrans(testx)'*theta5,'.')
 hold off 
 err(1,5) = mymse(theta5);
 err(2,5) = mymae(theta5);
 %%
 method = ["least-squares", "regularized LS", "L1-regularized LS", "robust regression", "Bayesian regression"];
 fprintf('the %s algorithm mean-squared error is %f, mean-absolute error is %f\n', [method;err(1,:);err(2,:)])
+
+%% feature transformations
+    function Phi = mytrans(x)
+%         Phi = x(1,:);Phi = [Phi; Phi.^2];  % 1381
+        Phi = (exp(x) - exp(-x)) ./ (exp(x) + exp(-x));Phi = Phi(1,:);
+%         Phi = x ./ (1+abs(x));  % 2404
+%         Phi = sin(x);  % 2120
+%         Phi = atan(x);  % 1866 
+%         Phi = x(1,:);  % 1418
+%         Phi = x;  % 1751
+%         Phi = [x; x.^2];  % 1603
+%         Phi = [x; x.^2 ;x.^3];  % 1573
+%         Phi = 1 ./ (1+ exp(x));  % 4128
+%         Phi = (exp(x) - exp(-x)) ./ (exp(x) + exp(-x));  % 2153      
+
+    end
+
 %% error
     function err = mymae(theta)       
-        err = sum(abs(testy-testx'*theta));
+        err = sum(abs(testy-mytrans(testx)'*theta));
     end
 
     function err = mymse(theta)
-        err = sum((testy-testx'*theta).^2);
+        err = sum((testy-mytrans(testx)'*theta).^2);
     end
 
 %% Least-squares

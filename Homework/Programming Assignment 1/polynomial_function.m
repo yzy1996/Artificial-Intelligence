@@ -168,6 +168,7 @@ myerrorplot
 
 %% Robust regression
     function theta4 = myrr
+        
         n = length(sampx);
         f = [zeros(1,K+1) ones(1,n)]';
         A = [-Phi' -eye(n);Phi' -eye(n)];

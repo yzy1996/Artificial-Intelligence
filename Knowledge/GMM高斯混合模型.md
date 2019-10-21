@@ -50,3 +50,10 @@ $$
 $$
 \frac{\partial{l}}{\partial{\mu_k}}=\sum_{i=1}^{n}\frac{}{\sum_{k=1}^{K}\pi_{k} \mathcal{N}\left({x_i} | \mu_{k}, \Sigma_{k}\right)}
 $$
+
+
+
+
+
+
+

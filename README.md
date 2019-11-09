@@ -1,18 +1,26 @@
-[English](./README.md) | 简体中文
-
-<h1 align="center">机器学习</h1>
+<h1 align="center">人工智能</h1>
 <div align="center">
 
-机器学习的知识理解以及相关代码，并结合机器学习课程的作业
+人工智能、机器学习、深度学习三者的关系是：
+
+ ![img](https://pic2.zhimg.com/80/v2-58d18a0c7a5c04fe66498929268425e7_hd.jpg) 
+
+ ![img](https://pic1.zhimg.com/80/v2-e358e127afbe5963f5b8622e2dd5b49f_hd.jpg) 
+
+从上面两张图就可以看出来，人工智能是一个很宽泛的名词，包含了机器学习，推荐系统以及机器人等；而机器学习又包括了深度学习，强化学习等。
+
+
 
 ![python-version](https://img.shields.io/badge/python-3.7-blue) ![Country](https://img.shields.io/badge/country-China-red)
 
 </div>
 
+
+# 机器学习
+
 ## 知识理解
 
 [Knowledge](./Knowledge)
-
 
 
 ## 配置指南

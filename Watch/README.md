@@ -15,3 +15,6 @@ watch the cutting-edge knowledge
 
  Taehoon Kim :: [homepage](https://carpedm20.github.io/) 
 
+
+
+ https://github.com/sbrugman/deep-learning-papers 

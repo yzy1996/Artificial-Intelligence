@@ -13,4 +13,5 @@ watch the cutting-edge knowledge
 
 ## Field People
 
- Taehoon Kim :: [page](https://carpedm20.github.io/) :: 
+ Taehoon Kim :: [homepage](https://carpedm20.github.io/) 
+

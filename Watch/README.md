@@ -9,3 +9,8 @@ watch the cutting-edge knowledge
 
 ## Field Team 
 
+
+
+## Field People
+
+ Taehoon Kim :: [page](https://carpedm20.github.io/) :: 

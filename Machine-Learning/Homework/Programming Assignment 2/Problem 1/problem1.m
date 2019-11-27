@@ -47,7 +47,8 @@ scatter(x(1, :), x(2, :), 36, yy, 'filled');
 
 %% EM-GMM
 mu = scale1 + (scale2 - scale1) * rand(d, K);
-[sigma(:,:,1),sigma(:,:,2),sigma(:,:,3),sigma(:,:,4)] = deal(eye(d));
+
+sigma = repmat(scale*eye(d),[1 1 K]);
 pi=rand(1,K);
 pi=pi/sum(pi);
 look = pi;

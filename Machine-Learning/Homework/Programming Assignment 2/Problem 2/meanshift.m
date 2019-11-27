@@ -1,5 +1,5 @@
 function Y = meanshift(x)
-iteration = 40;
+iteration = 300;
 n = length(x);
 h1 = 1;
 h2 = 2;
@@ -19,9 +19,8 @@ for i = 1:n
         end
         look = xx(:,i);
     end
-    iter
 end
 
-xx = round(xx);
-Y = xx(4, :);
+Y = round(xx(1, :));
+Y = Y > ((max(Y)+min(Y))/2);
 end

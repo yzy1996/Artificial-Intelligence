@@ -1,4 +1,4 @@
-function [Y, z] = kmeans(x, K)
+function Y = kmeans(x, K)
 
 n = length(x);
 z = zeros(n, K);

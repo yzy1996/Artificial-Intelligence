@@ -42,6 +42,7 @@ for iter = 1:iteration
     look = mu;
 end
 yy = (1:K) * z';
+figure()
 scatter(x(1, :), x(2, :), 36, yy, 'filled');
 
 %% EM-GMM
@@ -86,6 +87,7 @@ for iter = 1:iteration
   
 end
 [M, yy] = max(z,[],2);
+figure()
 scatter(x(1, :), x(2, :), 36, yy, 'filled')
 
 %% Mean-shift algorithm
@@ -108,5 +110,6 @@ end
 
 xx = round(xx);
 unique(xx(1,:))
+figure()
 scatter(x(1, :), x(2, :), 36, sum(xx), 'filled')
 

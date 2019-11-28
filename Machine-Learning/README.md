@@ -11,15 +11,9 @@
 
 ### 《统计学习方法》李航
 
+[代码1](https://github.com/fengdu78/lihang-code)    [代码2](https://github.com/SmirkCao/Lihang)
 
 
-
-
-
-
-
-
-## 
 
 
 

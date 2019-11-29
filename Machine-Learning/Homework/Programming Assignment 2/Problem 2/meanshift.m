@@ -1,8 +1,9 @@
 function Y = meanshift(x)
+
 iteration = 300;
 n = length(x);
-h1 = 1;
-h2 = 2;
+h1 = 10;
+h2 = 1;
 xx = x;
 
 for i = 1:n
@@ -22,5 +23,8 @@ for i = 1:n
 end
 
 Y = round(xx(1, :));
-Y = Y > ((max(Y)+min(Y))/2);
+
+% Y(Y < ((max(Y)+min(Y))/2)) = 1;
+% Y(Y >= ((max(Y)+min(Y))/2)) = 2;
+
 end

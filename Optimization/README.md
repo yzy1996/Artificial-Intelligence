@@ -51,7 +51,7 @@ add a sort and direct to subsection(introduction and code)
 
 ### Code
 
-[geatpy](http://geatpy.com/)
+[python-geatpy](http://geatpy.com/)
 
 [matlab-gamultiobj](https://ww2.mathworks.cn/help/gads/gamultiobj.html)
 

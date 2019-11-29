@@ -51,9 +51,11 @@ add a sort and direct to subsection(introduction and code)
 
 ### Code
 
- [geatpy](http://geatpy.com/)
+[geatpy](http://geatpy.com/)
 
-### Blogs
+[matlab-gamultiobj](https://ww2.mathworks.cn/help/gads/gamultiobj.html)
+
+### 
 
 ### papers
 

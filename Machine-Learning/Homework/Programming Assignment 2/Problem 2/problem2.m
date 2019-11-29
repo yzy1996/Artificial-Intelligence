@@ -10,14 +10,16 @@ axis image;
 XX = [X(1:2,:) ; X(3:4,:)/10]; % downscale the coordinate features (see part (b))
 
 % kmeans
-% Y = kmeans(XX, 2);
+Y = kmeans(XX, 2);
 
 % EM-GMM
-Y = emgmm(XX, 2);
+% Y = emgmm(XX, 2);
 
 % meanshift
 % Y = meanshift(XX);
 
+% Y²»ÄÜÎª0
+% 
 % make a segmentation image from the labels
 segm = labels2segm(Y, L);
 subplot(1,3,2); imagesc(segm); axis image;
@@ -25,19 +27,6 @@ subplot(1,3,2); imagesc(segm); axis image;
 % color the segmentation image
 csegm = colorsegm(segm, img);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 subplot(1,3,3); imagesc(csegm); axis image
+
+saveas(gcf,'kmeans 2','svg')

@@ -51,11 +51,11 @@ for subset = 1:5
         if subset == 1
             figure
             myplot
-            title('plot of the estimated function')
+%             title('plot of the estimated function')
             
             figure
             plot(polyx,sqrt(diag(sigmaa)),'LineWidth',2)
-            title('standard deviation around the mean')
+%             title('standard deviation around the mean')
             break
         end
         
@@ -93,7 +93,7 @@ for subset = 1:5
         err(5) = mymse(theta5);
         figure
         myplot
-        title('outliers output values')
+%         title('outliers output values')
     end
 end
 

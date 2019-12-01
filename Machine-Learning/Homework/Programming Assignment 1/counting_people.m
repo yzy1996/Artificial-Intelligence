@@ -21,8 +21,9 @@ hold on
 grid on
 plot(testy,'.')
 
-theta1 =myls
+theta1 = myls;
 plot(mytrans(testx)'*theta1,'.')
+title('least-squares')
 hold off 
 err(1,1) = mymse(theta1);
 err(2,1) = mymae(theta1);
@@ -34,6 +35,7 @@ plot(testy,'.')
 
 theta2 = myrls;
 plot(mytrans(testx)'*theta2,'.')
+title('regularized LS')
 hold off 
 err(1,2) = mymse(theta2);
 err(2,2) = mymae(theta2);
@@ -45,6 +47,7 @@ plot(testy,'.')
 
 theta3 = mylasso;
 plot(mytrans(testx)'*theta3,'.')
+title('L1-regularized LS')
 hold off 
 err(1,3) = mymse(theta3);
 err(2,3) = mymae(theta3);
@@ -56,6 +59,7 @@ plot(testy,'.')
 
 theta4 = myrr;
 plot(mytrans(testx)'*theta4,'.')
+title('robust regression')
 hold off 
 err(1,4) = mymse(theta4);
 err(2,4) = mymae(theta4);
@@ -67,6 +71,7 @@ plot(testy,'.')
 
 theta5 = mybr;
 plot(mytrans(testx)'*theta5,'.')
+title('Bayesian regression')
 hold off 
 err(1,5) = mymse(theta5);
 err(2,5) = mymae(theta5);
@@ -76,8 +81,8 @@ fprintf('the %s algorithm mean-squared error is %f, mean-absolute error is %f\n'
 
 %% feature transformations
     function Phi = mytrans(x)
-%         Phi = x(1,:);Phi = [Phi; Phi.^2];  % 1381
-        Phi = (exp(x) - exp(-x)) ./ (exp(x) + exp(-x));Phi = Phi(1,:);
+        Phi = x(1,:);Phi = [Phi; Phi.^2];  % 1381
+%         Phi = (exp(x) - exp(-x)) ./ (exp(x) + exp(-x));Phi = Phi(1,:);
 %         Phi = x ./ (1+abs(x));  % 2404
 %         Phi = sin(x);  % 2120
 %         Phi = atan(x);  % 1866 

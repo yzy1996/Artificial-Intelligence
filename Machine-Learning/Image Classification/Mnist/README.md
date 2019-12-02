@@ -22,7 +22,7 @@ The first 5000 examples of the test set are taken from the original NIST trainin
 
 These files are not in any standard image format. You have to write your own (very simple) program to read them.
 
-I give you an reference [code]().
+I give you an reference [code](https://github.com/yzy1996/Artificial-Intelligence/blob/master/Machine-Learning/Image%20Classification/Mnist/data%20_extract.py).
 
 ## Using scikit-learn package
 

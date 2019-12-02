@@ -4,10 +4,11 @@ format long
 
 %% input data
 cluster_data = load('cluster_data.mat');
-x = cluster_data.dataC_X;
-y = cluster_data.dataC_Y;
+x = cluster_data.dataA_X;
+y = cluster_data.dataA_Y;
 [d, n] = size(x);  % the number of datax
-
+scalemin = min(x, [], 2);  % the min scale of datax
+scalemax = max(x, [], 2);  % the max scale of datax
 %% initial
 K = 4;
 iteration = 200;  % fix maximum number of iterations
@@ -20,7 +21,7 @@ title('ground truth')
 %% K-means algorithm
 
 z = zeros(n, K);
-mu = mean(x, d) .* rand(d, K);
+mu = scalemin + (scalemax - scalemin) .* rand(d, K);
 dis = zeros(1,K);
 look = mu;
 
@@ -61,7 +62,7 @@ title('K-means')
 
 %% EM-GMM
 
-mu = mean(x, d) .* rand(d, K);
+mu = scalemin + (scalemax - scalemin) .* rand(d, K);
 
 sigma = repmat(eye(d),[1 1 K]);
 pi=rand(1,K);

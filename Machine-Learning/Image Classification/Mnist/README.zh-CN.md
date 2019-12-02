@@ -21,7 +21,8 @@
 
 这些文件不是任何标准图像格式。 你必须编写自己的（非常简单的）程序来阅读它们。
 
-我给你一个参考[代码](https://github.com/yzy1996/Machine-Learning/blob/master/task2/data _extract.py)。
+我给你一个参考[代码](https://github.com/yzy1996/Artificial-Intelligence/blob/master/Machine-Learning/Image%20Classification/Mnist/data%20_extract.py)。
+
 
 ## 利用scikit-learn库来做
 

@@ -40,3 +40,29 @@ pip install scikit-learn
 
 
 ## Without scikit-learn package
+
+
+
+
+
+
+
+## Based on tensorflow
+
+Use three methods to solve:
+
+* CNN
+* NN(BP)
+* softmax regression
+
+## Based on pytorch
+
+Use three methods to solve:
+
+* CNN
+* NN(BP)
+* softmax regression
+
+
+
+ps: use tensorflow and pytorch, you need to configure your environment first, you can see this

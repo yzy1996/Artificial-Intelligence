@@ -36,7 +36,7 @@ def extract_mnist_label(filename, type):
 if __name__ == '__main__':
 
     train_images = 'data/train-images.idx3-ubyte'
-    x_train = extract_mnist_image(train_images, 'train')  
+    x_train = extract_mnist_image(train_images, 'train')  # (60000, 28, 28)
 
     train_labels = 'data/train-labels.idx1-ubyte'
     y_train = extract_mnist_label(train_labels, 'train')  # (60000,)

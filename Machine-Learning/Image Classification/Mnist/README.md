@@ -65,4 +65,5 @@ Use three methods to solve:
 
 
 
-ps: use tensorflow and pytorch, you need to configure your environment first, you can see this
+ps: use tensorflow and pytorch, you need to configure your environment first, you can see [this](https://github.com/yzy1996/Artificial-Intelligence/blob/master/Machine-Learning/Configuration/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97.md)
+

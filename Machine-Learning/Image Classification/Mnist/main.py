@@ -22,8 +22,6 @@ def extract_mnist_image(filename, type):
 
     return images
 
-# images 存的是一个三维数组，60000*28*28，images[i]就是一个28*28的单张图片像素值
-
 
 def extract_mnist_label(filename, type):
 
@@ -35,18 +33,16 @@ def extract_mnist_label(filename, type):
     return labels
 
 
-
 if __name__ == '__main__':
 
-    # train_images = 'data/train-images.idx3-ubyte'
-    # x_train = extract_mnist_image(train_images, 'train') # (60000, 28, 28)
+    train_images = 'data/train-images.idx3-ubyte'
+    x_train = extract_mnist_image(train_images, 'train')  # (60000, 28, 28)
 
-    # train_labels = 'data/train-labels.idx1-ubyte'
-    # y_train = extract_mnist_label(train_labels, 'train') # (60000,)
+    train_labels = 'data/train-labels.idx1-ubyte'
+    y_train = extract_mnist_label(train_labels, 'train')  # (60000,)
 
-    # test_images = 'data/t10k-images.idx3-ubyte'
-    # x_test = extract_mnist_image(test_images, 'test') # (10000, 28, 28)
+    test_images = 'data/t10k-images.idx3-ubyte'
+    x_test = extract_mnist_image(test_images, 'test')  # (10000, 28, 28)
 
     test_labels = 'data/t10k-labels.idx1-ubyte'
-    y_test = extract_mnist_label(test_labels, 'test') # (10000,)
-    print(np.shape(y_test))
+    y_test = extract_mnist_label(test_labels, 'test')  # (10000,)

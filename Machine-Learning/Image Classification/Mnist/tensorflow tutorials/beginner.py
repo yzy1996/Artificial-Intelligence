@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np 
 import random
 
-
+# # standard mnist dataset
 # mnist = tf.keras.datasets.mnist
 # (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
@@ -33,12 +33,19 @@ y_test1 = np.genfromtxt('../data/challenge/cdigits_digits_labels.txt')
 
 x_train, x_test, x_test1 = x_train / 255.0, x_test / 255.0, x_test1 / 255.0
 
-model = tf.keras.models.Sequential([
-    tf.keras.layers.Flatten(input_shape=(28, 28)),
-    tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dropout(0.2),
-    tf.keras.layers.Dense(10, activation='softmax')
-])
+# model = tf.keras.models.Sequential([
+#     tf.keras.layers.Flatten(input_shape=(28, 28)),
+#     tf.keras.layers.Dense(128, activation='relu'),
+#     tf.keras.layers.Dropout(0.2),
+#     tf.keras.layers.Dense(10, activation='softmax')
+# ])
+
+model = tf.keras.models.Sequential()
+model.add(tf.keras.layers.Flatten(input_shape=(28, 28)))
+model.add(tf.keras.layers.Dense(128, activation='relu'))
+model.add(tf.keras.layers.Dropout(0.2))
+model.add(tf.keras.layers.Dense(10, activation='softmax'))
+
 
 model.compile(optimizer='adam',
               loss='sparse_categorical_crossentropy',

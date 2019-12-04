@@ -11,8 +11,8 @@ mnist = tf.keras.datasets.mnist
 for i in range(len(x_train)):
     x_train[i] = np.rot90(x_train[i], random.randint(0,4))
 
-x_test = np.genfromtxt('../data/challenge/cdigits_digits_vec.txt').reshape(150, 28, 28)
-y_test = np.genfromtxt('../data/challenge/cdigits_digits_labels.txt')
+# x_test = np.genfromtxt('../data/challenge/cdigits_digits_vec.txt').reshape(150, 28, 28)
+# y_test = np.genfromtxt('../data/challenge/cdigits_digits_labels.txt')
 
 x_train, x_test = x_train / 255.0, x_test / 255.0
 
@@ -79,7 +79,7 @@ def test_step(images, labels):
     test_accuracy(labels, predictions)
 
 
-EPOCHS = 20
+EPOCHS = 100
 
 for epoch in range(EPOCHS):
     for images, labels in train_ds:

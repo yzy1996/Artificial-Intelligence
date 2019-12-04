@@ -71,22 +71,53 @@ file2 = r'../data/train-labels.idx1-ubyte'
 trainingData = LoadData(file1, file2)
 training_data = trainingData.loadData()
 
-X_train = [i[0] for i in training_data]
-y_train = [i[1][0] for i in training_data]
+# sequence of the image and label
+train_seq = np.genfromtxt('../data/digits4000_txt/digits4000_trainset.txt').astype(np.uint16) # (2000,2)
+test_seq = np.genfromtxt('../data/digits4000_txt/digits4000_testset.txt').astype(np.uint16) # (2000,2)
 
-for i in range(len(X_train)):
-    X_train[i] = np.rot90(X_train[i].reshape(28, 28), random.randint(1,3)).reshape(784)
+# image and label
+digits_vec = np.genfromtxt('../data/digits4000_txt/digits4000_digits_vec.txt') # (4000,28,28)
+digits_vec = digits_vec.reshape(len(digits_vec), 784).astype(np.uint8)
+digits_labels = np.genfromtxt('../data/digits4000_txt/digits4000_digits_labels.txt').astype(np.uint8) # (4000,)
 
-x_test = np.genfromtxt('../data/challenge/cdigits_digits_vec.txt')
-yy = np.genfromtxt('../data/challenge/cdigits_digits_labels.txt').astype(np.int32)
+X_train = digits_vec[train_seq[:,0] - 1]
+y_train = digits_labels[train_seq[:,1] - 1]
+
+X_test = digits_vec[test_seq[:,0] - 1]
+y_test = digits_labels[test_seq[:,1] - 1]
+
+# challenge test image and label
+X_test1 = np.genfromtxt('../data/challenge/cdigits_digits_vec.txt')
+X_test1 = X_test1.reshape(len(X_test1), 784).astype(np.uint8)
+y_test1 = np.genfromtxt('../data/challenge/cdigits_digits_labels.txt').astype(np.uint8)
+
+
+X_train, X_test, X_test1 = X_train / 255.0, X_test / 255.0, X_test1 / 255.0
 
 test_data = []
-for label in yy:
+for label in y_train:
+    zero_vector = np.zeros((1, 10))
+    zero_vector[0, label] = 1
+    test_data.append(zero_vector)
+
+y_train = [i[0] for i in test_data]
+
+test_data = []
+for label in y_test:
     zero_vector = np.zeros((1, 10))
     zero_vector[0, label] = 1
     test_data.append(zero_vector)
 
 y_test = [i[0] for i in test_data]
+
+
+test_data = []
+for label in y_test1:
+    zero_vector = np.zeros((1, 10))
+    zero_vector[0, label] = 1
+    test_data.append(zero_vector)
+
+y_test1 = [i[0] for i in test_data]
 
 
 X_train, X_validation, y_train, y_validation = train_test_split(X_train, y_train, test_size=0.1, random_state=7)
@@ -95,11 +126,11 @@ INUPUT_NODE = 784
 OUTPUT_NODE = 10
 
 LAYER1_NODE = 500
-BATCH_SIZE = 200
+BATCH_SIZE = 64
 LERANING_RATE_BASE = 0.005  
 LERANING_RATE_DACAY = 0.99  
 REGULARZATION_RATE = 0.01  
-TRAINING_STEPS = 100000
+TRAINING_STEPS = 50000
 MOVING_AVERAGE_DECAY = 0.99  
 
 
@@ -177,4 +208,4 @@ def train(X_train, X_validation, y_train, y_validation, X_test, y_test):
         print("after %d training step(s), test accuracy using"
               "average model is %g" % (TRAINING_STEPS, test_acc))
 
-train(X_train, X_validation, y_train, y_validation, x_test, y_test)
+train(X_train, X_validation, y_train, y_validation, X_test1, y_test1)

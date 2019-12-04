@@ -2,17 +2,33 @@ import tensorflow as tf
 from nn import X_train, X_validation, y_train, y_validation
 import numpy as np
 import random
+
 tf.compat.v1.disable_eager_execution()
 sess = tf.compat.v1.InteractiveSession()
 
-for i in range(len(X_train)):
-    X_train[i] = np.rot90(X_train[i].reshape(28, 28), random.randint(0,4)).reshape(784)
 
-x_test = np.genfromtxt('../data/challenge/cdigits_digits_vec.txt')
-yy = np.genfromtxt('../data/challenge/cdigits_digits_labels.txt').astype(np.int32)
+# sequence of the image and label
+train_seq = np.genfromtxt('../data/digits4000_txt/digits4000_trainset.txt').astype(np.uint16) # (2000,2)
+test_seq = np.genfromtxt('../data/digits4000_txt/digits4000_testset.txt').astype(np.uint16) # (2000,2)
+
+# image and label
+digits_vec = np.genfromtxt('../data/digits4000_txt/digits4000_digits_vec.txt') # (4000,28,28)
+digits_vec = digits_vec.reshape(len(digits_vec), 784).astype(np.uint8)
+digits_labels = np.genfromtxt('../data/digits4000_txt/digits4000_digits_labels.txt').astype(np.uint8) # (4000,)
+
+
+X_test = digits_vec[test_seq[:,0] - 1]
+y_test = digits_labels[test_seq[:,1] - 1]
+
+
+# # challenge test image and label
+# X_test = np.genfromtxt('../data/challenge/cdigits_digits_vec.txt')
+# X_test = X_test.reshape(len(X_test), 784).astype(np.uint8)
+# y_test = np.genfromtxt('../data/challenge/cdigits_digits_labels.txt').astype(np.uint8)
+
 
 test_data = []
-for label in yy:
+for label in y_test:
     zero_vector = np.zeros((1, 10))
     zero_vector[0, label] = 1
     test_data.append(zero_vector)
@@ -31,7 +47,6 @@ def bias_variable(shape):
 
 def conv2d(x, W):
     return tf.nn.conv2d(input=x, filters=W, strides=[1, 1, 1, 1], padding='SAME')  
-
 
 
 def max_pool_2x2(x):
@@ -77,7 +92,7 @@ correct_prediction = tf.equal(tf.argmax(input=y_conv, axis=1), tf.argmax(input=y
 accuracy = tf.reduce_mean(input_tensor=tf.cast(correct_prediction, tf.float32))
 learning_rate_base = 0.005
 learning_rate_decay = 0.999
-batch_size = 200
+batch_size = 32
 global_step = tf.Variable(0, trainable=False)
 
 # learning_rate = tf.train.exponential_decay(learning_rate_base,
@@ -100,6 +115,6 @@ for i in range(10000):
     end = min(start+batch_size, len(X_train))
     train_step.run(feed_dict={x: X_train[start:end], y_: y_train[start:end], keep_prob: 0.5})
 
-# accuracy.save('my_model.h5')
-test_accuracy = accuracy.eval(feed_dict={x: x_test, y_: y_test, keep_prob: 1.0})
+
+test_accuracy = accuracy.eval(feed_dict={x: X_test, y_: y_test, keep_prob: 1.0})
 print("test accuracy is %g" % test_accuracy)

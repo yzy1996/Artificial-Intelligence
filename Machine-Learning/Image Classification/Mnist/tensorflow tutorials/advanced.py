@@ -1,12 +1,21 @@
 import tensorflow as tf
-
+import numpy as np 
 from tensorflow.keras.layers import Dense, Flatten, Conv2D
 from tensorflow.keras import Model
+import random
 
 mnist = tf.keras.datasets.mnist
 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
+
+for i in range(len(x_train)):
+    x_train[i] = np.rot90(x_train[i], random.randint(0,4))
+
+x_test = np.genfromtxt('../data/challenge/cdigits_digits_vec.txt').reshape(150, 28, 28)
+y_test = np.genfromtxt('../data/challenge/cdigits_digits_labels.txt')
+
 x_train, x_test = x_train / 255.0, x_test / 255.0
+
 
 # Add a channels dimension
 x_train = x_train[..., tf.newaxis]
@@ -70,7 +79,7 @@ def test_step(images, labels):
     test_accuracy(labels, predictions)
 
 
-EPOCHS = 5
+EPOCHS = 20
 
 for epoch in range(EPOCHS):
     for images, labels in train_ds:

@@ -18,3 +18,15 @@ tf_upgrade_v2 --infile filename.py --outfile filename_v2.py
 tf_upgrade_v2 --intree foldername --outtree foldername_v2 --reportfile report.txt
 ```
 
+
+
+## 2.保存并加载模型
+
+```python
+model.save('my_model.h5')
+
+new_model = tf.keras.models.load_model('my_model.h5')
+```
+
+
+

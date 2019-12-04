@@ -92,7 +92,6 @@ X_test1 = X_test1.reshape(len(X_test1), 784).astype(np.uint8)
 y_test1 = np.genfromtxt('../data/challenge/cdigits_digits_labels.txt').astype(np.uint8)
 
 
-X_train, X_test, X_test1 = X_train / 255.0, X_test / 255.0, X_test1 / 255.0
 
 test_data = []
 for label in y_train:
@@ -130,7 +129,7 @@ BATCH_SIZE = 64
 LERANING_RATE_BASE = 0.005  
 LERANING_RATE_DACAY = 0.99  
 REGULARZATION_RATE = 0.01  
-TRAINING_STEPS = 50000
+TRAINING_STEPS = 30000
 MOVING_AVERAGE_DECAY = 0.99  
 
 

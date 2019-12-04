@@ -28,7 +28,7 @@ y_test = digits_labels[test_seq[:,1] - 1]
 # challenge test image and label
 x_test1 = np.genfromtxt('../data/challenge/cdigits_digits_vec.txt')
 x_test1 = x_test1.reshape(len(x_test1), 28, 28).astype(np.uint8)
-y_test1 = np.genfromtxt('../data/challenge/cdigits_digits_labels.txt')
+y_test1 = np.genfromtxt('../data/challenge/cdigits_digits_labels.txt').astype(np.uint8)
 
 
 x_train, x_test, x_test1 = x_train / 255.0, x_test / 255.0, x_test1 / 255.0

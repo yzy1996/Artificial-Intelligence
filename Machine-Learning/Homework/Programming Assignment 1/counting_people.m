@@ -81,13 +81,13 @@ fprintf('the %s algorithm mean-squared error is %f, mean-absolute error is %f\n'
 
 %% feature transformations
     function Phi = mytrans(x)
-        Phi = x(1,:);Phi = [Phi; Phi.^2];  % 1381
+%         Phi = x(1,:);Phi = [Phi; Phi.^2];  % 1381
 %         Phi = (exp(x) - exp(-x)) ./ (exp(x) + exp(-x));Phi = Phi(1,:);
 %         Phi = x ./ (1+abs(x));  % 2404
 %         Phi = sin(x);  % 2120
 %         Phi = atan(x);  % 1866 
 %         Phi = x(1,:);  % 1418
-%         Phi = x;  % 1751
+        Phi = x;  % 1751
 %         Phi = [x; x.^2];  % 1603
 %         Phi = [x; x.^2 ;x.^3];  % 1573
 %         Phi = 1 ./ (1+ exp(x));  % 4128
@@ -97,11 +97,11 @@ fprintf('the %s algorithm mean-squared error is %f, mean-absolute error is %f\n'
 
 %% error
     function err = mymae(theta)       
-        err = sum(abs(testy-mytrans(testx)'*theta));
+        err = sum(abs(testy-mytrans(testx)'*theta))/600;
     end
 
     function err = mymse(theta)
-        err = sum((testy-mytrans(testx)'*theta).^2);
+        err = sum((testy-mytrans(testx)'*theta).^2)/600;
     end
 
 %% Least-squares

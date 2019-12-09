@@ -138,7 +138,7 @@ y33(y3 == y3(find(y == 2,1))) = 2;
 y33(y3 == y3(find(y == 3,1))) = 3;
 y33(y3 == y3(find(y == 4,1))) = 4;
 error3 = sum(y33 ~= y)
-unique(y3(1,:));
+unique(y3(1,:))
 subplot(2,2,4)
 scatter(x(1, :), x(2, :), 10, y3, 'filled')
 title('Mean-shift')

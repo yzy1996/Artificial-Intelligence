@@ -1,8 +1,8 @@
-function Y = meanshift1(x)
+function Y = meanshift1(x,h)
 
 iteration = 300;
 [d, n] = size(x);
-h = 1;
+
 xx = x;
 
 for i = 1:n

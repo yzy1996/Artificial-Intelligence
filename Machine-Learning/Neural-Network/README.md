@@ -1,11 +1,11 @@
 <h1 align="center">LeNet(LeNet-5)</h1>
 <div align="center">
 
+![python-version](https://img.shields.io/badge/python-3.7-blue) ![country](https://img.shields.io/badge/country-China-red)
+
 Yann LeCun, Leon Bottou, Yosuha Bengio and Patrick Haffner proposed a neural network architecture for handwritten and machine-printed character recognition in 1990’s which they called LeNet-5.
 
 published: 《Gradient-based learning applied to document recognition》
-
-![python-version](https://img.shields.io/badge/python-3.7-blue) ![country](https://img.shields.io/badge/country-China-red)
 
 </div>
 
@@ -81,7 +81,7 @@ trainable parameters = 120×84+84 = 10164
 
 ### Implementation
 
-see the code
+see the [code](https://github.com/yzy1996/Artificial-Intelligence/blob/master/Machine-Learning/Image-Classification/Mnist/tensorflow/train_cnn.py)
 
 
 

@@ -30,3 +30,11 @@ new_model = tf.keras.models.load_model('my_model.h5')
 
 
 
+## 3.官方文档
+
+[Tensorflow Core r2.0 python api](https://www.tensorflow.org/api_docs/python/tf) 
+
+[Keras中文文档](https://keras.io/zh/)
+
+[Keras Documentation](https://keras.io/)
+

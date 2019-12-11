@@ -81,7 +81,7 @@ trainable parameters = 120×84+84 = 10164
 
 ### Implementation
 
-
+see the code
 
 
 

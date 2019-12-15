@@ -13,8 +13,8 @@ polyy = poly_data.polyy;
 K = 5;
 n = length(sampx);
 Phi = ones(K+1, n);
-for i = 1:n
-    Phi(:,i) = [1, sampx(i), sampx(i)^2, sampx(i)^3, sampx(i)^4, sampx(i)^5];
+for k = 1:K
+    Phi(k+1, :) = sampx.^2;
 end
 
 %% regression algorithms

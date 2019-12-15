@@ -192,7 +192,7 @@ myerrorplot
 %% other function
     function err = mymse(theta)
         % mean-squared error        
-        err = sum((polyy'-polyval(flipud(theta),polyx)).^2);
+        err = sum((polyy'-polyval(flipud(theta),polyx)).^2)/100;
     end
 
     function Phi = mytrans(sampx)

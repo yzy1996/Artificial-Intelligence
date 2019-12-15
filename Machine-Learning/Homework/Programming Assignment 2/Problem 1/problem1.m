@@ -7,16 +7,21 @@ cluster_data = load('cluster_data.mat');
 x = cluster_data.dataA_X;
 y = cluster_data.dataA_Y;
 [d, n] = size(x);  % the number of datax
-scale1 = min(min(x));  % the min scale of datax
-scale2 = max(max(x));  % the max scale of datax
-
+scalemin = min(x, [], 2);  % the min scale of datax
+scalemax = max(x, [], 2);  % the max scale of datax
 %% initial
 K = 4;
-iteration = 100;  % fix maximum number of iterations
+iteration = 200;  % fix maximum number of iterations
+
+%% truth ground
+subplot(2,2,1)
+scatter(x(1, :), x(2, :), 10, y, 'filled');
+title('ground truth')
 
 %% K-means algorithm
+
 z = zeros(n, K);
-mu = scale1 + (scale2 - scale1) * rand(d, K);
+mu = scalemin + (scalemax - scalemin) .* rand(d, K);
 dis = zeros(1,K);
 look = mu;
 
@@ -41,14 +46,25 @@ for iter = 1:iteration
     end
     look = mu;
 end
-yy = (1:K) * z';
-figure()
-scatter(x(1, :), x(2, :), 36, yy, 'filled');
+
+y1 = (1:K) * z';
+
+y11 = zeros(1, n);
+y11(y1 == y1(find(y == 1,1))) = 1;
+y11(y1 == y1(find(y == 2,1))) = 2;
+y11(y1 == y1(find(y == 3,1))) = 3;
+y11(y1 == y1(find(y == 4,1))) = 4;
+error1 = sum(y11 ~= y)
+
+subplot(2,2,2)
+scatter(x(1, :), x(2, :), 10, y11, 'filled');
+title('K-means')
 
 %% EM-GMM
-mu = scale1 + (scale2 - scale1) * rand(d, K);
 
-sigma = repmat(scale*eye(d),[1 1 K]);
+mu = scalemin + (scalemax - scalemin) .* rand(d, K);
+
+sigma = repmat(eye(d),[1 1 K]);
 pi=rand(1,K);
 pi=pi/sum(pi);
 look = pi;
@@ -84,12 +100,18 @@ for iter = 1:iteration
     if round(look, 8) == round(pi, 8)
         break
     end
-    look = pi;
-  
+    look = pi;  
 end
-[M, yy] = max(z,[],2);
-figure()
-scatter(x(1, :), x(2, :), 36, yy, 'filled')
+[M, y2] = max(z,[],2);
+y22 = zeros(1, n);
+y22(y2 == y2(find(y == 1,1))) = 1;
+y22(y2 == y2(find(y == 2,1))) = 2;
+y22(y2 == y2(find(y == 3,1))) = 3;
+y22(y2 == y2(find(y == 4,1))) = 4;
+error2 = sum(y22 ~= y)
+subplot(2,2,3)
+scatter(x(1, :), x(2, :), 10, y22, 'filled')
+title('EM-GMM')
 
 %% Mean-shift algorithm
 h = 1;
@@ -108,9 +130,16 @@ for i = 1:n
         look = xx(:,i);
     end
 end
-
-xx = round(xx);
-unique(xx(1,:))
-figure()
-scatter(x(1, :), x(2, :), 36, sum(xx), 'filled')
+y3 = round(xx);
+y3 = y3(1,:);
+y33 = zeros(1, n);
+y33(y3 == y3(find(y == 1,1))) = 1;
+y33(y3 == y3(find(y == 2,1))) = 2;
+y33(y3 == y3(find(y == 3,1))) = 3;
+y33(y3 == y3(find(y == 4,1))) = 4;
+error3 = sum(y33 ~= y)
+unique(y3(1,:))
+subplot(2,2,4)
+scatter(x(1, :), x(2, :), 10, y3, 'filled')
+title('Mean-shift')
 

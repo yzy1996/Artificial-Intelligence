@@ -29,7 +29,7 @@ connections = 28×28×156 = output×(size + bias)×number = 28×28×(5×5+1)×6 
 
 sigmoid(a×average(x)+b)​
 
-input = 28×28×6, number = 6, size = 2×2, padding = 0, stride = 2, output = 28×28×6
+input = 28×28×6, number = 6, size = 2×2, padding = 0, stride = 2, output = 14×14×6
 
 trainable parameters =  (coefficient + bias)×number = (1+1)×6 =12
 
@@ -39,7 +39,7 @@ connections = output×(size + bias)×number = 14×14×(2×2+1)×6 = 5880 【为�
 
 **C3-Third Layer**(convolutional layer):  
 
-input = 14×14×6, number = 16, size = 5×5, padding = 0, stride = 1, output = 28×28×6
+input = 14×14×6, number = 16, size = 5×5, padding = 0, stride = 1, output = 10×10×6
 
 In this layer, only 10 out of 16 feature maps are connected to 6 feature maps of the previous layer 【是通过叠加的方式吗】【应该是】
 

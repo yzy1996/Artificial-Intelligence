@@ -47,7 +47,7 @@ add a sort and direct to subsection(introduction and code)
 *  ε-constraint method 
 *  Multi-Objective Genetic Algorithms 
 
-#### 
+
 
 ### Code
 
@@ -55,7 +55,7 @@ add a sort and direct to subsection(introduction and code)
 
 [matlab-gamultiobj](https://ww2.mathworks.cn/help/gads/gamultiobj.html)
 
-### 
+[Evolutionary multi-objective optimization platform](https://github.com/BIMK/PlatEMO)
 
 ### papers
 

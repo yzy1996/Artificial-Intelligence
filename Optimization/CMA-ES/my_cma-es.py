@@ -10,3 +10,5 @@ x, y = np.random.multivariate_normal(mean, cov, 5000).T
 plt.plot(x, y, 'x')
 plt.axis('equal')
 plt.show()
+
+

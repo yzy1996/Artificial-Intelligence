@@ -38,6 +38,7 @@ NIND = 100                # 种群规模
 Field = ea.crtfld(Encoding, problem.varTypes, problem.ranges, problem.borders) # 创建区域描述器
 population = ea.Population(Encoding, Field, NIND) # 实例化种群对象（此时种群还没被初始化，仅仅是完成种群对象的实例化）
 """================================算法参数设置==============================="""
+
 myAlgorithm = ea.moea_NSGA3_templet(problem, population) # 实例化一个算法模板对象
 myAlgorithm.MAXGEN = 500  # 最大进化代数
 myAlgorithm.drawing = 1   # 设置绘图方式（0：不绘图；1：绘制结果图；2：绘制过程动画）

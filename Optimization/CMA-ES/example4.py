@@ -1,3 +1,31 @@
+import math
+import torch
+
+from botorch.fit import fit_gpytorch_model
+from botorch.models import SingleTaskGP
+from gpytorch.mlls import ExactMarginalLogLikelihood
+
+X = torch.rand(20, 2) - 0.5
+Y = (torch.sin(2 * math.pi * X[:, 0]) + torch.cos(2 * math.pi * X[:, 1])).unsqueeze(-1)
+Y += 0.1 * torch.randn_like(Y)
+
+gp = SingleTaskGP(X, Y)
+mll = ExactMarginalLogLikelihood(gp.likelihood, gp)
+fit_gpytorch_model(mll)
+
+from botorch.acquisition import UpperConfidenceBound
+
+UCB = UpperConfidenceBound(gp, beta=0.1)
+
+
+
+
+
+
+
+
+
+
 import cma
 import numpy as np
 

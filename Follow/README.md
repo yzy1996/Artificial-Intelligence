@@ -9,7 +9,11 @@ follow the cutting-edge knowledge
 
 ## Field Team 
 
+Game AI
 
+Julian Togelius
+
+http://pcgbook.com/
 
 ## Field People
 
@@ -18,3 +22,5 @@ follow the cutting-edge knowledge
 
 
  https://github.com/sbrugman/deep-learning-papers 
+
+# PlatEMO

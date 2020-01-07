@@ -16,6 +16,7 @@ class MyProblem(ea.Problem): # 继承Problem父类
         ubin = [1] * Dim # 决策变量上边界
         # 调用父类构造方法完成实例化
         ea.Problem.__init__(self, name, M, maxormins, Dim, varTypes, lb, ub, lbin, ubin)
+
     def aimFunc(self, pop): # 目标函数
         Vars = pop.Phen # 得到决策变量矩阵
         XM = Vars[:,(self.M-1):]
@@ -23,6 +24,7 @@ class MyProblem(ea.Problem): # 继承Problem父类
         ones_metrix = np.ones((Vars.shape[0], 1))
         f = 0.5 * np.fliplr(np.cumprod(np.hstack([ones_metrix, Vars[:,:self.M-1]]), 1)) * np.hstack([ones_metrix, 1 - Vars[:, range(self.M - 2, -1, -1)]]) * np.tile(1 + g, (1, self.M))
         pop.ObjV = f # 把求得的目标函数值赋值给种群pop的ObjV
+
     def calBest(self): # 计算全局最优解
         uniformPoint, ans = ea.crtup(self.M, 10000) # 生成10000个在各目标的单位维度上均匀分布的参考点
         globalBestObjV = uniformPoint / 2
@@ -54,6 +56,7 @@ print('用时：%f 秒'%(myAlgorithm.passTime))
 print('评价次数：%d 次'%(myAlgorithm.evalsNum))
 print('非支配个体数：%d 个'%(NDSet.sizes))
 print('单位时间找到帕累托前沿点个数：%d 个'%(int(NDSet.sizes // myAlgorithm.passTime)))
+
 # 计算指标
 PF = problem.getBest() # 获取真实前沿，详见Problem.py中关于Problem类的定义
 if PF is not None and NDSet.sizes != 0:

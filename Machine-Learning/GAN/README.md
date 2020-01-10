@@ -1,5 +1,6 @@
 <h1 align="center">GAN</h1>
 <div align="center">
+
 ![Country](https://img.shields.io/badge/country-China-red)
 
 About  Generative Adversarial Network (GAN)
@@ -42,3 +43,17 @@ Wasserstein GAN（WGAN）
 [Read-through: Wasserstein GAN](https://www.alexirpan.com/2017/02/22/wasserstein-gan.html)
 
 [想要算一算Wasserstein距离？这里有一份PyTorch实战](https://www.jiqizhixin.com/articles/19031102)
+
+
+
+GAN的本质其实是优化真实样本分布和生成样本分布之间的差异，并最小化这个差异。特别需要指出的是，优化的目标函数是两个分布上的Jensen-Shannon距离，但这个距离有这样一个问题，如果两个分布的样本空间并不完全重合，这个距离是无法定义的。
+
+作者接着证明了“真实分布与生成分布的样本空间并不完全重合”是一个极大概率事件，并证明在一些假设条件下，可以从理论层面推导出一些实际中遇到的现象。
+
+既然知道了问题的关键所在，那么应该如何解决问题呢？该文章提出了一种解决方案：使用Wasserstein距离代替Jensen-Shannon距离。并依据Wasserstein距离设计了相应的算法，即WGAN。新的算法与原始GAN相比，参数更加不敏感，训练过程更加平滑。
+
+
+
+### Application in picture-DCGAN
+
+DCGAN采用一个随机噪声向量作为输入，如高斯噪声。输入通过与CNN类似但是相反的结构，将输入放大成二维数据。通过采用这种结构的生成模型和CNN结构的判别模型，DCGAN在图片生成上可以达到相当可观的效果。如下是一些生成的案例照片。

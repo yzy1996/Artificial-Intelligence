@@ -2,7 +2,7 @@ for the conflicts between different objectives
 
 
 
-Existing approaches for Pareto optimization can be categorized into two categories: **heuristic search** and **scalarization**
+Existing approaches for **Pareto optimization** can be categorized into two categories: **heuristic search** and **scalarization**
 
 
 

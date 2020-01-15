@@ -21,6 +21,8 @@
 [Knowledge](./Knowledge)
 
 
+
+
 ## 配置指南
 
 [深度学习配置指南](./深度学习配置指南.md) 
@@ -30,3 +32,19 @@
 
 
 [谷歌发起的一个AI奖项:AI GRANT](https://aigrant.org/)
+
+
+
+
+
+
+
+## TO DO LIST
+
+- [ ] 启发式算法（Heuristic Algorithm）
+- [ ] 
+
+
+
+
+

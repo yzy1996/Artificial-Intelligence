@@ -41,7 +41,7 @@ connections = output×(size + bias)×number = 14×14×(2×2+1)×6 = 5880 【为�
 
 input = 14×14×6, number = 16, size = 5×5, padding = 0, stride = 1, output = 10×10×6
 
-In this layer, only 10 out of 16 feature maps are connected to 6 feature maps of the previous layer 【是通过叠加的方式】
+In this layer, only 10 out of 16 feature maps are connected to 6 feature maps of the previous layer 【是通过叠加的方式】这里去看原论文的图
 
 trainable parameters =  weight + bias = (5×5×6×10)+16 = 6×(3×25+1)+6×(4×25+1)+3×(4×25+1)+(25×6+1) = 1516
 

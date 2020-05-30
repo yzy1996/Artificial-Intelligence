@@ -5,7 +5,7 @@
 
  Introduction  
 
-![python-version](https://img.shields.io/badge/python-3.7-blue) ![country](https://img.shields.io/badge/country-China-red)
+![country](https://img.shields.io/badge/country-China-red)
 
 </div>
 
@@ -69,3 +69,27 @@ Multi-objective Optimization Using Evolutionary Algorithms: An Introduction [201
 
 
 
+https://blog.csdn.net/quinn1994/article/details/80679528
+
+
+
+
+
+
+
+## Multi-objective Evolutionary Algorithms (MOEAs)
+- the dominance based algorithms (NSGA, SPEA)
+- decomposition-based MOEAs (MOEA/D, MOEA/D-DE)
+- the performance indicator based algorithms (SMS-EMOA)
+
+
+
+the third generation differential algorithm (GDE3)
+
+the memetic Pareto achieved evolution strategy (M-PAES)
+
+
+
+A general MOEA framework
+
+offspring reproduction, fitness assignment, environmental selection

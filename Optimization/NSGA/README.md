@@ -11,8 +11,6 @@ Full name is: **Non-dominated Sorting Genetic Algorithm** (非支配排序遗传
 
 NSGA-I --> NSGA-II --> NSGA-III
 
-改进了三个内容：(1)提出了快速非支配排序算法；(2)采用拥挤度和拥挤度比较算子；(3)引入精英策略。
-
 [Muiltiobjective Optimization Using Nondominated Sorting in Genetic Algorithms](https://ieeexplore.ieee.org/document/6791727)
 
 [A fast and elitist multiobjective genetic algorithm: NSGA-II](http://www.dmi.unict.it/mpavone/nc-cs/materiale/NSGA-II.pdf)
@@ -105,7 +103,7 @@ Approximation Front 与 PF 的贴近程度。
 
 
 
-
+ 改进了三个内容：(1)提出了快速非支配排序算法；(2)采用拥挤度和拥挤度比较算子；(3)引入精英策略。 
 
 
 

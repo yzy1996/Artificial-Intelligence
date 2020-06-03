@@ -10,6 +10,12 @@
 ## Guidance
 关于机器学习一些框架的配置和使用说明
 
+
+
+### 借助skit-learn 梳理
+
+
+
 ## Image-Classification
 关于图像识别相关代码
 
@@ -21,3 +27,7 @@
 ### 《统计学习方法》李航
 
 [代码1](https://github.com/fengdu78/lihang-code)    [代码2](https://github.com/SmirkCao/Lihang)
+
+### 《MIT Deep Learning Book》Ian Goodfellow et al
+
+[book](http://www.deeplearningbook.org/)

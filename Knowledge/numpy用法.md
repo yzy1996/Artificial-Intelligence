@@ -2,6 +2,54 @@
 
 
 
+## array数组
+
+### 一维向量array
+
+```
+a = [1, 2, 3]
+
+# 变array一维向量
+b = np.array(a)
+
+# 行向量变列向量
+c1 = b.reshape(-1, 1)
+c2 = np.array([a]).T
+```
+
+
+
+### narray
+
+```python
+# array 和 narray 转换
+a = np.array([1, 2, 3])
+a.reshape(-1, 1)
+>>> array([[1, 2, 3]])
+
+b = np.array([[1, 2, 3]])
+b.reshape(-1)
+>>> array([1, 2, 3])
+```
+
+
+
+
+
+增加行列
+
+```
+import numpy as np
+a = np.array([[1,2,3],[4,5,6],[7,8,9]])
+b = np.array([[0,0,0]])
+c = np.r_[a,b]
+d = np.c_[a,b.T]
+```
+
+
+
+
+
 ## random随机数
 
 > Random sampling ([`numpy.random`](https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.random.html))
@@ -22,3 +70,9 @@
 ## linalg 矩阵
 
 > Linear algebra ([`numpy.linalg`](https://docs.scipy.org/doc/numpy/reference/routines.linalg.html))
+
+
+
+
+
+np.linspace

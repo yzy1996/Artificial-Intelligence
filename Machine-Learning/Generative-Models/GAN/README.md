@@ -24,7 +24,7 @@ Facial Composite is to synthesize two target pictures into one pictures
 
 ---
 
-**[$R^2GAN$ Recipe Retrieval Generative Adversarial Network]**
+**[`$R^2GAN$ Recipe Retrieval Generative Adversarial Network`]**
 
 **[`2019`]** **[`CVPR`]**
 

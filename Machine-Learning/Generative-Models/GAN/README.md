@@ -1,19 +1,18 @@
 **[`CG-GAN: An Interactive Evolutionary GAN-based Approach for Facial Composite Generation`]**
 
-**[`2020`]** **[`AAAI`]**
+**[`2020`]** **[`AAAI`]** 
 
-<details><summary>Click to expand</summary>
-<p>
+<details><summary>Click to expand</summary><p>
 **The main work:**
 
 Facial Composite is to synthesize two target pictures into one pictures 
 
-**The method it used:** 
+**The methods it used:** 
 
 - using **pg-GAN** to create high-resolution human faces
-- using Latent Variable Evolution (**LVE**)  
+- using Latent Variable Evolution (**LVE**) to guide the search through a process of interactive evolution
 
-
+**Its contribution:**
 
 **My Comments:**
 
@@ -28,15 +27,18 @@ Facial Composite is to synthesize two target pictures into one pictures
 
 **[`2019`]** **[`CVPR`]**
 
-<details><summary>Click to expand</summary>
-    Aim at exploring the feasibility of generating image from procedure text for retrieval problem.
+<details><summary>Click to expand</summary><p>
+**The main work:**
+
+Aim at exploring the feasibility of generating image from procedure text for retrieval problem.
+
 It belongs to **NLP**, to solve a problem of 
-
-
 
 The simplest way is linear scan
 
 index the document-boolean retrieval model
+
+**The methods it used:** 
 
 This paper studies food-to-recipe and recipe-to-food retrieval
 
@@ -50,6 +52,7 @@ two-level ranking loss
 
 > It’s a new 
 
+</p>
 </details>
 
 

@@ -3,6 +3,8 @@
 **[`2020`]** **[`AAAI`]** 
 
 <details><summary>Click to expand</summary><p>
+
+
 **The main work:**
 
 Facial Composite is to synthesize two target pictures into one pictures 
@@ -13,6 +15,8 @@ Facial Composite is to synthesize two target pictures into one pictures
 - using Latent Variable Evolution (**LVE**) to guide the search through a process of interactive evolution
 
 **Its contribution:**
+
+ssuu
 
 **My Comments:**
 
@@ -28,6 +32,8 @@ Facial Composite is to synthesize two target pictures into one pictures
 **[`2019`]** **[`CVPR`]**
 
 <details><summary>Click to expand</summary><p>
+
+
 **The main work:**
 
 Aim at exploring the feasibility of generating image from procedure text for retrieval problem.
@@ -36,7 +42,7 @@ It belongs to **NLP**, to solve a problem of
 
 The simplest way is linear scan
 
-index the document-boolean retrieval model
+index the document-boolean retrieval model 
 
 **The methods it used:** 
 

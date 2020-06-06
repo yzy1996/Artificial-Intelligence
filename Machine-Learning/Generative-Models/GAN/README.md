@@ -4,6 +4,7 @@
 
 <details><summary>Click to expand</summary>
 <p>
+
 **The main work:**
 
 Facial Composite is to synthesize two target pictures into one pictures 

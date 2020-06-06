@@ -1,44 +1,22 @@
-# My Bibliography
+**[$R^2GAN$ Recipe Retrieval Generative Adversarial Network]**
 
-Template:
+**[`2019`]**
 
-**[`title`]**
-**[ `Year`]**
-**[`Conference`]**
-**[[:memo:](https://arxiv.org/) (paper)]**
-**[[:octocat:](https://github.com/) (code)]**
-
-
-
-Categories:
-
-- [**Hyper-Parameter Optimization**](#Hyper-Parameter-Optimization)
-
-
-
-
-
-## Hyper-Parameter Optimization
-
-**[`Random Search for Hyper-Parameter Optimization`]**
-**[`2012`]**
-**[`JLMR`]**
-**[[:memo:](http://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf)]**
+**[`CVPR`]**
 
 <details>
     <summary>Click to expand</summary>
+    Aim at exploring the feasibility of generating image from procedure text for retrieval problem.
+
+    NLP field: 
+
+The simplest way is linear scan
+
+index the document-boolean retrieval model
+
+This paper studies food-to-recipe and recipe-to-food retrieval
+
+>They specially use a GAN with one generator and dual discriminators
+
+two-level ranking loss
 </details>
-
-<details><summary>CLICK ME</summary>
-<p>
-
-#### yes, even hidden code blocks!
-
-```python
-print("hello world!")
-```
-
-</p>
-</details>
-
-

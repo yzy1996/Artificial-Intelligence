@@ -1,10 +1,9 @@
-**[CG-GAN: An Interactive Evolutionary GAN-based Approach for Facial Composite Generation]**
+**[`CG-GAN: An Interactive Evolutionary GAN-based Approach for Facial Composite Generation`]**
 
 **[`2020`]** **[`AAAI`]**
 
 <details><summary>Click to expand</summary>
 <p>
-
 **The main work:**
 
 Facial Composite is to synthesize two target pictures into one pictures 

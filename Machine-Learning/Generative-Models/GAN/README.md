@@ -1,8 +1,6 @@
 **[$R^2GAN$ Recipe Retrieval Generative Adversarial Network]**
 
-**[`2019`]**
-
-**[`CVPR`]**
+**[`2019`]** **[`CVPR`]**
 
 <details>
     <summary>Click to expand</summary>

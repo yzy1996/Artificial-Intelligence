@@ -3,7 +3,7 @@
 **[`2020`]** **[`AAAI`]**
 
 <details><summary>Click to expand</summary>
-
+<p>
 The method it used: 
 - using **pg-GAN** to create high-resolution human faces
 - using Latent Variable Evolution (**LVE**)  
@@ -14,6 +14,7 @@ The method it used:
 
 > It’s a new 
 
+</p>
 </details>
 
 ---

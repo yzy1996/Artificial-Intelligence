@@ -7,23 +7,22 @@
 
 **The main work:**
 
-Facial Composite is to synthesize two target pictures into one pictures 
+> Facial Composite is to synthesize two target pictures into one pictures 
 
 **The methods it used:** 
 
-- using **pg-GAN** to create high-resolution human faces
-- using Latent Variable Evolution (**LVE**) to guide the search through a process of interactive evolution
+> - [ ] using **pg-GAN** to create high-resolution human faces
+> - [x] using Latent Variable Evolution (**LVE**) to guide the search through a process of interactive evolution 
 
 **Its contribution:**
 
-ssuu
+> It extends LVE with the ability to freeze certain features discovered during the search, and enables a more controlled user-recreation of target images.
 
 **My Comments:**
 
 > It’s a new 
 
-</p>
-</details>
+</p></details>
 
 ---
 
@@ -36,9 +35,9 @@ ssuu
 
 **The main work:**
 
-Aim at exploring the feasibility of generating image from procedure text for retrieval problem.
+> Aim at exploring the feasibility of generating image from procedure text for retrieval problem. The specific content of the text is food recipe
 
-It belongs to **NLP**, to solve a problem of 
+It belongs to **NLP**, to solve a problem of information retrieval
 
 The simplest way is linear scan
 
@@ -58,8 +57,7 @@ two-level ranking loss
 
 > It’s a new 
 
-</p>
-</details>
+</p></details>
 
 
 

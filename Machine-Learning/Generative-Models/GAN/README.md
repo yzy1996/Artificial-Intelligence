@@ -4,8 +4,12 @@
 
 <details><summary>Click to expand</summary>
 <p>
+**The main work:**
 
-The method it used: 
+Facial Composite is to synthesize two target pictures into one pictures 
+
+**The method it used:** 
+
 - using **pg-GAN** to create high-resolution human faces
 - using Latent Variable Evolution (**LVE**)  
 

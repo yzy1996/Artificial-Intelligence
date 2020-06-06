@@ -18,3 +18,6 @@ This paper studies food-to-recipe and recipe-to-food retrieval
 
 two-level ranking loss
 </details>
+
+---
+

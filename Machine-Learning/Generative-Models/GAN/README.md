@@ -1,3 +1,13 @@
+**[`Evolutionary Generative Adversarial Networks`]**
+
+**[`2019`]** **[`TEVC`]** 
+
+
+
+
+
+
+
 **[`CG-GAN: An Interactive Evolutionary GAN-based Approach for Facial Composite Generation`]**
 
 **[`2020`]** **[`AAAI`]** 

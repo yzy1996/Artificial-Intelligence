@@ -4,9 +4,7 @@
 
 
 
-
-
-
+---
 
 **[`CG-GAN: An Interactive Evolutionary GAN-based Approach for Facial Composite Generation`]**
 

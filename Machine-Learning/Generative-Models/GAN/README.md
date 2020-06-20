@@ -36,7 +36,7 @@
 
 **[`Evolutionary Multi-Objective Optimization Driven by Generative Adversarial Networks`]**
 
-**[`2019`]** **[``]** **[[:memo:](./EMOO Driven by GAN.pdf)]** **[[:octocat:]()]** 
+**[`2019`]** **[``]** **[[:memo:](./EMOO-Driven-by-GAN.pdf)]** **[[:octocat:]()]** 
 
 
 

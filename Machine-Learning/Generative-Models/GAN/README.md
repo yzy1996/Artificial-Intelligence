@@ -1,10 +1,22 @@
+**[`Defense-GAN: protecting classifiers against adversarial attacks using generative models`]**
+
+**[`2018`]** **[`ICLR`]** **[[:memo:](./Defense-GAN.pdf)]** **[[:octocat:](https://github.com/kabkabm/defensegan)]**
+
+
+
+
+
+
+
 **[`Evolutionary Generative Adversarial Networks`]**
 
 **[`2019`]** **[`TEVC`]** 
 
 
 
----
+
+
+
 
 **[`CG-GAN: An Interactive Evolutionary GAN-based Approach for Facial Composite Generation`]**
 

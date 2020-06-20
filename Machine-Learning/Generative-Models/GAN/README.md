@@ -2,8 +2,20 @@
 
 **[`2018`]** **[`ICLR`]** **[[:memo:](./Defense-GAN.pdf)]** **[[:octocat:](https://github.com/kabkabm/defensegan)]**
 
+<details><summary>Click to expand</summary><p>
 
 
+**The main work:**
+
+> 
+
+**The methods it used:** 
+
+**Its contribution:**
+
+**My Comments:**
+
+</p></details>
 ---
 
 

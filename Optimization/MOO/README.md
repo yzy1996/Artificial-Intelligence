@@ -7,8 +7,6 @@ two survey of this field:
 
 
 
-There are two main methods to solve multi-objective optimization:
-
 ### 1. Gradient based multi-objective optimization
 
 The development of multiple gradient descent algorithm (MGDA) can be summarized as:

@@ -41,6 +41,30 @@ There are two main methods to solve multi-objective optimization:
 
 [Stochastic method for the solution of unconstrained vector optimization problems](./Stochastic-method-for-the-solution-of-unconstrained-vector-optimization-problems.pdf) by Schäffler (2002)
 
+<details><summary>Click to expand</summary><p>
+
+
+**The main algorithm:**
+
+> 
+
+**Methods it used:** 
+
+- [ ] 
+
+**Its contribution:**
+
+> 
+
+**My Comments:**
+
+> 
+>
+
+</p></details>
+
+---
+
 [Multiple-gradient descent algorithm (MGDA) for multiobjective optimization](./Multiple-gradient-descent-algorithm(MGDA)-for-multiobjective-optimization.pdf) by Désidéri (2012)
 
 <details><summary>Click to expand</summary><p>

@@ -98,9 +98,52 @@ All of the above methods use multi-objective Karush-Kuhn-Tucker (**KKT**) condit
 
 [Descent algorithm for nonsmooth stochastic multiobjective optimization](./Descent-algorithm-for-nonsmooth-stochastic-multiobjective-optimization.pdf) by Poirion (2017)
 
+<details><summary>Click to expand</summary><p>
+
+
+**The main work:**
+
+> 
+
+**Methods it used:** 
+
+- [ ] 
+
+**Its contribution:**
+
+> 
+
+**My Comments:**
+
+> 
+>
+
+</p></details>
+
+---
+
 [Gradient-Based Multiobjective Optimization with Uncertainties](./Gradient-Based-Multiobjective-Optimization-with-Uncertainties.pdf) by Peitz (2018)
 
+<details><summary>Click to expand</summary><p>
 
 
+**The main work:**
 
+> 
 
+**Methods it used:** 
+
+- [ ] 
+
+**Its contribution:**
+
+> 
+
+**My Comments:**
+
+> 
+>
+
+</p></details>
+
+---

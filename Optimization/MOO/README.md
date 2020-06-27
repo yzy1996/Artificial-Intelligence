@@ -15,10 +15,57 @@ There are two main methods to solve multi-objective optimization:
 
 [Steepest descent methods for multicriteria optimization](./Steepest-descen-methods-for-multicriteria-optimization.pdf) by Fliege (2000)
 
+<details><summary>Click to expand</summary><p>
+
+
+**The main work:**
+
+> 
+
+**Methods it used:** 
+
+- [ ] 
+
+**Its contribution:**
+
+> 
+
+**My Comments:**
+
+> 
+>
+
+</p></details>
+
+---
+
 [Stochastic method for the solution of unconstrained vector optimization problems](./Stochastic-method-for-the-solution-of-unconstrained-vector-optimization-problems.pdf) by Schäffler (2002)
 
 [Multiple-gradient descent algorithm (MGDA) for multiobjective optimization](./Multiple-gradient-descent-algorithm(MGDA)-for-multiobjective-optimization.pdf) by Désidéri (2012)
 
+<details><summary>Click to expand</summary><p>
+
+
+**The main algorithm:**
+
+> 
+
+**Methods it used:** 
+
+- [ ] 
+
+**Its contribution:**
+
+> 
+
+**My Comments:**
+
+> 
+>
+
+</p></details>
+
+---
 
 
 All of the above methods use multi-objective Karush-Kuhn-Tucker (**KKT**) conditions and find a descent direction that decreases all objectives. This approach was extended to **stochastic gradient descent**:

@@ -1,11 +1,11 @@
-MOO Survey
+# Multi-Objective Optimization Survey
 
 two survey of this field:
 
 - Nonlinear Multiobjective Optimization by Miettinen 1998
 - Multicriteria Optimization by Ehrgott 2005
 
-
+[Steepest descent methods for multicriteria optimization](a)
 
 Two main method to solve multi-objective optimization:
 

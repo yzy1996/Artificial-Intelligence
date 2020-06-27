@@ -6,9 +6,10 @@ two survey of this field:
 - Multicriteria Optimization by Ehrgott 2005
 
 
-Two main method to solve multi-objective optimization:
 
-### gradient-based multi-objective optimization
+There are two main methods to solve multi-objective optimization:
+
+### 1 Gradient based multi-objective optimization
 
 **multiple gradient descent algorithm (MGDA) Development**
 
@@ -20,7 +21,9 @@ Two main method to solve multi-objective optimization:
 
 
 
-Above all use multi-objective Karush-Kuhn-Tucker (**KKT**) conditions and find a descent direction that decreases all objectives. This approach was extended to **stochastic gradient descent**:
+All of the above methods use multi-objective Karush-Kuhn-Tucker (**KKT**) conditions and find a descent direction that decreases all objectives. This approach was extended to **stochastic gradient descent**:
+
+
 
 [Descent algorithm for nonsmooth stochastic multiobjective optimization](./Descent-algorithm-for-nonsmooth-stochastic-multiobjective-optimization.pdf) by Poirion (2017)
 

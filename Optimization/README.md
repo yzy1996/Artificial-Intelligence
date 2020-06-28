@@ -11,6 +11,12 @@
 
 ## Multi objective optimization
 
+In multi-objective optimization, several objective functions have to be minimized simultaneously. Usually, no single point will minimize all given objective functions at once, and so the concept of optimality has to be replaced by the concept of Pareto optimality. <!--hh-->
+
+~111~  ^555^   
+
+[^jjj]: jkjijiji
+
 Organization of the learning progress
 
 ### Development

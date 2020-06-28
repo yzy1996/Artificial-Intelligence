@@ -1,9 +1,6 @@
 <h1 align="center">Optimization</h1>
 <div align="center">
-
-
-
- Introduction  
+Download and view in Typora
 
 ![country](https://img.shields.io/badge/country-China-red)
 
@@ -11,17 +8,56 @@
 
 ## Multi objective optimization
 
-In multi-objective optimization, several objective functions have to be minimized simultaneously. Usually, no single point will minimize all given objective functions at once, and so the concept of optimality has to be replaced by the concept of Pareto optimality. <!--hh-->
+> In multi-objective optimization, several objective functions have to be minimized simultaneously. Usually, no single point will minimize all given objective functions at once, and so the concept of optimality has to be replaced by the concept of Pareto optimality. 
 
-~111~  ^555^   
+> A point is called **Pareto-optimal** or efficient, if there does not exist a different point with the same or smaller objective function values, such that there is a decrease in at least one objective function value.
 
-这是第一个有注脚的文本。^[注脚内容 第一条]
+> Each **local Pareto optimal** point is **globally Pareto optimal** as soon as all functions Fi (i = 1, . . . ,m) are convex.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Front_pareto.svg/1280px-Front_pareto.svg.png" alt="img" style="zoom:30%;" />
+
+1. **Pareto dominance** （支配）
+
+   目标函数表示为 $\underset{x}{min}\ F(x)=(F_1(x), F_2(x),\dots, F_m(x))$ ，若目标函数的两个解 $x_1$, $x_2$ 满足:
+   $$
+   \left\{
+   \begin{array}{l} 
+   F_i(x_1) \leq F_i(x_2),\ \forall i \in\{1, \ldots, m\}\\
+   F_i(x_1) < F_i(x_2),\ \exists i \in\{1, \ldots, m\}
+   \end{array}
+   \right.
+   $$
+   就称解 $x_1$ 支配 $x_2$
+
+2. **Pareto optimality**（最优）
+
+   如果存在解 $x^*$ ，没有其他能支配 $x^*$ 的解，就称解 $x^*$ 是帕累托最优解。所有的帕累托最优解构成了帕累托前沿。
+
+3. **Pareto Set** （集）
+
+   如果一组给定的最优解集中的解是相互非支配的，就称这个解集为帕累托集
+   
+4. **Pareto Front** （前沿）
+
+   帕累托集中每个解对应的目标值向量组成的集合称为帕累托前沿
+
+5. **Approximation Set** （近似集）
+
+   准确的帕累托集很难获得，
+
+6. **Approximation Front** （近似前沿）
+
+   类似帕累托前沿，近似集产生的是近似前沿
+
+
+
+constrained multicriteria optimization problem
+
+unconstrained multicriteria optimization problem
+
+
 
 Organization of the learning progress
-
-[^ss]: s
-
-
 
 ### Development
 

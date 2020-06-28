@@ -19,6 +19,10 @@ In multi-objective optimization, several objective functions have to be minimize
 
 Organization of the learning progress
 
+[^ss]: s
+
+
+
 ### Development
 
 | year |      event      | related papers |

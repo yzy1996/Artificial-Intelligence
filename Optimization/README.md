@@ -15,7 +15,7 @@ In multi-objective optimization, several objective functions have to be minimize
 
 ~111~  ^555^   
 
-[^jjj]: jkjijiji
+这是第一个有注脚的文本。^[注脚内容 第一条]
 
 Organization of the learning progress
 

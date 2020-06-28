@@ -18,20 +18,27 @@ The development of multiple gradient descent algorithm (MGDA) can be summarized 
 
 **The main work:**
 
-> 
+> They propose two parameter-free optimization methods for computing a point satisfying first-order necessary conditions for multicriteria optimization. Neither ordering information nor weighting factors for the different objective functions is assumed to be known.
 
-**Methods it used:** 
+They formulate a unconstrained minimization problem:
 
-- [ ] 
+$$
+\begin{aligned} 
+\min \quad & f_{x}(v)+\frac{1}{2}\|v\|^{2} \\
+\text{subject to} \quad & v \in \mathbb{R}^{n}
+\end{aligned}
+$$
 
-**Its contribution:**
+Since the objective function is proper, closed, and strongly convex, it has always a (unique) solution. Note that a simple reformulation to get rid of the non-differentiabilities would be
 
-> 
+$$
+\begin{aligned} 
+\min \quad & \alpha + \frac{1}{2}\|v\|^{2} \\
+\text{subject to} \quad & (Av)_i  \leq \alpha, \quad i=1, \ldots, m
+\end{aligned}
+$$
 
-**My Comments:**
-
-> 
->
+Of course, there is no need for the specific choice of $(1/2)\|\cdot\|^2$ as the function. In fact, any proper closed strictly convex function can be used.
 
 </p></details>
 

@@ -14,7 +14,7 @@ Download and view in Typora
 
 > Each **local Pareto optimal** point is **globally Pareto optimal** as soon as all functions Fi (i = 1, . . . ,m) are convex.
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Front_pareto.svg/1280px-Front_pareto.svg.png" alt="img" style="zoom:30%;" />
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Front_pareto.svg/1280px-Front_pareto.svg.png" alt="img" width = "300" align=center />
 
 1. **Pareto dominance** （支配）
 

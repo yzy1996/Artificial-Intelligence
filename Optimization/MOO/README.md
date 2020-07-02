@@ -51,20 +51,23 @@ Of course, there is no need for the specific choice of $(1/2)\|\cdot\|^2$ as the
 
 **The main algorithm:**
 
-> 
+> They propose a new stochastic algorithm for the solution of unconstrained vector optimization problems, which is based on a special class of stochastic differential equations.
 
-**Methods it used:** 
+$$
+\text{(QOP(X))} \quad \min _{\alpha \in \mathbb{R}^{m}}\left\{\left\|\sum_{i=1}^{m} \alpha_{i} \nabla f_{i}(x)\right\|_{2}^{2}, \alpha_{i} \geq 0, i=1, \ldots, m, \sum_{i=1}^{m} \alpha_{i}=1\right\}
+$$
 
-- [ ] 
+where $f = (f_1, f_2, \dots, f_m)^T \quad f_i:\mathbb{R}^{n} \rightarrow \mathbb{R} \quad i=1, \dots, m.$
 
-**Its contribution:**
+There are some properties of the problem resulting from convex analysis:
 
-> 
+(i) For each $x \in \mathbb{R}^n$, there exits a global minimizer $\hat{\alpha}$ of (QOP(X)), which is not unique in general. Each local minimizer of (QOP(X)) is a global minimizer.
 
-**My Comments:**
+(ii) Let $\hat{\alpha}$ and $\tilde{\alpha}$ be two global minimizers of (QOP(X)) for fixed $x \in \mathbb{R}^n$. Then,
 
-> 
->
+$$
+\sum_{i=1}^{m} \hat{\alpha}_{i} \nabla f_{i}(x)=\sum_{i=1}^{m} \tilde{\alpha}_{i} \nabla f_{i}(x)
+$$
 
 </p></details>
 
@@ -134,20 +137,8 @@ All of the above methods use multi-objective Karush-Kuhn-Tucker (**KKT**) condit
 
 **The main work:**
 
-> 
-
-**Methods it used:** 
-
-- [ ] 
-
-**Its contribution:**
-
-> 
-
-**My Comments:**
-
-> 
->
+> They develop a gradient-based algorithm for the solution of multiobjective optimization
+> problems with uncertainties. Uncertainties mean inexact gradients.
 
 </p></details>
 

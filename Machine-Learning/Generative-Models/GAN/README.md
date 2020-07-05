@@ -18,6 +18,8 @@ This is my  research summary on Generative Adversarial Networks and I sort them 
 
 > 
 
+If you want to know more about more details of the derivation or the difficult of GAN’s training, you can see the part of [Traditional GAN](# Traditional GAN)
+
 
 
 **Why is there an “s” after GANs?**

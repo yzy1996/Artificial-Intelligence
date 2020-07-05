@@ -1,7 +1,7 @@
 English | [简体中文](./README.zh-CN.md)
 
-<h1 align="center">GAN</h1>
-<div align="center">
+
+# GAN
 
 
 ![country](https://img.shields.io/badge/country-China-red)
@@ -12,7 +12,7 @@ This is my  research summary on Generative Adversarial Networks and I sort them 
 - Application GAN
 - Multi-Objective GAN
 
-</div>
 
-## [Traditional GAN](1 Traditional-GAN)
+
+## [Traditional GAN](./1 Traditional-GAN)
 

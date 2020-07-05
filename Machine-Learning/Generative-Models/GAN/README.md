@@ -18,7 +18,7 @@ This is my  research summary on Generative Adversarial Networks and I sort them 
 
 > 
 
-If you want to know more about more details of the derivation or the difficult of GAN’s training, you can see the part of [Traditional GAN](# Traditional GAN)
+If you want to know more about more details of the derivation or the difficult of GAN’s training, you can see the part of [Traditional GAN](# Traditional-GAN)
 
 
 
@@ -28,7 +28,7 @@ If you want to know more about more details of the derivation or the difficult o
 
 
 
-## [Traditional GAN](1-Traditional-GAN)
+## [Traditional-GAN](1-Traditional-GAN)
 
 The development of some famous GAN models including <u>Vanilla GAN</u>, <u>DCGAN</u>, <u>WGAN</u>
 

@@ -16,3 +16,8 @@ This is my  research summary on Generative Adversarial Networks and I sort them 
 
 ## [Traditional GAN](./1 Traditional-GAN)
 
+
+
+## [Application GAN](./2-Application GAN)
+
+## [Multi-Objective GAN](Multi-Objective GAN)

@@ -28,7 +28,7 @@ If you want to know more about more details of the derivation or the difficult o
 
 
 
-## [Traditional-GAN](1-Traditional-GAN)
+## [Traditional GAN](1-Traditional-GAN)
 
 The development of some famous GAN models including <u>Vanilla GAN</u>, <u>DCGAN</u>, <u>WGAN</u>
 

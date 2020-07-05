@@ -33,19 +33,28 @@ Download and view in Typora
 
    如果存在解 $x^*$ ，没有其他能支配 $x^*$ 的解，就称解 $x^*$ 是帕累托最优解。所有的帕累托最优解构成了帕累托前沿。
 
-3. **Pareto Set** （集）
+3. **Pareto-stationarity**  （稳定）
+
+   帕累托稳定是帕累托最优的必要条件。若存在一组权重 $\alpha_k$， 满足：
+
+   $$
+   \sum_{k=1}^{K} \alpha_{k} \nabla f_{k}=\mathbf{0}, \quad \sum_{k=1}^{K} \alpha_{k}=1, \quad \alpha_{k} \geq 0 \quad \forall k
+   $$
+   就称 $F$ 在 $x$ 达到了帕累托稳定
+
+4. **Pareto Set** （集）
 
    如果一组给定的最优解集中的解是相互非支配的，就称这个解集为帕累托集
-   
-4. **Pareto Front** （前沿）
+
+5. **Pareto Front** （前沿）
 
    帕累托集中每个解对应的目标值向量组成的集合称为帕累托前沿
 
-5. **Approximation Set** （近似集）
+6. **Approximation Set** （近似集）
 
    准确的帕累托集很难获得，
 
-6. **Approximation Front** （近似前沿）
+7. **Approximation Front** （近似前沿）
 
    类似帕累托前沿，近似集产生的是近似前沿
 

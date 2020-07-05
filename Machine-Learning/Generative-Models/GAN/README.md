@@ -14,5 +14,5 @@ This is my  research summary on Generative Adversarial Networks and I sort them 
 
 
 
-## [Traditional GAN](./1-Traditional-GAN)
+## [Traditional GAN](./1 Traditional-GAN)
 

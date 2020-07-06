@@ -2,66 +2,19 @@
 
 **[`2018`]** **[`ICLR`]** **[[:memo:](./Defense-GAN.pdf)]** **[[:octocat:](https://github.com/kabkabm/defensegan)]**
 
-<details><summary>Click to expand</summary><p>
-
-
-**The main work:**
-
-> To solve the problem of classification which is vulnerable to adversarial perturbations: carefully crafted small perturbations can cause misclassification of legitimate images. I can archive it into the field of **Machine deception**. (small perturbations do not affect human recognition but machine classifier)
->
-> I can summarize their work as follows: given a picture with deception, GAN is used to generate the picture without deception, and finally classifier is used to classify.
->
-> They use the GD of reconstruction error ($ \|G(\mathbf{z})-\mathbf{x}\|_{2}^{2} $) to find optimal $ G(z) $ 
-
-**The methods it used:** 
-
-- [ ] Several ways of attack: Fast Gradient Sign Method (FGSM), Randomized Fast Gradient Sign Method (RAND+FGSM), The Carlini-Wagner (CW) attack
-- [ ] Lebesgue-measure
-
-**Its contribution:**
-
-> They proposed a novel defense strategy utilizing GANs to enhance the
-> robustness of classification models against black-box and white-box adversarial attacks
-
-**My Comments:**
-
-> This work can be referred to using AE (Auto Encoder) for noise reduction. It’s just an easy application of GANs.
->
-
-</p></details>
-
----
-
-
-
-**[`Evolutionary Multi-Objective Optimization Driven by Generative Adversarial Networks`]**
-
-**[`2019`]** **[``]** **[[:memo:](./EMOO-Driven-by-GAN.pdf)]** **[[:octocat:]()]** 
-
 
 
 ---
+
+
 
 
 
 **[`Evolutionary Generative Adversarial Networks`]**
 
-**[`2019`]** **[`TEVC`]** **[[:memo:](./E-GAN.pdf)]** **[[:octocat:](https://github.com/WANG-Chaoyue/EvolutionaryGAN)]** **[[:octocat:](https://github.com/WANG-Chaoyue/EvolutionaryGAN-pytorch)]**
-
-<details><summary>Click to expand</summary><p>
+**[`2019`]** **[`TEVC`]** 
 
 
-**The main work:**
-
-> 
-
-**The methods it used:** 
-
-**Its contribution:**
-
-**My Comments:**
-
-</p></details>
 
 ---
 

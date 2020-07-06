@@ -36,6 +36,6 @@ The development of some famous GAN models including <u>Vanilla GAN</u>, <u>DCGAN
 
 Some applications of GAN including the use of defense
 
-## [Multi-Objective GAN](Multi-Objective-GAN)
+## [Multi-Objective GAN](3-Multi-Objective-GAN)
 
 Add multi-objective and evolutionary algorithm into GAN

@@ -2,17 +2,15 @@
 
 We can construct a framework of Multi-Objective GAN with:
 $$
-\mathcal{L}_{G}=\sum_{k=1}^{K} \alpha_{k} \mathcal{L}_{k}
+\min \mathcal{L}_{G}(\mathbf{x})=\left[L_{1}(\mathbf{z}), L_{2}(\mathbf{z}), \ldots, L_{K}(\mathbf{z})\right]^{T}
 $$
-where $\mathcal{L}_{k}$ is the loss of objective $k$
+where each $L_{k}=-\mathbb{E}_{z \sim p_{z}} \log D_{k}(G(z))$ , $k \in {1, \dots, K}$
 
 
 
-Previous works were done around multiple discriminators including 
+**Previous works were done around multiple discriminators including** 
 
-
-
-[Durugkar, 2016, Generative multi-adversarial networks](Generative multi-adversarial networks.pdf)
+[Durugkar, 2016, Generative multi-adversarial networks](./Literature/2016_Generative-Multi-Adversarial-Networks.pdf)
 
 > The goal of using the proposed methods is to favor worse discriminators, thus providing more useful gradients to the generator during training.
 >
@@ -29,7 +27,7 @@ Previous works were done around multiple discriminators including
 > $\beta$ is a hyperparameter, ($\beta$=0, 1 , $\infty$)
 >
 
-[Neyshabur, 2017, Stabilizing GAN Training with Multiple Random Projections](Stabilizing GAN Training with Multiple Random Projections.pdf)
+[Neyshabur, 2017, Stabilizing GAN Training with Multiple Random Projections](./Literature/2017_Stabilizing-GAN-Training-with-Multiple-Random-Projections.pdf)
 
 > using average loss minimization
 > 
@@ -44,3 +42,27 @@ Previous works were done around multiple discriminators including
 > \alpha_k = \frac{1}{K}
 > $$
 
+[Albuquerque, 2019, Multi-objective training of Generative Adversarial Networks with multiple
+discriminators](./Literature/2019_Multi-objective-training-of-generative-adversarial-networks-with-multiple-discrimi.pdf)
+
+> using hypervolume maximization
+> $$
+> \mathcal{L}_{G}=-\mathcal{V}=-\sum_{k=1}^{K} \log \left(\eta-l_{k}\right)
+> $$
+>
+> $$
+> \alpha_{k}=\frac{1}{T\left(\eta-l_{k}\right)}
+> $$
+>
+> $$
+> T=\sum_{k=1}^{K} \frac{1}{\eta-l_{k}}
+> $$
+>
+> 
+
+
+
+**These all methods consist two steps**:
+
+- Step 1 - consolidate all gradients into a single update parameters in the direction(compute the set $\alpha_1, \dots, \alpha_K$)
+- Step 2 - update parameters in the direction returned in Step 1

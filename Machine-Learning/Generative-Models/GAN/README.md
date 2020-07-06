@@ -9,7 +9,7 @@ English | [简体中文](./README.zh-CN.md)
 This is my  research summary on Generative Adversarial Networks and I sort them into:
 
 - Traditional GAN
-- Application GAN
+- Applicational GAN
 - Multi-Objective GAN
 
 
@@ -25,6 +25,29 @@ If you want to know more about more details of the derivation or the difficult o
 **Why is there an “s” after GANs?**
 
 > It means GAN and its variants
+
+
+
+**Commonly used datasets**
+
+> Mnist, CelebA, LSUN, and ImageNet
+
+
+
+**Facing problem**
+
+> - mode collapse: the generator can only learn some limited patterns from the large-scale target datasets, or assigns all of its probability mass to a small region in the space.
+> - vanishing gradient: 
+
+
+
+**Evaluation metrics of GAN**
+
+> paper: https://arxiv.org/pdf/1806.07755.pdf
+>
+> code: https://github.com/xuqiantong/GAN-Metrics
+>
+> blog: https://zhuanlan.zhihu.com/p/99375611
 
 
 

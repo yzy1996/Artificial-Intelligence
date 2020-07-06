@@ -32,7 +32,7 @@ If you want to know more about more details of the derivation or the difficult o
 
 The development of some famous GAN models including <u>Vanilla GAN</u>, <u>DCGAN</u>, <u>WGAN</u>
 
-## [Application GAN](2-Application-GAN)
+## [Applicational GAN](2-Applicational-GAN)
 
 Some applications of GAN including the use of defense
 

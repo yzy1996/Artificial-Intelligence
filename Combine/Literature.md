@@ -25,7 +25,10 @@
 **My Comments:**
 
 > This work can be referred to using AE (Auto Encoder) for noise reduction. It’s just an easy application of GANs.
->
+
+
+
+>Evolutionary algorithms are population-based so computation is intrinsically parallel.
 
 </p></details>
 

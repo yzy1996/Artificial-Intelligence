@@ -130,7 +130,43 @@ two-level ranking loss
 
 </p></details>
 
+---
+
+**[`Self-Attention Generative Adversarial Networks`]**
+
+**[`2019`]** **[`PMLR`]** **[[:octocat:](https://github.com/heykeetae/Self-Attention-GAN)]**
+
+<details><summary>Click to expand</summary><p>
 
 
+**The main work:**
+
+> It firstly introduced **Attention** into GAN, mainly apply on high-resolution detail generation.
+>
+> [ref_blog](https://zhuanlan.zhihu.com/p/55741364)
+
+
+
+**The methods it used:** 
+
+![img](https://media.arxiv-vanity.com/render-output/2954637/fig/framework.png)
+
+
+
+**My Comments:**
+
+> It’s a new 
+
+</p></details>
+
+
+
+$$
+\begin{aligned}
+{\omega}_{k+1}^{i}
+&={\omega}_{k}-\alpha \bar{\nabla} f_{i}\left({\omega}_{k}, D_{i n}^{i}\right)\qquad (4)\\
+&={\omega}_{k}-\beta_{k} \frac{1}{B} \sum_{i \in B_{k}}\left(I-\alpha \tilde{\nabla}^{2} f_{i}\left({\omega}_{k}, \mathcal{D}_{h}^{i}\right)\right) \tilde{\nabla} f_{i}\left({\omega}_{k+1}^{i}, \mathcal{D}_{o}^{i}\right)\qquad (5)
+\end{aligned}
+$$
 
 

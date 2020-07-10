@@ -1,3 +1,13 @@
+EA 进化算法包括了
+
+genetic algorithms (GA)
+
+evolutionary strategies (ES)
+
+neuroevolution
+
+
+
 # 区分 遗传算法GA 和 进化策略ES
 
 - 选好父母进行繁殖 (`GA`); 先繁殖, 选好的孩子 (`ES`)

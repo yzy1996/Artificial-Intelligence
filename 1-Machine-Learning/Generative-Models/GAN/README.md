@@ -62,3 +62,52 @@ Some applications of GAN including the use of defense
 ## [Multi-Objective GAN](3-Multi-Objective-GAN)
 
 Add multi-objective and evolutionary algorithm into GAN
+
+
+
+
+
+### objective functions of GANs
+
+
+
+**vanilla GAN**
+$$
+\min _{G} \max _{D} V(D, G)=\mathbb{E}_{\boldsymbol{x} \sim p_{\mathrm{data}}(\boldsymbol{x})}[\log D(\boldsymbol{x})]+\mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[\log (1-D(G(\boldsymbol{z})))]
+$$
+
+$$
+\min J^G = \mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[\log (1-D(G(\boldsymbol{z})))]
+$$
+
+where $J^G$ is the cost of for generator, $\log D(x)$ is the cross-entropy between $[D(x) \quad 1-D(x)]^T$ and $[1 \quad 0]^T$. Likewise,  $\log (1-D(G(z)))$ is the cross-entropy between $[1-D(G(z)) \quad D(G(z))]^T$ and $[1 \quad 0]^T$. It’s because that the cross-entropy 
+
+For a fixed generator $G$, the optimal discriminator $D$ is:
+$$
+D^*(x)=\frac{p_{data}(x)}{p_{data}(x)+p_{g}(x)},
+$$
+For this optimal $D^*$, the optimal $G$ satisfies:
+$$
+p_g(x) =p_{data}(x).
+$$
+
+> Problem: 
+>
+> The cross-entropy of $G$ can be expressed as follow:
+> $$
+> H^G = 1 * \log(1-D(G(z))) + 0*log(D(G(z))) = \log(1-D(G(z)))
+> $$
+> In early training progress, D can easily distinguish fake samples from real samples ($D(G(z)) \rightarrow 0$). This results in G not having sufficient gradient to improve, which is called **training instability**. Rather than training G in the way of Equation (2), another way of Equation (6) could provides larger gradients in early training.
+> $$
+> \min J^G = \mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[-\log (D(G(\boldsymbol{z})))]
+> $$
+> So a new cross-entropy of $G$ can be expressed as:
+> $$
+> H = 1 * \log(-D(G(z))) + 0*log(1 + D(G(z)))
+> $$
+> 
+>
+> 
+
+
+

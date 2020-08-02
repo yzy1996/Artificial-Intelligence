@@ -26,6 +26,10 @@
 
 
 
+
+
+
+
 ## Semi-supervised Learning
 
 The earliest work is《Semi-supervised Learning with Deep Generative Models》by **Kingma**.
@@ -55,3 +59,8 @@ Semi-supervised learning based on generative adversarial network: a comparison b
 
 
 Good Semi-supervised Learning That Requires a Bad GAN
+
+
+
+
+

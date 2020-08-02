@@ -25,3 +25,9 @@
 
 
 缺点是：这两个源的图片是很相似的，比如都是手写数字
+
+
+
+
+
+论文-DANN Domain-Adversarial Training of Neural Networks 2016

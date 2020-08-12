@@ -1,12 +1,14 @@
 # MGDA Survey
 
+（首先我们需要一句定性的描述）
+
 The Multi-Gradient Descent Algorithm (MGDA) is an extension of the classical Gradient Descent Algorithm to multiple objectives.
 
-
+（其次我们要介绍他的历史）
 
 The Multiple Gradient Descent Algorithm ( MGDA ) was originally introduced by [Desideri (2009)]() and [Desideri (2012)]() to solve multi-objective optimization problems involving differentiable objective functions.
 
-`Multiple-gradient descent algorithm (MGDA) for multiobjective optimization`
+
 
 (2009). Multiple-gradient descent algorithm
 
@@ -18,7 +20,7 @@ The Multiple Gradient Descent Algorithm ( MGDA ) was originally introduced by [D
 
 (2018). Quasi-Riemannian Multiple Gradient Descent Algorithm for constrained multiobjective differential optimization
 
-2017. Parametric optimization of pulsating jets in unsteady flow by multiple-gradient descent algorithm
+(2017). Parametric optimization of pulsating jets in unsteady flow by multiple-gradient descent algorithm
 
 ### Two Objectives
 

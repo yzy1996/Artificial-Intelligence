@@ -43,10 +43,30 @@ Using a GAN like architecture to disentangles different features
 **[`2020`]** **[`ECCV`]** [project page](https://minyoungg.github.io/pix2latent/) **[[:octocat:](https://github.com/minyoungg/pix2latent)]** 
 
 
+
+
+
+
+
+
+
+
+
+**[`Disentangled Representation Learning GAN for Pose-Invariant Face Recognition`]**
+
+**[`2017`]** **[`CVPR`]**
+
+
+
+
 <details><summary>Click to expand</summary><p>
 
 
-**key word**: 
+![Generator-in-multi-image-DR-GAN-From-an-image-set-of-a-subject-we-can-fuse-the-features_W64](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20200831160904.jpg)
+
+![Comparison-of-previous-GAN-architectures-and-our-proposed-DR-GAN_W640](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20200831161231.jpg)
+
+**key words**: 
 
 > Pose-Invariant Face Recognition (PIFR); 
 

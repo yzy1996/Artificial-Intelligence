@@ -48,15 +48,11 @@ Using a GAN like architecture to disentangles different features
 
 
 
-
-
-
+---
 
 **[`Disentangled Representation Learning GAN for Pose-Invariant Face Recognition`]**
 
-**[`2017`]** **[`CVPR`]**
-
-
+**[`2017`]** **[`CVPR`]** **[[:octocat:](https://github.com/zhangjunh/DR-GAN-by-pytorch)]** 
 
 
 <details><summary>Click to expand</summary><p>

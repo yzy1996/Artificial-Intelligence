@@ -7,3 +7,9 @@ https://blog.csdn.net/teeyohuang/category_9278933.html
 https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650724769&idx=2&sn=6fa540106cf6a5fd55fc39d057092888&chksm=871b1ddfb06c94c9e11d3a8281f60c0fce06a4e021fcd8eaab858c7f08ab9c939c4ad130e4b2&scene=21#wechat_redirect
 
 https://guimperarnau.com/blog/2017/03/Fantastic-GANs-and-where-to-find-them
+
+https://wiki.pathmind.com/generative-adversarial-network-gan
+
+https://www.freecodecamp.org/news/an-intuitive-introduction-to-generative-adversarial-networks-gans-7a2264a81394/
+
+https://towardsdatascience.com/semi-supervised-learning-with-gans-9f3cb128c5e

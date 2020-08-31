@@ -75,4 +75,4 @@ d = np.c_[a,b.T]
 
 
 
-np.linspace
+np.linspace() 比 range() 好，因为它包含了终值

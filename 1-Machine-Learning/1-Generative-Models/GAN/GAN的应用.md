@@ -1,5 +1,19 @@
 # GAN的应用
 
+In 2017, GAN produced 1024 × 1024 images that can fool a talent scout.
+
+
+
+image synthesis remains the main objective of GAN
+
+
+
+
+
+
+
+
+
 
 
 1. 最简单的图片生成

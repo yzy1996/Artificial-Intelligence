@@ -11,3 +11,11 @@ multi-attribute decision making (MADM) problems
 the **Lin**ear Programming Technique for **M**ultidimensional **A**nalysis of **P**reference (LINMAP)
 
 V. Srinivasan, A.D. Shocker, Linear programming techniques for multidimensional analysis of preference, Psychometrika 38 (1973) 337–342
+
+
+
+
+
+## Reference
+
+Application and Analysis of Methods for Selecting an Optimal Solution from the Pareto-Optimal Front obtained by Multiobjective Optimization

@@ -22,6 +22,14 @@ If you want to know more about more details of the derivation or the difficult o
 
 
 
+**Why Are GANs So Popular?**
+
+GANs are popular partly because they tackle the important unsolved challenge of unsupervised learning.
+
+If intelligence was a cake, unsupervised learning would be the cake, supervised learning would be the icing on the cake, and reinforcement learning would be the cherry on the cake. We know how to make the icing and the cherry, but we don’t know how to make the cake. – Yann LeCun, 2016.
+
+
+
 **Why is there an “s” after GANs?**
 
 > It means GAN and its variants
@@ -36,7 +44,7 @@ If you want to know more about more details of the derivation or the difficult o
 
 **Facing problem**
 
-> - mode collapse: the generator can only learn some limited patterns from the large-scale target datasets, or assigns all of its probability mass to a small region in the space.
+> - mode collapse: diversity the generator can only learn some limited patterns from the large-scale target datasets, or assigns all of its probability mass to a small region in the space.
 > - vanishing gradient: 
 
 
@@ -108,6 +116,32 @@ $$
 > 
 >
 > 
+
+
+
+blog 
+
+https://www.freecodecamp.org/news/an-intuitive-introduction-to-generative-adversarial-networks-gans-7a2264a81394/
+
+https://wiki.pathmind.com/generative-adversarial-network-gan
+
+
+
+
+
+some new work
+
+https://github.com/hankhank10/fakeface
+
+styleGAN
+
+styleGAN2
+
+https://thispersondoesnotexist.com/
+
+
+
+
 
 
 

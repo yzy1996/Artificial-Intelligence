@@ -16,3 +16,28 @@ where $w^*$ is a descent direction for all $f_i(\mathbf{x})$ . MGD then update p
 
 
 
+## Stochastic Multi-Gradient (SMG)
+
+which can be seen as an extension of the classical stochastic gradient method for single-objective optimization. 
+
+
+
+
+
+
+
+
+
+## Reference
+
+[1]The stochastic multi-gradient algorithm for multi-objective optimization and its application to supervised machine learning
+
+
+
+
+
+
+
+
+
+

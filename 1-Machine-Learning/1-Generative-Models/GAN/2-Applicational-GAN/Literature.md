@@ -90,6 +90,20 @@ Using a GAN like architecture to disentangles different features
 > - pose - represented by pose code 
 > - other facial feature (appearance variations) - represented by noise vector
 
+
+
+The learning problem are twofold: 1) to learn a pose-invariant identity representation for PIFR, and 2) to synthesize a face image $\hat{x}$ with the same identity $y^d$ but a different pose specified by a pose code $c$.
+
+The approach is to train a DR-GAN **conditioned** on the original image $x$ and the pose code $c$.
+
+
+
+Given a face image with label $y = \{y^d, y^p\}$, where $y^d$ represents the label for identity and $y^p$ for pose.
+
+
+
+$\hat{x} = G(\mathbf{x}, c, z)$
+
 </p></details>
 
 ---

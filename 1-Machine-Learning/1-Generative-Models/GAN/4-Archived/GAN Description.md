@@ -117,3 +117,61 @@ This kind of situation could be modeled as a minimax game in Game Theory. And th
 GAN [9] can generate samples similar to a data distribution through a two-player game between a generator G and a discriminator D.
 
 image synthesis remains the main objective of GAN
+
+
+
+
+
+It is proved in [9] that this minimax game has a global optimum when the distribution pg of the synthetic samples and the distribution pd of the training samples are the same. Under mild conditions (e.g., G and D have enough capacity), pg converges to pd. In practice, it is better for G to maximize log(D(G(z))) instead of minimizing log (1 − D(G(z))) [9].
+
+
+
+The goal of the generative model is to learn the underlying probabilistic distribution of unlabeled data by disentangling explanatory factors in the data [ Learning deep architectures for ai, e. A note on the evaluation of generative models]
+
+
+
+### 写在Related work里的
+
+**GAN:**
+
+The GAN[^1] has two networks: a generator G that tries to generate real data given noise $z \sim p_z(z)$, and a discriminator $D \in [0, 1]$ that classifies the real data $x \sim p_{data}(x)$ and the fake data G(z). The D(x) represents probability of x being a real data. The objective of G is to fit the true data distribution deceiving D by playing the following minimax game:
+$$
+\min _{\theta_{G}} \max _{\theta_{D}} \mathbb{E}_{x \sim p_{\text {data}}(x)}[\log D(x)]+\mathbb{E}_{z \sim p_{z}(z)}[\log (1-D(G(z)))]
+$$
+where $\theta_G$ and $\theta_D$ are parameters of G and D, respectively.
+
+
+
+**CGAN:**
+
+The objective of conditioned GANs is to fit conditional probability distribution $p(x|c)$ where c is condition that describes x. The objective is to learn $p(x|c)$ correctly from a labeled dataset $(x_1, c_1),(x_2, c_2), ...,(x_n, c_n)$. The generator G(z, c) of conditioned GAN has additional input c, and all generators used in our experiment take [x, c] as an input where [...] means vector concatenation. We can add c into the input of D(x, c) as well, or put regularization terms to guide the generator. If we use D(x, c), then the objective of the conditioned GAN is to optimize the equation 1 for each c:
+$$
+\min _{\theta_{G}} \max _{\theta_{D}} \mathbb{E}_{c \sim p_{\text {data}}(c)}\left[\mathbb{E}_{x \sim p_{\text {data}}(x \mid c)}[\log D(x, c)]+\mathbb{E}_{z \sim p_{z}(z)}[\log (1-D(G(z, c), c))]\right]
+$$
+where D(x, c) represents probability of x being a real data from condition c.
+
+### 写在摘要里的
+
+应用的价值，列举案例和论文
+
+The GAN [^1] is a prominent generative model that is found to be useful for unsupervised learning [^2], semi-supervised learning[^3], super resolution[^4], text-to-image[^5], and image inpainting[^6]. 
+
+证明可收敛
+
+The potentiality of GAN was supported by the theory that if the model has enough capacity, the learned distribution can converge to the distribution over real data[^1]. 
+
+一些提高GAN效果的方法，稳定性和多样性
+
+The representative power of the GAN was highly enhanced with deep learning techniques[^2] and various methods[^7][^8] was introduced to stabilize the learning process.
+
+
+
+[^1]: Generative adversarial nets
+[^2]: Unsupervised representation learning with deep convolutional generative adversarial networks
+[^3]: Semi-Supervised Learning with Generative Adversarial Networks
+[^4]: Photo-realistic single image super-resolution using a generative adversarial network
+[^5]: Generative adversarial text to image synthesis
+[^6]: Context encoders: Feature learning by inpainting
+[^7]: Improved techniques for training gans
+[^8]: Energy-based generative adversarial network
+

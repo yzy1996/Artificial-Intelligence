@@ -98,7 +98,7 @@ The approach is to train a DR-GAN **conditioned** on the original image $x$ and 
 
 
 
-Given a face image with label $y = \{y^d, y^p\}$, where $y^d$ represents the label for identity and $y^p$ for pose.
+Given a face image with label $y = \{y^d, y^p\}$, where $y^d$ represents the label for identity and $y^p$ for pose. The discriminator $D = [D^d, D^p]$.
 
 
 

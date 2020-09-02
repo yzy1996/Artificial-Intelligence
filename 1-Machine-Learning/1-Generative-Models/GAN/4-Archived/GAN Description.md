@@ -135,10 +135,28 @@ The goal of the generative model is to learn the underlying probabilistic distri
 **GAN:**
 
 The GAN[^1] has two networks: a generator G that tries to generate real data given noise $z \sim p_z(z)$, and a discriminator $D \in [0, 1]$ that classifies the real data $x \sim p_{data}(x)$ and the fake data G(z). The D(x) represents probability of x being a real data. The objective of G is to fit the true data distribution deceiving D by playing the following minimax game:
+
+
+
+
+
+Generative Adversarial Network (GAN) consists of a generator G and a discriminator D that compete in a twoplayer minimax game. D tries to distinguish a real image x from a synthetic one G(z), and G tries to synthesize realistic-looking images that can fool D. Concretely, D and G play the game with a value function V (D,G): 
+
+
+
+
 $$
 \min _{\theta_{G}} \max _{\theta_{D}} \mathbb{E}_{x \sim p_{\text {data}}(x)}[\log D(x)]+\mathbb{E}_{z \sim p_{z}(z)}[\log (1-D(G(z)))]
 $$
 where $\theta_G$ and $\theta_D$ are parameters of G and D, respectively.
+
+
+
+被证明收敛性
+
+It is proved in [^1] that this minimax game has a global optimum when the distribution $p_g$ of the synthetic samples and the distribution $p_d$ of the training samples are the same. Under mild conditions (e.g., G and D have enough capacity), $p_g$ converges to $p_d$.
+
+
 
 
 
@@ -149,6 +167,16 @@ $$
 \min _{\theta_{G}} \max _{\theta_{D}} \mathbb{E}_{c \sim p_{\text {data}}(c)}\left[\mathbb{E}_{x \sim p_{\text {data}}(x \mid c)}[\log D(x, c)]+\mathbb{E}_{z \sim p_{z}(z)}[\log (1-D(G(z, c), c))]\right]
 $$
 where D(x, c) represents probability of x being a real data from condition c.
+
+
+
+**SGAN:**
+
+Springenberg [35] generalizes GAN to learn a discriminative classifier where D is trained to not only distinguish between real and fake images, but also classify real images into K classes. D outputs a (K+1)-dim vector with the last dimension for the real/fake decision. The trained D is used for image classification. DR-GAN shares a similar loss for D as [35] but has two additions.First, we expand G with an encoder-decoder structure. Second, we have an additional side information classification on the pose while training D.
+
+
+
+
 
 ### 写在摘要里的
 

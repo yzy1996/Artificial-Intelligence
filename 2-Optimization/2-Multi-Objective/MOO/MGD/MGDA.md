@@ -2,7 +2,7 @@
 
 （首先我们需要一句定性的描述）
 
-The Multi-Gradient Descent Algorithm (MGDA) is an extension of the classical Gradient Descent Algorithm to multiple objectives.
+The Multi-Gradient Descent Algorithm (MGDA) is an extension of the classical Gradient Descent Algorithm to multiple objectives. This algorithm has been proved to converge to the Pareto Stationary solution.
 
 （其次我们要介绍他的历史）
 
@@ -15,6 +15,51 @@ The Multiple Gradient Descent Algorithm ( MGDA ) was originally introduced by [D
 (2018). Quasi-Riemannian Multiple Gradient Descent Algorithm for constrained multiobjective differential optimization
 
 (2017). Parametric optimization of pulsating jets in unsteady flow by multiple-gradient descent algorithm
+
+
+
+## Definition
+
+MGD finds a **common descent directiion** for all $f_i$ by defining the convex hull of all $\nabla f_{i}(\mathbf{x})$ and finding the minimum norm element within it. 
+$$
+\min _{\alpha_{1}, \ldots, \alpha_{n}}\left\{\left\|\sum_{i=1}^{n} \alpha_{i} \nabla f_{i}(\mathbf{x})\right\| \mid \sum_{i=1}^{n} \alpha_{i}=1, \alpha_{i} \geq 0\right\}
+$$
+
+where $\nabla f(\mathbf{x}) = \sum_{i=1}^{n} \alpha_{i} \nabla f_{i}(\mathbf{x})$ is the descent direction. MGD then update parameters with a learning rate $\lambda$ according to $\mathbf{x}_{t+1}=\mathbf{x}_{t}-\lambda \nabla f(\mathbf{x})$.
+
+
+
+To solve easily, the definition can be reformulated as a Quadratic Constrained Optimization Problem (QCQP). The QCQP is defined as follows:
+$$
+\min _{\alpha_{1}, \ldots, \alpha_{n}}\left\{\left\|\sum_{i=1}^{n} \alpha_{i} \nabla f_{i}(\mathbf{x})\right\|^{2} \mid \sum_{i=1}^{n} \alpha_{i}=1, \alpha_{i} \geq 0\right\}
+$$
+Besides, based on the calculated value, we can either get a stop condition:
+
+- $\nabla f(\mathbf{x})=0$, the solution is Pareto Stationary;
+- $\nabla f(\mathbf{x}) \neq 0$, the solution is not Pareto Stationary.
+
+
+
+Another expression of search direction $d^k$ is:
+$$
+d^{k}=\arg \min _{d \in \mathbb{R}^{n}}\left\{\max _{i \in\{1, \ldots, m\}} \nabla f_{i}\left(x_{k}\right)^{\top} d+\frac{1}{2}\|d\|^{2}\right\}
+$$
+This can be also rewritten equivalently as the following quadratic optimization problem:
+$$
+\begin{equation}
+\left(d^{k}, \alpha^{k}\right)=\arg \min _{d \in \mathbb{R}^{n}, \alpha \in \mathbb{R}} \alpha+\frac{1}{2}\|d\|^{2}
+\\
+\text { subject to } \nabla f_{i}\left(x^{k}\right)^{\top} d \leq \alpha, \quad i=1, \ldots, m
+\end{equation}
+$$
+
+- If $x^k$ is Pareto critical, then $d^k = 0 \in \mathbb{R}^{n}$ and $\alpha^k = 0$
+
+
+
+
+
+Based on the number of objectives, there are two different ways of how this QCQP can be solved: with an analytical solution for two objectives or with a constrained optimization problem for more objectives.
 
 ### Two Objectives
 

@@ -16,7 +16,7 @@ https://zhuanlan.zhihu.com/p/31193293
 
 
 
-
+Completely derandomized self-adaptation in evolution strategies. evolutionary computation
 
 # python库
 

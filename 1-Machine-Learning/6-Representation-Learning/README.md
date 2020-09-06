@@ -92,3 +92,8 @@ the most robust approach to feature learning is to disentangle as many factors a
 
 [^1]: Representation Learning: A Review and New
 
+
+
+
+
+Bengio et al. [3] propose that a disentangled representation is one for which changes in the encoded data are sparse over real-world transformations; that is, changes in only a few latents at a time should be able to represent sequences which are likely to happen in the real world.

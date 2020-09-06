@@ -105,3 +105,15 @@ robust
 earn disentangled representations in a completely unsupervised manner.
 
 disentangles writing styles from digit shapes on the MNIST dataset
+
+
+
+**SGAN**
+
+transform the discriminator into a multi-class classifier
+
+Additionally, this time, by the end of training, we can actually throw away the generator. Note that the roles changed. Now, the generator is only used for helping the discriminator during training.
+
+
+
+we turn its *sigmoid* output into a *softmax* with 11 class outputs. The first 10 for the individual class probabilities of the SVHN dataset (zero to nine), and the 11th class for all the fake images that come from the generator.

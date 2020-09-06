@@ -1,6 +1,6 @@
 # Multiple Gradient Descent (MGD)
 
-Multiple gradient descent ([Schäffler, 2002](Stochastic method for the solution of unconstrained vector optimization problems), [Désidéri, 2012](Multiple-gradient descent algorithm (MGDA) for multiobjective optimization), [Peitz, 2018](Gradient-based multiobjective optimization with uncertainties)) was proposed for the unconstrained case of multiobjective optimization of $\mathbf{F}(\mathbf{x})$ assuming a **convex**, **continuously differentiable** and **smooth** $f_k(x)$ for all $k$.
+Multiple gradient descent ([Schäffler, 2002](Stochastic method for the solution of unconstrained vector optimization problems), [Désidéri, 2012](Multiple-gradient descent algorithm (MGDA) for multiobjective optimization), [Peitz, 2018](Gradient-based multiobjective optimization with uncertainties)) was proposed for the unconstrained case of multi-objective optimization of $\mathbf{F}(\mathbf{x})$ assuming a **convex**, **continuously differentiable** and **smooth** $f_k(x)$ for all $k$.
 
 
 

@@ -6,13 +6,25 @@ Download and view in Typora
 
 </div>
 
-## Multi objective optimization
+Navigation 
 
-> In multi-objective optimization, several objective functions have to be minimized simultaneously. Usually, no single point will minimize all given objective functions at once, and so the concept of optimality has to be replaced by the concept of Pareto optimality. 
+- Learning notes
+
+
+
+Optimization problems are divided into [SOP](# Single objective optimization) and [MOP](# Multi Objective Optimization) according to the number of objectives.
+
+## Single Objective Optimization
+
+
+
+## Multi Objective Optimization
+
+> In multi-objective optimization, several objective functions have to be minimized simultaneously. Usually, no single point will minimize all given objective functions at once, and the concept of optimality has to be replaced by the concept of Pareto optimality. 
 
 > A point is called **Pareto-optimal** or efficient, if there does not exist a different point with the same or smaller objective function values, such that there is a decrease in at least one objective function value.
 
-> Each **local Pareto optimal** point is **globally Pareto optimal** as soon as all functions Fi (i = 1, . . . ,m) are convex.
+> Each **local Pareto optimal** point is **globally Pareto optimal** when all functions Fi (i = 1, . . . ,m) are convex.
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Front_pareto.svg/1280px-Front_pareto.svg.png" alt="img" width = "300" align = "center" />
 

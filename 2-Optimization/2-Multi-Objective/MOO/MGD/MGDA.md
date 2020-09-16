@@ -22,20 +22,20 @@ The Multiple Gradient Descent Algorithm ( MGDA ) was originally introduced by [D
 
 MGD finds a **common descent directiion** for all $f_i$ by defining the convex hull of all $\nabla f_{i}(\mathbf{x})$ and finding the minimum norm element within it. 
 $$
-\min _{\alpha_{1}, \ldots, \alpha_{n}}\left\{\left\|\sum_{i=1}^{n} \alpha_{i} \nabla f_{i}(\mathbf{x})\right\| \mid \sum_{i=1}^{n} \alpha_{i}=1, \alpha_{i} \geq 0\right\}
+\min _{\lambda_{1}, \ldots, \lambda_{m}}\left\{\left\|\sum_{i=1}^{m} \lambda_{i} \nabla \mathcal{L}_{i}(\theta)\right\| \mid \sum_{i=1}^{m} \lambda_{i}=1, \lambda_{i} \geq 0\right\}
 $$
 
-where $\nabla f(\mathbf{x}) = \sum_{i=1}^{n} \alpha_{i} \nabla f_{i}(\mathbf{x})$ is the descent direction. MGD then update parameters with a learning rate $\lambda$ according to $\mathbf{x}_{t+1}=\mathbf{x}_{t}-\lambda \nabla f(\mathbf{x})$.
+where $\nabla \mathcal{L}(\theta) = \sum_{i=1}^{m} \lambda_{i} \nabla \mathcal{L}_{i}(\theta)$ is the descent direction. MGD then update parameters with a learning rate $\lambda$ according to $\mathbf{x}_{t+1}=\mathbf{x}_{t}-\lambda \nabla f(\mathbf{x})$.
 
 
 
 To solve easily, the definition can be reformulated as a Quadratic Constrained Optimization Problem (QCQP). The QCQP is defined as follows:
 $$
-\min _{\alpha_{1}, \ldots, \alpha_{n}}\left\{\left\|\sum_{i=1}^{n} \alpha_{i} \nabla f_{i}(\mathbf{x})\right\|^{2} \mid \sum_{i=1}^{n} \alpha_{i}=1, \alpha_{i} \geq 0\right\}
+\min _{\lambda_{1}, \ldots, \lambda_{m}}\left\{\left\|\sum_{i=1}^{m} \lambda_{i} \nabla \mathcal{L}_{i}(\theta)\right\|^2 \mid \sum_{i=1}^{m} \lambda_{i}=1, \lambda_{i} \geq 0\right\}
 $$
 Besides, based on the calculated value, we can either get a stop condition:
 
-- $\nabla f(\mathbf{x})=0$, the solution is Pareto Stationary;
+- $\nabla \mathcal{L}(\theta)=0$, the solution is Pareto Stationary;
 - $\nabla f(\mathbf{x}) \neq 0$, the solution is not Pareto Stationary.
 
 
@@ -111,6 +111,6 @@ However stochastic means that the KKT condition could not be satisfied as we do 
 
 Different objectives have different scales. Both MGDA and SMSGDA are sensitive to the value scales. This will cause that one single objective may completely dominates the whole optimization process. To solve this problem, [(Nikola, 2020)](Multi-Gradient Descent for Multi-Objective Recommender Systems) propose a gradient normalization method:
 $$
-\nabla_{w} \hat{L}_{i}(w)=\frac{\nabla_{w} L_{i}(w)}{L_{i}\left(w_{i n i t}\right)}
+\nabla_{\theta} \hat{\mathcal{L}}_{i}(\theta)=\frac{\nabla_{\theta} \mathcal{L}_{i}(\theta)}{\mathcal{L}_{i}\left(\theta_{i n i t}\right)}
 $$
 where $\nabla_{w} \hat{L}_{i}(w)$ is the normalized gradient, $\nabla_{w} L_{i}(w)$ the non-normalized gradient, $L_{i}\left(w_{i n i t}\right)$ the initial loss of the objective. They consider $L_{i}\left(w_{i n i t}\right)$ to be an  empirical maximum loss for the particular objective.

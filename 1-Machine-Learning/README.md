@@ -16,6 +16,22 @@
 
 
 
+优化方法
+
+**Optimization Methods in machine learning**
+
+according to whether gradient information is available
+
+- First-order: gradient descent methods
+- Zeroth-order: random search methods
+  - poor convergence properties when the parameter dimension is large ()
+
+
+
+
+
+
+
 ### 借助skit-learn 梳理
 
 

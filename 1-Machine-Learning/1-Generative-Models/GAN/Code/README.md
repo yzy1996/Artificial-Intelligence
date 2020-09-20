@@ -1,6 +1,20 @@
 # 代码框架
 
-
+```
+├── main.py # gateway
+├── data
+│   ├── celebA # celebA data (not included in this repo)
+│       ├── xxxx.jpg
+│       ├── xxxx.jpg
+│       ├── xxxx.jpg
+│       └── xxxx.jpg
+├── GAN.py # build GAN
+├── model.py # Generator and Discriminator
+├── ops.py # some operations on layer
+├── utils.py # utils
+├── logs # log files for tensorboard to be saved here
+└── checkpoint # model files to be saved here
+```
 
 ### 1. 数据集
 

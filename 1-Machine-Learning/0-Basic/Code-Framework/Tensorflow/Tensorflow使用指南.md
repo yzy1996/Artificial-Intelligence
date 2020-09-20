@@ -1,5 +1,65 @@
 # Tensorflow使用指南
 
+
+
+## 加载数据集
+
+tensorflow 官方支持了很多数据集，看这里 [Datasets](https://tensorflow.google.cn/datasets/catalog/overview) 
+
+使用一行代码即可，利用 `tfds.load` 构建 `tf.data.Dataset`
+
+```python
+<datasetname> = tfds.load(name="<datasetname>")
+```
+
+指定下载路径，默认是 `~/tensorflow_datasets`
+
+```python
+<datasetname> = tfds.load(name="<datasetname>", data_dir="dir_path")
+```
+
+
+
+
+
+切分数据集可以
+
+```python
+mnist_train = tfds.load(name="mnist", split="train")
+or
+mnist_train = tfds.load(name="mnist")["train"]
+```
+
+如果要显示一张图片
+
+```python
+for mnist_example in mnist_train.take(1):  # 只取一个样本
+    image, label = mnist_example["image"], mnist_example["label"]
+
+    plt.imshow(image.numpy()[:, :, 0].astype(np.float32), cmap=plt.get_cmap("gray"))
+    print("Label: %d" % label.numpy())
+```
+
+
+
+最后要输入流水线
+
+```python
+mnist_train = mnist_train.shuffle(1024).batch(32)
+
+# prefetch 将使输入流水线可以在模型训练时异步获取批处理。
+mnist_train = mnist_train.prefetch(tf.data.experimental.AUTOTUNE)
+```
+
+可视化一些样本
+
+```python
+mnist_test, info = tfds.load("mnist", split="test", with_info=True)
+fig = tfds.show_examples(info, mnist_test)
+```
+
+
+
 数据处理
 
 ```python
@@ -144,4 +204,33 @@ model.save('path_to_my_model')
 
 model = keras.models.load_model('path_to_my_model')
 ```
+
+
+
+
+
+## Layer 
+
+Dense 全连接层
+
+```python
+tf.keras.layers.Dense(
+    units, activation=None, use_bias=True, kernel_initializer='glorot_uniform',
+    bias_initializer='zeros', kernel_regularizer=None, bias_regularizer=None,
+    activity_regularizer=None, kernel_constraint=None, bias_constraint=None,
+    **kwargs
+)
+```
+
+It implements the operation: `output = activation(dot(input, kernel) + bias)`
+
+The most common situation is `(batch_size, input_dim)`, and the corresponding output is `(batch_size, units)`
+
+`(batch_size × input_dim) × (input_dim × units)  = (batch_size × units)`
+
+So the kernel (a weight matrix created by the layer) size is `(input_dim, units)`
+
+
+
+
 

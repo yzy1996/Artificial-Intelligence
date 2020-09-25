@@ -2,6 +2,20 @@
 
 
 
+查看数据类型，
+
+tensor.dtype
+
+tensor.name
+
+tensor.op
+
+tensor.eval()
+
+tf.shape
+
+
+
 ## 加载数据集
 
 tensorflow 官方支持了很多数据集，看这里 [Datasets](https://tensorflow.google.cn/datasets/catalog/overview) 

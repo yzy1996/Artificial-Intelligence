@@ -1,5 +1,9 @@
 # Tensorflow使用指南
 
+查看tensorflow 版本
+
+
+
 
 
 查看数据类型，

@@ -43,7 +43,42 @@ probility distribution over x, and parameterized by $\theta$, $p_{\theta}(x)$
 
 
 
+**Simple Gaussian Evolution Strategies**
+
+It models $p_{\theta}(x)$ as a n-dimensional Gaussian distribution
+$$
+\theta = (\mu, \sigma), p_{\theta}(x) \sim \mathcal{N}\left(\mu, \sigma^{2} I\right)
+$$
+
+1. Initialize $\theta$
+
+2. Generate the offspring population of size $\Lambda$ by sampling from Gaussian distribution.
+
+3. Select a top subset of $\lambda$ with optimal $f(x_i)$ and this subset is called elite set.
+
+4. Update new mean and std
+   $$
+   \begin{aligned}
+   \mu^{(t+1)} &=\operatorname{avg}\left(D_{\text {elite }}^{(t+1)}\right)=\frac{1}{\lambda} \sum_{i=1}^{\lambda} x_{i}^{(t+1)} \\
+   \sigma^{(t+1)^{2}} &=\operatorname{var}\left(D_{\text {elite }}^{(t+1)}\right)=\frac{1}{\lambda} \sum_{i=1}^{\lambda}\left(x_{i}^{(t+1)}-\mu^{(t+1)}\right)^{2}
+   \end{aligned}
+   $$
+
+
+
+**Covariance Matrix Adaptation Evolution Strategies (CMA-ES)**
+
+The std $\sigma$ accounts for the level of exploration. In vanilla ES, $\sigma^{(t+1)}$ is highly correlated with $\sigma^{(t)}$.  
+$$
+\theta = (\mu, \sigma, C), p_{\theta}(x) \sim \mathcal{N}\left(\mu, \sigma^{2} C\right)
+$$
+
+
+
+
 
 
 ### GA
+
+$x$ is a sequence of binary codes, $x \in \{0, 1\}^n$
 

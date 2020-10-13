@@ -8,11 +8,11 @@
 
 ### 1. Book
 
-[Algorithms for Reinforcement Learning](https://sites.ualberta.ca/~szepesva/RLBook.html). **[`Csaba Szepesvári`]**. **[`2010`]**
+[Algorithms for Reinforcement Learning](https://sites.ualberta.ca/~szepesva/RLBook.html). **[`Csaba Szepesvári`]**  **[:date:`2010`]** [:file_folder:[file](Learning-Material/Algorithms-for-Reinforcement-Learning.pdf)] 
 
-[Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book.html). **[`Richard S. Sutton et.al`]**. **[`2018`]**
+[Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book.html). **[`Richard S. Sutton et.al`]** **[:date:`2018-2020`]** [:file_folder:[file](Learning-Material/RLbook2020.pdf)] 
 
-[Reinforcement Learning: Theory and Algorithms](https://rltheorybook.github.io/). **[`Alekh Agarwal et.al`]**. **[`2020`]**
+[Reinforcement Learning: Theory and Algorithms](https://rltheorybook.github.io/). **[`Alekh Agarwal et.al`]** **[:date:`2019-2020`]** [:file_folder:[file](Learning-Material/Reinforcement-Learning-Theory-and-Algorithm.pdf)] 
 
 
 

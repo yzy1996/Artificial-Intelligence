@@ -26,15 +26,21 @@
 
 
 
+
+
 **[:man_student:`Alessandro Lazaric`]** **[:school:`Centre Inria-Lille Nord Europe`]** **[:date:`2017`]**
 
 [:houses:[website](http://researchers.lille.inria.fr/~lazaric/Webpage/Teaching.html)] [:file_folder:[file](Learning-Material/Alessandro-Lazaric)] 
 
 
 
+
+
 **[:school:`Reinforcement Learning China Summer School`]** **[:date:`2020`]**
 
 [:houses:[website](https://rlchina.org/)] [:file_folder:[file](Learning-Material/RLChina)]
+
+
 
 
 

@@ -1,6 +1,10 @@
-[`Prediction-Guided Multi-Objective Reinforcement Learning for Continuous Robot Control`]
+**[`Prediction-Guided Multi-Objective Reinforcement Learning for Continuous Robot Control`]**
 
-[`PMLR`] [`2020`]
+**[`PMLR`]** **[`2020`]**
+
+
+
+<details><summary>Click to expand</summary><p>
 
 
 
@@ -32,3 +36,6 @@ first find a discrete set of Pareto policies, then extract to a continuous Paret
 
 discover the individual policies on the Pareto front; construct a continuous set of Pareto-optimal solutions by **Pareto analysis** and **interpolation**.
 
+</p></details>
+
+---

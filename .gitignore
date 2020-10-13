@@ -9,3 +9,5 @@
 *.svg
 *.png
 *.data-00001-of-00002
+*.index
+1-Machine-Learning/1-Generative-Models/GAN/Awesome/DCGAN/tensorflow/without-argparse/output/checkpoints/checkpoint

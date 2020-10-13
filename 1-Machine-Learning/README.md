@@ -28,6 +28,32 @@ according to whether gradient information is available
 
 
 
+Reinforcement learning
+
+> an agent interacts with the environment by trial-and-error mechanism and learns an optimal policy by maximizing cumulative rewards
+
+Meta learning
+
+>The goal of meta learning is to design a model that can efficiently adapt to the new
+>environment with as few samples as possible.
+
+Variational inference
+
+> aims to approximate the posterior distributions in Bayesian machine learning.
+
+
+
+According to the modeling purpose and the problem, machine learning algorithms can be divided into:
+
+- **Supervised Learning**
+  - classification problem
+  - regression problem
+- **Semi-Supervised Learning** 
+- **Unsupervised Learning**
+  - clustering
+  - dimension reduction
+- **Reinforcement Learning**
+
 
 
 

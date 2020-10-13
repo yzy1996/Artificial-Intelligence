@@ -4,6 +4,14 @@
 
 > 求解在连续变量的问题，相对应的是离散优化问题
 
+
+
+已经整理完毕，参见 [详解](./detail.md)
+
+## TO DO LIST
+
+- [ ] 代码
+
 # 学习资料
 
 [The CMA Evolution Strategy: A Tutorial](https://arxiv.org/abs/1604.00772) 很完整的从理论基础到整个算法的各个部分的教程，比较长、难懂。
@@ -38,7 +46,7 @@ http://www.apachecn.org/
 
 https://github.com/apachecn/AiLearning
 
-
+https://medium.com/@skywalker0803r/cma-es-%E5%84%AA%E5%8C%96%E7%AE%97%E6%B3%95-f05a2c974632
 
 
 

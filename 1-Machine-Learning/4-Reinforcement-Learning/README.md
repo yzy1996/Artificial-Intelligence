@@ -22,15 +22,16 @@
 
 > who is head of DeepMind's enhanced Learning team and the AlphaGo project
 
----
 
-**[:man_student:`Alessandro Lazaric`]** **[:school:`Centre Inria-Lille Nord Europe`]** **[:date:`2017`]** [:houses:[Website](http://researchers.lille.inria.fr/~lazaric/Webpage/Teaching.html)] [:file_folder:[File](Learning-Material/Alessandro-Lazaric)] 
 
----
+**[:man_student:`Alessandro Lazaric`]** **[:school:`Centre Inria-Lille Nord Europe`]** **[:date:`2017`]** [:houses:[Website](http://researchers.lille.inria.fr/~lazaric/Webpage/Teaching.html)] [:file_folder:[File](Learning-Material/Alessandro-Lazaric)]
+
+
 
 **[:school:`Reinforcement Learning China Summer School`]** **[:date:`2020`]** [:houses:[Website](https://rlchina.org/)] [:file_folder:[File](Learning-Material/RLChina)]
 
----
+
+
 
 **[:man_student:`Zhou Bolei`]** **[:school:`CUHK`]** **[:date:`2020`]** [:houses:[Website](https://github.com/zhoubolei/introRL)] [:file_folder:[File](Learning-Material/Zhou-Bolei)]
 

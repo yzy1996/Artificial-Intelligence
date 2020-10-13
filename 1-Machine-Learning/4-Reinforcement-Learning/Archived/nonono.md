@@ -1,3 +1,0 @@
-策略迭代和价值迭代：
-
-value based是v参与迭代，policy根据迭代的v决定，不论v迭代几步以后来决定policy，可能每迭代一步就update一下policy，也可能迭代一系列之后update。policy based是policy直接参与迭代

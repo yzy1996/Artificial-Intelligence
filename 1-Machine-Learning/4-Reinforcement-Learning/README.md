@@ -20,8 +20,6 @@
 
 **[:man_student:`David Silver`]** **[:school:`UCL`]** **[:date:`2015-present`]** [:houses:[Website](https://www.davidsilver.uk/teaching/)] [:file_folder:[File](Learning-Material/David-Silver)] 
 
-> who is head of DeepMind's enhanced Learning team and the AlphaGo project
-
 
 
 **[:man_student:`Alessandro Lazaric`]** **[:school:`Centre Inria-Lille Nord Europe`]** **[:date:`2017`]** [:houses:[Website](http://researchers.lille.inria.fr/~lazaric/Webpage/Teaching.html)] [:file_folder:[File](Learning-Material/Alessandro-Lazaric)]

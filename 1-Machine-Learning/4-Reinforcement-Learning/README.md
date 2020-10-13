@@ -18,29 +18,21 @@
 
 ### 2. Course
 
-**[:man_student:`David Silver`]** **[:school:`UCL`]** **[:date:`2015-present`]**
+**[:man_student:`David Silver`]** **[:school:`UCL`]** **[:date:`2015-present`]** [:houses:[Website](https://www.davidsilver.uk/teaching/)] [:file_folder:[File](Learning-Material/David-Silver)] 
 
 > who is head of DeepMind's enhanced Learning team and the AlphaGo project
 
-[:houses:[website](https://www.davidsilver.uk/teaching/)] [:file_folder:[file](Learning-Material/David-Silver)] 
+---
+
+**[:man_student:`Alessandro Lazaric`]** **[:school:`Centre Inria-Lille Nord Europe`]** **[:date:`2017`]** [:houses:[Website](http://researchers.lille.inria.fr/~lazaric/Webpage/Teaching.html)] [:file_folder:[File](Learning-Material/Alessandro-Lazaric)] 
 
 ---
 
-**[:man_student:`Alessandro Lazaric`]** **[:school:`Centre Inria-Lille Nord Europe`]** **[:date:`2017`]** [:houses:[website](http://researchers.lille.inria.fr/~lazaric/Webpage/Teaching.html)] [:file_folder:[file](Learning-Material/Alessandro-Lazaric)] 
-
-
+**[:school:`Reinforcement Learning China Summer School`]** **[:date:`2020`]** [:houses:[Website](https://rlchina.org/)] [:file_folder:[File](Learning-Material/RLChina)]
 
 ---
 
-**[:school:`Reinforcement Learning China Summer School`]** **[:date:`2020`]**
-
-[:houses:[website](https://rlchina.org/)] [:file_folder:[file](Learning-Material/RLChina)]
-
----
-
-**[:man_student:`Zhou Bolei`]** **[:school:`CUHK`]** **[:date:`2020`]**
-
-[:houses:[website](https://github.com/zhoubolei/introRL)] [:file_folder:[file](Learning-Material/Zhou-Bolei)]
+**[:man_student:`Zhou Bolei`]** **[:school:`CUHK`]** **[:date:`2020`]** [:houses:[Website](https://github.com/zhoubolei/introRL)] [:file_folder:[File](Learning-Material/Zhou-Bolei)]
 
 
 

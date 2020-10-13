@@ -11,3 +11,7 @@
 *.data-00001-of-00002
 *.index
 1-Machine-Learning/1-Generative-Models/GAN/Awesome/DCGAN/tensorflow/without-argparse/output/checkpoints/checkpoint
+*.data-00000-of-00002
+1-Machine-Learning/1-Generative-Models/GAN/Code/training_checkpoints/checkpoint
+*.data-00000-of-00001
+1-Machine-Learning/1-Generative-Models/GAN/Awesome/WGAN/training_checkpoints/checkpoint

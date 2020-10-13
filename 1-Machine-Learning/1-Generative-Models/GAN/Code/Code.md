@@ -27,3 +27,7 @@ https://www.kesci.com/home/project/5ba203041e126e003c83995d
 https://github.com/joeylitalien/celeba-gan-pytorch
 
 https://github.com/znxlwm/pytorch-MNIST-CelebA-GAN-DCGAN
+
+https://github.com/wiseodd/generative-models
+
+https://github.com/hwalsuklee/tensorflow-generative-model-collections

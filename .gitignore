@@ -15,3 +15,4 @@
 1-Machine-Learning/1-Generative-Models/GAN/Code/training_checkpoints/checkpoint
 *.data-00000-of-00001
 1-Machine-Learning/1-Generative-Models/GAN/Awesome/WGAN/training_checkpoints/checkpoint
+*.pkl

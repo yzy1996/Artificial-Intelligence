@@ -8,6 +8,12 @@ image synthesis remains the main objective of GAN
 
 
 
+### image editing
+
+### super-resolution
+
+### video-generation
+
 
 
 

@@ -3,7 +3,7 @@
 
 ![python-version](https://img.shields.io/badge/python-3.7-blue)![Country](https://img.shields.io/badge/country-China-red)
 
- 关于机器学习的一些东西
+全面的机器学习资料
 
 </div>
 
@@ -87,15 +87,7 @@ According to the modeling purpose and the problem, machine learning algorithms c
 ## Neural-Network
 神经网络一些知识点
 
-## 书籍
 
-### 《统计学习方法》李航
-
-[代码1](https://github.com/fengdu78/lihang-code)    [代码2](https://github.com/SmirkCao/Lihang)
-
-### 《MIT Deep Learning Book》Ian Goodfellow et al
-
-[book](http://www.deeplearningbook.org/)
 
 
 
@@ -110,4 +102,16 @@ According to the modeling purpose and the problem, machine learning algorithms c
 - 深度学习框架
   - [Tensorflow]()
   - [Pytorch]()
+
+
+
+# How to learn
+
+## Books
+
+《统计学习方法》李航 [代码1](https://github.com/fengdu78/lihang-code) [代码2](https://github.com/SmirkCao/Lihang)
+
+《机器学习》(西瓜书) 周志华 [公式推导](https://datawhalechina.github.io/pumpkin-book/)
+
+《MIT Deep Learning Book》Ian Goodfellow et al [book](http://www.deeplearningbook.org/)
 

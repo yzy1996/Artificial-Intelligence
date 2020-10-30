@@ -1,6 +1,30 @@
 [TOC]
 
+### GAN: Vanilla GAN
 
+> NeurIPS 2014 
+>
+> 
+
+---
+
+### CGAN: Conditional GAN
+
+> CoRR abs/1411.1784 2014
+
+Conditional GAN [18, 26] extends the GAN by feeding the labels to both G and D to generate images conditioned on the label, which can be the class label, modality information, or even partial data for inpainting. It has been used to generate MNIST digits conditioned on the class label and to learn multi-modal models. In conditional GAN, D is trained to classify a real image with mismatched conditions to a fake class. In DR-GAN, D classifies a real image to the corresponding class based on the labels.
+
+
+
+The conditional GAN[10] concatenates condition vector into the input of the generator and the discriminator. Variants of this method was successfully applied in [7, 11, 14]. [7] obtained visually discriminative vector representation of text descriptions and then concatenated that vector into every layer of the discriminator and the noise vector of the generator. [11] used a similar method to generate face images from binary attribute vectors such as hair styles, face shapes, etc. In [14], Structure-GAN generates surface normal maps and then they are concatenated into noise vector of Style-GAN to put styles in those maps.
+
+
+
+
+
+
+
+---
 
 ### WGAN-GP: Improved Training of Wasserstein GANs
 
@@ -185,14 +209,11 @@ $$
 
 
 
-Conditional GAN
+### PGGAN
 
-Conditional GAN [18, 26] extends the GAN by feeding the labels to both G and D to generate images conditioned on the label, which can be the class label, modality information, or even partial data for inpainting. It has been used to generate MNIST digits conditioned on the class label and to learn multi-modal models. In conditional GAN, D is trained to classify a real image with mismatched conditions to a fake class. In DR-GAN, D classifies a real image to the corresponding class based on the labels.
-
-
-
-The conditional GAN[10] concatenates condition vector into the input of the generator and the discriminator. Variants of this method was successfully applied in [7, 11, 14]. [7] obtained visuallydiscriminative vector representation of text descriptions and then concatenated that vector into every layer of the discriminator and the noise vector of the generator. [11] used a similar method to generate face images from binary attribute vectors such as hair styles, face shapes, etc. In [14], Structure-GAN generates surface normal maps and then they are concatenated into noise vector of Style-GAN to put styles in those maps.
+[[:octocat:](https://github.com/ptrblck/prog_gans_pytorch_inference)]
 
 
 
-Ways of conditioning generative adversarial networks
+---
+

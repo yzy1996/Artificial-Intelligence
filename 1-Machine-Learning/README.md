@@ -7,7 +7,26 @@
 
 </div>
 
+
+
+# Table of Main Contents
+
+- [1. Supervised Learning]()
+- [2. Semi Supervised Learning]()
+- [3. Unsupervised Learning]()
+- [4. Reinforcement Learning]()
+- [5. Meta Learning]()
+- [6. Transfer Learning]()
+  - [6.1 Multi-task Learning]()
+
+- [7. Generative Model]()
+  - [7.1 AE]()
+  - [7.2 GAN]()
+
+
+
 ## Guidance
+
 关于机器学习一些框架的配置和使用说明
 
 
@@ -77,3 +96,18 @@ According to the modeling purpose and the problem, machine learning algorithms c
 ### 《MIT Deep Learning Book》Ian Goodfellow et al
 
 [book](http://www.deeplearningbook.org/)
+
+
+
+
+
+
+
+
+
+# Tool
+
+- 深度学习框架
+  - [Tensorflow]()
+  - [Pytorch]()
+

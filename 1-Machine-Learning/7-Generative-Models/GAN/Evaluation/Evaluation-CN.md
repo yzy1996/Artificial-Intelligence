@@ -64,3 +64,7 @@ $$
 
 
 
+
+
+LPIPS distance
+

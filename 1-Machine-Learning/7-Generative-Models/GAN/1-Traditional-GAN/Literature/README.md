@@ -237,7 +237,6 @@ Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Net
 
 qqq
 
-
 </p></details>
 
 ---

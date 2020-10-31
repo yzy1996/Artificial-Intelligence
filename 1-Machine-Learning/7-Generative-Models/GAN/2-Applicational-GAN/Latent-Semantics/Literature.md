@@ -45,3 +45,10 @@ main contribution: solves the optimization problem in the latent space that maxi
 </p></details>
 
 ---
+
+
+
+
+
+## InterFaceGAN
+

@@ -32,3 +32,8 @@ related work:
 - Style generator inversion for image enhancement and animation
 
 > these two suggest that instead of finding a common latent code w, the results improve if a separate w is chosen for each layer of the generator.
+
+
+
+applications
+

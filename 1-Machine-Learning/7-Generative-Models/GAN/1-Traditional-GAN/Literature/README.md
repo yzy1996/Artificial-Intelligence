@@ -227,7 +227,7 @@ Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Net
 
 ---
 
-### StyleGAN
+## StyleGAN
 
 [A Style-Based Generator Architecture for Generative Adversarial Networks]()
 

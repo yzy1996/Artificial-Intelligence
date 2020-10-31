@@ -231,7 +231,7 @@ Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Net
 
 [A Style-Based Generator Architecture for Generative Adversarial Networks]()
 
-**`(NVIDIA)`**	**`[Tero Karras, Samuli Laine, Timo Aila]`**	**`(2019)`**	**`[CVPR]`**	**[[:memo:]()]**	**[[:octocat:](https://github.com/NVlabs/stylegan)]**
+**`(2019)`**	**`[CVPR]`**	**`(NVIDIA)`**	**`[Tero Karras, Samuli Laine, Timo Aila]`**	**[[:memo:]()]**	**[[:octocat:](https://github.com/NVlabs/stylegan)]**
 
 
 

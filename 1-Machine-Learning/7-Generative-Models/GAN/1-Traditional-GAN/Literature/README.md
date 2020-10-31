@@ -231,13 +231,47 @@ Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Net
 
 [A Style-Based Generator Architecture for Generative Adversarial Networks]()
 
-**`(2019)`**	**`[CVPR]`**	**`(NVIDIA)`**	**`[Tero Karras, Samuli Laine, Timo Aila]`**	**[[:memo:]()]**	**[[:octocat:](https://github.com/NVlabs/stylegan)]**
+**`(2019)`**	**`[CVPR]`**	**`(NVIDIA)`**	**`[Tero Karras, Samuli Laine]`**	**[[:memo:]()]**	**[[:octocat:](https://github.com/NVlabs/stylegan)]**
 
 <details><summary>Click to expand</summary><p>
+![image-20201031134802945](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201031134812.png)
 
-ddd
+
+
+**need to know**:
+
+- [ ] (AdaIN) adaptive instance normalization operation after each convolution layer
+
+
+
+**summary**:
+
+do not provide input layer with a latent code $z$, start from a learned constant and map $z$ to a intermediate latent space $w$, donated by $f: \mathcal{Z} \rightarrow \mathcal{W}$, where $f$ is an MLP.
+
+> The intermediate latent space is much less entangled than the input latent space.
 
 </p></details>
 
 ---
 
+
+
+## StyleGAN2
+
+[Analyzing and Improving the Image Quality of StyleGAN]()
+
+**`(2020)`**	**`[CVPR]`**	**`(NVIDIA)`**	**`[Tero Karras, Samuli Laine]`**	**[[:memo:]()]**	**[[:octocat:](https://github.com/NVlabs/stylegan2)]**
+
+<details><summary>Click to expand</summary><p>
+**Projection method**
+
+Given a target image $x$, seek to find the corresponding $w \in \mathcal{W}$ and per-layer noise maps.
+
+1. compute $\mu_{\mathrm{w}}=\mathbb{E}_{\mathrm{z}} f(\mathrm{z})$ by running 10000 random $z$ 
+2. computing $\sigma_{\mathrm{w}}^{2}=\mathbb{E}_{\mathrm{z}}\left\|f(\mathrm{z})-\mu_{\mathrm{w}}\right\|_{2}^{2}$ 
+3. begin optimize with $\mathrm{w} = \mu_{\mathrm{w}}$ and $n_i = \mathcal{N}(0, \mathrm{I})$ 
+4. $L_{image} = D_{LPIPS}[x, g(\tilde{\mathrm{w}}, n_0, n_1, \dots)]$
+
+</p></details>
+
+---

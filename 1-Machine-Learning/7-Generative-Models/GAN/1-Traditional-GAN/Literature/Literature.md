@@ -176,7 +176,7 @@ $$
 \end{aligned}
 $$
 
-## AC-GAN(2017)
+### AC-GAN(2017)
 
 **[`2017`]** **[`ICLR`]** **[[:memo:](./Defense-GAN.pdf)]** **[[:octocat:](https://github.com/kabkabm/defensegan)]**
 
@@ -207,13 +207,29 @@ $$
 
 
 
+### SRGAN
 
+Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
+
+[CVPR 2017]
+
+[[:octocat:](https://github.com/JustinhoCHN/SRGAN_Wasserstein)]
+
+---
 
 ### PGGAN
 
-[[:octocat:](https://github.com/ptrblck/prog_gans_pytorch_inference)]
+[[:octocat:](https://github.com/ptrblck/prog_gans_pytorch_inference)] [[:octocat:](https://github.com/nashory/pggan-pytorch)]
+
+
 
 
 
 ---
+
+### StyleGAN
+
+**`A Style-Based Generator Architecture for Generative Adversarial Networks`**
+
+**`CVPR2019`** 
 

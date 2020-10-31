@@ -231,5 +231,5 @@ Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Net
 
 [A Style-Based Generator Architecture for Generative Adversarial Networks]()
 
-**`(2019)`**	**`[CVPR]`**	[:memo:]()	[:octocat:](https://github.com/heykeetae/Self-Attention-GAN)
+**`(2019)`**	**`[CVPR]`**	[[:memo:]()]	**[[:octocat:](https://github.com/heykeetae/Self-Attention-GAN)]**
 

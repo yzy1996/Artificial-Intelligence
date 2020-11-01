@@ -234,15 +234,12 @@ Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Net
 **`(2019)`**	**`[CVPR]`**	**`(NVIDIA)`**	**`[Tero Karras, Samuli Laine]`**	**[[:memo:]()]**	**[[:octocat:](https://github.com/NVlabs/stylegan)]**
 
 <details><summary>Click to expand</summary><p>
+
 ![image-20201031134802945](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201031134812.png)
-
-
 
 **need to know**:
 
 - [ ] (AdaIN) adaptive instance normalization operation after each convolution layer
-
-
 
 **summary**:
 

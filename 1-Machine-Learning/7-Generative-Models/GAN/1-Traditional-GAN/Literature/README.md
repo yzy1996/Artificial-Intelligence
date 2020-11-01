@@ -235,6 +235,7 @@ Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Net
 
 <details><summary>Click to expand</summary><p>
 
+
 ![image-20201031134802945](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201031134812.png)
 
 **need to know**:
@@ -260,6 +261,8 @@ do not provide input layer with a latent code $z$, start from a learned constant
 **`(2020)`**	**`[CVPR]`**	**`(NVIDIA)`**	**`[Tero Karras, Samuli Laine]`**	**[[:memo:]()]**	**[[:octocat:](https://github.com/NVlabs/stylegan2)]**
 
 <details><summary>Click to expand</summary><p>
+
+
 **Projection method**
 
 Given a target image $x$, seek to find the corresponding $w \in \mathcal{W}$ and per-layer noise maps.

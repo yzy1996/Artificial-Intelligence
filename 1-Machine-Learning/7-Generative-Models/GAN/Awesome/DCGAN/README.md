@@ -35,3 +35,10 @@ def generator_loss_fn(fake_output):
 ```
 
 
+
+| s    | s    | s    |
+| ---- | ---- | ---- |
+| s    | s    | s    |
+|      |      |      |
+|      |      |      |
+

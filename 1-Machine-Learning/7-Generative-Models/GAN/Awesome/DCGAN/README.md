@@ -34,11 +34,3 @@ def generator_loss_fn(fake_output):
     return bce(tf.ones_like(fake_output), fake_output)
 ```
 
-
-
-| s    | s    | s    |
-| ---- | ---- | ---- |
-| s    | s    | s    |
-|      |      |      |
-|      |      |      |
-

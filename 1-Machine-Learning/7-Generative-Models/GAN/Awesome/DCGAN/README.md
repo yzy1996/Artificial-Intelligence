@@ -1,9 +1,22 @@
 # DCGAN
 
-[`Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks`]
-[`ICLR`] [`2016`]
+[Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks](https://arxiv.org/abs/1511.06434)
+
+Alec Radford, Luke Metz, Soumith Chintala **`[ICLR 2016]`**
 
 
+
+**Architecture guidelines for stable Deep Convolutional GANs**
+
+- Replace any pooling layers with strided convolutions (discriminator) and fractional-strided convolutions (generator).
+- Use batchnorm in both the generator and the discriminator
+- Remove fully connected hidden layers for deeper architectures. Just use average pooling at the end.
+- Use ReLU activation in generator for all layers except for the output, which uses Tanh.
+- Use LeakyReLU activation in the discriminator for all layers.
+
+
+
+**Loss function**
 $$
 L_D = E[\log(D(x))] + E[\log(1-D(G(z)))]
 $$
@@ -12,11 +25,7 @@ $$
 L_G = E[\log(D(G(z)))]
 $$
 
-
-
-判别器给 真数据 
-
-
+![mylatex20201105_204317](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201105204330.png)
 
 **Loss function code**
 
@@ -33,11 +42,3 @@ def generator_loss_fn(fake_output):
 ```
 
 
-
-## code
-
-
-
-0 for fake output
-
-1 for real output 

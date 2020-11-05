@@ -17,13 +17,6 @@ Alec Radford, Luke Metz, Soumith Chintala **`[ICLR 2016]`**
 
 
 **Loss function**
-$$
-L_D = E[\log(D(x))] + E[\log(1-D(G(z)))]
-$$
-
-$$
-L_G = E[\log(D(G(z)))]
-$$
 
 ![mylatex20201105_204317](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201105204330.png)
 

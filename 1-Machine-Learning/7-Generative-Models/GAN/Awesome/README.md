@@ -6,7 +6,7 @@ English | [简体中文](./README.zh-CN.md)
 
 ![python-version](https://img.shields.io/badge/python-3.7-blue) ![country](https://img.shields.io/badge/country-China-red)
 
-Latest implement of various GANs with tensorflow(=1.3.0) and pytorch(=1.16.0).
+Latest implement of various GANs with tensorflow(=2.3.0) and pytorch(=1.16.0).
 
 More details about GANs, please see the repository of xxx.
 

@@ -1,8 +1,18 @@
 # WGAN-GP
 
-[论文](https://arxiv.org/abs/1704.00028) [代码](https://github.com/igul222/improved_wgan_training)
+[Improved Training of Wasserstein GANs](https://arxiv.org/abs/1704.00028)
+
+Ishaan Gulrajani, Faruk Ahmed, Martin Arjovsky, Vincent Dumoulin, Aaron Courville **`[NeurIPS 2017]`**
+
+**[[:octocat:](https://github.com/igul222/improved_wgan_training)]** 
 
 
+
+**Loss function**
+
+![mylatex20201106_212247](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201106212304.png)
+
+**Loss function code**
 
 ```python
 def discriminator_loss_fn(real_output, fake_output):
@@ -30,6 +40,9 @@ def gradient_penalty(f, real_data, fake_data):
 discriminator_loss_fn() += 10 * gradient_penalty()
 ```
 
+
+
+## 知识点补充
 
 在WGAN中，我们用裁切的方式实现利普希茨约束，但裁切的参数 $c$ 
 $$

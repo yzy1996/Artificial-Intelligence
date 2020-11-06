@@ -72,10 +72,7 @@ WGAN-GP中，对判别器网络不再使用Batch normalization，因为会影响
 
 
 
-![Image for post](https://miro.medium.com/max/2054/1*yYvwVzRnlVmRFCh7-JOASw.png)
+##  Reading Material
 
+[2018-GAN-Wasserstein GAN & WGAN-GP](https://medium.com/@jonathan_hui/gan-wasserstein-gan-wgan-gp-6a1a2aa1b490)
 
-
-
-
-https://medium.com/@jonathan_hui/gan-wasserstein-gan-wgan-gp-6a1a2aa1b490

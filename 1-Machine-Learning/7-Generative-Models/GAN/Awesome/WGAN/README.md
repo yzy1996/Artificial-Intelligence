@@ -1,5 +1,56 @@
 # WGAN
 
+[Wasserstein GAN](https://arxiv.org/abs/1701.07875)
+
+Martin Arjovsky, Soumith Chintala, Léon Bottou **`[ICML 2017]`**
+
+官方**[[:octocat:](https://github.com/martinarjovsky/WassersteinGAN)]** 
+
+
+
+**The differences in implementation for the WGAN are as follows**
+
+- No log in the loss. Use a linear activation function in the output layer of the D (instead of sigmoid).
+
+- Use -1 labels for real images and 1 labels for fake images (instead of 1 and 0).
+
+- Use Wasserstein loss to train the critic and generator models.
+
+- Clip the weights of D to a limited range after each mini batch update (e.g. [-0.01,0.01]).
+
+- Train D more than G each iteration (e.g. 5).
+
+- Use the RMSProp version of gradient descent with a small learning rate and no momentum (e.g. 0.00005).
+
+
+
+**Loss function**
+
+![mylatex20201106_204405](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201106204634.png)
+
+**Loss function code**
+
+```python
+def discriminator_loss_fn(real_output, fake_output):
+    return tf.reduce_mean(fake_output) - tf.reduce_mean(real_output)
+
+def generator_loss_fn(fake_output):
+    return -tf.reduce_mean(fake_output)
+```
+等价于
+
+```python
+bce = tf.keras.losses.BinaryCrossentropy(from_logits=True)
+
+def discriminator_loss_fn(real_output, fake_output):
+    real_loss = bce(real_output, -tf.ones_like(real_output))
+    fake_loss = bce(fake_output, tf.ones_like(fake_output))
+    return real_loss - fake_loss
+
+def generator_loss_fn(fake_output):
+    return bce(fake_output, -tf.ones_like(fake_output))
+```
+
 
 
 ## 知识点补充
@@ -24,14 +75,7 @@ WGAN在具体实现上做了哪些改动呢？
 
 ![Algorithm for the Wasserstein Generative Adversarial Networks](https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2019/05/Algorithm-for-the-Wasserstein-Generative-Adversarial-Networks-1.png)
 
-The differences in implementation for the WGAN are as follows:
 
-1. No log in the loss. Use a linear activation function in the output layer of the D (instead of sigmoid).
-2. Use -1 labels for real images and 1 labels for fake images (instead of 1 and 0).
-3. Use Wasserstein loss to train the critic and generator models.
-4. Clip the weights of D to a limited range after each mini batch update (e.g. [-0.01,0.01]).
-5. Train D more than G each iteration (e.g. 5).
-6. Use the RMSProp version of gradient descent with a small learning rate and no momentum (e.g. 0.00005).
 
 
 
@@ -58,46 +102,11 @@ $$
 
 
 
-## code
-
-$$
-L_D = E[D(x)] - E[D(G(z))]
-\\
-L_G = E[D(G(z))]
-\\
-W_D \leftarrow clip_by_value(W_D, -0.01, 0.01)
-$$
-
-$$
-
-$$
-
-$$
-
-$$
 
 
 
 
 
-
-
-[官方源码](https://github.com/martinarjovsky/WassersteinGAN)
-
-
-
-```python
-def discriminator_loss_fn(real_output, fake_output):
-    return tf.reduce_mean(fake_output) - tf.reduce_mean(real_output)
-
-def generator_loss_fn(fake_output):
-    return -tf.reduce_mean(fake_output)
-```
-
-
--1 for real output
-
-1 for fake output
 
 
 

@@ -200,4 +200,4 @@ seed = tf.random.normal([NUM_TO_GENERATE ** 2, NOISE_DIM])
 
 train(train_dataset, EPOCHS)
 
-generator.save(OUTPUT_PATH / '/model_DCGAN.h5')
+generator.save(OUTPUT_PATH / 'model_DCGAN.h5')

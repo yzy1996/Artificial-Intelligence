@@ -1,19 +1,16 @@
 # LSGAN
 
-[`Least Squares Generative Adversarial Networks`]
-[`ICCV`] [`2017`]
+[Least Squares Generative Adversarial Networks](https://arxiv.org/abs/1611.04076)
+
+Xudong Mao, Qing Li, Haoran Xie, Raymond Y.K. Lau, Zhen Wang, Stephen Paul Smolley **`[ICCV 2017]`**
 
 
 
-$$
-L_D = E[(D(x) - 1)^2] + E[D(G(z))^2]
-$$
-
-$$
-L_G = E[(D(G(z)) - 1)^2]
-$$
 
 
+**Loss function**
+
+![mylatex20201106_203527](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201106203618.png)
 
 **Loss function code**
 
@@ -30,11 +27,3 @@ def generator_loss_fn(fake_output):
 ```
 
 
-
-## code
-
-
-
-0 for fake output
-
-1 for real output 

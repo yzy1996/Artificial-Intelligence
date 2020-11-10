@@ -216,4 +216,4 @@ for epoch in range(EPOCHS):
 
     print(f'Time: {time.time() - start}')
 
-torch.save(generator, OUTPUT_PATH / 'model_DCGAN.pkl')
+torch.save(generator, OUTPUT_PATH / 'Mnist_DCGAN.pkl')

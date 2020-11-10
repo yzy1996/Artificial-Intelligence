@@ -23,6 +23,9 @@ requires_grad=True/False
 
 # 操作名称
 grad_fn = <AddBackward0> / <MulBackward0> / <MeanBackward0> / <SumBackward0>
+
+# 是否为叶子节点
+is_leaf=True/False
 ```
 
 计算导数使用

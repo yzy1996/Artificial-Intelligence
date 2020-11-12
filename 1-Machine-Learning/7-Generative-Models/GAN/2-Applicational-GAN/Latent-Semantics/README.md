@@ -1,10 +1,59 @@
-One sentence to summary: the latent space of GANs have semantically meaningful directions.
+interpretable control directions
+
+
+
+意义：
+
+1. browse through the concepts that the GAN has learned
+2. training a general model requires enormous computational resources, so interpret and extend the capabilities of existing GANs
+
+对象：existing GANs
+
+
+
+
+
+**One sentence to summary**: the latent space of GANs have semantically meaningful directions.
 
 Which results moving in these directions corresponds to human-interpretable image transformations.
 
-Examples: rotation, zooming or recoloring, 
+**Examples**: rotation, zooming or recoloring, 
 
 exploitation of these directions would make image editing more straightforward
+
+
+
+### Semantic image editing
+
+> task is to transform a source image to a target image while modifying desired semantic attributes.
+
+> for artistic visualization, design, photo enhancement
+
+two primary goals
+
+> providing continuous manipulation of multiple attributes simultaneously
+>
+> maintaining the original image’s identity as much as possible while ensuring photo-realism
+
+
+
+Existing GAN-based approaches can be categorized roughly into two groups:
+
+1) image-space editing
+
+> These approaches often have high computational cost, and they primarily focus on binary attribute (on/off) changes, rather than providing continuous attribute editing abilities
+
+2) latent-space editing
+
+> lower-dimensional space
+>
+> 
+
+
+
+
+
+
 
 
 
@@ -25,6 +74,12 @@ Methods:
 - unsupervised ()
 
   {Unsupervised Discovery of Interpretable Directions in the GAN Latent Space}
+  
+  {Ganspace: Discovering interpretable gan controls}
+
+
+
+
 
 >前两者can only discover researchers expectation directions. 需要想象力
 >

@@ -223,6 +223,33 @@ Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Net
 
 
 
+## BigGAN
+
+[Large Scale GAN Training for High Fidelity Natural Image Synthesis](https://arxiv.org/abs/1809.11096)
+
+**`[ICLR 2019]`**  **`(DeepMind)`**
+
+<details><summary>Click to expand</summary><p>
+
+
+**Main method**
+
+the intermediate layers take the latent vector as input:
+$$
+\mathbf{y}_{i}=G_{i}\left(\mathbf{y}_{i-1}, \mathbf{z}\right)
+$$
+which is called Skip-z inputs
+
+
+
+Skip-z inputs
+
+</p></details>
+
+
+
+
+
 
 
 ---

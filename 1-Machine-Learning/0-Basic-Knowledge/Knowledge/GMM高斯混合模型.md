@@ -1,5 +1,7 @@
 # GMM高斯混合模型
 
+> Gaussian Mixed Model
+
 设有随机变量$X$，则混合高斯模型可以用下式表示：
 $$
 p(\boldsymbol{x})=\sum_{k=1}^{K} \pi_{k} \mathcal{N}\left(\boldsymbol{x} | \boldsymbol{\mu}_{k}, \boldsymbol{\Sigma}_{k}\right)

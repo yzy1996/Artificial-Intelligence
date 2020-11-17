@@ -1,8 +1,8 @@
 # State-Of-The-Art
 
-2019-Large scale GAN training for high fidelity natural image synthesis
 
-2019-A style-based generator architecture for generative adversarial networks
+
+
 
 
 

@@ -8,11 +8,29 @@
 
 - the structure of latent spaces
 
-  1.existence:
+  semantic meaningful directions
+
+  1.existence: exist such directions
 
   2.domainagnostic transformations (zooming or translation) & domain-specific transformations (adding smile or glasses)
 
 - disentangled latent spaces
+
+
+
+> On the”steerability” of generative adversarial networks
+>
+> Controlling generative models with continuos factors of variations
+>
+> Ganalyze: Toward visual definitions of cognitive image properties
+>
+> Interpreting the latent space of gans for semantic face editing
+
+
+
+
+
+
 
 
 

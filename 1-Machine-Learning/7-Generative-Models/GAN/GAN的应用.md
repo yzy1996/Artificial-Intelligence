@@ -1,5 +1,21 @@
 # GAN的应用
 
+
+
+## state-of-the-art
+
+**`[BigGAN]`** [Large scale GAN training for high fidelity natural image synthesis](https://arxiv.org/abs/1809.11096) **`[ICLR 2019]`** **`(Brock et al.)`**
+
+**`[StyleGAN]`** [A style-based generator architecture for generative adversarial networks](https://arxiv.org/abs/1812.04948) **`[CVPR 2019]`** **`(Karras et al.)`**
+
+**`[StyleGAN2]`** [Analyzing and Improving the Image Quality of StyleGAN](https://arxiv.org/abs/1912.04958) **`[CVPR2020]`** **`(Karras et al.)`**
+
+> able to generate good-looking high-resolution images (even can not be distinguished from real ones)
+
+
+
+
+
 In 2017, GAN produced 1024 × 1024 images that can fool a talent scout.
 
 

@@ -283,7 +283,7 @@ do not provide input layer with a latent code $z$, start from a learned constant
 
 ## StyleGAN2
 
-[Analyzing and Improving the Image Quality of StyleGAN]()
+[Analyzing and Improving the Image Quality of StyleGAN](https://arxiv.org/abs/1912.04958)
 
 **`(2020)`**	**`[CVPR]`**	**`(NVIDIA)`**	**`[Tero Karras, Samuli Laine]`**	**[[:memo:]()]**	**[[:octocat:](https://github.com/NVlabs/stylegan2)]**
 

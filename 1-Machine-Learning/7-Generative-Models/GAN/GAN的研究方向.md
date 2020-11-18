@@ -4,6 +4,30 @@
 
 
 
+## model interpretability
+
+
+
+### Interpretable directions in the latent space
+
+
+
+### Disentanglement learning
+
+InfoGAN 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## GANs interpretability
 
 - the structure of latent spaces
@@ -12,7 +36,7 @@
 
   1.existence: exist such directions
 
-  2.domainagnostic transformations (zooming or translation) & domain-specific transformations (adding smile or glasses)
+  2.domain agnostic transformations (zooming or translation) & domain-specific transformations (adding smile or glasses)
 
 - disentangled latent spaces
 

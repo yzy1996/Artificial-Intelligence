@@ -2,12 +2,22 @@ interpretable control directions
 
 
 
-意义：
+## 存在性
+
+2015 Radford et al. find GAN latent space processes semantically meaningful vector space arithmetic
+
+
+
+
+
+## 意义：
 
 1. browse through the concepts that the GAN has learned
 2. training a general model requires enormous computational resources, so interpret and extend the capabilities of existing GANs
 
 对象：existing GANs
+
+
 
 
 
@@ -55,23 +65,21 @@ Existing GAN-based approaches can be categorized roughly into two groups:
 
 
 
+## 主要方法
 
-
-Methods:
-
-- supervised (require human labels, pre-trained models)
+- [Supervised]() (require human labels, pre-trained models)
 
   {Interpreting the latent space of gans for semantic face editing}
 
   {Ganalyze: Toward visual definitions of cognitive image properties}
 
-- self-supervised (image augmentations) - [simple transformations]
+- [Self-supervised]() (image augmentations) - [simple transformations]
 
   {On the”steerability” of generative adversarial networks}
 
   {Controlling generative models with continuos factors of variations}
 
-- unsupervised ()
+- [Unsupervised]() ()
 
   {Unsupervised Discovery of Interpretable Directions in the GAN Latent Space}
   
@@ -101,11 +109,47 @@ The key of interpreting the latent space of GANs is to find the meaningful subsp
 
 
 
-## supervised learning based approaches
+### Supervised Learning
+
+> domain-specific transformations (adding smile or glasses)
 
 randomly sample a large amount of latent codes, then synthesize corresponding images and annotate them with labels, and finally use these labeled samples to learn a separation boundary in the latent space.
 
 存在的问题：需要预定义的语义，需要大量采样
+
+
+
+> Shen et al. Interpreting the latent space of gans for semantic face editing
+
+> Karras et al. A style-based generator architecture for generative adversarial networks
+
+Use the classifiers pretrained on the CelebA dataset to predict certain face attributes
+
+Add labels to latent space and separate a hyperplane. A normal to this hyperplane becomes a direction that captures the corresponding attribute.
+
+
+
+> Controlling generative models with continues factors of variations
+
+solve the optimization problem in the latent space that maximizes the score of the pretrained model, predicting image memorability
+
+
+
+**weakness**: need human labels or pretrained models, expensive to obtain
+
+
+
+### Self-supervised Learning
+
+> domain agnostic transformations (zooming or translation)
+
+
+
+> Jahanian et al. On the”steerability” of generative adversarial networks
+>
+> Plumerault et al. Controlling generative models with continuos factors of variations
+
+simple image augmentations such as zooming or translation 
 
 
 

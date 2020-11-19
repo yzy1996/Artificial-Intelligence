@@ -58,9 +58,7 @@ main contribution: solves the optimization problem in the latent space that maxi
 <details><summary>Click to expand</summary><p>
 
 
-<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119220419.png" alt="image-20201119220418801" style="zoom:50%;" />
-
-
+<div align=center><img width="300" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119220419.png"/></div>
 
 **Assumption**
 

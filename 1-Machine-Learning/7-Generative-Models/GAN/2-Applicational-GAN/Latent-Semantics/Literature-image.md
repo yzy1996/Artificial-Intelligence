@@ -106,7 +106,7 @@ $T$: moves the input $\mathbf{z}$ along a certain direction $\theta$
 
 **A**: use a CNN of [MemNet]() to assesses an image property of memorability
 
-**T**: moves the input z along a certain direction **θ**
+**T**: moves the input **z** along a certain direction **θ**
 
 : learn to increase (or decrease) the memorability with a certain amount **α**
 

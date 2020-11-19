@@ -1,4 +1,4 @@
-# GAN的研究方向
+# Research Direction of GAN
 
 
 
@@ -14,7 +14,15 @@
 
 ### Disentanglement learning
 
-InfoGAN 
+[InfoGAN]()  enforces the generated images to preserve information about the latent code coordinates by maximizing the corresponding mutual information.
+
+[$\beta$-VAE]()  put more emphasis on the $KL$-term in the standard VAE's ELBO objective.
+
+
+
+[2019-Oogan](Disentangling gan with one-hot sampling and orthogonal regularization)  forces the code vector $c$ to be one-hot, simplifying the task for a GAN discriminators' head to predict the code.
+
+[2020-VAE-GAN](High-fidelity synthesis with disentangled representation)  combine VAE and GAN to achieve a disentanglement images representation by the VAE and then pass the discovered code to the GAN model.
 
 
 

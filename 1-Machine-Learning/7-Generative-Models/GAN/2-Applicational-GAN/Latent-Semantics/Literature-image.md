@@ -1,6 +1,6 @@
-[InterFaceGAN](# InterFaceGAN)
+[InterFaceGAN](#InterFaceGAN)
 
-[GANalyze](# GANalyze)
+[GANalyze](#GANalyze)
 
 
 

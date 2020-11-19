@@ -177,12 +177,13 @@ solve the optimization problem in the latent space that maximizes the score of t
 
 
 
-> Ganalyze: Toward visual definitions of cognitive image properties
+> - [x] Ganalyze: Toward visual definitions of cognitive image properties
+>
 >
 > - improves the memorability of the output image
-> 
+>
 > Semantic hierarchy emerges in deep generative representations for scene synthesis
-> 
+>
 > - explores the hierarchical semantics in the deep generative representations for scene synthesis
 
 ### Self-supervised Learning

@@ -116,9 +116,7 @@ $T$: moves the input $\mathbf{z}$ along a certain direction $\theta$
 
 **T**: moves the input **z** along a certain direction **θ**
 
-: learn to increase (or decrease) the memorability with a certain amount **α**
-
-
+learn to increase (or decrease) the memorability with a certain amount **α**
 
 
 

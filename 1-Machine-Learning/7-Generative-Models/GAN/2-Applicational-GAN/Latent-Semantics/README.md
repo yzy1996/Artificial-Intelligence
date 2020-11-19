@@ -6,7 +6,39 @@ interpretable control directions
 
 2015 Radford et al. find GAN latent space processes semantically meaningful vector space arithmetic
 
+Some work has observed the vector arithmetic property 
 
+[Unsupervised representation learning with deep convolutional generative adversarial networks]()
+
+[Deep feature interpolation for image content changes]()
+
+
+
+Latent space of GANs is generally treated as Riemannian manifold
+
+[2018 Metrics for deep generative models]() 
+
+[Latent space oddity: on the curvature of deep generative models]()
+
+[Latent space non-linear statistics]()
+
+
+
+Prior work focused on exploring how to make the output image vary smoothly from one synthesis to another through interpolation in the latent space, regardless of whether the image is semantically controllable
+
+[Feature-based metrics for exploring the latent space of generative models]()
+
+[The riemannian geometry of deep generative models]()
+
+
+
+[Optimizing the latent space of generative networks]()
+
+
+
+## What we do
+
+the study on how a well-trained GAN is able to encode different semantics inside the latent space is still missing.
 
 
 
@@ -19,7 +51,13 @@ interpretable control directions
 
 
 
+orthogonal image transformation
 
+
+
+easy to distinguish and do not affect other attributes 
+
+find more directions that do not interfere 
 
 
 
@@ -139,6 +177,14 @@ solve the optimization problem in the latent space that maximizes the score of t
 
 
 
+> Ganalyze: Toward visual definitions of cognitive image properties
+>
+> - improves the memorability of the output image
+> 
+> Semantic hierarchy emerges in deep generative representations for scene synthesis
+> 
+> - explores the hierarchical semantics in the deep generative representations for scene synthesis
+
 ### Self-supervised Learning
 
 > domain agnostic transformations (zooming or translation)
@@ -147,9 +193,28 @@ solve the optimization problem in the latent space that maximizes the score of t
 
 > Jahanian et al. On the”steerability” of generative adversarial networks
 >
+> - studies the steerability of GANs concerning camera motion and image color tone.
+>
 > Plumerault et al. Controlling generative models with continuos factors of variations
 
 simple image augmentations such as zooming or translation 
 
 
+
+
+
+
+
+# learning-based methods
+
+conditional GAN 
+
+
+
+current methods required 
+
+- carefully designed loss functions
+
+- introduction of additional attribute labels or features
+- special architectures to train new models
 

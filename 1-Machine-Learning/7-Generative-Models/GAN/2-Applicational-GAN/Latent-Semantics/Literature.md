@@ -83,7 +83,7 @@ $T$: moves the input $\mathbf{z}$ along a certain direction $\theta$
 
 </p></details>
 
-
+---
 
 ## GANalyze
 

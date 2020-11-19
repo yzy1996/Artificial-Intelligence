@@ -98,15 +98,11 @@ $T$: moves the input $\mathbf{z}$ along a certain direction $\theta$
 
 **Formulation**
 
-![mylatex20201119_212932](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119212949.svg)
-
-![mylatex20201119_212957](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119213010.svg)
-
-![CodeCogsEqn](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214048.svg)
-
 ![mylatex20201119_214151](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214216.svg)
 
-![CodeCogsEqn (1)](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214226.svg)
+![mylatex20201119_214351](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214436.svg)
+
+
 
 G: use the Generator of [BigGAN]() which is pretrained on ImageNet
 

@@ -36,6 +36,10 @@ Prior work focused on exploring how to make the output image vary smoothly from 
 
 
 
+**when linearly interpolating two latent codes z1 and z2, the appearance of the corresponding synthesis changes continuously, It implicitly means that the semantics contained in the image also change gradually**
+
+> Unsupervised representation learning with deep convolutional generative adversarial networks
+
 ## What we do
 
 the study on how a well-trained GAN is able to encode different semantics inside the latent space is still missing.

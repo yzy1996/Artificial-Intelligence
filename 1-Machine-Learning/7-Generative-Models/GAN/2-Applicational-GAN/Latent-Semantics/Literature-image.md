@@ -102,6 +102,8 @@ $T$: moves the input $\mathbf{z}$ along a certain direction $\theta$
 
 ![mylatex20201119_214351](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214436.svg)
 
+<div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214216.svg"/></div>
+
 G: use the Generator of [BigGAN]() which is pretrained on ImageNet
 
 A: use a CNN of [MemNet]() to assesses an image property of memorability

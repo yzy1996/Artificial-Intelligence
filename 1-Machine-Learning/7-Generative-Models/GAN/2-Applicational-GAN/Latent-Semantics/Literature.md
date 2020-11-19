@@ -66,20 +66,26 @@ For any binary semantic (e.g., male v.s. female), there exists a **hyperplane** 
 
 **Formulation**
 $$
-\operatorname{argmin}_{\theta} \mathcal{L}(\theta)=\mathbb{E}_{\mathbf{z}, \mathbf{y}, \alpha}\left[\left(A\left(G\left(T_{\theta}(\mathbf{z}, \alpha), \mathbf{y}\right)\right)-(A(G(\mathbf{z}, \mathbf{y}))+\alpha)\right)^{2}\right]
+\mathrm{d}(\mathbf{n}, \mathbf{z})=\mathbf{n}^{T} \mathbf{z}
 $$
 
 $$
-T_{\theta}(\mathbf{z}, \alpha)=\mathbf{z}+\alpha \theta
+f(g(\mathbf{z}))=\lambda \mathrm{d}(\mathbf{n}, \mathbf{z})
 $$
 
-$G$: use the Generator of [BigGAN]() which is pretrained on ImageNet
+$G$: use the Generator of [PGGAN]() and [StyleGAN]() which are pretrained on [CelebA-HQ]()
 
-$A$: use a CNN of [MemNet]() to assesses an image property of memorability
 
-$T$: moves the input $\mathbf{z}$ along a certain direction $\theta$ 
 
-: learn to increase (or decrease) the memorability with a certain amount $\alpha$
+latent code z -> image x -> label
+
+latent code z -> label
+
+They train five independent linear SVMs on pose, smile, age, gender, eyeglasses, and then evaluate them
+
+
+
+find n and edit the latent code z with $z_{edit} = z + \alpha n$
 
 
 

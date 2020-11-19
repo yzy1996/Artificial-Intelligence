@@ -104,6 +104,10 @@ $T$: moves the input $\mathbf{z}$ along a certain direction $\theta$
 
 ![CodeCogsEqn](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214048.svg)
 
+![mylatex20201119_214151](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214216.svg)
+
+![CodeCogsEqn (1)](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214226.svg)
+
 G: use the Generator of [BigGAN]() which is pretrained on ImageNet
 
 A: use a CNN of [MemNet]() to assesses an image property of memorability

@@ -102,13 +102,13 @@ $T$: moves the input $\mathbf{z}$ along a certain direction $\theta$
 
 <div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214436.svg"/></div>
 
-G: use the Generator of [BigGAN]() which is pretrained on ImageNet
+**G**: use the Generator of [BigGAN]() which is pretrained on ImageNet
 
-A: use a CNN of [MemNet]() to assesses an image property of memorability
+**A**: use a CNN of [MemNet]() to assesses an image property of memorability
 
-T: moves the input $\mathbf{z}$ along a certain direction $\theta$ 
+**T**: moves the input z along a certain direction **θ**
 
-: learn to increase (or decrease) the memorability with a certain amount $\alpha$
+: learn to increase (or decrease) the memorability with a certain amount **α**
 
 
 

@@ -58,7 +58,13 @@ main contribution: solves the optimization problem in the latent space that maxi
 <details><summary>Click to expand</summary><p>
 
 
-![image-20201119164856956](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119164859.png)
+<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119220419.png" alt="image-20201119220418801" style="zoom:50%;" />
+
+
+
+**Assumption**
+
+For any binary semantic (e.g., male v.s. female), there exists a **hyperplane** in the latent space serving as the **separation boundary**. Semantic remains the same when the latent code walks within the same side of the hyperplane yet turns into the opposite when across the boundary.
 
 **Formulation**
 $$
@@ -111,9 +117,7 @@ $A$: use a CNN of [MemNet]() to assesses an image property of memorability
 
 $T$: moves the input $\mathbf{z}$ along a certain direction $\theta$ 
 
-: learn to increase (or decrease) the memorability with a certain amount $\alpha$
-
-
+learn to increase (or decrease) the memorability with a certain amount $\alpha$
 
 
 

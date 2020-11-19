@@ -47,11 +47,77 @@ main contribution: solves the optimization problem in the latent space that maxi
 
 </p></details>
 
----
-
-
-
 
 
 ## InterFaceGAN
+
+[Interpreting the Latent Space of GANs for Semantic Face Editing](https://arxiv.org/abs/1907.10786)
+
+**`[CVPR 2020]`**	**`(CUHK)`**	**`[Yujun Shen, Bolei Zhou]`**	**([:memo:]())**	**[[:octocat:](https://github.com/genforce/interfacegan)]**
+
+<details><summary>Click to expand</summary><p>
+
+
+![image-20201119164856956](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119164859.png)
+
+**Formulation**
+$$
+\operatorname{argmin}_{\theta} \mathcal{L}(\theta)=\mathbb{E}_{\mathbf{z}, \mathbf{y}, \alpha}\left[\left(A\left(G\left(T_{\theta}(\mathbf{z}, \alpha), \mathbf{y}\right)\right)-(A(G(\mathbf{z}, \mathbf{y}))+\alpha)\right)^{2}\right]
+$$
+
+$$
+T_{\theta}(\mathbf{z}, \alpha)=\mathbf{z}+\alpha \theta
+$$
+
+$G$: use the Generator of [BigGAN]() which is pretrained on ImageNet
+
+$A$: use a CNN of [MemNet]() to assesses an image property of memorability
+
+$T$: moves the input $\mathbf{z}$ along a certain direction $\theta$ 
+
+: learn to increase (or decrease) the memorability with a certain amount $\alpha$
+
+
+
+
+
+</p></details>
+
+
+
+## GANalyze
+
+[GANalyze: Toward visual definitions of cognitive image properties](https://arxiv.org/abs/1906.10112)
+
+**`[CVPR 2019]`**	**`(MIT)`**	**`[Lore Goetschalckx, Alex Andonian]`**	**([:memo:]())**	**[[:octocat:](https://github.com/LoreGoetschalckx/GANalyze)]**
+
+<details><summary>Click to expand</summary><p>
+
+
+![image-20201119164856956](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119164859.png)
+
+**Formulation**
+$$
+\operatorname{argmin}_{\theta} \mathcal{L}(\theta)=\mathbb{E}_{\mathbf{z}, \mathbf{y}, \alpha}\left[\left(A\left(G\left(T_{\theta}(\mathbf{z}, \alpha), \mathbf{y}\right)\right)-(A(G(\mathbf{z}, \mathbf{y}))+\alpha)\right)^{2}\right]
+$$
+
+$$
+T_{\theta}(\mathbf{z}, \alpha)=\mathbf{z}+\alpha \theta
+$$
+
+$G$: use the Generator of [BigGAN]() which is pretrained on ImageNet
+
+$A$: use a CNN of [MemNet]() to assesses an image property of memorability
+
+$T$: moves the input $\mathbf{z}$ along a certain direction $\theta$ 
+
+: learn to increase (or decrease) the memorability with a certain amount $\alpha$
+
+
+
+
+
+</p></details>
+
+---
 

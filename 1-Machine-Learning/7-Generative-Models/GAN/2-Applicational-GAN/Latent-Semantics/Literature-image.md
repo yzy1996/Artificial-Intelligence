@@ -98,11 +98,9 @@ $T$: moves the input $\mathbf{z}$ along a certain direction $\theta$
 
 **Formulation**
 
-![mylatex20201119_214151](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214216.svg)
-
-![mylatex20201119_214351](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214436.svg)
-
 <div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214216.svg"/></div>
+
+<div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214436.svg"/></div>
 
 G: use the Generator of [BigGAN]() which is pretrained on ImageNet
 

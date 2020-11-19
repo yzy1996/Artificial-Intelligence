@@ -1,3 +1,11 @@
+[InterFaceGAN](# InterFaceGAN)
+
+[GANalyze](# GANalyze)
+
+
+
+---
+
 **`Unsupervised Discovery of Interpretable Directions in the GAN Latent Space`**
 
 **`[ICML 2020]`** **[[:octocat:](https://github.com/anvoynov/GANLatentDiscovery)]** 

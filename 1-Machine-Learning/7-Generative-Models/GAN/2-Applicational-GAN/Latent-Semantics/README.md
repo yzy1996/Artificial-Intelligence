@@ -1,5 +1,13 @@
 interpretable control directions
 
+studying the semantics of the latent space of generative models
+
+
+
+the interpretability of the latent space of
+generative models by introducing a new method to find meaningful directions in the
+latent space of any GAN
+
 
 
 ## 存在性

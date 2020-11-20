@@ -31,7 +31,7 @@ Self-supervised learning
 
 ---
 
-
+# factors of variations
 
 [Controlling generative models with continuous factors of variations](https://arxiv.org/abs/2001.10238)
 
@@ -67,8 +67,6 @@ then estimate the direction encoding the factor of variation described by $\math
 > **Dataset**
 
 [dSprites]() and [ILSVRC]()
-
-
 
 > **GAN model**
 
@@ -107,7 +105,7 @@ $$
 
 $G$: use the Generator of [PGGAN]() and [StyleGAN]() which are pretrained on [CelebA-HQ]()
 
-> **Main**
+> **Framework**
 
 latent code z -> image x -> label
 
@@ -159,4 +157,6 @@ learn to increase (or decrease) the memorability with a certain amount $\alpha$
 ---
 
 <table><tr>背景色yellow</tr></table>
+
+
 

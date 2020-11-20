@@ -1,6 +1,18 @@
-**`Unsupervised Discovery of Interpretable Directions in the GAN Latent Space`**
 
-**`[ICML 2020]`** **[[:octocat:](https://github.com/anvoynov/GANLatentDiscovery)]** 
+
+[InterFaceGAN](#InterFaceGAN)
+
+[GANalyze](#GANalyze)
+
+[Factors of Variations](#Factors-of-Variations)
+
+[GAN_Steerability](#GAN_Steerability)
+
+---
+
+[Unsupervised Discovery of Interpretable Directions in the GAN Latent Space](https://arxiv.org/abs/2002.03754)
+
+**`[ICML 2020]`**	**`(Russia)`**	**`[Andrey Voynov, Artem Babenko]`**	**([:memo:]())**	**[[:octocat:](https://github.com/anvoynov/GANLatentDiscovery)]**
 
 <details><summary>Click to expand</summary><p>
 
@@ -9,7 +21,9 @@
 
 Features: **unsupervised, background removal**
 
-Method: via jointly learning **a set of directions** and a **model** to distinguish the corresponding image transformations
+> **Framework**
+
+via jointly learning **a set of directions** and a **model** to distinguish the corresponding image transformations
 
 
 
@@ -24,53 +38,6 @@ based on InfoGAN
 Self-supervised learning
 
 ![mylatex20201030_110850](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201030110908.svg)
-
-
-
-</p></details>
-
----
-
-# factors of variations
-
-[Controlling generative models with continuous factors of variations](https://arxiv.org/abs/2001.10238)
-
-**`[ICLR 2020]`**	**`(France)`**	**`[Antoine Plumerault, Hervé Le Borgne]`**	**([:memo:]())**	**[[:octocat:](https://github.com/AntoinePlumerault/Controlling-generative-models-with-continuous-factors-of-variations)]**
-
-<details><summary>Click to expand</summary><p>
-
-
->**Framework**
-
-for an original generation: $I = G(z_0)$
-
-want a transformation: $I \rightarrow \mathcal{T}_{t}(I)$ (e.g. $\mathcal{T}$ is a rotation, then $t$ is the angle)
-
-approximate $z_T$ by $G(z_T) \approx \mathcal{T}_{t}(I)$ -> [invert the generator]()
-
-then estimate the direction encoding the factor of variation described by $\mathcal{T}$ with the difference between $z_0$ and $z_T$ 
-
-**given $\mathcal{T}$ to get $z_T$** 
-
-> **Difficulty**
-
-- reconstruction error
-  $$
-  \hat{z}=\underset{z \in \mathcal{Z}}{\arg \min } \mathcal{L}(I, G(\boldsymbol{z}))
-  $$
-  choose the error of the MSE on images in the frequency domain
-
-- recursice estimation of the trajectory
-
-  decomposing the transformation
-
-> **Dataset**
-
-[dSprites]() and [ILSVRC]()
-
-> **GAN model**
-
-[BigGAN](): two vector input (a latent vector **z** and a one-hot vector **c** to generate conditional categories)
 
 
 
@@ -156,7 +123,66 @@ learn to increase (or decrease) the memorability with a certain amount $\alpha$
 
 ---
 
-<table><tr>背景色yellow</tr></table>
+## Factors of Variations
+
+[Controlling generative models with continuous factors of variations](https://arxiv.org/abs/2001.10238)
+
+**`[ICLR 2020]`**	**`(France)`**	**`[Antoine Plumerault, Hervé Le Borgne]`**	**([:memo:]())**	**[[:octocat:](https://github.com/AntoinePlumerault/Controlling-generative-models-with-continuous-factors-of-variations)]**
+
+<details><summary>Click to expand</summary><p>
 
 
+>**Framework**
+
+for an original generation: $I = G(z_0)$
+
+want a transformation: $I \rightarrow \mathcal{T}_{t}(I)$ (e.g. $\mathcal{T}$ is a rotation, then $t$ is the angle)
+
+approximate $z_T$ by $G(z_T) \approx \mathcal{T}_{t}(I)$ -> [invert the generator]()
+
+then estimate the direction encoding the factor of variation described by $\mathcal{T}$ with the difference between $z_0$ and $z_T$ 
+
+**given $\mathcal{T}$ to get $z_T$** 
+
+> **Difficulty**
+
+- reconstruction error
+  $$
+  \hat{z}=\underset{z \in \mathcal{Z}}{\arg \min } \mathcal{L}(I, G(\boldsymbol{z}))
+  $$
+  choose the error of the MSE on images in the frequency domain
+
+- recursice estimation of the trajectory
+
+  decomposing the transformation
+
+> **Dataset**
+
+[dSprites]() and [ILSVRC]()
+
+> **GAN model**
+
+[BigGAN](): two vector input (a latent vector **z** and a one-hot vector **c** to generate conditional categories)
+
+
+
+</p></details>
+
+---
+
+## GAN_Steerability
+
+[On the "steerability" of generative adversarial networks](https://arxiv.org/abs/1907.07171)
+
+**`[ICLR 2020]`**	**`(MIT)`**	**`[Ali Jahanian, Lucy Chai, Phillip Isola]`**	**([:memo:]())**	**[[:octocat:](https://ali-design.github.io/gan_steerability/)]**
+
+<details><summary>Click to expand</summary><p>
+
+
+
+
+
+</p></details>
+
+---
 

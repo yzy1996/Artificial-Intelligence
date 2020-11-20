@@ -158,5 +158,5 @@ learn to increase (or decrease) the memorability with a certain amount $\alpha$
 
 ---
 
-<table><tr><td bgcolor=yellow>背景色yellow</td></tr></table>
+<table>背景色yellow</table>
 

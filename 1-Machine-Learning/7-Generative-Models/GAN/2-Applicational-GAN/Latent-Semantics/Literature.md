@@ -33,17 +33,37 @@ Self-supervised learning
 
 
 
+[Controlling generative models with continuous factors of variations](https://arxiv.org/abs/2001.10238)
+
+**`[ICLR 2020]`**	**`(France)`**	**`[Antoine Plumerault, Hervé Le Borgne]`**	**([:memo:]())**	**[[:octocat:](https://github.com/AntoinePlumerault/Controlling-generative-models-with-continuous-factors-of-variations)]**
 
 
-**`Controlling generative models with continuos factors of variations`**
-
-**`ICLR 2020`**
 
 <details><summary>Click to expand</summary><p>
 
 Features: 
 
 main contribution: solves the optimization problem in the latent space that maximizes the score of the pretrained model, predicting image memorability. Want to increase of memorability
+
+
+
+for an original generation: $G: z \in \mathcal{Z} \rightarrow \mathcal{I}$
+
+want a transformation: $\mathcal{T}_{t}: \mathcal{I} \rightarrow \mathcal{I}$ ($\mathcal{T}$ is a rotation, then $t$ is the angle)
+
+
+
+> Dataset
+
+[dSprites]() and [ILSVRC]()
+
+
+
+> GAN model
+
+[BigGAN](): two vector input (a latent vector **z** and a one-hot vector **c** to generate conditional categories)
+
+
 
 </p></details>
 

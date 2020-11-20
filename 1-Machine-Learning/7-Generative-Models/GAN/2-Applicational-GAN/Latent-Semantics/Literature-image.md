@@ -88,7 +88,7 @@ latent code z -> label
 
 then train five independent linear SVMs on pose, smile, age, gender, eyeglasses
 
-finally find **n** and edit the latent code z with 
+finally find **n** and edit the latent code z with ![mylatex20201120_102253](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201120102427.svg)
 
 
 

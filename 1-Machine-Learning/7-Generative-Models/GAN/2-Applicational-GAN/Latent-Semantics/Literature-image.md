@@ -74,11 +74,11 @@ For any binary semantic (e.g., male v.s. female), there exists a **hyperplane** 
 
 > Formulation
 
-![mylatex20201120_102021](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201120102049.svg)
+<div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201120102049.svg"/></div>
 
-![mylatex20201120_102029](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201120102111.svg)
+<div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201120102111.svg"/></div>
 
-$G$: use the Generator of [PGGAN]() and [StyleGAN]() which are pretrained on [CelebA-HQ]()
+**G**: use the Generator of [PGGAN]() and [StyleGAN]() which are pretrained on [CelebA-HQ]()
 
 > Main 
 
@@ -109,7 +109,7 @@ finally find **n** and edit the latent code z with ![mylatex20201120_102253](htt
 
 **Formulation**
 
-
+<div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214216.svg"/></div>
 
 <div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214436.svg"/></div>
 

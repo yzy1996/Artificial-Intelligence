@@ -66,26 +66,29 @@ main contribution: solves the optimization problem in the latent space that maxi
 <details><summary>Click to expand</summary><p>
 
 
-![image-20201119164856956](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119164859.png)
+<div align=center><img width="300" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119220419.png"/></div>
 
-**Formulation**
-$$
-\operatorname{argmin}_{\theta} \mathcal{L}(\theta)=\mathbb{E}_{\mathbf{z}, \mathbf{y}, \alpha}\left[\left(A\left(G\left(T_{\theta}(\mathbf{z}, \alpha), \mathbf{y}\right)\right)-(A(G(\mathbf{z}, \mathbf{y}))+\alpha)\right)^{2}\right]
-$$
+> Assumption
 
-$$
-T_{\theta}(\mathbf{z}, \alpha)=\mathbf{z}+\alpha \theta
-$$
+For any binary semantic (e.g., male v.s. female), there exists a **hyperplane** in the latent space serving as the **separation boundary**. Semantic remains the same when the latent code walks within the same side of the hyperplane yet turns into the opposite when across the boundary.
 
-$G$: use the Generator of [BigGAN]() which is pretrained on ImageNet
+> Formulation
 
-$A$: use a CNN of [MemNet]() to assesses an image property of memorability
+![mylatex20201120_102021](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201120102049.svg)
 
-$T$: moves the input $\mathbf{z}$ along a certain direction $\theta$ 
+![mylatex20201120_102029](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201120102111.svg)
 
-: learn to increase (or decrease) the memorability with a certain amount $\alpha$
+$G$: use the Generator of [PGGAN]() and [StyleGAN]() which are pretrained on [CelebA-HQ]()
 
+> Main 
 
+latent code z -> image x -> label
+
+latent code z -> label
+
+then train five independent linear SVMs on pose, smile, age, gender, eyeglasses
+
+finally find **n** and edit the latent code z with 
 
 
 
@@ -106,7 +109,7 @@ $T$: moves the input $\mathbf{z}$ along a certain direction $\theta$
 
 **Formulation**
 
-<div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214216.svg"/></div>
+
 
 <div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214436.svg"/></div>
 

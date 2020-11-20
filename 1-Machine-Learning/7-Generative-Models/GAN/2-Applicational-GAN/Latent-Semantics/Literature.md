@@ -60,11 +60,12 @@ main contribution: solves the optimization problem in the latent space that maxi
 
 <div align=center><img width="300" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119220419.png"/></div>
 
-**Assumption**
+> Assumption
 
 For any binary semantic (e.g., male v.s. female), there exists a **hyperplane** in the latent space serving as the **separation boundary**. Semantic remains the same when the latent code walks within the same side of the hyperplane yet turns into the opposite when across the boundary.
 
-**Formulation**
+> Formulation
+
 $$
 \mathrm{d}(\mathbf{n}, \mathbf{z})=\mathbf{n}^{T} \mathbf{z}
 $$
@@ -75,19 +76,15 @@ $$
 
 $G$: use the Generator of [PGGAN]() and [StyleGAN]() which are pretrained on [CelebA-HQ]()
 
-
+> Main 
 
 latent code z -> image x -> label
 
 latent code z -> label
 
-They train five independent linear SVMs on pose, smile, age, gender, eyeglasses, and then evaluate them
+then train five independent linear SVMs on pose, smile, age, gender, eyeglasses
 
-
-
-find n and edit the latent code z with $z_{edit} = z + \alpha n$
-
-
+finally find n and edit the latent code z with $z_{edit} = z + \alpha n$
 
 
 

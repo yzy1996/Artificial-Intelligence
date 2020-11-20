@@ -107,7 +107,7 @@ finally find **n** and edit the latent code z with ![mylatex20201120_102253](htt
 
 ![image-20201119164856956](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119164859.png)
 
-**Formulation**
+> Formulation
 
 <div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214216.svg"/></div>
 
@@ -118,6 +118,8 @@ finally find **n** and edit the latent code z with ![mylatex20201120_102253](htt
 **A**: use a CNN of [MemNet]() to assesses an image property of memorability
 
 **T**: moves the input **z** along a certain direction **θ**
+
+> Main
 
 learn to increase (or decrease) the memorability with a certain amount **α**
 

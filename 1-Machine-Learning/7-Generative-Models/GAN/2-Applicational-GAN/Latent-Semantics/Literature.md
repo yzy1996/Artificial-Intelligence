@@ -10,6 +10,8 @@
 
 ---
 
+## Unsupervised 
+
 [Unsupervised Discovery of Interpretable Directions in the GAN Latent Space](https://arxiv.org/abs/2002.03754)
 
 **`[ICML 2020]`**	**`(Russia)`**	**`[Andrey Voynov, Artem Babenko]`**	**([:memo:]())**	**[[:octocat:](https://github.com/anvoynov/GANLatentDiscovery)]**

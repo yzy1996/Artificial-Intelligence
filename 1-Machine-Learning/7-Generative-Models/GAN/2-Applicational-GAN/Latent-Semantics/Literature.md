@@ -1,5 +1,9 @@
 
 
+[GANSpace](#GANSpace)
+
+[Unsupervised](#Unsupervised) 
+
 [InterFaceGAN](#InterFaceGAN)
 
 [GANalyze](#GANalyze)
@@ -10,6 +14,45 @@
 
 ---
 
+## GANSpace
+
+[GANSpace: Discovering Interpretable GAN Controls](https://arxiv.org/abs/2004.02546)
+
+**`[NeurIPS 2020]`**	**`(Adobe&NVIDIA)`**	**`[Erik Härkönen, Aaron Hertzmann]`**	**([:memo:]())**	**[[:octocat:](https://github.com/harskish/ganspace)]**
+
+<details><summary>Click to expand</summary><p>
+
+
+<div align=center><img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201121154059.png"/></div>
+
+> **Keywords**
+
+PCA
+
+
+
+> **Goal**
+
+find useful directions in $z$ space
+
+
+
+> **Pipeline**
+
+sample $N$ random vector $z_{1:N}$, then compute the corresponding $w_i = M(z_i)$ value
+
+compute PCA of these $w_{1:N}$ values, with a bias $V$ for $W$
+
+given a new image defined by $w$, edit it by varying PCA coordinates $x$
+$$
+w^{\prime} = w + Vx
+$$
+
+
+</p></details>
+
+---
+
 ## Unsupervised 
 
 [Unsupervised Discovery of Interpretable Directions in the GAN Latent Space](https://arxiv.org/abs/2002.03754)
@@ -17,6 +60,7 @@
 **`[ICML 2020]`**	**`(Russia)`**	**`[Andrey Voynov, Artem Babenko]`**	**([:memo:]())**	**[[:octocat:](https://github.com/anvoynov/GANLatentDiscovery)]**
 
 <details><summary>Click to expand</summary><p>
+
 
 ![A9Rlu0i5j_139dt6w_ea4](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201101155344.png)
 
@@ -62,7 +106,7 @@ Self-supervised learning
 
 For any binary semantic (e.g., male v.s. female), there exists a **hyperplane** in the latent space serving as the **separation boundary**. Semantic remains the same when the latent code walks within the same side of the hyperplane yet turns into the opposite when across the boundary.
 
-> Formulation
+> **Formulation**
 
 $$
 \mathrm{d}(\mathbf{n}, \mathbf{z})=\mathbf{n}^{T} \mathbf{z}
@@ -154,7 +198,7 @@ then estimate the direction encoding the factor of variation described by $\math
   $$
   choose the error of the MSE on images in the frequency domain
 
-- recursice estimation of the trajectory
+- recursive estimation of the trajectory
 
   decomposing the transformation
 
@@ -180,6 +224,22 @@ then estimate the direction encoding the factor of variation described by $\math
 
 <details><summary>Click to expand</summary><p>
 
+
+<div align=center><img width="800" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201121120437.png"/></div>
+
+> **Formulation**
+
+$$
+w^{*}=\underset{w}{\arg \min } \mathbb{E}_{z, \alpha}[\mathcal{L}(G(z+\alpha w), \operatorname{edit}(G(z), \alpha))]
+$$
+
+objective $\mathcal{L}$ could be [$L2$ loss]() or [LPIPS perceptual image similarity metric]()
+
+
+
+> **Pipeline**
+
+GAN model: BigGAN and StyleGAN
 
 
 

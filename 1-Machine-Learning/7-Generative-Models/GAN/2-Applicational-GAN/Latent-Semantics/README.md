@@ -10,6 +10,16 @@ latent space of any GAN
 
 
 
+latent space navigation
+
+
+
+Semantic image editing
+
+
+
+controllable semantic image editing via latent space navigation in GANs.
+
 ## 存在性
 
 2015 Radford et al. find GAN latent space processes semantically meaningful vector space arithmetic
@@ -214,7 +224,9 @@ simple image augmentations such as zooming or translation
 
 
 
+### Unsupervised Learning
 
+are often less effective at providing semantic meaningful directions and all too often change image identity during an edit
 
 
 

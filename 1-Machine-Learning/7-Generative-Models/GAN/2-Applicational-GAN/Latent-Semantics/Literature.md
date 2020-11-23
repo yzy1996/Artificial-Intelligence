@@ -85,7 +85,7 @@ find useful directions in $z$ space
 
 sample $N$ random vector $z_{1:N}$, then compute the corresponding $w_i = M(z_i)$ value
 
-compute PCA of these $w_{1:N}$ values, with a bias $V$ for $W$
+compute PCA of these $w_{1:N}$ values, then get a basis $V$ for $W$
 
 given a new image defined by $w$, edit it by varying PCA coordinates $x$
 $$
@@ -294,3 +294,4 @@ GAN model: BigGAN and StyleGAN
 
 
 
+ 

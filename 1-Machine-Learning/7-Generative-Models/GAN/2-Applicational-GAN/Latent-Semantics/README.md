@@ -245,9 +245,11 @@ current methods required
 
 
 
+
+
 > Problem Statement
 
 a (<u>pretrained</u>) fixed GAN model consisting of a generator **G** and a discriminator **D**
 
-latent vector $\boldsymbol{z} \in \mathbb{R}^m$ from a known distribution $P(\boldsymbol{z})$, and sample $N$ random vectors $\mathbb{Z} = \{\boldsymbol{z}^{(1)}, \dots, \boldsymbol{z}^{N}\}$
+latent vector $\boldsymbol{z} \in \mathbb{R}^m$ from a known distribution $P(\boldsymbol{z})$, and sample $N$ random vectors $\mathbb{Z} = \{\boldsymbol{z}^{(1)}, \dots, \boldsymbol{z}^{(N)}\}$
 

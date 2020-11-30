@@ -26,9 +26,17 @@ combines neural scene representations with classical ray marching - a volume ren
 <details><summary>Click to expand</summary><p>
 
 
+**Field**
+
+view synthesis works
+
+
+
 **Noun explanation**
 
 reflectance: 
+
+light transmittance:
 
 
 
@@ -50,7 +58,9 @@ reflectance:
 >
 >    
 
+**Aims**
 
+> We aim to model geometry and appearance of complex real scenes from multi-view unstructured flash images
 
 Neural Reflectance Fields are a continuous function neural representation that **implicitly models both scene geometry and reflectance**.
 

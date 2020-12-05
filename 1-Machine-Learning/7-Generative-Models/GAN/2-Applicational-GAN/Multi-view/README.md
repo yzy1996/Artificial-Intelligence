@@ -20,6 +20,16 @@ Generate multi-view images from a single-view input
 
 
 
+**GAN pipeline in this problem**
+
+```mermaid
+graph LR
+    A(input image) --> B(Encoder) --> C(latent code) --> D(Decoder) --> E(output image)
+    
+```
+
+
+
 
 
 

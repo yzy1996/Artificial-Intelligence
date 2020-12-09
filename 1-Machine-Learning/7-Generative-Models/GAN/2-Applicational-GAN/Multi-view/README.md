@@ -25,6 +25,8 @@
 ```mermaid
 graph LR
     A(input image) --> B(Encoder) --> C(latent code) --> D(Decoder) --> E(output image)
+    F(Discriminator) --> B
+    F --> D
     
 ```
 
@@ -56,11 +58,11 @@ disentangle pose and identity factors by cross-reconstruction [^Peng et al., 201
 <details><summary>Click to expand</summary><p>
 
 
-<div align=center><img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201121154059.png" /></div>
+<div align=center><img width="800" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201209160238.png" /></div>
 
 > **Keywords**
 
-PCA
+Two-pathway
 
 
 
@@ -104,6 +106,9 @@ $\{D_s(\mathbb{x}), D_s(G(\mathbb{z}, v))\}$ 和 $\{D_v(\mathbb{x}), v\}$ 差距
 | $\tilde{\mathbb{x}}_{j} = G(E_\mathbb{z}(\mathbb{x}_{i}),v_j)$ |               fake image                |      |
 
 - 
+
+
+
 
 
 </p></details>

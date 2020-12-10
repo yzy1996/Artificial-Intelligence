@@ -66,9 +66,9 @@ Two-pathway
 
 
 
-> **Goal**
+> Novelty
 
-find useful directions in $z$ space
+maintain the completeness of the learned embedding space.
 
 
 
@@ -102,7 +102,7 @@ $\{D_s(\mathbb{x}), D_s(G(\mathbb{z}, v))\}$ 和 $\{D_v(\mathbb{x}), v\}$ 差距
 | :----------------------------------------------------------: | :-------------------------------------: | :--: |
 |                        $\mathbb{x}_i$                        | real image $\mathbb{x}$ with view $v_i$ |      |
 |                        $\mathbb{x}_j$                        | real image $\mathbb{x}$ with view $v_j$ |      |
-| $(\bar{\mathbb{z}}, \bar{\mathbb{v}}) = \left(E_\mathbb{z}(\mathbb{x}_i), E_v(\mathbb{x}_i)\right)$ |                                         |      |
+| $(\bar{\mathbb{z}}, \bar{\mathbb{v}}) = (E_{\mathbb{z}}(\mathbb{x}_i), E_v(\mathbb{x}_i))$ |                                         |      |
 | $\tilde{\mathbb{x}}_{j} = G(E_\mathbb{z}(\mathbb{x}_{i}),v_j)$ |               fake image                |      |
 
 - 

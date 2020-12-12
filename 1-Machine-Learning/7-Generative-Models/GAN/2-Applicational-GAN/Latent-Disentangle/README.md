@@ -8,6 +8,12 @@ Disentanglement can be defined as the ability to control a single factor, or fea
 
 
 
+supervised solutions are most effective [Aberman et al. 2019]
+
+but often impose infeasible data collection requirement
+
+
+
 
 
 

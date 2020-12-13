@@ -33,7 +33,6 @@ these all parameters are stored in a matrix $K^j$
 
 
 
-
 </p></details>
 
 ---

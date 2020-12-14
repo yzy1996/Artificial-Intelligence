@@ -4,6 +4,8 @@ Modeling a real scene from captured images and reproducing its appearance under 
 
 recover scene geometry and reflectance
 
+surface reconstruction
+
 > Related technology
 
 3D reconstruction & inverse rendering
@@ -16,6 +18,18 @@ combines neural scene representations with classical ray marching - a volume ren
 
 - implicit model
 - explicit model
+
+
+
+
+
+# Literature Contents
+
+[Neural Reflectance Fields](#Neural Reflectance Fields)
+
+[Analytic Meshing](#Analytic Meshing)
+
+
 
 ## Neural Reflectance Fields
 
@@ -75,3 +89,27 @@ represent by a deep multi-layer perceptron (MLP)
 
 https://whimsical.com/view-synthesis-2zfiLatcYU3nsNmAb2y74f
 
+
+
+
+
+## Analytic Meshing
+
+[Analytic Marching: An Analytic Meshing Solution from Deep Implicit Surface Networks](https://arxiv.org/abs/2002.06597)
+
+**`[PMLR 2020]`**	**`(SUST)`**	**`[Jiabao Lei, Kui Jia]`**	**([:memo:]())**	**[[:octocat:](https://github.com/NVlabs/stylegan)]**
+
+<details><summary>Click to expand</summary><p>
+
+
+**Summary**
+
+> This paper studies the problem of **surface reconstruction** through learning **surface mesh** via **implicit functions**, where implicit functions are implemented as multi-layer perceptrons (**MLPs**) with rectified linear units (**ReLU**).
+
+
+
+
+
+</p></details>
+
+---

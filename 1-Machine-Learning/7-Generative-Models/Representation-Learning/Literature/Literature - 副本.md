@@ -108,6 +108,17 @@ https://whimsical.com/view-synthesis-2zfiLatcYU3nsNmAb2y74f
 
 
 
+**Related work**
+
+- [ ] marching cubes (standard algorithm)
+- [ ] a ReLU based MLP partitions its input space into a number of linear regions
+- [ ] polygonal mesh 
+- [ ] signed distance function or SDF
+
+
+
+`isosurface extraction`: implicit representation -> explicit surface mesh
+
 
 
 </p></details>

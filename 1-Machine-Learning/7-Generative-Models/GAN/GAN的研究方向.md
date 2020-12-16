@@ -2,6 +2,10 @@
 
 
 
+GAN minimax optimization still poses great theoretical and empirical challenges.
+
+
+
 
 
 ## model interpretability

@@ -1,24 +1,22 @@
-# text to image synthesis
-
-main method: combine recurrent neural networks and generative adversarial networks
 
 
 
 
+[Training Generative Adversarial Networks with Limited Data](https://arxiv.org/abs/2006.06676)
+
+**`[NeurIPS 2020]`**	**`(NVIDIA)`**	**`[Tero Karras, Timo Aila]`**	**([:memo:]())**	**[[:octocat:](https://github.com/NVlabs/stylegan2-ada)]**
+
+<details><summary>Click to expand</summary><p>
 
 
+**Summary**
 
-> [Learning What and Where to Draw](https://arxiv.org/abs/1610.02454)
->
-> [Generative adversarial text-to-image synthesis](https://arxiv.org/abs/1605.05396)
->
-> [Parallel Multiscale Autoregressive Density Estimation](https://arxiv.org/abs/1703.03664)
->
-> [StackGAN: Text to Photo-realistic Image Synthesis with Stacked Generative Adversarial Networks](https://arxiv.org/abs/1612.03242)
-
-
-
+> Training generative adversarial networks (GAN) using too little data typically leads
+> to discriminator overfitting, causing training to diverge
 
 
 
 
+</p></details>
+
+---

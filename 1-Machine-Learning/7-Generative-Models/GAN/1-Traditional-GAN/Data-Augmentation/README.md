@@ -44,11 +44,31 @@ Will simultaneous regularization and normalization improve GANs performance?
 <details><summary>Click to expand</summary><p>
 
 
-**Summary**
+> **Summary**
 
-> They propose a training stabilizer based on **consistency regularization**. In particular, they **augment data** passing into the GAN discriminator and **penalize the sensitivity** of the discriminator to these augmentations.
->
-> **Consistency regularization** is widely used in semi-supervised learning to ensure that the classifier output remains unaffected for an unlabeled example even it is augmented in semantic-preserving ways.
+They propose a training stabilizer based on **consistency regularization**. In particular, they **augment data** passing into the GAN discriminator and **penalize the sensitivity** of the discriminator to these augmentations.
+
+**Consistency regularization** is widely used in semi-supervised learning to ensure that the classifier output remains unaffected for an unlabeled example even it is augmented in semantic-preserving ways.
+
+The pipeline is to first augment images with semantic-preserving augmentations before they are fed into the discriminator and penalize the sensitivity of the discriminator to these augmentations.
+
+> **Details**
+
+$T(x)$ donates a stochastic data augmentation function. $D(x)$ donates the last layer before the activation function. The proposed regularization is given by
+$$
+\min_{D} L_{c r} = \min_{D} \|D(x)-D(T(x))\|^{2}
+$$
+The overall consistency regularized GAN (CR-GAN) objective is written as
+$$
+L_{D}^{c r}=L_{D}+\lambda L_{c r}, \quad L_{G}^{c r}=L_{G}.
+$$
+
+> **Augmentation type**
+
+1 Gaussian Noise; 2 **Random shift & flip**; 3 Cutout; 4 Random shift & flip with cutout
+
+The experiment shows that No.2 performs best.
+
 
 
 </p></details>

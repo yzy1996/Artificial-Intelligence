@@ -1,7 +1,7 @@
 English | [简体中文](./README.zh-CN.md)
 
 
-#  Generative Adversarial Networks(GAN)
+#  Generative Adversarial Networks (GANs)
 
 
 ![country](https://img.shields.io/badge/country-China-red)
@@ -141,6 +141,33 @@ https://thispersondoesnotexist.com/
 
 
 
+
+
+A GAN consists of a generator $G$ and a discriminator $D$, both are conducted by a neural network. $G$ takes a latent variable $z \sim p(z)$ sampled from a prior distribution and maps it to the observation space $\mathcal{X}$. $D$ takes an observation $x \in \mathcal{X}$ and produces a decision output over possible observation sources (either from $G$ or from the empirical data distribution). 
+
+
+
+The generator and the discriminator in the standard GAN training procedure are trained by minimizing the following objectives:
+$$
+\begin{align}
+&L_{D}=-\mathbb{E}_{x \sim p_{\text {data }}}[\log D(x)]-\mathbb{E}_{z \sim p(z)}[1-\log D(G(z))], \\
+&L_{G}=-\mathbb{E}_{z \sim p(z)}[\log D(G(z))].
+\end{align}
+$$
+This formulation is originally proposed by Goodfellow et al. (2014) as non-saturating (NS) GAN. A significant amount of research has been done on modifying this formulation in order to improve the training process. A notable example is the **hinge-loss** version of the adversarial loss:
+$$
+\begin{align}
+&L_{D}=-\mathbb{E}_{x \sim p_{\text {data }}}[\min (0,-1+D(x))]-\mathbb{E}_{z \sim p(z)}[\min (0,-1-D(G(z)))], \\
+&L_{G}=-\mathbb{E}_{z \sim p(z)}[D(G(z))].
+\end{align}
+$$
+Another commonly adopted GAN formulation is the **Wassertein** GAN (WGAN), where the authors propose clipping the weights to enforce the continuous of Wassertein distance. The loss function of WGAN is:
+$$
+\begin{align}
+&L_{D}=-\mathbb{E}_{x \sim p_{\text {data }}}[D(x)]+\mathbb{E}_{z \sim p(z)}[D(G(z))], \\
+&L_{G}=-\mathbb{E}_{z \sim p(z)}[D(G(z))].
+\end{align}
+$$
 
 
 

@@ -1,17 +1,34 @@
+# Training Instability
+
+
+
+## Field Introduction
+
 To tackle the instability of the training procedure
 
-> Why it's a problem? GAN need to find a Nash equilibrium of a non-convex game in a continuous and high dimensional parameter space.
+> Why it's a problem? 
+
+GAN need to find a Nash equilibrium of a non-convex game in a continuous and high dimensional parameter space.
 
 
 
 These methods can be divided into two categories:
 
 - **Normalization**
+  
   - **Spectral normalization** (weight matrices in the discriminator are divided by an approximation of their largest singular value)
 - **Regularization**
   - **Wasserstein** (penalize the gradient norm of straight lines between real data and generated data)
+  
   - [^Roth 2017] (directly regularize the squared gradient norm for both the training data and the generated data.) 
+  
   - **[DRAGAN](#DRAGAN)** (penalize the gradients at Gaussian perturbations of training data) 
+  
+  - Consistency regularization ()
+  
+    > pros & cons: simple to implement, not particularly computationally burdensome, and relatively insensitive to hyper-parameters
+
+
 
 
 
@@ -23,14 +40,39 @@ Will simultaneous regularization and normalization improve GANs performance?
 
 
 
-
+## Bibliography
 
 [CR-GAN](#CR-GAN)
 
+[ICR-GAN](#ICR-GAN)
+
+---
+
+### ICR-GAN
+
+[Improved Consistency Regularization for GANs](https://arxiv.org/pdf/2002.04724.pdf)
+
+**`[AAAI 2020]`**	**`(Google)`**	**`[Zhengli Zhao, Han Zhang]`**	**([:memo:]())**	**[[:octocat:](https://github.com/google/compare_gan)]**
+
+<details><summary>Click to expand</summary><p>
 
 
+![image-20201219215131885](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201219215132.png)
 
+> **Summary**
 
+They improve [CR-GAN](#CR-GAN) in two ways (apply forms of consistency regularization to the generated images, the latent vector space, and the generator):
+
+- Balanced Consistency Regularization, in which generator samples are also augmented along with training data.
+- Latent Consistency Regularization, in which draws from the prior are perturbed, and the sensitivity to those perturbations is discouraged and encouraged for the discriminator and the generator, respectively.
+
+> **Details**
+
+balanced consistency regularization (bCR)
+
+</p></details>
+
+---
 
 
 
@@ -79,7 +121,7 @@ The experiment shows that No.2 performs best.
 
 
 
-z
+
 
 
 

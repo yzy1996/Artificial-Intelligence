@@ -1,5 +1,30 @@
 # Introduction
 
+> Problem
+
+Modeling a real scene from captured images and reproducing its appearance under novel conditions.
+
+recover scene geometry and reflectance
+
+surface reconstruction
+
+> Related technology
+
+3D reconstruction & inverse rendering
+
+> new break
+
+combines neural scene representations with classical ray marching - a volume rendering approach that is naturally differentiable
+
+
+
+- implicit model
+- explicit model
+
+
+
+
+
 The problem of learning discriminative 3D models from 2D images
 
 3D properties such as camera viewpoint or object pose
@@ -38,11 +63,20 @@ marching cubes
 
 [NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/pdf/2003.08934.pdf)
 
+**[`ECCV 2020`]**	**(`UCB, UCSD`)**	**[[Code-Tensorflow](https://github.com/bmild/nerf)]**	**[[Code-PyTorch](https://github.com/yenchenlin/nerf-pytorch)]**	**[[Code-PyTorch](https://github.com/krrish94/nerf-pytorch)]**	**([Page](https://www.matthewtancik.com/nerf))**
 
+**[`Ben Mildenhall`, `Pratul P. Srinivasan`, `Matthew Tancik`, `Jonathan T. Barron`, `Ravi Ramamoorthi`, `Ren Ng`]**
 
+<details><summary>Click to expand</summary>
+dddd
 
+dddddd
 
+dddd
 
+</details>
+
+---
 
 ### Meshlet
 
@@ -51,7 +85,6 @@ marching cubes
 **`[NeurIPS 2020]`**	**`(EPFL)`**	**`[Edoardo Remelli, Pascal Fua]`**	**[[Code](https://github.com/cvlab-epfl/MeshSDF)]**
 
 <details><summary>Click to expand</summary><p>
-
 
 
 </p></details>

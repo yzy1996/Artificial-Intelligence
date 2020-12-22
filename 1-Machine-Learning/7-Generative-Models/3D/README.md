@@ -49,11 +49,37 @@ SRN
 
 
 
+
+
+1. Neural scene representations
+
+   method including: volumes & point clouds & implicit functions & **neural reflectance field**
+
+   ray marching
+
+2. Geometry and reflectance capture
+
+   Classically, modeling and rerendering a real scene requires full reconstruction of its geometry and reflectance. From captured images, scene geometry is usually reconstructed by structure-from-motion and multi-view stereo.
+
+   Now a practical device - modern cellphone that has a camera and a built-in flash light – and capture flash images to acquire spatially varying **BRDFs**. Such a device only acquires reflectance samples under collocated light and view.
+
+3. Relighting and view synthesis
+
+
+
+
+
 ## Explanation
 
 marching cubes
 
+reflectance: 
 
+light transmittance:
+
+
+
+non-rigidly deforming:
 
 ## Literature
 
@@ -68,11 +94,21 @@ marching cubes
 **[`Ben Mildenhall`, `Pratul P. Srinivasan`, `Matthew Tancik`, `Jonathan T. Barron`, `Ravi Ramamoorthi`, `Ren Ng`]**
 
 <details><summary>Click to expand</summary>
-dddd
 
-dddddd
 
-dddd
+![image-20201204115352659](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201204115352.png)
+
+> **First You should know**
+
+The NeRF training procedure relies on the fact that given a 3D scene, two intersecting rays from two different cameras should yield the same color.
+
+> **Summary**
+
+Synthesize novel views of complex scenes from a sparse set of input views. Optimize an underlying continuous volumetric scene function. We aim to model geometry and appearance of complex real scenes from multi-view unstructured flash images. Neural Reflectance Fields are a continuous function neural representation that **implicitly models both scene geometry and reflectance**. represent by a deep multi-layer perceptron (MLP)
+
+> **Pipeline**
+
+Input a single continuous 5D coordinate - spatial location ($x, y, z$) and viewing direction ($\theta, \phi$)
 
 </details>
 

@@ -3,14 +3,23 @@ English | [简体中文](./README.zh-CN.md)
 
 #  Generative Adversarial Networks (GANs)
 
-
-![country](https://img.shields.io/badge/country-China-red)
-
 This is my  research summary on Generative Adversarial Networks and I sort them into:
 
 - Traditional GAN
 - Applicational GAN
 - Multi-Objective GAN
+
+
+
+Some review to help you know this field
+
+[Generative Adversarial Networks in Computer Vision: A Survey and Taxonomy]()
+
+[A Review on Generative Adversarial Networks: Algorithms, Theory, and Applications]()
+
+[Generative Adversarial Networks for Image and Video Synthesis: Algorithms and Applications]()
+
+[Generative adversarial network in medical imaging: A review]()
 
 
 

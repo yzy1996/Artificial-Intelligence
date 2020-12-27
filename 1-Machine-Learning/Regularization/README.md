@@ -35,6 +35,10 @@ f(x) = \text{clip}(\frac{x+1}{2}, 0, 1) = \max \left(0, \min \left(1, \frac{(x+1
 \end{cases}
 $$
 
+$$
+\min(1, \max(0, x))
+$$
+
 
 
 A normal L0 regularized empirical risk minimization procedure can be shown as:

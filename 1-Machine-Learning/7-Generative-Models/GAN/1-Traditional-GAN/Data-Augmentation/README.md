@@ -18,9 +18,10 @@ These methods can be divided into two categories:
   
   - **Spectral normalization** (weight matrices in the discriminator are divided by an approximation of their largest singular value)
 - **Regularization**
+  
   - **Wasserstein** (penalize the gradient norm of straight lines between real data and generated data)
   
-  -  [^Roth 2017] (directly regularize the squared gradient norm for both the training data and the generated data.) 
+  - [^Roth2017] (directly regularize the squared gradient norm for both the training data and the generated data.) 
   
   - **[DRAGAN](#DRAGAN)** (penalize the gradients at Gaussian perturbations of training data) 
   
@@ -81,7 +82,7 @@ balanced consistency regularization (bCR)
 
 [Consistency regularization for generative adversarial networks](https://arxiv.org/pdf/1910.12027.pdf)
 
-**`[ICLR 2020]`**	**`(Google)`**	**`[Han Zhang, Honglak Lee]`**	**([:memo:]())**	**[[:octocat:]()]**
+**`[ICLR 2020]`**	**`(Google)`**	**`[Han Zhang, Honglak Lee]`**	**([Code]())**
 
 <details><summary>Click to expand</summary><p>
 
@@ -117,14 +118,6 @@ The experiment shows that No.2 performs best.
 
 ---
 
-
-
-
-
-
-
-
-
 [A large-scale study on regularization and normalization in GANs](https://arxiv.org/pdf/1807.04720.pdf)
 
 **`[ICML 2019]`**	**`(Google)`**	**`[Karol Kurach, Sylvain Gelly]`**	**([:memo:]())**	**[[:octocat:](https://github.com/google/compare_gan)]**
@@ -139,8 +132,6 @@ The experiment shows that No.2 performs best.
 </p></details>
 
 ---
-
-
 
 ### DRAGAN
 
@@ -164,5 +155,5 @@ The experiment shows that No.2 performs best.
 
 
 
-[^Roth 2017]: Stabilizing training of generative adversarial networks through regularization
+[^Roth2017]: Stabilizing training of generative adversarial networks through regularization
 

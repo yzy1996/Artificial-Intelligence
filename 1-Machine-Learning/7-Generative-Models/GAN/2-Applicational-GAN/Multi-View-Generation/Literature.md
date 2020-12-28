@@ -11,96 +11,9 @@
 <details><summary>Click to expand</summary><p>
 
 
-<div align=center><img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201121154059.png" /></div>
-
-> **Keywords**
-
-PCA
-
-
-
-> **Goal**
-
-find useful directions in $z$ space
-
-
-
-> **Pipeline**
-
-sample $N$ random vector $z_{1:N}$, then compute the corresponding $w_i = M(z_i)$ value
-
-compute PCA of these $w_{1:N}$ values, then get a basis $V$ for $W$
-
-given a new image defined by $w$, edit it by varying PCA coordinates $x$
-$$
-w^{\prime} = w + Vx
-$$
-
-
 </p></details>
 
 ---
-
-
-
-
-
----
-
-**[`SRFlow: Learning the Super-Resolution Space with Normalizing Flow`]**
-
-**[`2020`]**  **[`ECCV`]**
-
-
-<details><summary>Click to expand</summary><p>
-**Research Problem:** 
-
-
-</p></details>
-
----
-
-
-
-
-
-
-
-**[`Domain-Adversarial Training of Neural Networks(DANN)`]**
-
-**[`2016`]** **[`JMLR`]** **[[:memo:](./Defense-GAN.pdf)]** **[[:octocat:](https://github.com/kabkabm/defensegan)]**
-
-<details><summary>Click to expand</summary><p>
-
-
-**The main work:**
-
-> To solve the problem of **Domain Adaptation**
->
-> 
->
-
-</p></details>
-
----
-
-
-
-**[`Multi-Task Adversarial Network for Disentangled Feature Learning`]**
-
-**[`2018`]** **[`CVPR`]** **[[:memo:](./EMOO-Driven-by-GAN.pdf)]** **[[:octocat:]()]** 
-
-
-
-Main idea:
-
-Using a GAN like architecture to disentangles different features
-
----
-
-
-
-
 
 
 
@@ -159,8 +72,6 @@ The approach is to train a DR-GAN **conditioned** on the original image $x$ and 
 
 
 Given a face image with label $y = \{y^d, y^p\}$, where $y^d$ represents the label for identity and $y^p$ for pose. The discriminator $D = [D^d, D^p]$.
-
-
 
 $\hat{x} = G(\mathbf{x}, c, z)$
 

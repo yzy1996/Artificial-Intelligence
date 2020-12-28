@@ -20,7 +20,7 @@ These methods can be divided into two categories:
 - **Regularization**
   - **Wasserstein** (penalize the gradient norm of straight lines between real data and generated data)
   
-  - [^Roth 2017] (directly regularize the squared gradient norm for both the training data and the generated data.) 
+  -  [^Roth 2017] (directly regularize the squared gradient norm for both the training data and the generated data.) 
   
   - **[DRAGAN](#DRAGAN)** (penalize the gradients at Gaussian perturbations of training data) 
   

@@ -1,159 +1,183 @@
-# Training Instability
+English | [简体中文](./README.zh-CN.md)
+
+
+#  Generative Adversarial Networks (GANs)
+
+This is my  research summary on Generative Adversarial Networks and I sort them into:
+
+- Traditional GAN
+- Applicational GAN
+- Multi-Objective GAN
 
 
 
-## Field Introduction
+Some review to help you know this field
 
-To tackle the instability of the training procedure
+[Generative Adversarial Networks in Computer Vision: A Survey and Taxonomy]()
 
-> Why it's a problem? 
+[A Review on Generative Adversarial Networks: Algorithms, Theory, and Applications]()
 
-GAN need to find a Nash equilibrium of a non-convex game in a continuous and high dimensional parameter space.
+[Generative Adversarial Networks for Image and Video Synthesis: Algorithms and Applications]()
 
-
-
-These methods can be divided into two categories:
-
-- **Normalization**
-  
-  - **Spectral normalization** (weight matrices in the discriminator are divided by an approximation of their largest singular value)
-- **Regularization**
-  
-  - **Wasserstein** (penalize the gradient norm of straight lines between real data and generated data)
-  
-  - [^Roth2017] (directly regularize the squared gradient norm for both the training data and the generated data.) 
-  
-  - **[DRAGAN](#DRAGAN)** (penalize the gradients at Gaussian perturbations of training data) 
-  
-  - Consistency regularization ()
-  
-    > pros & cons: simple to implement, not particularly computationally burdensome, and relatively insensitive to hyper-parameters
+[Generative adversarial network in medical imaging: A review]()
 
 
 
+**Introduction of GAN**
+
+> 
+
+If you want to know more about more details of the derivation or the difficult of GAN’s training, you can see the part of [Traditional GAN](#Traditional-GAN)
 
 
-Will simultaneous regularization and normalization improve GANs performance?
 
-> Won't. Both regularization and normalization are motivated by controlling Lipschitz constant of the discriminator
+**Why Are GANs So Popular?**
+
+GANs are popular partly because they tackle the important unsolved challenge of unsupervised learning.
+
+If intelligence was a cake, unsupervised learning would be the cake, supervised learning would be the icing on the cake, and reinforcement learning would be the cherry on the cake. We know how to make the icing and the cherry, but we don’t know how to make the cake. – Yann LeCun, 2016.
+
+
+
+**Why is there an “s” after GANs?**
+
+> It means GAN and its variants
+
+
+
+**Commonly used datasets**
+
+> Mnist, CelebA, LSUN, and ImageNet
+
+
+
+**Facing problem**
+
+> - mode collapse: diversity the generator can only learn some limited patterns from the large-scale target datasets, or assigns all of its probability mass to a small region in the space.
+> - vanishing gradient: 
+
+
+
+**Evaluation metrics of GAN**
+
+> paper: https://arxiv.org/pdf/1806.07755.pdf
 >
-> A large-scale study on regularization and normalization in GANs
+> code: https://github.com/xuqiantong/GAN-Metrics
+>
+> blog: https://zhuanlan.zhihu.com/p/99375611
 
 
 
-## Bibliography
+## [Traditional GAN](1-Traditional-GAN)
 
-[CR-GAN](#CR-GAN)
+The development of some famous GAN models including <u>Vanilla GAN</u>, <u>DCGAN</u>, <u>WGAN</u>
 
-[ICR-GAN](#ICR-GAN)
+## [Applicational GAN](2-Applicational-GAN)
 
----
+Some applications of GAN including the use of defense
 
-### ICR-GAN
+## [Multi-Objective GAN](3-Multi-Objective-GAN)
 
-[Improved Consistency Regularization for GANs](https://arxiv.org/pdf/2002.04724.pdf)
-
-**`[AAAI 2020]`**	**`(Google)`**	**`[Zhengli Zhao, Han Zhang]`**	**([:memo:]())**	**[[:octocat:](https://github.com/google/compare_gan)]**
-
-<details><summary>Click to expand</summary><p>
-
-
-![image-20201219215131885](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201219215132.png)
-
-> **Summary**
-
-They improve [CR-GAN](#CR-GAN) in two ways (apply forms of consistency regularization to the generated images, the latent vector space, and the generator):
-
-- Balanced Consistency Regularization, in which generator samples are also augmented along with training data.
-- Latent Consistency Regularization, in which draws from the prior are perturbed, and the sensitivity to those perturbations is discouraged and encouraged for the discriminator and the generator, respectively.
-
-> **Details**
-
-balanced consistency regularization (bCR)
-
-</p></details>
-
----
+Add multi-objective and evolutionary algorithm into GAN
 
 
 
 
-### CR-GAN
 
-[Consistency regularization for generative adversarial networks](https://arxiv.org/pdf/1910.12027.pdf)
-
-**`[ICLR 2020]`**	**`(Google)`**	**`[Han Zhang, Honglak Lee]`**	**([Code]())**
-
-<details><summary>Click to expand</summary><p>
+### objective functions of GANs
 
 
-> **Summary**
 
-They propose a training stabilizer based on **consistency regularization**. In particular, they **augment data** passing into the GAN discriminator and **penalize the sensitivity** of the discriminator to these augmentations.
-
-**Consistency regularization** is widely used in semi-supervised learning to ensure that the classifier output remains unaffected for an unlabeled example even it is augmented in semantic-preserving ways.
-
-The pipeline is to first augment images with semantic-preserving augmentations before they are fed into the discriminator and penalize the sensitivity of the discriminator to these augmentations.
-
-> **Details**
-
-$T(x)$ donates a stochastic data augmentation function. $D(x)$ donates the last layer before the activation function. The proposed regularization is given by
+**vanilla GAN**
 $$
-\min_{D} L_{c r} = \min_{D} \|D(x)-D(T(x))\|^{2}
-$$
-The overall consistency regularized GAN (CR-GAN) objective is written as
-$$
-L_{D}^{c r}=L_{D}+\lambda L_{c r}, \quad L_{G}^{c r}=L_{G}.
+\min _{G} \max _{D} V(D, G)=\mathbb{E}_{\boldsymbol{x} \sim p_{\mathrm{data}}(\boldsymbol{x})}[\log D(\boldsymbol{x})]+\mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[\log (1-D(G(\boldsymbol{z})))]
 $$
 
-> **Augmentation type**
+$$
+\min J^G = \mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[\log (1-D(G(\boldsymbol{z})))]
+$$
 
-1 Gaussian Noise; 2 **Random shift & flip**; 3 Cutout; 4 Random shift & flip with cutout
+where $J^G$ is the cost of for generator, $\log D(x)$ is the cross-entropy between $[D(x) \quad 1-D(x)]^T$ and $[1 \quad 0]^T$. Likewise,  $\log (1-D(G(z)))$ is the cross-entropy between $[1-D(G(z)) \quad D(G(z))]^T$ and $[1 \quad 0]^T$. It’s because that the cross-entropy 
 
-The experiment shows that No.2 performs best.
+For a fixed generator $G$, the optimal discriminator $D$ is:
+$$
+D^*(x)=\frac{p_{data}(x)}{p_{data}(x)+p_{g}(x)},
+$$
+For this optimal $D^*$, the optimal $G$ satisfies:
+$$
+p_g(x) =p_{data}(x).
+$$
 
-
-
-</p></details>
-
----
-
-[A large-scale study on regularization and normalization in GANs](https://arxiv.org/pdf/1807.04720.pdf)
-
-**`[ICML 2019]`**	**`(Google)`**	**`[Karol Kurach, Sylvain Gelly]`**	**([:memo:]())**	**[[:octocat:](https://github.com/google/compare_gan)]**
-
-<details><summary>Click to expand</summary><p>
-
-
-**Summary**
-
+> Problem: 
+>
+> The cross-entropy of $G$ can be expressed as follow:
+> $$
+> H^G = 1 * \log(1-D(G(z))) + 0*log(D(G(z))) = \log(1-D(G(z)))
+> $$
+> In early training progress, D can easily distinguish fake samples from real samples ($D(G(z)) \rightarrow 0$). This results in G not having sufficient gradient to improve, which is called **training instability**. Rather than training G in the way of Equation (2), another way of Equation (6) could provides larger gradients in early training.
+> $$
+> \min J^G = \mathbb{E}_{\boldsymbol{z} \sim p_{\boldsymbol{z}}(\boldsymbol{z})}[-\log (D(G(\boldsymbol{z})))]
+> $$
+> So a new cross-entropy of $G$ can be expressed as:
+> $$
+> H = 1 * \log(-D(G(z))) + 0*log(1 + D(G(z)))
+> $$
 > 
-
-</p></details>
-
----
-
-### DRAGAN
-
-[On Convergence and Stability of GANs](https://arxiv.org/pdf/1705.07215.pdf)
-
-**`[None 2017]`**	**`(Gatech)`**	**`[Naveen Kodali, James Hays]`**	**([:memo:]())**	**[[:octocat:](https://github.com/kodalinaveen3/DRAGAN)]**
-
-<details><summary>Click to expand</summary><p>
-
-
-**Summary**
-
+>
 > 
 
 
-</p></details>
 
----
+blog 
+
+https://www.freecodecamp.org/news/an-intuitive-introduction-to-generative-adversarial-networks-gans-7a2264a81394/
+
+https://wiki.pathmind.com/generative-adversarial-network-gan
 
 
 
 
 
-[^Roth2017]: Stabilizing training of generative adversarial networks through regularization
+some new work
+
+https://github.com/hankhank10/fakeface
+
+styleGAN
+
+styleGAN2
+
+https://thispersondoesnotexist.com/
+
+
+
+
+
+A GAN consists of a generator $G$ and a discriminator $D$, both are conducted by a neural network. $G$ takes a latent variable $z \sim p(z)$ sampled from a prior distribution and maps it to the observation space $\mathcal{X}$. $D$ takes an observation $x \in \mathcal{X}$ and produces a decision output over possible observation sources (either from $G$ or from the empirical data distribution). 
+
+
+
+The generator and the discriminator in the standard GAN training procedure are trained by minimizing the following objectives:
+$$
+\begin{align}
+&L_{D}=-\mathbb{E}_{x \sim p_{\text {data }}}[\log D(x)]-\mathbb{E}_{z \sim p(z)}[1-\log D(G(z))], \\
+&L_{G}=-\mathbb{E}_{z \sim p(z)}[\log D(G(z))].
+\end{align}
+$$
+This formulation is originally proposed by Goodfellow et al. (2014) as non-saturating (NS) GAN. A significant amount of research has been done on modifying this formulation in order to improve the training process. A notable example is the **hinge-loss** version of the adversarial loss:
+$$
+\begin{align}
+&L_{D}=-\mathbb{E}_{x \sim p_{\text {data }}}[\min (0,-1+D(x))]-\mathbb{E}_{z \sim p(z)}[\min (0,-1-D(G(z)))], \\
+&L_{G}=-\mathbb{E}_{z \sim p(z)}[D(G(z))].
+\end{align}
+$$
+Another commonly adopted GAN formulation is the **Wassertein** GAN (WGAN), where the authors propose clipping the weights to enforce the continuous of Wassertein distance. The loss function of WGAN is:
+$$
+\begin{align}
+&L_{D}=-\mathbb{E}_{x \sim p_{\text {data }}}[D(x)]+\mathbb{E}_{z \sim p(z)}[D(G(z))], \\
+&L_{G}=-\mathbb{E}_{z \sim p(z)}[D(G(z))].
+\end{align}
+$$
+
+
+
 

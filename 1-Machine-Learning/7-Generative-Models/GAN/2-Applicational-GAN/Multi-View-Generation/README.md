@@ -49,7 +49,7 @@ disentangle pose and identity factors by cross-reconstruction [^Peng et al., 201
 
 
 
-## CR-GAN
+### CR-GAN
 
 [CR-GAN: Learning Complete Representations for Multi-view Generation]()
 
@@ -109,18 +109,65 @@ $\{D_s(\mathbb{x}), D_s(G(\mathbb{z}, v))\}$ 和 $\{D_v(\mathbb{x}), v\}$ 差距
 
 
 
-
-
 </p></details>
 
 ---
 
+### DR-GAN
 
+[Disentangled Representation Learning GAN for Pose-Invariant Face Recognition](https://openaccess.thecvf.com/content_cvpr_2017/papers/Tran_Disentangled_Representation_Learning_CVPR_2017_paper.pdf)
+
+**`[CVPR 2017]`**	**`(MSU)`**	**`[Luan Tran, Xi Yin, Xiaoming Liu]`**	**([:memo:]())**	**[[:octocat:]()]**
 
 <details><summary>Click to expand</summary><p>
-ssss
 
-sssss
+
+![Generator-in-multi-image-DR-GAN-From-an-image-set-of-a-subject-we-can-fuse-the-features_W64](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20200831160904.jpg)
+
+![Comparison-of-previous-GAN-architectures-and-our-proposed-DR-GAN_W640](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20200831161231.jpg)
+
+**key words**: 
+
+> Pose-Invariant Face Recognition (PIFR); 
+
+**Problem:** 
+
+> solve the problem of pose-invariant face recognition (PIFR), the goal is to extract the identity representation that is exclusive or invariant to pose and other variations.
+
+**Related work:** 
+
+> existing PIFR methods can be group into two categories - 1) employ face frontalization to synthesize a frontal face and then use traditional face recognition methods. 2) learn features directly from the non-frontal face.
+
+**Impact:**
+
+> help law enforcement practitioners identify suspects
+
+**Main method:**
+
+> - the input of $G_{enc}$ is **a face image** of any pose; the output is **a feature representation**.
+> - the input of $G_{dec}$ is **a feature representation** above, **a pose code** $c$, and **a random noise vector** $z$; the output of $G_{dec}$ is **a synthetic face image** at a target pose
+> - $D$ is trained to not only distinguish **real vs. fake** images, but also predict the **identity and pose** of a face.
+
+**Mainly including three features:**
+
+> - identity - represented by feature extracted by $G_{enc}$
+> - pose - represented by pose code 
+> - other facial feature (appearance variations) - represented by noise vector
+
+
+
+The learning problem are twofold: 1) to learn a pose-invariant identity representation for PIFR, and 2) to synthesize a face image $\hat{x}$ with the same identity $y^d$ but a different pose specified by a pose code $c$.
+
+The approach is to train a DR-GAN **conditioned** on the original image $x$ and the pose code $c$.
+
+
+
+Given a face image with label $y = \{y^d, y^p\}$, where $y^d$ represents the label for identity and $y^p$ for pose. The discriminator $D = [D^d, D^p]$.
+
+$\hat{x} = G(\mathbf{x}, c, z)$
+
 </p></details>
+
+---
 
 

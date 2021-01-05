@@ -9,25 +9,19 @@
 
 
 
-# Table of Main Contents
+# Table of Contents
 
-- [1. Supervised Learning]()
-- [2. Semi Supervised Learning]()
-- [3. Unsupervised Learning]()
-- [4. Reinforcement Learning]()
-- [5. Meta Learning]()
-- [6. Transfer Learning]()
-  - [6.1 Multi-task Learning]()
-
-- [7. Generative Model]()
-  - [7.1 AE]()
-  - [7.2 GAN]()
+- [1. Generative Model]()
+- [2. Reinforcement Learning]()
+- [3. Meta Learning]()
+- [4. Transfer Learning]()
+  - [4.1 Multi-task Learning]()
 
 
 
-## Guidance
 
-关于机器学习一些框架的配置和使用说明
+## Basic Knowledge
+
 
 
 

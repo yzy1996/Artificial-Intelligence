@@ -1,4 +1,4 @@
-# 
+# Pytorch
 
 推荐学习材料：https://github.com/lyhue1991/eat_pytorch_in_20_days
 

@@ -109,3 +109,10 @@ According to the modeling purpose and the problem, machine learning algorithms c
 
 《MIT Deep Learning Book》Ian Goodfellow et al [book](http://www.deeplearningbook.org/)
 
+
+
+
+
+
+
+[谷歌发起的一个AI奖项:AI GRANT](https://aigrant.org/)

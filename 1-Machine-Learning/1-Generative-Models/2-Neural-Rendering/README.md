@@ -30,6 +30,18 @@ You need to know first
 
 
 
+2D-to-3D representation
+
+
+
+3D-to-3D image rendering
+
+ 
+
+
+
+
+
 ## Research Teams
 
 [Berkeley Artificial Intelligence Research Lab (BAIR)](https://bair.berkeley.edu/)
@@ -46,7 +58,9 @@ Selected works: `NeRF` | `pixelNeRF`
 [Max Planck Institute Graphics Vision & Video Group](http://gvv.mpi-inf.mpg.de/GVV_Team.html) 
 
 - Prof. [Christian Theobalt](https://people.mpi-inf.mpg.de/~theobalt/)
+- Prof. [Andreas Geiger](http://www.cvlibs.net/)
 - PhD. [Ayush Tewari](https://people.mpi-inf.mpg.de/~atewari/)
+- Ph.D. [Michael Niemeyer](https://m-niemeyer.github.io/)
 
 Selected works: `PatchNets` |
 

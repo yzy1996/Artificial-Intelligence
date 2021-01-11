@@ -1,4 +1,39 @@
-# Introduction
+# 3D 
+
+
+
+
+
+## Introduction
+
+
+
+
+
+generative 3D face model
+
+- FLAME
+- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 The problem of learning discriminative 3D models from 2D images
 
@@ -122,5 +157,30 @@ $$
 ---
 
 
+
+### GIF
+
+[Generative Interpretable Faces](https://arxiv.org/pdf/2009.00149.pdf)
+
+**[`3DV 2020`]**	**(`MPI`)**	**[[Code](https://github.com/ParthaEth/GIF)]**
+
+**[`Partha Ghosh`, `Pravir Singh Gupta`, `Roy Uziel`, `Anurag Ranjan`, `Michael Black`, `Timo Bolkart`]**
+
+<details><summary>Click to expand</summary><p>
+
+
+> **Summary**
+
+
+
+
+
+> **Details**
+
+
+
+</p></details>
+
+---
 
 

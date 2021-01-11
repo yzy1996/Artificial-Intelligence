@@ -1,5 +1,44 @@
 # Generative model
 
+
+
+## Background
+
+photorealistic image synthesis
+
+- high resolution
+- content controllable
+
+
+
+2D\3D
+
+
+
+compositional nature of scenes
+
+- individual objects' shapes
+- appearances
+- background
+
+
+
+Modern computer graphics (CG) techniques have achieved impressive results and are industry standard in gaming and movie productions. However, they are very hardware and computing expensive and require substantial repetitive labor. 
+
+Therefore, the ability to generate and manipulate photorealistic image content is a long-standing goal of computer vision and graphics.
+
+
+
+
+
+
+
+
+
+
+
+## Introduction
+
 Generative models can be divided into two classes:
 
 - implicit generative models (IGMs)
@@ -39,9 +78,21 @@ $$
 
 ## GAN 2014
 
+Generative Adversarial Networks (GANs) emerge as a powerful class of generative models. In particular, they are able to synthesize photorealistic images at high resolutions ($$1024 \times 1024$$) pixels which can not be distinguished. 
+
+
+
+GANs and its variants 
+
+
+
 train with adversarial methods, bypass the need of computing densities, at the expense of a good density estimation
 
 Generative adversarial networks (GANs) represent a zero-sum game between two machine players, a generator and a discriminator, designed to learn the distribution of data.
+
+
+
+
 
 
 

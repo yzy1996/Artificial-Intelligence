@@ -1,4 +1,4 @@
-English | [简体中文](./README.zh-CN.md)
+ English | [简体中文](./README.zh-CN.md)
 
 
 #  Generative Adversarial Networks (GANs)
@@ -8,6 +8,40 @@ This is my  research summary on Generative Adversarial Networks and I sort them 
 - Traditional GAN
 - Applicational GAN
 - Multi-Objective GAN
+
+
+
+阶段1：能够
+
+- mode collapse
+- gradient vanishing
+
+阶段2：够好 High-quality
+
+- high-resolution
+- controllable (representation disentanglement)
+- multi-view consistent
+
+阶段3：新追求
+
+- 3D 
+
+
+
+可以改进的地方：
+
+- loss function
+- regularization and normalization
+- architecture
+
+
+
+按应用场景分：
+
+- image
+- text
+- audio
+- video
 
 
 

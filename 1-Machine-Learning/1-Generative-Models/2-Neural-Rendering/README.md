@@ -38,7 +38,9 @@ You need to know first
 
  
 
+3D-aware image synthesis
 
+voxel-based representation
 
 
 

@@ -12,7 +12,7 @@ from pathlib import Path
 import time
 
 # 定义常量 Constant
-EPOCHS = 50
+EPOCHS = 300
 BATCH_SIZE = 128
 BUFFER_SIZE = 60000
 

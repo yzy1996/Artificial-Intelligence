@@ -127,3 +127,61 @@ custom Module subclass
 
 
 
+
+
+## 数据处理
+
+**(1) numpy to tensor**
+
+
+
+```python
+torch.from_numpy()
+# 会共享相同的内存，修改tensor也会对应修改ndarray
+# NumPy ndarray
+
+>>> a = numpy.array([1, 2, 3])
+>>> t = torch.from_numpy(a)
+>>> t
+tensor([ 1,  2,  3])
+>>> t[0] = -1
+>>> a
+array([-1,  2,  3])
+```
+
+```python
+torch.as_tensor()
+# Can be a list, tuple, NumPy ndarray, scalar, and other types.
+
+>>> a = numpy.array([1, 2, 3])
+>>> t = torch.as_tensor(a) # 不复制
+>>> t
+tensor([ 1,  2,  3])
+>>> t[0] = -1
+>>> a
+array([-1,  2,  3])
+
+>>> a = numpy.array([1, 2, 3])
+>>> t = torch.as_tensor(a, device=torch.device('cuda')) # 不复制
+>>> t
+tensor([ 1,  2,  3])
+>>> t[0] = -1
+>>> a
+array([1,  2,  3])
+```
+
+
+
+```python
+torch.Tensor()
+# copy data
+
+>>> a = numpy.array([1, 2, 3])
+>>> t = torch.Tensor(a)
+>>> t
+tensor([ 1,  2,  3])
+>>> t[0] = -1
+>>>
+array([1,  2,  3])
+```
+

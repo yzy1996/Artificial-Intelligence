@@ -12,6 +12,10 @@ English | [简体中文](./README.zh-CN.md)
 
 take advantages of the knowledge learned from related tasks
 
+few-shot
+
+
+
 
 
 

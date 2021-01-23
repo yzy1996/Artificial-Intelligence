@@ -44,6 +44,16 @@ voxel-based representation
 
 
 
+A coordinate-based MLP model. 
+
+<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210123193611.png" alt="image-20210123193611687" style="zoom:50%;" />
+
+the issue is: computing the network weights $\theta$ that 
+
+
+
+
+
 ## Research Teams
 
 [Berkeley Artificial Intelligence Research Lab (BAIR)](https://bair.berkeley.edu/)

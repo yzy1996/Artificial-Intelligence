@@ -4,6 +4,20 @@
 
 ## Introduction
 
+
+
+**Computer Graphics** (CG) is a branch of computer science that deals with **generating images** with the aid of computers. 
+
+
+
+3D reconstruction from multiple images: this tech is to predict the ①**depth** from ②**length** and ③**breadth**.
+
+We try to predict a function for depth determination at various points in the image against the object itself.
+
+Here comes the Neural Radiance Fields.
+
+
+
 the larger field of *Neural rendering* is defined by the [excellent review paper by Tewari et al.](https://arxiv.org/abs/2004.03805) as
 
 > “deep image or video generation approaches that enable explicit or implicit control of scene properties such as illumination, camera parameters, pose, geometry, appearance, and semantic structure.”
@@ -22,7 +36,7 @@ the larger field of *Neural rendering* is defined by the [excellent review paper
 
 ## Trick
 
-**positional encoding**
+**(1) positional encoding**
 
 Low dimensional input needs to be mapped to higher-dimensional features to be able to represent complex signals when $$f$$ is parameterized with a neural network. Specifically, we element-wise apply a pre-defined **positional encoding** to each component of $$\mathbf{x}$$ and $$\mathbf{d}$$.
 $$
@@ -32,7 +46,7 @@ where $$t$$ is a scalar input, and $$L$$ the number of frequency octaves.
 
 
 
-**SIREN**
+**(2) SIREN**
 
 
 
@@ -40,7 +54,7 @@ where $$t$$ is a scalar input, and $$L$$ the number of frequency octaves.
 
 > Why not use a convolutional layer?
 
-
+They are linear relation.
 
 
 

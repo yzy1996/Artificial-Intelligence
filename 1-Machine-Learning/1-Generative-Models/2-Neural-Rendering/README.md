@@ -48,9 +48,18 @@ A coordinate-based MLP model.
 
 <img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210123193611.png" alt="image-20210123193611687" style="zoom:50%;" />
 
-the issue is: computing the network weights $\theta$ that 
+the issue is: computing the network weights $\theta$ is very expensive, especially recover a high resolution radiance field as in NeRF.
 
+Approaches includes:
 
+- concatenating a latent vector to the input coordinate and supervising a single neural network to represent an entire class of signals [Occupancy networks]() [DeepSDF]()
+- training a hypernetwork to map from signal observations (or a latent code) to MLP weights
+
+Implicit neural representations with periodic activation functions
+
+Scene representation networks
+
+MetaSDF
 
 
 

@@ -2,6 +2,12 @@
 
 
 
+
+
+
+
+
+
 ## Background
 
 photorealistic image synthesis
@@ -73,6 +79,33 @@ $$
 
 
 
+There are three main methods: 
+
+- VAE
+
+- GAN
+- Flow
+
+They both learn from the training data and use the learned model to generate or predict new instances.
+
+
+
+相同点：都用到了随机噪声，然后度量噪声和真实数据的分布差异
+
+不同点：GAN为了拟合数据分布，VAE为了找到数据的隐式表达，Flow建立训练数据和生成数据之间的关系
+
+GAN 和 Flow 的输入和输出都是一一对应的，而VAE不是
+
+
+
+训练的损失函数上：
+
+VAE最大化ELBO，其目的是要做最大似然估计，最大似然估计等价于最小化KL，但这个KL不是数据和噪声的KL，而是model给出的![[公式]](https://www.zhihu.com/equation?tex=p%28x%29)和数据所展示的![[公式]](https://www.zhihu.com/equation?tex=p%28x%29)之间的KL。
+
+GAN是最小化JS，这个JS也是model给出的![[公式]](https://www.zhihu.com/equation?tex=p%28x%29)和数据所展示的![[公式]](https://www.zhihu.com/equation?tex=p%28x%29)之间的。
+
+流模型训练也非常直接，也是最大似然估计。只不过因为流模型用的是可逆神经网络，因此，相比于其他两者，学习inference即学习隐含表示非常容易，
+
 
 
 
@@ -92,7 +125,7 @@ Generative adversarial networks (GANs) represent a zero-sum game between two mac
 
 
 
-
+> 只要能骗过Discriminator就好
 
 
 
@@ -102,5 +135,19 @@ at the cost of learning two neural networks
 
 
 
+
+
+## VAE-GAN
+
+combine VAE with GAN
+
+
+
 ## Bijective GNN
+
+
+
+## Flow
+
+
 

@@ -10,6 +10,14 @@ Related repositories:
 
 ## Introduction
 
+> **Challenge Description**
+
+[representation 3D shape] in an **accurate**, **efficient** and **compact** manner
+
+
+
+
+
 Computer graphics + generative model two areas come together -> neural rendering 
 
 
@@ -60,6 +68,24 @@ Implicit neural representations with periodic activation functions
 Scene representation networks
 
 MetaSDF
+
+
+
+Task field:
+
+- relight
+
+[NeRV](# NeRV)
+
+Deep reflectance volumes
+
+A neural rendering framework for free-viewpoint relighting
+
+Deferred neural lighting
+
+Single-shot neural relighting and SVBRDF estimation
+
+Neural light transport for relighting and view synthesis
 
 
 

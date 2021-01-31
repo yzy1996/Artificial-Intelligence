@@ -16,12 +16,12 @@ GAN need to find a Nash equilibrium of a non-convex game in a continuous and hig
 
 - **Normalization**
   
-  - **Spectral normalization** (weight matrices in the discriminator are divided by an approximation of their largest singular value)
+  - **Spectral normalization** (weight matrices in the discriminator are divided by an approximation of their largest singular value) 另一种让函数满足 1-Lipschitz continuity 的方式
 - **Regularization**
   
   - **Wasserstein** (penalize the gradient norm of straight lines between real data and generated data)
   
-  - [^Roth2017] (directly regularize the squared gradient norm for both the training data and the generated data.) 
+  -  [^Roth2017] (directly regularize the squared gradient norm for both the training data and the generated data.) 
   
   - **[DRAGAN](#DRAGAN)** (penalize the gradients at Gaussian perturbations of training data) 
   
@@ -29,7 +29,7 @@ GAN need to find a Nash equilibrium of a non-convex game in a continuous and hig
   
     > pros & cons: simple to implement, not particularly computationally burdensome, and relatively insensitive to hyper-parameters
 
-
+regularization evolves non-trivial computational overheads
 
 
 

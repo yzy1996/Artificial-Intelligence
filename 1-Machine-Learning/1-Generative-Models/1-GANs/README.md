@@ -212,4 +212,4 @@ $$
 
 
 
-
+[How to Train a GAN? Tips and tricks to make GANs work](https://github.com/soumith/ganhacks)

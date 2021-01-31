@@ -43,12 +43,12 @@ def generator_loss_fn(fake_output):
 bce = tf.keras.losses.BinaryCrossentropy(from_logits=True)
 
 def discriminator_loss_fn(real_output, fake_output):
-    real_loss = bce(real_output, -tf.ones_like(real_output))
-    fake_loss = bce(fake_output, tf.ones_like(fake_output))
+    real_loss = bce(-tf.ones_like(real_output), real_output)
+    fake_loss = bce(tf.ones_like(fake_output), fake_output)
     return real_loss - fake_loss
 
 def generator_loss_fn(fake_output):
-    return bce(fake_output, -tf.ones_like(fake_output))
+    return bce(-tf.ones_like(fake_output), fake_output)
 ```
 
 

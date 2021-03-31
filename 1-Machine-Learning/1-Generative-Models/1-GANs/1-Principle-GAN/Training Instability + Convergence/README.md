@@ -1,5 +1,7 @@
 # Training Instability
 
+技巧详见：
+
 
 
 ## Introduction
@@ -52,6 +54,16 @@ Q1. Will simultaneous regularization and normalization improve GANs performance?
 > Won't. Both regularization and normalization are motivated by controlling Lipschitz constant of the discriminator
 >
 > --- A large-scale study on regularization and normalization in GANs
+
+
+
+
+
+2017 On Convergence and Stability of GANs
+
+2018 Which training methods for GANs do actually converge
+
+
 
 
 
@@ -188,3 +200,8 @@ $$
 
 [^Roth2017]: Stabilizing training of generative adversarial networks through regularization
 
+
+
+推荐阅读：
+
+https://blog.csdn.net/w55100/article/details/88091704

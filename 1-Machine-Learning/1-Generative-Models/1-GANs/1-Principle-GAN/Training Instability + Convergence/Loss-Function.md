@@ -38,7 +38,7 @@ WGAN: $f(x) = x$
 |       **WGAN**        | $$\begin{align}&L_{D}^{WGAN}=-\mathbb{E}_{x \sim p_r}[D(x)]+\mathbb{E}_{\tilde{x} \sim p_g}[D(\tilde{x})]\\&L_{G}^{WGAN}=-\mathbb{E}_{\tilde{x} \sim p_g}[D(\tilde{x})]\\&W_D \leftarrow \text{clip_by_value}(W_D, -0.01, 0.01) \end{align}$$ |
 |      **WGAN-GP**      | $$L_{D}^{WGAN-GP}=L_{D}^{WGAN} + \lambda {\mathbb{E}}_{\hat{x} \sim p_{\hat{x}}}\left[\left(\left\|\nabla_{\hat{x}} D(\hat{x})\right\|_{2}-1\right)^{2}\right] \\ L_{G}^{WGAN-GP}=L_{G}^{WGAN} \\ \hat{x} = \alpha x + (1-\alpha) \tilde{x}$$ |
 |      **DRAGAN**       | $L_{D}^{DRAGAN}=L_{D}^{GAN} + \lambda {\mathbb{E}}_{\tilde{x} \sim p_r+\mathcal{N}(0, c)}\left[\left(\left\|\nabla_{\hat{x}} D(\tilde{x})\right\|_{2}-1\right)^{2}\right] \\ L_{G}^{DRAGAN}=L_{G}^{GAN}$ |
-|                       | $\min_D \mathcal{L}(D) = \mathbb{E}_{x \sim p_r} [\max(0, 1-D(x))] + \mathbb{E}_{\tilde{x} \sim p_g} [\max(0, 1+D(\tilde{x}))] \\ \min_G \mathcal{L}(G) = -\mathbb{E}_{\tilde{x} \sim p_g} [D(\tilde{x})]$ |
+|   **Geometric GAN**   | $\mathcal{L}_D^{GGAN} = \mathbb{E}_{x \sim p_r} [\max(0, 1-D(x))] + \mathbb{E}_{\tilde{x} \sim p_g} [\max(0, 1+D(\tilde{x}))] \\ \mathcal{L}_G^{GGAN} = -\mathbb{E}_{\tilde{x} \sim p_g} [D(\tilde{x})]$ |
 
 
 

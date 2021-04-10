@@ -8,12 +8,13 @@ Self-Supervised 3D Mesh Reconstruction from Single Images
 **[`CVPR 2021`]**	**(`CUHK`)**  
 *Tao Hu, Liwei Wang, Xiaogang Xu, Shu Liu, Jiaya Jia*  
 <details><summary>Click to expand</summary><p>
-sd 
+dd
 
-sd 
+sasd 
 
-sd 
+asd h
 
 </p></details>
 
 ---
+

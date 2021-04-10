@@ -10,8 +10,9 @@ Self-Supervised 3D Mesh Reconstruction from Single Images
 <details><summary>Click to expand</summary><p>
 shushu 
 shuhus 
-
 shuhus 
+
+ssd 
 
 </p></details>
 

@@ -16,9 +16,8 @@ Dynamic data-augmentation
 
 ## Literature
 
-[Training Generative Adversarial Networks with Limited Data](https://arxiv.org/abs/2006.06676)
-
-**[`NeurIPS 2020`]**	**(`NVIDIA`)**	**[`Tero Karras, Timo Aila`]**	**[[:octocat:](https://github.com/NVlabs/stylegan2-ada)]**
+[Training Generative Adversarial Networks with Limited Data](https://arxiv.org/abs/2006.06676)  
+**[`NeurIPS 2020`]** **(`NVIDIA`)** [[:octocat:](https://github.com/NVlabs/stylegan2-ada)] (*Tero Karras, Timo Aila*)
 
 <details><summary>Click to expand</summary><p>
 

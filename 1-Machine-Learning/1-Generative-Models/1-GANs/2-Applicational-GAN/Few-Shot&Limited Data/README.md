@@ -18,7 +18,9 @@ Dynamic data-augmentation
 
 [fastgan](#fastgan)
 
+[DiffAugment](#DiffAugment)
 
+---
 
 [Training Generative Adversarial Networks with Limited Data](https://arxiv.org/abs/2006.06676)  
 **[`NeurIPS 2020`]** **(`NVIDIA`)** [[:octocat:](https://github.com/NVlabs/stylegan2-ada)] (*Tero Karras, Timo Aila*)
@@ -37,13 +39,14 @@ Dynamic data-augmentation
 
 ---
 
-Differentiable augmentation for data-efficient gan training
+<span id="DiffAugment"></span>[Differentiable augmentation for data-efficient gan training](https://arxiv.org/pdf/2006.10738.pdf)  
+**[`NeurIPS 2020`]** **(`MIT`)** [[:octocat:](https://github.com/mit-han-lab/data-efficient-gans)] (*Shengyu Zhao, Zhijian Liu, Ji Lin, Jun-Yan Zhu, Song Han*)
 
 
 
+---
 
-
-<span id="fastgan"></span>[Towards Faster and Stabilized GAN Training for High-fidelity Few-shot Image Synthesis](https://arxiv.org/pdf/2101.04775.pdf)  
+<span id="Fastgan"></span>[Towards Faster and Stabilized GAN Training for High-fidelity Few-shot Image Synthesis](https://arxiv.org/pdf/2101.04775.pdf)  
 **[`ICLR 2021`]** **(`Rutgers`)** [[:octocat:](https://github.com/odegeasslbc/FastGAN-pytorch)] (*Bingchen Liu, Yizhe Zhu, Kunpeng Song, Ahmed Elgammal*)
 
 <details><summary>Click to expand</summary><p>

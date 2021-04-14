@@ -39,5 +39,5 @@ Differentiable augmentation for data-efficient gan training
 
 
 Towards Faster and Stabilized GAN Training for High-fidelity Few-shot Image Synthesis  
-**[`ICLR 2021`]** **(`Rutgers`)** *Bingchen Liu, Yizhe Zhu, Kunpeng Song, Ahmed Elgammal* [[:octocat:](https://github.com/odegeasslbc/FastGAN-pytorch)]
+**[`ICLR 2021`]** **(`Rutgers`)** [[:octocat:](https://github.com/odegeasslbc/FastGAN-pytorch)] *Bingchen Liu, Yizhe Zhu, Kunpeng Song, Ahmed Elgammal* 
 

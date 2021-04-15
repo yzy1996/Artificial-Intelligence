@@ -86,6 +86,8 @@ $$
 
 ### Geometric GAN
 
+又叫 Hinge loss:  $f(x) = \max(0, 1-tx)$，其中 $t$ 是真实标签，
+
 [Geometric GAN](https://arxiv.org/abs/1705.02894)	[`arxiv2017`]	[`Jae Hyun Lim`, `Jong Chul Ye`]
 $$
 \begin{align}
@@ -99,6 +101,19 @@ $$
 dloss = (F.relu(1 - d_real) + F.relu(1 + d_fake)).mean()
 gloss = -d_fake.mean()
 ```
+
+>ReLU：$f(x) = \max(0, x)$
+
+
+
+还有一种写法变形，其实是一模一样的，但我觉得不好，因为没有ReLU的直接。
+$$
+\begin{align}
+&\min_D \mathcal{L}(D) = -\mathbb{E}_{x \sim p_r} [\min(0, -1+D(x))] - \mathbb{E}_{\tilde{x} \sim p_g} [\min(0, -1-D(\tilde{x}))] \\
+&\min_G \mathcal{L}(G) = -\mathbb{E}_{\tilde{x} \sim p_g} [D(\tilde{x})]
+\end{align}
+$$
+
 
 
 

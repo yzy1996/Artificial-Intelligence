@@ -8,13 +8,15 @@
 
 > What does the problem look like?
 
-**Mode collapse** (local equilibria)
+**Mode collapse** (local equilibria) on $Generator$
 
 
 
 > Why it's a problem? 
 
-GAN need to find a Nash equilibrium of a non-convex game in a continuous and high dimensional parameter space. It's not tractable.
+GAN need to find a Nash equilibrium of a non-convex game in a continuous and high dimensional parameter space. It's not tractable. 
+
+As $Discriminator$ is more likely to be overfitting on the datasets, thus unable to provide meaningful gradients to train $Generator$.
 
 
 
@@ -24,16 +26,16 @@ We often use a divergence between real and generated distribution to measure the
 
 
 
-
-
-
-
 There are some approaches to improve:
 
+- **Objectives** (details see [**]())
+  
+- WGAN, Geometric gan, LSGAN
+  
 - **Normalization**
   
   - **Spectral normalization** (weight matrices in the discriminator are divided by an approximation of their largest singular value) 另一种让函数满足 1-Lipschitz continuity 的方式
-- **Regularization**
+- **Regularization** (mainly on gradients)
   
   - **Wasserstein** (penalize the gradient norm of straight lines between real data and generated data)
   
@@ -46,6 +48,12 @@ There are some approaches to improve:
     > pros & cons: simple to implement, not particularly computationally burdensome, and relatively insensitive to hyper-parameters
 
 regularization evolves non-trivial computational overheads
+
+- **Self-Supervision on $D$**
+  - Self-supervised gan
+  - Self-supervised gans via auxiliary rotation loss
+
+
 
 
 
@@ -72,6 +80,10 @@ Q1. Will simultaneous regularization and normalization improve GANs performance?
 [CR-GAN](#CR-GAN)
 
 [ICR-GAN](#ICR-GAN)
+
+
+
+[SSGAN](#SSGAN)
 
 ---
 
@@ -195,6 +207,13 @@ $$
 ---
 
 
+
+Which training methods for gans do actually converge?
+
+
+
+<span id="SSGAN"></span>[Self-supervised GAN: Analysis and Improvement with Multi-class Minimax Game](https://arxiv.org/pdf/1911.06997.pdf)  
+**[`NeurIPS 2019`]** **(`SUTD`)** [[:octocat:](https://github.com/tntrung/msgan)] (*Ngoc-Trung Tran, Viet-Hung Tran, Ngoc-Bao Nguyen, Linxiao Yang, Ngai-Man Cheung*)
 
 
 

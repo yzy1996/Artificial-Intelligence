@@ -143,9 +143,9 @@ The discriminator learns to accurately distinguish between the synthesized data 
 
 
 
+## Training Instability + Convergence
 
-
-## Convergence
+Please see [file](Training Instability + Convergence)
 
 
 
@@ -196,3 +196,9 @@ Maximum Mean Discrepancies (MMDs)
 </p></details>
 
 ---
+
+
+
+
+
+GAN的遗忘性，真样本的作用可以看作是一种防止遗忘的效果，

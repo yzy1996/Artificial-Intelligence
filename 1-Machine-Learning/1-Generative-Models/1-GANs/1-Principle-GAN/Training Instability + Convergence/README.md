@@ -30,7 +30,7 @@ There are some approaches to improve:
 
 - **Objectives** (details see [**]())
   
-- WGAN, Geometric gan, LSGAN
+  - WGAN, Geometric gan, LSGAN
   
 - **Normalization**
   
@@ -50,8 +50,10 @@ There are some approaches to improve:
 regularization evolves non-trivial computational overheads
 
 - **Self-Supervision on $D$**
-  - Self-supervised gan
-  - Self-supervised gans via auxiliary rotation loss
+  
+  > about self-supervised learning, please see [*]()
+  >
+  > In GANs, we first use a deformation function to deform real/fake samples and then use an auxiliary classifier to distinguish the 
 
 
 
@@ -195,25 +197,33 @@ $$
 \lambda \cdot \mathbb{E}_{x \sim P_{\text {real }}, \delta \sim N_{d}(0, c I)}\left[\left\|\nabla_{\mathbf{x}} D_{\theta}(x+\delta)\right\|-k\right]^{2}
 $$
 
-
-
-
-
-
-
-
 </p></details>
 
 ---
 
 
 
-Which training methods for gans do actually converge?
+
 
 
 
 <span id="SSGAN"></span>[Self-supervised GAN: Analysis and Improvement with Multi-class Minimax Game](https://arxiv.org/pdf/1911.06997.pdf)  
 **[`NeurIPS 2019`]** **(`SUTD`)** [[:octocat:](https://github.com/tntrung/msgan)] (*Ngoc-Trung Tran, Viet-Hung Tran, Ngoc-Bao Nguyen, Linxiao Yang, Ngai-Man Cheung*)
+
+<details><summary>Click to expand</summary><p>
+
+
+> **Summary**
+
+self-supervised learning need a transformation $\mathcal{T}$
+
+
+
+
+
+
+
+Which training methods for gans do actually converge?
 
 
 
@@ -224,3 +234,4 @@ Which training methods for gans do actually converge?
 推荐阅读：
 
 https://blog.csdn.net/w55100/article/details/88091704
+

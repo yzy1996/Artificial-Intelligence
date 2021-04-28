@@ -395,7 +395,7 @@ $$
 Combine **volumetric radiance** (powerful for "unsupervised" coarse scene) and **surface rendering** (accurate reconstruction).
 
 <div align="center">
-	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210428214156.png" alt="image-20210428214154651" width="300">
+	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210428214156.png" alt="image-20210428214154651" width="500">
 </div>
 
 > **Details**

@@ -28,7 +28,7 @@ the larger field of *Neural rendering* is defined by the [excellent review paper
 
 
 
-**A radiance fields**  is a continuous function $$f$$ which maps a 3D point $$\mathbf{x} \in \mathbb{R}^3$$ and a viewing direction $$\mathbf{d} \in \mathbb{S}^2$$ to a volume density $$\sigma \in \mathbb{R}^+$$ and an RGB color value $$\mathbf{c} \in \mathbb{R}^3$$. 
+**A radiance fields**  is a continuous function $f$ which maps a 3D point $\mathbf{x} \in \mathbb{R}^3$ and a viewing direction $\mathbf{d} \in \mathbb{S}^2$ to a volume density $\sigma \in \mathbb{R}^+$ and an RGB color value $\mathbf{c} \in \mathbb{R}^3$. 
 
 
 
@@ -38,11 +38,11 @@ the larger field of *Neural rendering* is defined by the [excellent review paper
 
 **(1) positional encoding**
 
-Low dimensional input needs to be mapped to higher-dimensional features to be able to represent complex signals when $$f$$ is parameterized with a neural network. Specifically, we element-wise apply a pre-defined **positional encoding** to each component of $$\mathbf{x}$$ and $$\mathbf{d}$$.
+Low dimensional input needs to be mapped to higher-dimensional features to be able to represent complex signals when $f$ is parameterized with a neural network. Specifically, we element-wise apply a pre-defined **positional encoding** to each component of $\mathbf{x}$ and $\mathbf{d}$.
 $$
 \gamma(t, L) = \left(\sin(2^0t\pi), \cos(2^0t\pi), \dots, \sin(2^{L}t\pi), \cos(2^{L}t\pi)\right),
 $$
-where $$t$$ is a scalar input, and $$L$$ the number of frequency octaves.
+where $t$ is a scalar input, and $L$ the number of frequency octaves.
 
 
 
@@ -84,7 +84,7 @@ FFHQ
 
 [NeRF++](#NeRF++)
 
-
+[UNISURF](#UNISURF)
 
 **Generalization**
 
@@ -301,8 +301,83 @@ Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a D
 
 **[[Code](https://github.com/facebookresearch/nonrigid_nerf)]**
 
-
-
+<details><summary>Click to expand</summary>
 
 
 ![Pipeline figure](https://github.com/facebookresearch/nonrigid_nerf/raw/master/misc/pipeline.png)
+
+
+
+</details>
+
+---
+
+### DietNeRF
+
+[Putting NeRF on a Diet: Semantically Consistent Few-Shot View Synthesis](https://arxiv.org/pdf/2104.00677.pdf)  
+**[`Arxiv`] (`Berkeley`)**  
+*Ajay Jain, Matthew Tancik, Pieter Abbeel*
+
+<details><summary>Click to expand</summary>
+
+
+> Why the name?
+
+
+
+
+
+> Key point
+
+can be estimated from only a few photos and can generate views with unobserved regions
+
+
+
+> 如何做到的呢？
+
+在传统NeRF的基础上，加了一个**sematic consistency loss**。后者来自于**CLIP's Vision Transformer**，用来衡量真样本，和新生成的不同pose下的是不是同一个object。
+
+
+
+> 为什么这样可以做到？
+
+没有prior knowledge的话，是很难学到没有见过的物体的。所以考虑借助一个pre-trained image encoder来guide
+
+
+
+> Details
+
+$$
+\mathcal{L}_{\mathrm{SC}, \ell_{2}}(I, \hat{I})=\frac{\lambda}{2}\|\phi(I)-\phi(\hat{I})\|_{2}^{2}
+$$
+
+
+
+</details>
+
+---
+
+### NeRF--
+
+
+
+</details>
+
+---
+
+
+
+<span id="UNISURF"></span> [UNISURF: Unifying Neural Implicit Surfaces and Radiance Fields for Multi-View Reconstruction](https://arxiv.org/pdf/2104.10078.pdf)  
+**[`arxiv`] (`MPI`)**  
+*Michael Oechsle, Songyou Peng, Andreas Geiger*
+
+<details><summary>Click to expand</summary>
+
+> Summary
+
+
+
+</details>
+
+---
+

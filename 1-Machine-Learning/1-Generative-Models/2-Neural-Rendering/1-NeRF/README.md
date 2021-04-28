@@ -32,6 +32,28 @@ the larger field of *Neural rendering* is defined by the [excellent review paper
 
 
 
+NeRF uses a neural network to map a 3D location $\mathbf{x} \in \mathbb{R}^3$ and a viewing direction $\mathbf{d} \in \mathbb{R}^3$ to a volume density $\sigma_\theta(\mathbf{x}) \in \mathbb{R}^+$ and a color value $c_\theta(\mathbf{x}, \mathbf{d}) \in \mathbb{R}^3$.
+
+这样写的好处是清晰了sigma和 c 是有什么决定的，配上那个图就清晰了
+
+
+
+NeRF带来的好处是什么呢？
+
+Conditioning on the viewing direction $\mathbf{d}$ allows for modeling view-dependent effects such as specular reflections and improves reconstruction quality in case the Lambertian assumption is violated.
+
+
+
+不需要目标的mask，
+
+While NeRF does not require object masks for training due to its volumetric radiance representation, extracting the scene geometry from the volume density requires careful tuning of the density threshold and leads to artifacts due to the ambiguity present in the density field,
+
+再怎么渲染呢
+
+
+
+
+
 
 
 ## Trick
@@ -103,11 +125,9 @@ FFHQ
 
 ### NeRF
 
-[NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/pdf/2003.08934.pdf)
-
-**[`ECCV 2020`]**	**(`UCB, UCSD`)**	**[[Code-Tensorflow](https://github.com/bmild/nerf)]**	**[[Code-PyTorch](https://github.com/yenchenlin/nerf-pytorch)]**	**[[Code-PyTorch](https://github.com/krrish94/nerf-pytorch)]**	**([Page](https://www.matthewtancik.com/nerf))**
-
-**[`Ben Mildenhall`, `Pratul P. Srinivasan`, `Matthew Tancik`, `Jonathan T. Barron`, `Ravi Ramamoorthi`, `Ren Ng`]**
+[NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis](https://arxiv.org/pdf/2003.08934.pdf)  
+**[`ECCV 2020`]** **(`UCB, UCSD`)** **[[Code-Tensorflow](https://github.com/bmild/nerf)]** **[[Code-PyTorch](https://github.com/yenchenlin/nerf-pytorch)]** **[[Code-PyTorch](https://github.com/krrish94/nerf-pytorch)]** **([Page](https://www.matthewtancik.com/nerf))**  
+*[`Ben Mildenhall`, `Pratul P. Srinivasan`, `Matthew Tancik`, `Jonathan T. Barron`, `Ravi Ramamoorthi`, `Ren Ng`]*
 
 <details><summary>Click to expand</summary>
 
@@ -154,11 +174,9 @@ rendering
 
 ### GRAF
 
-[Generative Radiance Fields for 3D-Aware Image Synthesis](https://arxiv.org/pdf/2007.02442.pdf)
-
-**[`NeurIPS 2020`]**	**(`MPI`)**	**[[Code](https://github.com/autonomousvision/graf)]**
-
-**[`Katja Schwarz`, `Yiyi Liao`, `Michael Niemeyer`, `Andreas Geiger`]**
+[Generative Radiance Fields for 3D-Aware Image Synthesis](https://arxiv.org/pdf/2007.02442.pdf)  
+**[`NeurIPS 2020`]** **(`MPI`)** **[[Code](https://github.com/autonomousvision/graf)]**  
+*[`Katja Schwarz`, `Yiyi Liao`, `Michael Niemeyer`, `Andreas Geiger`]*
 
 <details><summary>Click to expand</summary>
 
@@ -365,15 +383,18 @@ $$
 
 ---
 
-
-
-<span id="UNISURF"></span> [UNISURF: Unifying Neural Implicit Surfaces and Radiance Fields for Multi-View Reconstruction](https://arxiv.org/pdf/2104.10078.pdf)  
+<span id="UNISURF"></span>
+[UNISURF: Unifying Neural Implicit Surfaces and Radiance Fields for Multi-View Reconstruction](https://arxiv.org/pdf/2104.10078.pdf)  
 **[`arxiv`] (`MPI`)**  
 *Michael Oechsle, Songyou Peng, Andreas Geiger*
 
 <details><summary>Click to expand</summary>
 
-> Summary
+> **Summary**
+
+Combine **volumetric radiance** (powerful for "unsupervised" coarse scene) and **surface rendering** (accurate reconstruction). 
+
+> **Details**
 
 
 

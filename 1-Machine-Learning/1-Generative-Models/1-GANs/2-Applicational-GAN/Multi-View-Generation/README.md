@@ -1,4 +1,10 @@
-**Task1: Generate multi-view images from a single-view input**
+# Generate multi-view from a single-view input
+
+understand 3D shape from 2D projections
+
+require a differentiable 3D-to-2D projection module.
+
+
 
 
 
@@ -17,6 +23,10 @@
 > combination of the both [^Peng et al., 2017]
 >
 > GAN: [^Tran et al., 2017] [^Zhao et al., 2017]
+
+
+
+Encoder-decoder 
 
 
 
@@ -44,6 +54,12 @@ disentangle pose and identity factors by cross-reconstruction [^Peng et al., 201
 [^Zhu et al., 2014]:Multi-view perceptron: a deep model for learning face identity and view representations
 [^Tran et al., 2017]:Disentangled Representation Learning GAN for Pose-Invariant Face Recognition
 [^Zhao et al., 2017]: Multi-view image generation from a single-view
+
+
+
+
+
+
 
 
 

@@ -73,8 +73,6 @@ They define the desired properties:
 Main method is the **low-rank symmetric shape basis**  
 ref: A simple prior-free method for non-rigid structure-from-motion factorization, Recovering non-rigid 3D shape from image streams, Nonrigid structure-from-motion: Estimating shape and motion with hierarchical priors.
 
-
-
 </p></details>
 
 ---
@@ -83,9 +81,85 @@ ref: A simple prior-free method for non-rigid structure-from-motion factorizatio
 **[`CVPR_2020`] (`Oxford`)**  
 *Tomas Jakab, Ankush Gupta, Hakan Bilen, Andrea Vedaldi*
 
+<details><summary>Click to expand</summary>
+
+<div align=center>
+	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210511173048.png" width="800" />
+</div>
+
+> **Summary**
+
+Learn from only unlabeled videos and **a weak empirical prior** on the object poses. (为什么要用视频呢？因为视频帧之间的对象是同一个目标，只是有pose的差异，通过分析这些差异就可以对pose建模。)
+
+The pose priors are obtained from unpaired data. (虽然强调跟训练pose的网络无关，但这也算是一种多余的先验输入辅助，还是有监督的，只不过是 little additional supervision。)
+
+Introduce a **conditional generator** design combining **image translation**
+
+> **Details**
+
+用了 Adversarial loss，是通过新的 unpaired 数据 (看上图)。目标是希望 新生成的 和 真实的不匹配 一致 (比如都是轮廓样式)。
+
+一个 AE loss，用的是 VGG 的 perceptual loss 
+$$
+\mathcal{L}_{\text {perc }}=\frac{1}{N} \sum_{i=1}^{N}\left\|\Gamma\left(\hat{x}_{i}\right)-\Gamma\left(\boldsymbol{x}_{i}\right)\right\|_{2}^{2},
+$$
+一个 difference adversarial loss：
+$$
+\mathcal{L}_{\mathrm{disc}}(D)=\frac{1}{M} \sum_{j=1}^{M} D\left(\overline{\boldsymbol{y}}_{j}\right)^{2}+\frac{1}{N} \sum_{i=1}^{N}\left(1-D\left(\boldsymbol{y}_{i}\right)\right)^{2}
+$$
+
+</p></details>
+
+---
+
+[Unsupervised learning of intrinsic structural representation points](https://arxiv.org/pdf/2003.01661.pdf)  
+**[`CVPR 2020`] (`HKU, MPI`)**  
+*Nenglun Chen, Lingjie Liu, Zhiming Cui, Runnan Chen, Duygu Ceylan, Changhe Tu, Wenping Wang*
+
+<details><summary>Click to expand</summary>
+
+<div align=center>
+	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210511224355.png" width="800" />
+</div>
+
+> **Summary**
+
+**Take 3D point cloud as input, output the structure points**
+
+
+
+</p></details>
+
+---
+
 [Unsupervised learning of landmarks by descriptor vector exchange](https://arxiv.org/pdf/1908.06427.pdf)  
 **[`ICCV 2019`] (`Oxford`)**  
 *James Thewlis, Samuel Albanie, Hakan Bilen, Andrea Vedaldi*
+
+<details><summary>Click to expand</summary>
+
+<div align=center>
+	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210511180002.png" width="400" />
+</div>
+
+> **Summary**
+
+Develop a new perspective on **equivariance to random image transformations** method. Based on [previous work](Unsupervised learning of object landmarks by factorized spatial embeddings).
+
+Introduce an **invariant descriptors** (例如[SIFT](Distinctive image features from scaleinvariant
+keypoints)，就想是一个embedding) to establish correspondences between images which is the same as **landmark detectors**. In addition, landmarks are invariant to intra-class variations in addition to viewing effects. (看上图很好理解)
+
+> **Details**
+
+用了一个中间instance来增强变形的能力。
+
+<div align=center>
+	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210511202103.png" width="800" />
+</div>
+
+</p></details>
+
+---
 
 [Teacher supervises students how to learn from partially labeled images for facial landmark detection](https://arxiv.org/pdf/1908.02116.pdf)  
 **[`ICCV 2019`] (`SUST`)**  
@@ -94,6 +168,32 @@ ref: A simple prior-free method for non-rigid structure-from-motion factorizatio
 [Self-supervised learning of a facial attribute embedding from video](https://arxiv.org/pdf/1808.06882.pdf)  
 **[`BMVC 2018`] (`Oxford`)**  
 *Olivia Wiles, A. Sophia Koepke, Andrew Zisserman*
+
+<details><summary>Click to expand</summary>
+
+The aim is to train a network to learn an embedding that encodes facial attributes in a selfsupervised manner, without any labels.
+
+</p></details>
+
+---
+
+[USIP: Unsupervised Stable Interest Point Detection from 3D Point Clouds](https://arxiv.org/pdf/1904.00229.pdf)  
+**[`ICCV 2019`] (`NUS`)**  
+*Jiaxin Li, Gim Hee Lee*
+
+<details><summary>Click to expand</summary>
+
+<div align=center>
+	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210511225110.png" width="800" />
+</div>
+
+> **Summary**
+
+ss
+
+</p></details>
+
+---
 
 [Unsupervised learning of object landmarks through conditional image generation](https://arxiv.org/pdf/1806.07823.pdf)
 **[`NeurIPS 2018`] (`Oxford`)**  
@@ -169,6 +269,8 @@ Detect consistent landmarks with image deformations under a process of factorizi
 
 They mainly learn viewpoint-independent representations of objects from images,  the structure of an object is expressed as a set of landmark points. The landmark can be seen as a representation of transformations. 
 
+利用 变形前后关键点不变性 作为学习信号。
+
 > **Details**
 
 $S \subset \mathbb{R}^{3}$ is the surface of a physical object, independent of the particular image $\mathrm{x}$  
@@ -186,6 +288,7 @@ to deformable objects, they introduce a common reference space - object frame, u
 $$
 \forall r \in S_{0}: \Phi(r ; \mathbf{x} \circ g)=g(\Phi(r ; \mathbf{x})).
 $$
+
 </p></details>
 
 ---
@@ -194,7 +297,23 @@ $$
 **[`CVPR-W 2017`] (`CMU`)**  
 *Amir Zadeh, Tadas Baltrušaitis, Louis-Philippe Morency*
 
-### 3D 
+[Single Image 3D Interpreter Network](https://arxiv.org/pdf/1604.08685.pdf)  
+**[`ECCV 2016`] (`MIT`)**  
+*Jiajun Wu, Tianfan Xue, Joseph J. Lim, Yuandong Tian, Joshua B. Tenenbaum, Antonio Torralba, William T. Freeman*
+
+<details><summary>Click to expand</summary>
+
+<div align=center>
+	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210511164624.png" width="800" />
+</div>
+
+> **Summary**
+
+This work achieves state-of-the-art performance on both 2D keypoint estimation and 3D structure recovery. 有 2D annotations on real images.
+
+</p></details>
+
+---
 
 [Discovery of latent 3d keypoints via end-to-end geometric reasoning](https://arxiv.org/pdf/1807.03146.pdf)  
 **[`NeurIPS 2018`] (`Google`)**  

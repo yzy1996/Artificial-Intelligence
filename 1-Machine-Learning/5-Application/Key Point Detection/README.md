@@ -14,52 +14,53 @@ The model we learn often covers a collection of objects of **a specific category
 
 ## Introduction
 
-**name**: landmark/keypoint detector/discovery/estimation
+**name**: landmark/keypoint detection/discovery/estimation
+
+> 思考这个和 pose estimation 的关系？pose也是由一个个关键点构成的，
 
 
 
-内容：找到同一类别里 不受视角影响的 几何结构，语义一致 的关键点，
+**先笼统地介绍：**
 
-The meaning of predicting keyPoints/landmarks?
+- 关键点很重要：因为可以看成是物体的一种最简洁形状表征，就可以用来形状编辑，重建，识别等；所以如何找关键点是一个很重要的研究问题。同时分类和识别工作同时伴随着的是特征提取，那么在geometric vision 领域，比如 3D reconstruction and shape alignment 是不是也伴随着有一个 keypoint detection module ，然后再是 geometric reasoning。
 
-for shape edit？
+- 关键点的特点 - 不随视角，光线，形状变化，姿态 而变化
 
-invariant to pose, shape, and illumination
+  **Equivariance**: equivariant to image transformation, including object and camera motions.
 
-a good proxy for shape editing [^KeypointDeformer]
-
-
-
-伴随着这个的做法，同时还做了什么呢
-
-pose estimation
+- 关键点检测的拓展：姿态估计
 
 
 
-分类和识别工作同时伴随着的是特征提取，那么在geometric vision 领域，比如 3D reconstruction and shape alignment 是不是也伴随着又一个 keypoint detection module ，然后是 geometric reasoning,
-
-
-
-希望达到的效果：
-
-- **Equivariance**: equivariant to image transformation, including object and camera motions.
-
-
-
-现在可以做到
+**现在可以做到：**
 
 - 2D/3D数据输入
 - 监督和无监督，这里的监督指的是特征点标记
-
 - 一个模型涵盖同一类物体
 
 
 
-概述目前主要的方法有哪些：
+**再详细根据分类介绍**
+
+- 根据对象domain划分
+
+> **Facial keypoints** (facial landmarks): often defined manually with coordinates (x, y). These keypoints mark important areas of the face: the eyes, corners of the mouth, the nose, etc.
+>
+> 不过跟我们关系不大
+>
+> <div align=center>
+> 	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210511113228.jpg" width="100" />
+> </div>
 
 
 
-直接利用，借用keypoint的工作：
+**概述目前主要的方法有哪些**：
+
+[todo]
+
+
+
+直接利用/借用keypoint的工作：
 
 **Non-Rigid Structure-from-Motion (NRSfM)** methods ref:
 
@@ -81,11 +82,31 @@ pose estimation
 
 
 
-$$
-
-> **Related words**:
+**Related keywords**:
 
 landmark, parts, skeletons, category-specific
+
+keypoint heatmap: 关键点热力图，图中数值越大的位置，越有可能是关键点
+
+
+
+**未来可以做的**
+
+现在都是对单个物体进行关键点检测，当场景中同时有多个物体呢？一种是先进行单个物体的标记，再套用但物体的检测；一种是对所有的part加标注，最后再判断是否属于同一个物体。
+
+
+
+**评价指标**
+
+可以手动标然后做回归
+
+
+
+**Something related**
+
+the structure of objects can be also described as constituent parts.
+
+
 
 ## Data
 
@@ -99,97 +120,59 @@ annotated keypoints for:
 
 
 
-评价指标
+## Literature
 
-可以手动标然后做回归
+有物体上的，也有人体上的，人体上又分为脸部和躯体
 
+有针对2D数据的，也有针对3D数据的
 
-
-
-
-related works:
-
-the structure of objects can be also described as constituent parts.
+因此我根据以上进行分类划分
 
 ---
 
+值得还没读完的
 
-用的是 discovery ，是不是也可以用 detection
+- OpenPose: Realtime Multi-Person 2D Pose Estimation using Part Affinity Fields
 
-2D Unsupervised keypoint discovery 
+  提到了一个叫 Part Affinity Fields (PAFs) 的方法
+  
+- [CombOptNet: Fit the Right NP-Hard Problem by Learning Integer Programming Constraints](https://arxiv.org/pdf/2105.02343.pdf)
 
-2017 Unsupervised learning of object landmarks by factorized spatial embeddings
+  有一个这样的实验图
 
-2018 Unsupervised discovery of object landmarks as structural representations
+<div align=center>
+	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210511175347.png" width="400" />
+</div>
 
-2018 Self-supervised learning of a facial attribute embedding from video
+- 6-dof object pose from semantic keypoints
 
-2018 Unsupervised learning of object landmarks through conditional image generation
-
-2019 Unsupervised learning of landmarks by descriptor vector exchange
-
-2020 Self-supervised learning of interpretable keypoints from unlabelled videos
-
-
-
-3D keypoints on 2D image
-
-- 2018 Discovery of latent 3d keypoints via end-to-end geometric reasoning
-
-> 用的 3D pose 的信息
+- 3d landmark model discovery from a registered set of organic shapes
 
 
-
-3D keypoints on 3D shapes.
-
-- 2021 KeypointDeformer: Unsupervised 3D Keypoint Discovery for Shape Control
-- 2020 Unsupervised learning of intrinsic structural representation points
-- 2020 Unsupervised learning of category-specific symmetric 3d keypoints from point sets
-
-
-
-
-
-价值意义
-
-robotics applications need 3D keypoints for control 
-
-- 2019 Keypoint affordances for category-level robotic manipulation
-- 2019 kpam-sc: Generalizable manipulation planning using keypoint affordance and shape completion
-
-
-
-根据这些特征点，可以做识别
-
-
-
-## Literature
-
-6-dof object pose from semantic keypoints
-
-3d landmark model discovery from a registered set of organic shapes
 
 ## Supervised
 
-2013 Deep convolutional network cascade for facial point detection
+[Simultaneous facial landmark detection, pose and deformation estimation under facial occlusion](https://arxiv.org/pdf/1709.08130.pdf)  
+**[`CVPR 2017`] (`Rensselaer Polytechnic Institute`)**  
+*Yue Wu, Chao Gou, Qiang Ji*
 
-2014 Facial landmark detection by deep multi-task learning
+[Deep Deformation Network for Object Landmark Localization](https://arxiv.org/pdf/1605.01014.pdf)  
+**[`ECCV 2016`] (`NEC`)**  
+*Xiang Yu, Feng Zhou, Manmohan Chandraker*
 
-2016 Deep deformation network for object landmark localization
+[Facial landmark detection by deep multi-task learning](http://personal.ie.cuhk.edu.hk/~ccloy/files/eccv_2014_deepfacealign.pdf)  
+**[`ECCV 2014`] (`CUHK`)**  
+*Zhanpeng Zhang, Ping Luo, Chen Change Loy, and Xiaoou Tang*
 
-2017 Simultaneous facial landmark detection, pose and deformation estimation under facial occlusion
+[Deep Convolutional Network Cascade for Facial Point Detection](https://www.cv-foundation.org/openaccess/content_cvpr_2013/papers/Sun_Deep_Convolutional_Network_2013_CVPR_paper.pdf)  
+**[`CVPR 2013`] (`CUHK`)**  
+*Yi Sun, Xiaogang Wang, Xiaoou Tang*
 
 ## Unsupervised
 
-
-
-[input dimension] to [output dimension]
+> [input dimension] to [output dimension]
 
 ### 2D to 2D 
-
-[KeypointDeformer: Unsupervised 3D Keypoint Discovery for Shape Control](https://arxiv.org/pdf/2104.11224.pdf)  
-**[`CVPR 2021`] (`Oxford, UCB, Stanford`)**  
-*Tomas Jakab, Richard Tucker, Ameesh Makadia, Jiajun Wu, Noah Snavely, Angjoo Kanazawa*
 
 [Self-supervised learning of interpretable keypoints from unlabelled videos](https://openaccess.thecvf.com/content_CVPR_2020/papers/Jakab_Self-Supervised_Learning_of_Interpretable_Keypoints_From_Unlabelled_Videos_CVPR_2020_paper.pdf)  
 **[`CVPR_2020`] (`Oxford`)**  
@@ -219,59 +202,88 @@ robotics applications need 3D keypoints for control
 **[`ICCV 2017`] (`Oxford`)**  
 *James Thewlis, Hakan Bilen, Andrea Vedaldi*
 
-[Convolutional experts constrained local model for 3d facial landmark detection](https://arxiv.org/pdf/1611.08657.pdf)
-**[`CVPR-W 2017`] (`CMU`)**  
-*Amir Zadeh, Tadas Baltrušaitis, Louis-Philippe Morency*
-
-Keypoint recognition using randomized trees
-
-Deep Deformation Network for Object Landmark Localization
-
 ### 2D to 3D
 
 [Discovery of latent 3d keypoints via end-to-end geometric reasoning](https://arxiv.org/pdf/1807.03146.pdf)  
 **[`NeurIPS 2018`] (`Google`)**  
 *Supasorn Suwajanakorn, Noah Snavely, Jonathan Tompson, Mohammad Norouzi*
 
-
+[Implicit 3D Orientation Learning for 6D Object Detection from RGB Images](https://arxiv.org/pdf/1902.01275.pdf)  
+**[`ECCV 2018`] (`German Aerospace Center, TUM`)**  
+*Martin Sundermeyer, Zoltan-Csaba Marton, Maximilian Durner, Manuel Brucker, Rudolph Triebel*
 
 ### 3D to 3D
+
+[KeypointDeformer: Unsupervised 3D Keypoint Discovery for Shape Control](https://arxiv.org/pdf/2104.11224.pdf)  
+**[`CVPR 2021`] (`Oxford, UCB, Stanford`)**  
+*Tomas Jakab, Richard Tucker, Ameesh Makadia, Jiajun Wu, Noah Snavely, Angjoo Kanazawa*
 
 [Unsupervised Learning of Category-Specific Symmetric 3D Keypoints from Point Sets](https://arxiv.org/pdf/2003.07619.pdf)  
 **[`ECCV 2020`] (`ETH`)**  
 *Clara Fernandez-Labrador, Ajad Chhatkuli, Danda Pani Paudel, Jose J. Guerrero, Cédric Demonceaux, Luc Van Gool*
 
-Usip: Unsupervised stable interest point detection from 3d point clouds
+[Unsupervised learning of intrinsic structural representation points](https://arxiv.org/pdf/2003.01661.pdf)  
+**[`CVPR 2020`] (`HKU, MPI`)**  
+*Nenglun Chen, Lingjie Liu, Zhiming Cui, Runnan Chen, Duygu Ceylan, Changhe Tu, Wenping Wang*
 
+[Convolutional experts constrained local model for 3d facial landmark detection](https://arxiv.org/pdf/1611.08657.pdf)
+**[`CVPR-W 2017`] (`CMU`)**  
+*Amir Zadeh, Tadas Baltrušaitis, Louis-Philippe Morency*
 
+[USIP: Unsupervised Stable Interest Point Detection from 3D Point Clouds](https://arxiv.org/pdf/1904.00229.pdf)  
+**[`ICCV 2019`] (`NUS`)**  
+*Jiaxin Li, Gim Hee Lee*
 
 ## For different domain
 
-human bodies
+### human bodies
 
-DeepPose: Human pose estimation via deep neural networks
+[Hand Keypoint Detection in Single Images using Multiview Bootstrapping](https://arxiv.org/pdf/1704.07809.pdf)  
+**[`CVPR 2017`] (`CMU`)**  
+*Tomas Simon, Hanbyul Joo, Iain Matthews, Yaser Sheikh*
 
-Stacked hourglass networks for human pose estimation
+[Stacked Hourglass Networks for Human Pose Estimation](https://arxiv.org/pdf/1603.06937.pdf)  
+**[`ECCV 2016`] (`Michigan`)**  
+*Alejandro Newell, Kaiyu Yang, Jia Deng*
 
-Articulated pose estimation with flexible mixtures-of-parts
+[Cascaded hand pose regression](https://openaccess.thecvf.com/content_cvpr_2015/papers/Sun_Cascaded_Hand_Pose_2015_CVPR_paper.pdf)  
+**[`CVPR 2015`] (`CUHK`)**  
+*Xiao Sun, Yichen Wei, Shuang Liang, Xiaoou Tang, Jian Sun*
 
-Cascaded pose regression
+[DeepPose: Human pose estimation via deep neural networks](https://arxiv.org/pdf/1312.4659.pdf)  
+**[`CVPR 2014`] (`Google`)**  
+*Alexander Toshev, Christian Szegedy*
 
+[Articulated pose estimation with flexible mixtures-of-parts](https://www.cs.cmu.edu/~deva/papers/pose2011.pdf)  
+**[`CVPR 2011`] (`UCI`)**  
+*Yi Yang, Deva Ramanan*
 
+[Cascaded pose regression](https://authors.library.caltech.edu/23201/1/Dollar2010p133332008_Ieee_Conference_On_Computer_Vision_And_Pattern_Recognition_Vols_1-12.pdf)  
+**[`CVPR 2010`] (`CIT`)**  
+*Piotr Dollár, Peter Welinder, Pietro Perona*
 
-bird
+### Bird
 
-Deep deformation network for object landmark localization
+Deep Deformation Network for Object Landmark Localization
 
 Part Localization using Multi-Proposal Consensus for Fine-Grained Categorization
 
 Bird part localization using exemplar-based models with enforced pose and subcategory consistency
 
+### Furniture
+
+[Single Image 3D Interpreter Network](https://arxiv.org/pdf/1604.08685.pdf)  
+**[`ECCV 2016`] (`MIT`)**  
+*Jiajun Wu, Tianfan Xue, Joseph J. Lim, Yuandong Tian, Joshua B. Tenenbaum, Antonio Torralba, William T. Freeman*
 
 
-furniture 
 
-Single Image 3D Interpreter Network.
+## 价值意义
+
+robotics applications need 3D keypoints for control 
+
+- 2019 Keypoint affordances for category-level robotic manipulation
+- 2019 kpam-sc: Generalizable manipulation planning using keypoint affordance and shape completion
 
 
 

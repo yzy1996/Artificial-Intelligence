@@ -195,7 +195,7 @@ ss
 
 ---
 
-[Unsupervised learning of object landmarks through conditional image generation](https://arxiv.org/pdf/1806.07823.pdf)
+[Unsupervised learning of object landmarks through conditional image generation](https://arxiv.org/pdf/1806.07823.pdf)  
 **[`NeurIPS 2018`] (`Oxford`)**  
 *Tomas Jakab, Ankush Gupta, Hakan Bilen, Andrea Vedaldi*
 

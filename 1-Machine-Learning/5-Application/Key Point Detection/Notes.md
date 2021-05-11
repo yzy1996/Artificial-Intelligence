@@ -293,7 +293,7 @@ $$
 
 ---
 
-[Convolutional experts constrained local model for 3d facial landmark detection](https://arxiv.org/pdf/1611.08657.pdf)
+[Convolutional experts constrained local model for 3d facial landmark detection](https://arxiv.org/pdf/1611.08657.pdf)  
 **[`CVPR-W 2017`] (`CMU`)**  
 *Amir Zadeh, Tadas Baltrušaitis, Louis-Philippe Morency*
 

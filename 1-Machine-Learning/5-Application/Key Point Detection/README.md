@@ -190,7 +190,7 @@ annotated keypoints for:
 **[`BMVC 2018`] (`Oxford`)**  
 *Olivia Wiles, A. Sophia Koepke, Andrew Zisserman*
 
-[Unsupervised learning of object landmarks through conditional image generation](https://arxiv.org/pdf/1806.07823.pdf)
+[Unsupervised learning of object landmarks through conditional image generation](https://arxiv.org/pdf/1806.07823.pdf)  
 **[`NeurIPS 2018`] (`Oxford`)**  
 *Tomas Jakab, Ankush Gupta, Hakan Bilen, Andrea Vedaldi*
 

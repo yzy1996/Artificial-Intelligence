@@ -20,6 +20,8 @@ surface-based
 
 
 
+computationally expensive since it requires many forward passes through the network for every pixel.
+
 
 
 表征的目的：

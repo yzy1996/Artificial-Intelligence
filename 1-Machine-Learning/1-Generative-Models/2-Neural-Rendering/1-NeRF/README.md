@@ -40,6 +40,8 @@ NeRF uses a neural network to map a 3D location $\mathbf{x} \in \mathbb{R}^3$ an
 
 NeRF带来的好处是什么呢？
 
+view-independent, 因为x
+
 Conditioning on the viewing direction $\mathbf{d}$ allows for modeling view-dependent effects such as specular reflections and improves reconstruction quality in case the Lambertian assumption is violated.
 
 
@@ -107,6 +109,8 @@ FFHQ
 [NeRF++](#NeRF++)
 
 [UNISURF](#UNISURF)
+
+分类
 
 **Generalization**
 

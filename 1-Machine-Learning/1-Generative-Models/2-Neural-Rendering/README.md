@@ -18,6 +18,10 @@ Related repositories:
 
 
 
+Traditional 2D GANs take in a latent vector $$\mathbf{z} \sim p_{\mathbf{z}}$$ and directly produce a 2D image.
+
+Now, instead of directly generating an image from the input noise $$\mathbf{z}$$, new generator $$G(\mathbf{z}, \xi)$$ produces an implicit 3D radiance field conditioned on $\mathbf{z}$. Then novel view image is rendered from this radiance field by volume rendering.
+
 
 
 Computer graphics + generative model two areas come together -> neural rendering 

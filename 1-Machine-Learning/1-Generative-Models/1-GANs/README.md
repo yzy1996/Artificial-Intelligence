@@ -156,7 +156,6 @@ $$
 > $$
 > H = 1 * \log(-D(G(z))) + 0*log(1 + D(G(z)))
 > $$
-> 
 
 
 
@@ -213,3 +212,10 @@ $$
 
 
 [How to Train a GAN? Tips and tricks to make GANs work](https://github.com/soumith/ganhacks)
+
+
+
+
+
+GAN models share two common aspects: solving a challenging saddle point optimization problem, interpreted as an adversarial game between a generator and a discriminator functions.
+

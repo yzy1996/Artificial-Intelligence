@@ -22,11 +22,11 @@ The model we learn often covers a collection of objects of **a specific category
 
 **先笼统地介绍：**
 
-- 关键点很重要：因为可以看成是物体的一种最简洁形状表征，就可以用来形状编辑，重建，识别等；所以如何找关键点是一个很重要的研究问题。同时分类和识别工作同时伴随着的是特征提取，那么在geometric vision 领域，比如 3D reconstruction and shape alignment 是不是也伴随着有一个 keypoint detection module ，然后再是 geometric reasoning。
+- 关键点很重要：因为可以看成是物体的一种最简洁形状表征，就可以用来形状编辑，重建，识别等；所以如何找关键点是一个很重要的研究问题。同时分类和识别工作同时伴随着的是特征提取，那么在geometric vision 领域，比如 3D reconstruction and shape alignment 是不是也伴随着有一个 keypoint detection module 的前置任务，然后再是 geometric reasoning。
 
 - 关键点的特点 - 不随视角，光线，形状变化，姿态 而变化
 
-  **Equivariance**: equivariant to image transformation, including object and camera motions.
+  **Equivariance**: equivariant to image transformation, including object and camera motions. 3D pose, size, position, viewing angle, and illumination conditions
 
 - 关键点检测的拓展：姿态估计
 
@@ -44,13 +44,17 @@ The model we learn often covers a collection of objects of **a specific category
 
 - 根据对象domain划分
 
-> **Facial keypoints** (facial landmarks): often defined manually with coordinates (x, y). These keypoints mark important areas of the face: the eyes, corners of the mouth, the nose, etc.
->
-> 不过跟我们关系不大
->
-> <div align=center>
-> 	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210511113228.jpg" width="100" />
-> </div>
+	- **Facial keypoints** (facial landmarks): often defined manually with coordinates (x, y). These keypoints mark important areas of the face: the eyes, corners of the mouth, the nose, etc.
+	- **Human Keypoint Detection** (human pose detection)：旨在定位图像中人体关节点的位置。有一个最权威的比赛 MS COCO Keypoint track。
+	- **Animal** (such as Bird)
+	- **Objects** (such as furniture)
+- 根据监督性划分
+  - Supervised: 
+  - Unsupervised: 
+- 根据数据维度
+  - 2D输入2D输出:
+  - 3D输入3D输出:
+  - 2D输入3D输出:
 
 
 
@@ -82,7 +86,7 @@ The model we learn often covers a collection of objects of **a specific category
 
 
 
-**Related keywords**:
+**Keywords**:
 
 landmark, parts, skeletons, category-specific
 
@@ -177,6 +181,10 @@ annotated keypoints for:
 [Self-supervised learning of interpretable keypoints from unlabelled videos](https://openaccess.thecvf.com/content_CVPR_2020/papers/Jakab_Self-Supervised_Learning_of_Interpretable_Keypoints_From_Unlabelled_Videos_CVPR_2020_paper.pdf)  
 **[`CVPR_2020`] (`Oxford`)**  
 *Tomas Jakab, Ankush Gupta, Hakan Bilen, Andrea Vedaldi*
+
+[Unsupervised Learning of Object Keypoints for Perception and Control](https://arxiv.org/pdf/1906.11883.pdf)  
+**[`NeurIPS 2019`] ()**  
+*Tejas Kulkarni, Ankush Gupta, Catalin Ionescu, Sebastian Borgeaud, Malcolm Reynolds, Andrew Zisserman, Volodymyr Mnih*
 
 [Unsupervised learning of landmarks by descriptor vector exchange](https://arxiv.org/pdf/1908.06427.pdf)  
 **[`ICCV 2019`] (`Oxford`)**  

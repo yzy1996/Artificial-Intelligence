@@ -171,7 +171,7 @@ keypoints)，就想是一个embedding) to establish correspondences between imag
 
 <details><summary>Click to expand</summary>
 
-The aim is to train a network to learn an embedding that encodes facial attributes in a selfsupervised manner, without any labels.
+The aim is to train a network to learn an embedding that encodes facial attributes in a self supervised manner, without any labels.
 
 </p></details>
 
@@ -189,7 +189,7 @@ The aim is to train a network to learn an embedding that encodes facial attribut
 
 > **Summary**
 
-ss
+
 
 </p></details>
 
@@ -257,11 +257,11 @@ landmark located at the maximum.
 *James Thewlis, Hakan Bilen, Andrea Vedaldi*
 
 <details><summary>Click to expand</summary>
-
 <div align=center>
 	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210509151055.png" width="400" />
-    <p>(point r in the reference space S, a map $Phi$ detects the location q)</p>
+    <p>(point r in the reference space S, a map $Phi$ detects the location q 两幅图是同一物体不同视角)</p>
 </div>
+
 
 > **Summary**
 
@@ -278,7 +278,7 @@ $\mathrm{x}: \Lambda \rightarrow \mathbb{R}$ is an image of the object
 $\Lambda \sub \mathbb{R}^2$  is the image domain
 
 learn a function $q = \Phi_S(p;\mathrm{x})$, where $p \in S$ is the object points, $q \in \Lambda$ is the corresponding pixels.  
-an image warp function $g: \mathbb{R}^2 \mapsto \mathbb{R}^2$.
+an image warp function $g: \mathbb{R}^2 \mapsto \mathbb{R}^2$. 主要是依靠viewpoint的变换
 
 The factorization is:
 $$

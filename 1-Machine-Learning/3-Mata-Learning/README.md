@@ -9,6 +9,8 @@ Meta-learning typically addresses the problem of **few-shot learning**, where so
 
 The goal is to train a learner that can quickly adapt to new, unseen tasks given only few training examples, often referred to as context observations.
 
+The goal of meta-learning is to learn from previous tasks a well-generalized meta-learnerM() which can facilitate the training of the base learner in a future task with a few examples.
+
 > An example in computer vision: a network need to learn to differentiate between new classes based on only a small number of labeled instances of each class.
 
 
@@ -18,6 +20,9 @@ take advantages of the knowledge learned from related tasks
 few-shot
 
 
+
+- learn quickly with a few samples
+- 
 
 
 
@@ -40,6 +45,24 @@ Branch
   > can specialize to a new task via few steps of gradient descent
 
 
+
+Meta-Learning frame:
+
+N-way and K-shot few-shot task "Problem definition"
+
+given a labeled dataset of base classes $C_{base}$ with a large amount of images in each class, the goal is to learn concepts in novel classes $C_{novel}$ with a few samples in each class. 
+
+(training) We have N classes, in each class, there are K support samples and Q query samples
+
+the goal is to classify the query samples after training from support samples.
+
+(evaluation) compute from many tasks samples from the data in $C_{novel}$
+
+meta-learning architectures can be categorized into:
+
+- Memory-based methods.
+- Optimization-based methods.
+- Metric-based methods.
 
 
 
@@ -74,4 +97,10 @@ $$
 ### MAML
 
 
+
+[Hierarchically Structured Meta-learning](https://arxiv.org/pdf/1905.05301.pdf)
+
+
+
+> **Summary**
 

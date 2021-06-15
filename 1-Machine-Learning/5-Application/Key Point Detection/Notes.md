@@ -257,11 +257,11 @@ landmark located at the maximum.
 *James Thewlis, Hakan Bilen, Andrea Vedaldi*
 
 <details><summary>Click to expand</summary>
+
 <div align=center>
 	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210509151055.png" width="400" />
     <p>(point r in the reference space S, a map $Phi$ detects the location q 两幅图是同一物体不同视角)</p>
 </div>
-
 
 > **Summary**
 
@@ -270,6 +270,8 @@ Detect consistent landmarks with image deformations under a process of factorizi
 They mainly learn viewpoint-independent representations of objects from images,  the structure of an object is expressed as a set of landmark points. The landmark can be seen as a representation of transformations. 
 
 利用 变形前后关键点不变性 作为学习信号。
+
+？这个关键点是如何定义的呢，人还是自动的
 
 > **Details**
 

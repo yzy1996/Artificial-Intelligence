@@ -131,7 +131,7 @@ $$
 
 一般记作：$[R \mid t]$，其中 $R$ 是一个 $3 \times 3$ 的旋转矩阵，$t$ 是一个 $3 \times 1$ 的平移量。（这样的写法不是条件概率那样的意思，而只是为了便于表明这个 $3 \times 4$ 矩阵是由什么构成的。
 $$
-[\mathbf{R} \mid t] = 
+[\mathbf{R} \mid \mathbf{t}] = 
 \underbrace{\left(\begin{array}{c|c}
 I & \mathbf{t}
 \end{array}\right)}_{\text{3D Translation}} 

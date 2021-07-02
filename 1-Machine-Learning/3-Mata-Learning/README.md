@@ -46,7 +46,7 @@ Branch
 
 
 
-### Meta-Learning frame:
+### Meta-Learning Problem Definition:
 
 - We have a task distribution $P(\mathcal{T})$, and then we sample a task $\mathcal{T}_i$ with a dataset $\mathcal{D}_i$.
 
@@ -54,11 +54,9 @@ Branch
 - during meta-training stage, we train the model $f$ on the meta-training tasks.
 - during meta-test stage, the well-trained model $f$ is applied to the new task $\mathcal{T}_t$ with its support set $\mathcal{D_t^s}$ and evaluate the performance on the query set $\mathcal{D_t^q}$.
 
+**N-way and K-shot few-shot task**
 
-
-
-
-N-way and K-shot few-shot task "Problem definition"
+$\left\{\left(\mathbf{x}_{n}^{k}, y_{n}^{k}\right) \mid k=1 \ldots K ; n=1 \ldots N\right\}$ contains $N$ classes, and $K$ samples for each class.
 
 given a labeled dataset of base classes $C_{base}$ with a large amount of images in each class, the goal is to learn concepts in novel classes $C_{novel}$ with a few samples in each class. 
 
@@ -68,6 +66,8 @@ the goal is to classify the query samples after training from support samples.
 
 (evaluation) compute from many tasks samples from the data in $C_{novel}$
 
+
+
 meta-learning architectures can be categorized into:
 
 - Memory-based methods.
@@ -76,11 +76,15 @@ meta-learning architectures can be categorized into:
 
 
 
+Humans have a remarkable ability to quickly grasp new concepts from a very small number of examples or a limited amount of experience, leveraging prior knowledge and context
+
+how to learn or to quickly adapt to new information
+
 ### Main algorithms
 
 #### gradient-based
 
-model-agnostic meta learning (MAML)
+model-agnostic meta learning (MAML) 
 
 The goal of MAML is to learn initial parameters $\theta^*$ such that one or a few gradient steps on $D^s$ 
 
@@ -139,6 +143,12 @@ $$
 - review
 
 2020-Meta-learning in neural networks: A survey
+
+
+
+**gradient-based**
+
+Model-agnostic meta-learning for fast adaptation of deep networks
 
 
 

@@ -6,7 +6,7 @@
 
 ---
 
-<span id="CR-GAN"></span>
+<span id="ShapeHD"></span>
 [Consistency regularization for generative adversarial networks](https://arxiv.org/pdf/1910.12027.pdf)  
 **[ICLR 2020]  (`Google`)  [[Code](https://github.com/NVlabs/stylegan)]**  
 *Tero Karras, Samuli Laine, Timo Aila*

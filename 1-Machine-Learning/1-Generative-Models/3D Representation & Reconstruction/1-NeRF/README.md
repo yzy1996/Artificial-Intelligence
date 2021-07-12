@@ -1,6 +1,53 @@
-# Neural Radiance Fields Notes
+# Neural Radiance Fields
+
+NeRF represents the 3D geometry and appearance of a scene as a continuous 5D to 2D mapping function and uses volume rendering to synthesize novel views. The training process relies on multiple images with given camera poses.
 
 
+
+
+
+预备知识：
+
+camera 
+
+
+
+这一个笔记主要围绕NeRF相关展开，从为什么NeRF会诞生，到NeRF还存在的问题。通过相关文献归纳整理。
+
+
+
+- fail to represent or synthesize with few instances
+- heavily rely on known camera pose
+
+
+
+### accurate known camera pose information
+
+`一是有多准确`，`二是可变性有多强`
+
+iNeRF and NeRF-- optimize camera pose along with other parameters when training NeRF.
+
+
+
+[iNeRF: Inverting Neural Radiance Fields for Pose Estimation](https://arxiv.org/pdf/2012.05877.pdf)  
+**[`Arxiv 2020`] (`MIT, Google`)**  
+*Lin Yen-Chen, Pete Florence, Jonathan T. Barron, Alberto Rodriguez, Phillip Isola, Tsung-Yi Lin*
+
+[NeRF--: Neural Radiance Fields Without Known Camera Parameters](https://arxiv.org/pdf/2102.07064.pdf)  
+**[`Arxiv 2021`] (`Oxford`)** [[Code](https://github.com/ActiveVisionLab/nerfmm)]  
+*Zirui Wang, Shangzhe Wu, Weidi Xie, Min Chen, Victor Adrian Prisacariu*
+
+[GNeRF: GAN-based Neural Radiance Field without Posed Camera](https://arxiv.org/pdf/2103.15606.pdf)  
+**[`Arxiv 2021`] (`ShanghaiTech`)**  
+*Quan Meng, Anpei Chen, Haimin Luo, Minye Wu, Hao Su, Lan Xu, Xuming He, Jingyi Yu*
+
+
+
+补充：其实谈到相机位置估计，不可避免会和 Structure-from-Motion (SfM) 去比较，他们的开源包叫COLMAP：
+
+[Structure-from-Motion Revisited](https://demuc.de/papers/schoenberger2016sfm.pdf)  
+**[`CVPR 2016`] (`UNC, ETH`)** [[Code](https://github.com/colmap/colmap)]  
+*Johannes L. Schonberger, Jan-Michael Frahm*
 
 ## Introduction
 

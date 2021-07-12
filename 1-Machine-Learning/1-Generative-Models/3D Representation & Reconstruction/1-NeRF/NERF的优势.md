@@ -8,7 +8,7 @@
 
 存在的问题呢？
 
-fail at few-shot nocel view synthesis
+
 
 **NeRF overfits to training views**
 

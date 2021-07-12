@@ -1,4 +1,6 @@
-# 3D 
+# GAN for 3D Understanding
+
+
 
 
 
@@ -48,6 +50,44 @@ learn model for **single** or **multiple** objects.
 
 
 ## Literature
+
+
+
+- [RGBD-GAN: Unsupervised 3D Representation Learning From Natural Image Datasets via RGBD Image Synthesis](https://arxiv.org/pdf/1909.12573.pdf)  
+  **[`ICLR 2020`] (`U Tokyo, RIKEN`)**  
+  *Atsuhiro Noguchi, Tatsuya Harada*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -23,6 +23,16 @@ camera
 
 
 
+## Contents
+
+- [Pose Estimation from RGB Images](#Pose Estimation from RGB Images)
+
+
+
+
+
+
+
 ### Pose Estimation from RGB Images
 
 Existing NeRF-based methods assume that the camera parameters are known. So it's better to train NeRF model without known camera poses. Even though there are some existing approaches (e.g. SfM) to pre-compute camera parameters.

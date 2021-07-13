@@ -10,6 +10,10 @@ A collection of resources on 3D reconstruction.
 >
 > 表征可以是表征单个物体，也可以是表征多个物体
 
+
+
+通常为了简化，我们会使用canonical view / model
+
 ## Introduction
 
 To tackle the instability of the training procedure...
@@ -23,6 +27,8 @@ These methods can be divided into two categories:
 
 
 ## Literature
+
+
 
 ### Survey
 
@@ -38,9 +44,13 @@ Regard the object surface as a 2-dimensional manifold embedded in the 3-dimensio
 
 
 
-### 2D - 3D
+### Single View Reconstruction
 
-<span id="Fastgan"></span>
+> more details ref [file](./Single-View-Reconstruction)
+>
+> 也可以叫 single image reconstruction，对一个 3D 目标，单个图像就是单个视角
+
+<span id="Symmetric"></span>
 [Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild](https://arxiv.org/pdf/1911.11130.pdf)  
 **[`CVPR 2020`]  (`Oxford`)**  
 *Shangzhe Wu, Christian Rupprecht, Andrea Vedaldi*

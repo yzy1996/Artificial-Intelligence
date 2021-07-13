@@ -1,6 +1,6 @@
-# 3D reconstruction
+# <p align=center>`Single View Reconstruction`</p>
 
-including single or multi view 
+
 
 
 
@@ -11,6 +11,18 @@ the type of reconstruction includes
 
 
 ## Introduction
+
+
+
+
+
+## Literature
+
+[Unsupervised Learning of Probably Symmetric Deformable 3D Objects from Images in the Wild](https://arxiv.org/pdf/1911.11130.pdf)  
+**[`CVPR 2020`]  (`Oxford`)**  
+*Shangzhe Wu, Christian Rupprecht, Andrea Vedaldi*
+
+
 
 
 

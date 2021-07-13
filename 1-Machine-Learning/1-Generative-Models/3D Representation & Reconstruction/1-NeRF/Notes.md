@@ -33,15 +33,25 @@ The loss gradient is from the differences between the rendered image and the obs
 
 > **Details**
 
-Sampling strategy brings two orders of magnitude fewer pixels than a full-image sampling
+Sampling strategy brings two orders of magnitude fewer pixels than a full-image sampling.
 
+They assume that NeRF model $F_\Theta$ and the camera intrinsics are known, but the camera pose $T$ is undetermined. So the formulation can be written as:
+$$
+\hat{T}=\underset{T \in \operatorname{SE}(3)}{\operatorname{argmin}} \mathcal{L}(T \mid I, \Theta)
+$$
+To sample effectively, they propose to first employ interest point detector localizes the interest points and then apply a morphological dilation.
 
+:x: 文中提到了一点是：他们这个方法可以用来让NeRF实现半监督学习，因为可以先用信息都已知的数据训练NeRF模型，然后增加一部分没有pose的图片，iNeRF输出pose，然后构成新的数据集继续训练NeRF。但这是半监督吗？（标准的半监督不是利用数据的结构信息去做分类，然后再增加部分标注信息，进而可以自动补全其他标注信息吗？）本身用不充分的信息，训练出了一个不充分的模型，用模型去做不充分预测，新的不充分数据继续训练这个不充分模型，结果依旧不充分，误差反而还可能累积了。
 
+关于这个，作者也发现当标注信息过少时，效果反而还变差了。
 
+> **Limitations**
 
+- lighting and occlusion severely affect the performance.
 
+- it needs a trained NeRF model which in turn requires known camera poses as supervision. (**硬伤啊！都训练好了再让你去估计相机位置，这是图啥？**) 
 
-
+- slowly.
 
 </p></details>
 
@@ -54,9 +64,35 @@ Sampling strategy brings two orders of magnitude fewer pixels than a full-image 
 
 <details><summary>Click to expand</summary><p>
 
+<div align=center><img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210713111427.png"/></div>
+
 > **Summary**
 
-dsd
+They propose to jointly optimise the camera parameters for each input image while simultaneously training the NeRF model. 
+
+> **Details**
+
+They parameterize the camera rotation as: (skew matrix)
+$$
+\boldsymbol{R}=\boldsymbol{I}+\frac{\sin (\alpha)}{\alpha} \boldsymbol{\phi}^{\wedge}+\frac{1-\cos (\alpha)}{\alpha^{2}}\left(\boldsymbol{\phi}^{\wedge}\right)^{2}
+\\
+\boldsymbol{\phi}^{\wedge}=\left(\begin{array}{l}
+\phi_{0} \\
+\phi_{1} \\
+\phi_{2}
+\end{array}\right)^{\wedge}=\left(\begin{array}{ccc}
+0 & -\phi_{2} & \phi_{1} \\
+\phi_{2} & 0 & -\phi_{0} \\
+-\phi_{1} & \phi_{0} & 0
+\end{array}\right)
+$$
+To improve the quality of the synthesized images, after the first training process is completed, they drop the trained NeRF model and re-initialise it while keeping the trained camera parameters. Then they repeat the joint optimisation.
+
+> **Limitation**
+
+- struggles to reconstruct scenes with large texture-less regions or in the presence significant photometric inconsistency across frames.
+- fall into local minima.
+- roughly forwardfacing scenes and relatively short camera trajectories
 
 </p></details>
 
@@ -97,9 +133,9 @@ $$
 
 > **Limitation**
 
-Require a reasonable camera pose sampling distribution not far from the true distribution.
+- Require a reasonable camera pose sampling distribution not far from the true distribution.
 
-Not so accurate as of the COLMAP when there are sufficient information.
+- Not so accurate as of the COLMAP when there are sufficient information.
 
 </p></details>
 

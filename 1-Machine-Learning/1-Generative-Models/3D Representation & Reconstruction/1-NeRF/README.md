@@ -4,6 +4,8 @@ NeRF represents the 3D geometry and appearance of a scene as a continuous 5D to 
 
 
 
+high fidelity
+
 
 
 预备知识：
@@ -21,9 +23,13 @@ camera
 
 
 
-### accurate known camera pose information
+### Pose Estimation from RGB Images
 
-`一是有多准确`，`二是可变性有多强`
+Existing NeRF-based methods assume that the camera parameters are known. So it's better to train NeRF model without known camera poses. Even though there are some existing approaches (e.g. SfM) to pre-compute camera parameters.
+
+也可以说解决的问题是，novel view synthesis from 2D images **without known camera poses**.
+
+做到的效果包括：`一是有多准确`，`二是可变化范围有多大`
 
 iNeRF and NeRF-- optimize camera pose along with other parameters when training NeRF.
 

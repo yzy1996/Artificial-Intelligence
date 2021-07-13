@@ -24,13 +24,17 @@ $$
 
 
 
-
-
-
-
 ## Literature
 
 [A Primal-Dual Formulation for Deep Learning with Constraints](https://papers.nips.cc/paper/2019/file/cf708fc1decf0337aded484f8f4519ae-Paper.pdf)  
 **[`NeurIPS`] (`Indian Institute of Technology Delhi`)** [[Code](https://github.com/dair-iitd/dl-with-constraints)]  
 *Yatin Nandwani, Abhishek Pathak, Mausam and Parag Singla*
+
+[DC3: A learning method for optimization with hard constraints](https://arxiv.org/pdf/2104.12225.pdf)  
+**[`ICLR 2021`] (`CMU, McGill`)**  
+*Priya L. Donti, David Rolnick, J. Zico Kolter*
+
+[Imposing Hard Constraints on Deep Networks: Promises and Limitations](https://arxiv.org/pdf/1706.02025.pdf)  
+**[`Arxiv 2017`] (`EPFL`)**  
+*Pablo Márquez-Neila, Mathieu Salzmann, Pascal Fua*
 

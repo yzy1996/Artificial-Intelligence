@@ -1,36 +1,33 @@
-# <p align=center>`[Title]`</p>
+# <p align=center>`Single View Reconstruction`</p>
 
-> The order is from the latest to the old
 
-[CR-GAN](#CR-GAN)
+
+## Contents
+
+[ShapeHD](#ShapeHD)
 
 ---
 
 <span id="ShapeHD"></span>
-[Consistency regularization for generative adversarial networks](https://arxiv.org/pdf/1910.12027.pdf)  
-**[ICLR 2020]  (`Google`)  [[Code](https://github.com/NVlabs/stylegan)]**  
-*Tero Karras, Samuli Laine, Timo Aila*
+[Learning Shape Priors for Single-View 3D Completion and Reconstruction](https://arxiv.org/pdf/1809.05068.pdf)  
+**[`ECCV 2018`] (`MIT`)**  
+*Jiajun Wu, Chengkai Zhang, Xiuming Zhang, Zhoutong Zhang, William T. Freeman, Joshua B. Tenenbaum*
 
 <details><summary>Click to expand</summary><p>
 
+<div align=center><img width="600" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210714105831.png"/></div>
+
 > **Summary**
 
-They propose a training stabilizer based on **consistency regularization**. In particular, they **augment data** passing into the GAN discriminator and **penalize the sensitivity** of the discriminator to these augmentations.
+They just propose a penalty term to improve the quality of 3D reconstruction by integrating deep generative models with adversarially learned shape priors. After training the model, they can achieve single-view 3D shape completion and reconstruction.
 
 > **Details**
 
-$T(x)$ donates a stochastic data augmentation function. $D(x)$ donates the last layer before the activation function. The proposed regularization is given by:
+Their model consists of three components:
 
-Latex
-$$
-\operatorname{argmin}_{\theta} \mathcal{L}(\theta)=\mathbb{E}_{\mathbf{z}, \mathbf{y}, \alpha}\left[\left(A\left(G\left(T_{\theta}(\mathbf{z}, \alpha), \mathbf{y}\right)\right)-(A(G(\mathbf{z}, \mathbf{y}))+\alpha)\right)^{2}\right]
-$$
-
-Latex2image
-<div align=center><img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119214216.svg"/></div>
-
-figure
-<div align=center><img width="300" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119220419.png"/></div>
+- (encoder-decoder) 2.5D sketch estimator to predict the object's depth, surface normals, and silhouette from an RGB image.
+- (encoder-decoder) 3D shape estimator to predict a 3D shape in the canonical view from 2.5D sketches.
+- (discriminator from pre-trained GAN) deep naturalness model to penalize the shape estimator
 
 </p></details>
 

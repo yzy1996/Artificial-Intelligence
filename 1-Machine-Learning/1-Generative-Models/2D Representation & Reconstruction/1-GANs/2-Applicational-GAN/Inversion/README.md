@@ -13,6 +13,16 @@ There are two main approaches to embed instances from the image space to the lat
 
 
 
+inverse problem:
+
+deblurring, image inpainting, phase retrieval,
+
+
+
+
+
+
+
 ## Literature
 
 **GAN Inversion A Survey**
@@ -64,4 +74,18 @@ They propose an embedding algorithm to map a given image into the latent space o
 [Generative visual manipulation on the natural image manifold](https://arxiv.org/pdf/1609.03552.pdf)  
 **[`ECCV 2016`]**  
 *Jun-Yan Zhu, Philipp Krähenbühl, Eli Shechtman, Alexei A. Efros*
+
+
+
+Image processing using multi-code gan prior
+
+
+
+
+
+
+<span id="Pixel2Style2Pixel"></span>
+[Encoding in Style: a StyleGAN Encoder for Image-to-Image Translation](https://arxiv.org/pdf/2008.00951.pdf)  
+**[`CVPR 2021`]**  
+*Elad Richardson, Yuval Alaluf, Or Patashnik, Yotam Nitzan, Yaniv Azar, Stav Shapiro, Daniel Cohen-Or*
 

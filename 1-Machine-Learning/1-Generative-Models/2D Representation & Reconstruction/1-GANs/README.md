@@ -222,3 +222,12 @@ GAN models share two common aspects: solving a challenging saddle point optimiza
 
 
 a popular paradigm to learn the distribution of the observed data
+
+
+
+### Basic
+
+
+
+### Applications
+

@@ -12,7 +12,7 @@ the type of reconstruction includes
 
 ## Introduction
 
-
+更多的是指训练好的模型具有这个能力，而训练过程是通过多视角图像的
 
 
 
@@ -22,7 +22,9 @@ the type of reconstruction includes
 **[`CVPR 2020`]  (`Oxford`)**  
 *Shangzhe Wu, Christian Rupprecht, Andrea Vedaldi*
 
-
+[Learning Shape Priors for Single-View 3D Completion and Reconstruction](https://arxiv.org/pdf/1809.05068.pdf)  
+**[`ECCV 2018`] (`MIT`)**  
+*Jiajun Wu, Chengkai Zhang, Xiuming Zhang, Zhoutong Zhang, William T. Freeman, Joshua B. Tenenbaum*
 
 
 

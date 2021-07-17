@@ -4,6 +4,10 @@ NeRF represents the 3D geometry and appearance of a scene as a continuous 5D to 
 
 
 
+带来的另一个好处是可解释性
+
+
+
 high fidelity
 
 

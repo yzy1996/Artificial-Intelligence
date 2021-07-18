@@ -141,7 +141,6 @@ Existing GAN-based approaches can be categorized roughly into two groups:
 
 > lower-dimensional space
 >
-> 
 
 
 

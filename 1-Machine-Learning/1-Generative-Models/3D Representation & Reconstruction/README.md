@@ -39,6 +39,12 @@ A collection of resources on 3D reconstruction.
 
 
 
+Our goal is to **reconstruct 3D objects or scenes** from **single or multiple view 2D images**, by the means of one of the **3D representation methods** (e.g., point cloud, neural implicit function, surface),  with this comes **novel views synthesis**.
+
+
+
+
+
 通常为了简化，我们会使用canonical view / model
 
 
@@ -208,6 +214,10 @@ Regard the object surface as a 2-dimensional manifold embedded in the 3-dimensio
 
 
 > 这里补充一点是，可以用 Marching cubes 从SDF 得到Mesh
+
+#### Neural implicit function
+
+neural radiance fields
 
 
 

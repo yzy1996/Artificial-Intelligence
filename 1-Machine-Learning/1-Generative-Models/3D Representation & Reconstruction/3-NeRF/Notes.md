@@ -6,13 +6,60 @@
 
 ## Content
 
+- Improve Performance
+  - [UNISURF](#UNISURF)
+
 - Pose Estimation from RGB Images
+  - [iNeRF](#iNeRF)
+  - [NeRF--](#NeRF--)
+  - [GNeRF](#GNeRF)
 
-[iNeRF](#iNeRF)
+---
 
-[NeRF--](#NeRF--)
+<span id="UNISURF"></span>
+[UNISURF: Unifying Neural Implicit Surfaces and Radiance Fields for Multi-View Reconstruction](https://arxiv.org/pdf/2104.10078.pdf)  
+**[`arxiv`] (`MPI`)**  
+*Michael Oechsle, Songyou Peng, Andreas Geiger*
 
-[GNeRF](#GNeRF)
+<details><summary>Click to expand</summary>
+
+<div align="center"><img width="500" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210428214156.png" ></div>
+
+> **Summary**
+
+Combine **volumetric radiance** (powerful for "unsupervised" coarse scene) and **surface rendering** (accurate reconstruction).
+
+> **Details**
+
+
+$$
+\begin{aligned}
+\mathcal{L} &=\mathcal{L}_{r e c}+\lambda \mathcal{L}_{r e g}
+\\
+\mathcal{L}_{r e c} &=\sum_{\mathbf{r} \in \mathcal{R}}\left\|\hat{C}_{v}(\mathbf{r})-C(\mathbf{r})\right\|_{1} \\
+\mathcal{L}_{r e g} &=\sum_{\mathbf{x}_{s} \in \mathcal{S}}\left\|\mathbf{n}\left(\mathbf{x}_{s}\right)-\mathbf{n}\left(\mathbf{x}_{s}+\boldsymbol{\epsilon}\right)\right\|_{2}
+\\
+\mathbf{n}\left(\mathbf{x}_{s}\right)&=\frac{\nabla_{\mathbf{x}_{s}} o_{\theta}\left(\mathbf{x}_{s}\right)}{\left\|\nabla_{\mathbf{x}_{s}} o_{\theta}\left(\mathbf{x}_{s}\right)\right\|_{2}}
+\end{aligned}
+$$
+将 surface rendering 和 volume rendering 写成
+$$
+\begin{aligned}
+&\hat{C}_{v}(\mathbf{r})=\sum_{i=1}^{N} o_{\theta}\left(\mathbf{x}_{i}\right) \prod_{j<i}\left(1-o_{\theta}\left(\mathbf{x}_{j}\right)\right) c_{\theta}\left(\mathbf{x}_{i}, \mathbf{n}_{i}, \mathbf{h}_{i}, \mathbf{d}\right) \\
+&\hat{C}_{s}(\mathbf{r})=c_{\theta}\left(\mathbf{x}_{s}, \mathbf{n}_{s}, \mathbf{h}_{s}, \mathbf{d}\right)
+\end{aligned}
+$$
+
+
+</details>
+
+---
+
+
+
+
+
+
 
 ---
 

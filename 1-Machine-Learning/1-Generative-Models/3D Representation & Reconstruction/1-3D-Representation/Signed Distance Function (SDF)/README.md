@@ -16,7 +16,7 @@ sign indicates whether $\mathbf{x}$ is inside or outside of
 
 
 
-学出很多登高面，然后0登高面就是表面
+学出很多等高面，然后0登高面就是表面
 
 zero level-set
 
@@ -28,13 +28,13 @@ Humans possess an impressive intuition for 3D shapes: given partial observations
 
 
 
-### DeepSDF
+---
 
-[DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/abs/1901.05103)
 
-**[`CVPR 2019`]**	**[`UW, MIT,Facebook`]**
-
-**[`Jeong Joon Park`, `Peter Florence`, `Julian Straub`, `Richard Newcombe`, `Steven Lovegrove`]**
+<span id="DeepSDF"></span>
+[DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/abs/1901.05103)  
+**[`CVPR 2019`] [`UW, MIT,Facebook`]**  
+*Jeong Joon Park, Peter Florence, Julian Straub, Richard Newcombe, Steven Lovegrove*
 
 <details><summary>Click to expand</summary><p>
 
@@ -80,19 +80,14 @@ hope the latent code space is a compact manifold in order to help converge to go
 
 The SDF prediction $\tilde{s}_{j}=f_{\theta}\left(\boldsymbol{z}_{i}, \boldsymbol{x}_{j}\right)$ and the loss function $\mathcal{L}\left(\tilde{s}_{j}, s_{j}\right)$.
 
-
-
 </p></details>
 
 ---
 
-### MetaSDF
-
-[MetaSDF: Meta-learning Signed Distance Functions](https://arxiv.org/pdf/2006.09662.pdf)
-
-**[`NeurIPS 2020`]**	**(`Stanford`)**
-
-**[`Vincent Sitzmann`, `Eric R. Chan`, `Richard Tucker`, `Noah Snavely`, `Gordon Wetzstein`]**
+<span id="MetaSDF"></span>
+[MetaSDF: Meta-learning Signed Distance Functions](https://arxiv.org/pdf/2006.09662.pdf)  
+**[`NeurIPS 2020`] (`Stanford`)**  
+*Vincent Sitzmann, Eric R. Chan, Richard Tucker, Noah Snavely, Gordon Wetzstein]*
 
 a dataset $\mathcal{D}$ of $N$ shapes, each shape is represented by a set of points $X_i$ consisting of $K$ point samples
 

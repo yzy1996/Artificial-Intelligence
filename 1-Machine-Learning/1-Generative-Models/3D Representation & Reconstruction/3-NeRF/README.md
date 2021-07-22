@@ -1,4 +1,8 @@
-# Neural Radiance Fields
+# <p align=center>`Neural Radiance Fields` </p>
+
+ref yenchen's [awesome-NeRF](https://github.com/yenchenlin/awesome-NeRF)
+
+
 
 NeRF represents the 3D geometry and appearance of a scene as a continuous 5D to 2D mapping function and uses volume rendering to synthesize novel views. The training process relies on multiple images with given camera poses.
 
@@ -7,6 +11,8 @@ NeRF represents the 3D geometry and appearance of a scene as a continuous 5D to 
 volume density does not admit accurate surface reconstruction
 
 
+
+NeRF use volume rendering by learning alpha-compositing of a radiance field along rays.
 
 带来的另一个好处是可解释性
 
@@ -31,17 +37,52 @@ camera
 
 
 
-## Contents
-
-- [Pose Estimation from RGB Images](#Pose Estimation from RGB Images)
 
 
+是怎么渲染的呢
+
+<div align="center"><img width="500" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210722155353.png" ></div>
+
+
+$$
+\begin{aligned}
+\hat{C}(\mathbf{r}) &=\sum_{i=1}^{N} T_{i}\left(1-\exp \left(-\sigma_{\theta}\left(\mathbf{x}_{i}\right) \delta_{i}\right)\right) c_{\theta}\left(\mathbf{x}_{i}, \mathbf{d}\right) \\
+T_{i} &=\exp \left(-\sum_{j<i} \sigma_{\theta}\left(\mathbf{x}_{j}\right) \delta_{j}\right)
+\end{aligned}
+$$
+
+
+有工作接着 
+
+extract meshes
+
+- Neural Body
+- D-NeRF
+- NeRD
+
+extract surface
+
+- UNISURF
+
+
+
+## Table of Contents
+
+有为了提升nerf质量的，也有在nerf基础上做应用的，或者改进的，
+
+
+
+- [Deformable](#Deformable)
+- [Pose Estimation](#Pose Estimation)
+- 
 
 
 
 
 
-### Pose Estimation from RGB Images
+
+
+### Pose Estimation
 
 Existing NeRF-based methods assume that the camera parameters are known. So it's better to train NeRF model without known camera poses. Even though there are some existing approaches (e.g. SfM) to pre-compute camera parameters.
 
@@ -53,25 +94,25 @@ iNeRF and NeRF-- optimize camera pose along with other parameters when training 
 
 
 
-[iNeRF: Inverting Neural Radiance Fields for Pose Estimation](https://arxiv.org/pdf/2012.05877.pdf)  
-**[`Arxiv 2020`] (`MIT, Google`)**  
-*Lin Yen-Chen, Pete Florence, Jonathan T. Barron, Alberto Rodriguez, Phillip Isola, Tsung-Yi Lin*
+- [iNeRF: Inverting Neural Radiance Fields for Pose Estimation](https://arxiv.org/pdf/2012.05877.pdf)  
+  **[`IROS 2021`] (`MIT, Google`)**  
+  *Lin Yen-Chen, Pete Florence, Jonathan T. Barron, Alberto Rodriguez, Phillip Isola, Tsung-Yi Lin*
 
-[NeRF--: Neural Radiance Fields Without Known Camera Parameters](https://arxiv.org/pdf/2102.07064.pdf)  
-**[`Arxiv 2021`] (`Oxford`)** [[Code](https://github.com/ActiveVisionLab/nerfmm)]  
-*Zirui Wang, Shangzhe Wu, Weidi Xie, Min Chen, Victor Adrian Prisacariu*
+- [NeRF--: Neural Radiance Fields Without Known Camera Parameters](https://arxiv.org/pdf/2102.07064.pdf)  
+  **[`Arxiv 2021`] (`Oxford`)** [[Code](https://github.com/ActiveVisionLab/nerfmm)]  
+  *Zirui Wang, Shangzhe Wu, Weidi Xie, Min Chen, Victor Adrian Prisacariu*
 
-[GNeRF: GAN-based Neural Radiance Field without Posed Camera](https://arxiv.org/pdf/2103.15606.pdf)  
-**[`Arxiv 2021`] (`ShanghaiTech`)**  
-*Quan Meng, Anpei Chen, Haimin Luo, Minye Wu, Hao Su, Lan Xu, Xuming He, Jingyi Yu*
+- [GNeRF: GAN-based Neural Radiance Field without Posed Camera](https://arxiv.org/pdf/2103.15606.pdf)  
+  **[`Arxiv 2021`] (`ShanghaiTech`)**  
+  *Quan Meng, Anpei Chen, Haimin Luo, Minye Wu, Hao Su, Lan Xu, Xuming He, Jingyi Yu*
 
 
 
 补充：其实谈到相机位置估计，不可避免会和 Structure-from-Motion (SfM) 去比较，他们的开源包叫COLMAP：
 
-[Structure-from-Motion Revisited](https://demuc.de/papers/schoenberger2016sfm.pdf)  
-**[`CVPR 2016`] (`UNC, ETH`)** [[Code](https://github.com/colmap/colmap)]  
-*Johannes L. Schonberger, Jan-Michael Frahm*
+- [Structure-from-Motion Revisited](https://demuc.de/papers/schoenberger2016sfm.pdf)  
+  **[`CVPR 2016`] (`UNC, ETH`)** [[Code](https://github.com/colmap/colmap)]  
+  *Johannes L. Schonberger, Jan-Michael Frahm*
 
 ## Introduction
 
@@ -450,34 +491,11 @@ $$
 
 ---
 
-### NeRF--
 
-
-
-</details>
 
 ---
 
-<span id="UNISURF"></span>
-[UNISURF: Unifying Neural Implicit Surfaces and Radiance Fields for Multi-View Reconstruction](https://arxiv.org/pdf/2104.10078.pdf)  
-**[`arxiv`] (`MPI`)**  
-*Michael Oechsle, Songyou Peng, Andreas Geiger*
 
-<details><summary>Click to expand</summary>
-
-> **Summary**
-
-Combine **volumetric radiance** (powerful for "unsupervised" coarse scene) and **surface rendering** (accurate reconstruction).
-
-<div align="center">
-	<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210428214156.png" alt="image-20210428214154651" width="500">
-</div>
-
-> **Details**
-
-
-
-</details>
 
 ---
 

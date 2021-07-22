@@ -56,6 +56,23 @@ signed distance functions   occupancy networks
 
 
 
+
+
+表征的方式一般有：
+
+- Volumetric (OctNet)
+- PointClouds (PointSetGen)
+- Surfaces (AtlasNet)
+- Signed / Unsigned Distance Function
+- Geometeric Primitives
+- occupancy field
+- depth maps
+- implicit functions
+
+
+
+
+
 现有的表征模型有：
 
 - voxel grids

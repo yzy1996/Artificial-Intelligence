@@ -1,6 +1,7 @@
 [liao2020unsupervised](#liao2020unsupervised)
 
-<span id="liao2020unsupervised"></span>[Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis](https://arxiv.org/pdf/1912.05237.pdf)  
+<span id="liao2020unsupervised"></span>
+[Towards Unsupervised Learning of Generative Models for 3D Controllable Image Synthesis](https://arxiv.org/pdf/1912.05237.pdf)  
 **[`CVPR 2020`]** **(`MPI`)**  
 *Yiyi Liao, Katja Schwarz, Lars Mescheder, Andreas Geiger*
 

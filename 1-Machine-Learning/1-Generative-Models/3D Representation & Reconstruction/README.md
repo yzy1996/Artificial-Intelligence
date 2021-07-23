@@ -28,7 +28,7 @@ Survey
 
 ## Introduction
 
-Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) from **single or multiple view 2D images**, by the means of one of the **3D representation methods** (e.g., point cloud, neural implicit function, surface),  with this comes **novel views synthesis** by **rendering**.
+Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) from **single or multiple view 2D images**, by the means of one of the **3D representation methods** (e.g., point cloud, neural implicit function, surface).  With this naturally comes the application of **novel views synthesis** by **rendering**.
 
 > 其实除了从 2D image 里学，输入数据还可以是PointCloud，或者RGB-D Images。
 

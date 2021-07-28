@@ -57,6 +57,13 @@ learn model for **single** or **multiple** objects.
   **[`ICLR 2020`] (`U Tokyo, RIKEN`)**  
   *Atsuhiro Noguchi, Tatsuya Harada*
 
+- [Do 2D GANs Know 3D Shape? Unsupervised 3D shape reconstruction from 2D Image GANs](https://arxiv.org/pdf/2011.00844.pdf)  
+  **[`ICLR 2021`] (`CUHK, NTU`)**  
+  *Xingang Pan, Bo Dai, Ziwei Liu, Chen Change Loy, Ping Luo*
+
+- [Image GANs meet Differentiable Rendering for Inverse Graphics and Interpretable 3D Neural Rendering](https://arxiv.org/pdf/2010.09125.pdf)  
+  **[`ICLR 2021`] (NVIDIA, Toronto)**  
+  *Yuxuan Zhang, Wenzheng Chen, Huan Ling, Jun Gao, Yinan Zhang, Antonio Torralba, Sanja Fidler*
 
 
 
@@ -66,8 +73,16 @@ learn model for **single** or **multiple** objects.
 
 
 
+<details><summary>Click to expand</summary>
+<p>A keyboard. </p>
+<p>A keyboard. </p>
+</p>> summary </p>
+dfdf <br>
+sss
 
 
+sss 
+</details>
 
 
 
@@ -140,12 +155,9 @@ learn model for **single** or **multiple** objects.
 
 **`[NeurIPS 2020]`**	**`(Adobe)`**	**`[Thu Nguyen-Phuoc, Christian Richardt]`**	**[[Paper](https://github.com/thunguyenphuoc/BlockGAN)]**
 
-<details><summary>Click to expand</summary><p>
+<details><summary>Click to expand</summary>
 
-
-![image-20201214151435632](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201214151442.png)
-
-
+<div align=center><img width="600" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201214151442.png"/></div>
 
 > **Summary**
 
@@ -155,8 +167,6 @@ learns 3D object-oriented scene representations directly from unlabeled 2D image
 
 divide an 3D feature into background and foreground
 
-
-
 a noise vector $\mathbb{z}_i$ and the object's 3D pose $\theta_i = (s_i, \mathbf{R}_i, \mathbf{t}_i)$
 
 3D feature $O_i = g_i(\mathbb{z}_i, \theta_i)$
@@ -164,9 +174,7 @@ $$
 \mathbf{x}=p\left(f(\underbrace{O_{0},}_{\text {background }} \underbrace{O_{1}, \ldots, O_{K}}_{\text {foreground }})\right)
 $$
 
-
-
-</p></details>
+</details>
 
 ---
 
@@ -225,5 +233,5 @@ $$
 
 
 
-
+$\sub$
 

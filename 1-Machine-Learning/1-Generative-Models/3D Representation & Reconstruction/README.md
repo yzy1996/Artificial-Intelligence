@@ -48,7 +48,9 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
 
 首先划分为 是表征**单个物体** 还是表征**一个类别的物体**
 
-其次划分为 不同的表征方法
+其次划分为 不同的表征方法 explicit and implicit
+
+
 
 但似乎是某些特定的方法专门研究出来表征一个类别物体的
 

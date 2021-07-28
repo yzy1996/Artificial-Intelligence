@@ -36,3 +36,8 @@ figure
 
 ---
 
+
+
+AtlasNet [18] learns an implicit representation that maps and assembles 2D squares
+to 3D surface patches.
+

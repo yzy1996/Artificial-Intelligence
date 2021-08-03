@@ -15,7 +15,7 @@ A collection of resources on 3D representation and reconstruction from multi-vie
 
 - [NeRF](#NeRF) (因为太火爆，所以给 NeRF related 开个专门的话题)
 - [Neural Rendering](#Neural-Rendering) (这是一个很大的话题，因此把不好划分到上述的归类到这里)
-  - [Inverse Rendering](./4-Neural-Rendering/Inverse-Rendering), [Relight](./4-Neural-Rendering/Relight), [Single View Reconstruction](./4-Neural-Rendering/Single-View-Reconstruction)
+  - [Inverse Rendering](./4-Neural-Rendering/Inverse-Rendering), [Relight](./4-Neural-Rendering/Relight), [Single View Reconstruction](./4-Neural-Rendering/Single-View-Reconstruction), Shape Completion
 - [Tricks](#Tricks) 
   - SIREN
 - [Datasets](#Datasets)
@@ -143,10 +143,10 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
   *Lars Mescheder, Michael Oechsle, Michael Niemeyer, Sebastian Nowozin, Andreas Geiger*
 
 - [DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/pdf/1901.05103.pdf)  
-  **[`CVPR 2019`] (UW, MIT)**  
+  **[`CVPR 2019`] (`UW, MIT`)**  
   *Jeong Joon Park, Peter Florence, Julian Straub, Richard Newcombe, Steven Lovegrove*
 
-
+ 
 
 ### Surface Reconstruction
 
@@ -273,6 +273,16 @@ fast integration
 - [Learning Shape Priors for Single-View 3D Completion and Reconstruction](https://arxiv.org/pdf/1809.05068.pdf)  
   **[`ECCV 2018`] (`MIT`)**  
   *Jiajun Wu, Chengkai Zhang, Xiuming Zhang, Zhoutong Zhang, William T. Freeman, Joshua B. Tenenbaum*
+
+### Shape Completion
+
+> estimates the complete geometry from a partial shape
+
+
+
+Unsupervised 3D Shape Completion through GAN Inversion
+
+
 
 
 

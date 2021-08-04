@@ -154,6 +154,18 @@ Model-agnostic meta-learning for fast adaptation of deep networks
 
 
 
+### Task Augmentation
+
+[Improving Generalization in Meta-learning via Task Augmentation](https://arxiv.org/pdf/2007.13040.pdf)  
+**[`ICML 2021`] (`PSU, Stanford`)**  
+*Huaxiu Yao, Longkai Huang, Linjun Zhang, Ying Wei, Li Tian, James Zou, Junzhou Huang, Zhenhui Li*
+
+[Meta-Learning with Fewer Tasks through Task Interpolation](https://arxiv.org/pdf/2106.02695.pdf)  
+**[`Arxiv 2021`] (`Stanford`)**  
+*Huaxiu Yao, Linjun Zhang, Chelsea Finn*
+
+
+
 ### MAML
 
 

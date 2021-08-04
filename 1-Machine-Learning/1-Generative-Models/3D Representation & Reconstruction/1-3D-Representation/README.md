@@ -16,6 +16,14 @@ there is no canonical representation which is both computationally and memory ef
 
 
 
+encode **geometry** and **appearance** 
+
+
+
+
+
+
+
 先对主要方法进行一个分类：
 
 - Explicit Representation
@@ -35,7 +43,7 @@ there is no canonical representation which is both computationally and memory ef
 
 隐式的可以解决上面这两个问题，但不好渲染到2D图
 
-
+ 
 
 **Voxel based**：因为它可以直接类比2D的像素，到了3D就成了体素，因此很多传统的2D 卷积网络可以直接迁移过来，同时拓扑结构也很好泛化迁移；但是由于很占内存，分辨率无法很高。
 
@@ -152,6 +160,7 @@ Given 2D image observations, these approaches aim to infer a 3D-structure-aware 
 
 
 
-
-
+[Neural Sparse Voxel Fields](https://arxiv.org/pdf/2007.11571.pdf)  
+**[`NeurIPS 2020`] ()**  
+*Lingjie Liu, Jiatao Gu, Kyaw Zaw Lin, Tat-Seng Chua, Christian Theobalt*
 

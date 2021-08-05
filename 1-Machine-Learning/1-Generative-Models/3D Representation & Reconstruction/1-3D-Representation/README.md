@@ -161,6 +161,8 @@ Given 2D image observations, these approaches aim to infer a 3D-structure-aware 
 
 
 [Neural Sparse Voxel Fields](https://arxiv.org/pdf/2007.11571.pdf)  
-**[`NeurIPS 2020`] ()**  
+**[`NeurIPS 2020`] (`MPI, Facebook`)**  
 *Lingjie Liu, Jiatao Gu, Kyaw Zaw Lin, Tat-Seng Chua, Christian Theobalt*
+
+
 

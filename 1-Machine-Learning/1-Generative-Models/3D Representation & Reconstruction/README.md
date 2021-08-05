@@ -36,9 +36,11 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
 
 因为真实世界是3D的，所以我们希望能够表征和重建3D模型，另一方面3D表征带来的优势是 和视角无关的，这为机器人环境探索，行人重识别带来了便利。
 
-这里我主要关注的是 neural implicit functions 这一类方法，它们是 coordinate-based neural models，因为建立了空间中的点到某一指标的映射关系；Occupancy Field 和 SDF 是映射到 Surface 值，NeRF 是映射到 不透明度和颜色。这一类方法具有的特点是：全空间连续可导 (可以用DL，分辨率可以无限大)，表征能力强大，占用内存小。
+这里我主要关注的是 neural implicit functions 这一类方法，就是用神经网络来表征3D几何，它们都属于是 coordinate-based neural models，因为建立了空间中的点到某一指标（feature）的映射关系；Occupancy Field 和 SDF 是映射到 Surface 值，NeRF 是映射到 不透明度和颜色。这一类方法具有的特点是：全空间连续可导 (可以用DL，分辨率可以无限大)，表征能力强大，占用内存小。
 
-这些神经隐式表征方法还需要额外的渲染技术，渲染可以简单理解为“对3D模型拍个照得到2D图像”，复杂一点讲需要涵盖 cameras pose, lights, surface geometry and material 这么多因素。
+> 对比的是一些显式表征，例如 point cloud, mesh, voxels。过去这些方法的训练是需要3D监督的，因为是和这些监督真值去对比，而隐式表征因为都是可导的，所以可以借助神经网络的反向传播直接和输入真值去对比，做到end-to-end。这需要依靠 neural rendering。
+
+这些神经隐式表征方法还需要额外的配套渲染技术，渲染可以简单理解为“对3D模型拍个照得到2D图像”，复杂一点讲需要涵盖 cameras pose, lights, surface geometry and material 这么多因素。
 
 通常学习的过程中很难做到单张图训练，学习到足够的先验信息后再通过逆向渲染做到对单张图的推断。在做的过程中，为了简化，我们也会使用canonical view / model。
 
@@ -61,8 +63,10 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
 而3D object，载体可以是体素值（类比像素值）voxel grids；为什么是可以是，因为还可以是point clouds，meshes。为什么呢，因为看到他们我们也可以知道这个object的形状呀。这些表征的特点是：**离散**，对complex geometry 的 fidelity **（保真度）高**。
 
 
+### Explicit
 
-### PointCloud
+
+#### PointCloud
 
 - [A Point Set Generation Network for 3D Object Reconstruction from a Single Image](https://arxiv.org/pdf/1612.00603.pdf)  
   **[`CVPR 2017`] (`Tsinghua, Stanford`)**  
@@ -80,9 +84,9 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
   **[`CVPR 2018`] (`Universite Paris-Est`)**  
   *Loic Landrieu, Martin Simonovsky*
 
+---
 
-
-### Mesh
+#### Mesh
 
 - [Pixel2Mesh Generating 3D Mesh Models from Single RGB Images](https://arxiv.org/pdf/1804.01654.pdf)  
   **[`ECCV 2018`] (`Fudan, Princeton`)**  
@@ -92,9 +96,9 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
   **[`CVPR 2020`] (`NVIDIA, UCSB`)**  
   *Abhishek Badki, Orazio Gallo, Jan Kautz, Pradeep Sen*
 
+---
 
-
-### Voxels
+#### Voxels
 
 优点：由像素直接上升到体素，很多2D的方法可以直接迁移过来
 
@@ -116,7 +120,7 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
   **[`3DV 2017`] (`Graz University of Technology, MPI, ETH`)**  
   *Gernot Riegler, Ali Osman Ulusoy, Horst Bischof, Andreas Geiger*
 
-
+---
 
 ### Neural Implicit Function
 
@@ -124,11 +128,35 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
 
 鉴于此，引入了 neural implicit representations, 完全连续，用起来简单，占用内存小。
 
-虽然下面分类单独拎出来了，但其实也是属于这一大类下的。surface-based, volume-based
 
 
+SDF 和 occupancy probabulity 这一大类因为训练的 truth ground是真实的3D 数据，和后面的 without 3D supervision 还不太一样
 
-下面是用 implicit function 表征的通用形式：
+#### Signed Distance Function
+
+缺点：bad on sharp areas，需要3D监督信号，因为不需要differentiable renderer
+
+- [Implicit surface representations as layers in neural networks](https://openaccess.thecvf.com/content_ICCV_2019/papers/Michalkiewicz_Implicit_Surface_Representations_As_Layers_in_Neural_Networks_ICCV_2019_paper.pdf)  
+  **[`ICCV 2019`] (`Queensland`)**  
+  *Mateusz Michalkiewicz, Jhony K. Pontes, Dominic Jack, Mahsa Baktashmotlagh, Anders Eriksson*
+
+- [Learning Implicit Fields for Generative Shape Modeling](https://arxiv.org/pdf/1812.02822.pdf)  
+  **[`CVPR 2019`] (`Simon Fraser University`)**  
+  *Zhiqin Chen, Hao Zhang*
+
+- [Occupancy Networks: Learning 3D Reconstruction in Function Space](https://arxiv.org/pdf/1812.03828.pdf)  
+  **[`CVPR 2019`] (`MPI, Google`)**  
+  *Lars Mescheder, Michael Oechsle, Michael Niemeyer, Sebastian Nowozin, Andreas Geiger*
+
+- [DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/pdf/1901.05103.pdf)  
+  **[`CVPR 2019`] (`UW, MIT`)**  
+  *Jeong Joon Park, Peter Florence, Julian Straub, Richard Newcombe, Steven Lovegrove*
+
+---
+
+surface-based, volume-based
+
+下面是用 implicit function + neural rendering 中隐式表征的通用形式：
 
 $$
 F_{\theta}:(\boldsymbol{p}, \boldsymbol{v}) \rightarrow (\boldsymbol{c}, \omega)
@@ -164,29 +192,13 @@ Neural volumes: Learning dynamic renderable volumes from images
 
 Nerf: Representing scenes as neural radiance fields for view synthesis
 
-
-
-### Signed Distance Function
-
-缺点：bad on sharp areas
-
-<span id="IM-NET"></span>
-
-- [Learning Implicit Fields for Generative Shape Modeling](https://arxiv.org/pdf/1812.02822.pdf)  
-  **[`CVPR 2019`] (`Simon Fraser University`)**  
-  *Zhiqin Chen, Hao Zhang*
-
-- [Occupancy Networks: Learning 3D Reconstruction in Function Space](https://arxiv.org/pdf/1812.03828.pdf)  
-  **[`CVPR 2019`] (`MPI, Google`)**  
-  *Lars Mescheder, Michael Oechsle, Michael Niemeyer, Sebastian Nowozin, Andreas Geiger*
-
-- [DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/pdf/1901.05103.pdf)  
-  **[`CVPR 2019`] (`UW, MIT`)**  
-  *Jeong Joon Park, Peter Florence, Julian Straub, Richard Newcombe, Steven Lovegrove*
-
  
 
-### Surface Reconstruction
+
+
+
+
+#### Surface Reconstruction
 
 优点：
 
@@ -194,17 +206,26 @@ Nerf: Representing scenes as neural radiance fields for view synthesis
 
 Regard the object surface as a 2-dimensional manifold embedded in the 3-dimensional space.
 
+- [AtlasNet: A Papier-Mâché Approach to Learning 3D Surface Generation](https://arxiv.org/pdf/1802.05384.pdf)  
+  **[`CVPR 2018`] (`LIGM, Adobe`)**  
+  *Thibault Groueix, Matthew Fisher, Vladimir G. Kim, Bryan C. Russell, Mathieu Aubry*
+- [Learning to Infer Implicit Surfaces without 3D Supervision](https://arxiv.org/pdf/1911.00767.pdf)  
+  **[`NeurIPS 2019`] (`USC`)**  
+  *Shichen Liu, Shunsuke Saito, Weikai Chen, Hao Li*
+- [Scene Representation Networks: Continuous 3D-Structure-Aware Neural Scene Representations](https://arxiv.org/pdf/1906.01618.pdf)  
+  **[`NeurIPS 2019`] (`Stanford`)**  
+  *Vincent Sitzmann, Michael Zollhöfer, Gordon Wetzstein*
 - [Analytic Marching: An Analytic Meshing Solution from Deep Implicit Surface Networks]()  
   **[`ICML 2020`] (`SCUT`)**  
   *Jiabao Lei, Kui Jia*
 
-- [AtlasNet: A Papier-Mâché Approach to Learning 3D Surface Generation](https://arxiv.org/pdf/1802.05384.pdf)  
-  **[`CVPR 2018`] (`LIGM, Adobe`)**  
-  *Thibault Groueix, Matthew Fisher, Vladimir G. Kim, Bryan C. Russell, Mathieu Aubry*
-
-
-
 > 这里补充一点是，可以用 Marching cubes 从SDF 得到Mesh
+
+
+
+[Sdfdiff: Differentiable rendering of signed distance fields for 3d shape optimization](https://arxiv.org/pdf/1912.07109.pdf)  
+**[`CVPR 2020`] (`University of Maryland`)**  
+*Yue Jiang, Dantong Ji, Zhizhong Han, Matthias Zwicker*
 
 
 

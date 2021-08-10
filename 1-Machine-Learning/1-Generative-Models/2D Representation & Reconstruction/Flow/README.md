@@ -32,18 +32,32 @@ $$
 
 ### Normalizing Flows
 
+<div align='center'><img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119220419.png"/></div>
 
 
 
+<p>
+    <img width="600" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
+	<figcaption align="center">
+		Fig.1 - 4K Mountains Wallpaper
+	</figcaption>
+</p>
 
-<figure align=center>
-    <img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
-	<figcaption align = "center">
+<p align="center">
+    <img width="600" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
+	<figcaption align="center">
+		Fig.1 - 4K Mountains Wallpaper
+	</figcaption>
+</p>
+
+
+
+<figure align="center">
+    <img width="600" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
+	<figcaption align="center">
 		Fig.1 - 4K Mountains Wallpaper
 	</figcaption>
 </figure>
-
-
 
 ## Literature
 

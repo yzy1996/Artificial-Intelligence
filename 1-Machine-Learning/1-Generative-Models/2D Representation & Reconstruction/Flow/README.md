@@ -71,8 +71,10 @@ $$
 
 <div align="center">
 <img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
-<p ssss /p>
 </div>
+<p align="center">
+    Fig.1 - 4K Mountains Wallpaper
+</p>
 
 可以居中
 

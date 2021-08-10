@@ -2,6 +2,14 @@
 
 A collection of resources on Flow Model.
 
+
+
+related or reference links:
+
+[Lil-Flow-based Deep Generative Models](https://lilianweng.github.io/lil-log/2018/10/13/flow-based-deep-generative-models.html)
+
+
+
 ## Introduction
 
 To tackle the instability of the training procedure...
@@ -26,62 +34,23 @@ $$
 
 
 
+$$
+
+$$
 
 
 
 
 ### Normalizing Flows
 
-<div align='center'><img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201119220419.png"/></div>
-
-
-
-<p>
-    <img width="600" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
-	<figcaption align="center">
-		Fig.1 - 4K Mountains Wallpaper
-	</figcaption>
-</p>
-
-<p align="center">
-    <img width="600" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
-	<figcaption>
-		Fig.1 - 4K Mountains Wallpaper
-	</figcaption>
-</p>
-
-可以居中
-
-<p align="center">
-    <img width="600" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
-</p>
-<p align="center">
-    Fig.1 - 4K Mountains Wallpaper
-</p>
-
-
-<figure align="center">
-    <img width="600" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
-	<figcaption align="center">
-		Fig.1 - 4K Mountains Wallpaper
-	</figcaption>
-</figure>
-
-不能居中
-
 <div align="center">
 <img width="600" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
 </div>
 <div align="center">
-    Fig.1 - 4K Mountains Wallpaper
+    Figure from [Lil](https://lilianweng.github.io/lil-log/2018/10/13/flow-based-deep-generative-models.html)
 </div>
 
-<div align="center">
-<img width="600" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
-</div>
-<p align="center">
-    Fig.1 - 4K Mountains Wallpaper
-</p>
+
 
 可以居中
 
@@ -104,11 +73,4 @@ $$
 ## Main Research Group
 
 <h5 align="center"><i>If warmup is the answer, what is the question?</i></h5>
-
-
-
-<figure>
-<img src="https://images.unsplash.com/photo-1549740425-5e9ed4d8cd34?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwzOTU0NTB8fGVufDB8fHw%3D&w=1000&q=80" alt="Trulli" style="width:100%">
-<figcaption align = "center"><b>Fig.1 - 4K Mountains Wallpaper</b></figcaption>
-</figure>
 

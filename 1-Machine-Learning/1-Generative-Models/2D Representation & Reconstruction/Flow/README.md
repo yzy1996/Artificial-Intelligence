@@ -57,9 +57,9 @@ $$
 	</figcaption>
 </figure>
 
-<div align=center>
+<div align="center">
 <img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210810105939.png"/>
-	<figcaption align=center>
+	<figcaption align="center">
 		Fig.1 - 4K Mountains Wallpaper
 	</figcaption>
 </div>

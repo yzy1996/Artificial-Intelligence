@@ -52,10 +52,28 @@ $$
 kl =
 $$
 
-
 The problem of IS is that it does not capture how synthetic images compare to real images.
 
+
+$$
+\mathrm{IS}=\exp \left(\mathbb{E}_{x \sim p_{g}} D_{K L}(p(y \mid x) \| p(y))\right)
+$$
+
+
+
+
+
+
 ### Frechet Inception Distance (FID)
+
+The Fréchet distance between two multivariate Gaussians $X_1 \sim N(\mu_1, \sigma_1)$ and $X_2 \sim N(\mu_2, \sigma_2)$ is:
+$$
+d^2 = ||\mu_1 - \mu_2||^2 + \Tr(\sigma_1 + \sigma_2 - 2\sqrt{\sigma_1\sigma_2}).
+$$
+
+> sample 数量应该比网络层的维度大，Inception pool_3 的维度是 2048，所以应该大于 2048，一般推荐用大于 10,000 个样本。（原因是计算协方差矩阵至少得填满才能算平方根）
+
+
 
 proposed by [2].
 
@@ -68,6 +86,24 @@ It's an improvement over the existing Inception Score.
 The activations for each real and generated image are summarized as a multivariate Gaussian by calculating the mean and covariance of the images. These statistics are then calculated for the activations across the collection of real and generated images. The distance between these two distributions is then calculated using the Frechet distance, also called the Wasserstein-2 distance.
 
 A lower FID score indicates more realistic images that match the statistical properties of real images.
+
+
+
+[GANs Trained by a Two Time-Scale Update Rule Converge to a Local Nash Equilibrium](https://arxiv.org/pdf/1706.08500.pdf)  
+**[`NeurIPS 2017`] (`LIT AI Lab`)** [[Tensorflow](https://github.com/bioinf-jku/TTUR)] [[Pytorch](https://github.com/mseitzer/pytorch-fid)] 
+*Martin Heusel, Hubert Ramsauer, Thomas Unterthiner, Bernhard Nessler, Sepp Hochreiter*
+
+
+
+Pytorch pip Usage
+
+```python
+pip install pytorch-fid
+
+python -m pytorch_fid path/to/dataset1 path/to/dataset2
+```
+
+
 
 
 

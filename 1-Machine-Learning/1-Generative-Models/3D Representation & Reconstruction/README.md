@@ -6,6 +6,14 @@ A collection of resources on 3D representation and reconstruction from multi-vie
 
 
 
+related project
+
+[vsitzmann/awesome-implicit-representations](https://github.com/vsitzmann/awesome-implicit-representations)
+
+[yenchenlin/awesome-NeRF](yenchenlin/awesome-NeRF)
+
+[weihaox/awesome-neural-rendering](weihaox/awesome-neural-rendering)
+
 ## Table of Contents
 
 - [3D Representation](#3D-Representation) (一些3D表征的方法)
@@ -26,9 +34,9 @@ Survey
 
 
 
-## Introduction
+## 1. Introduction
 
-Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) from **single or multiple view 2D images**, by the means of one of the **3D representation methods** (e.g., point cloud, neural implicit function, surface).  With this naturally comes the application of **novel views synthesis** by **rendering**.
+Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) from **single or multiple view 2D images**, by means of one of the **3D representation methods** (e.g., point cloud, neural implicit function, surface).  With this naturally comes the application of **novel views synthesis** by **rendering**.
 
 > 其实除了从 2D image 里学，输入数据还可以是PointCloud，或者RGB-D Images。
 
@@ -36,7 +44,7 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
 
 因为真实世界是3D的，所以我们希望能够表征和重建3D模型，另一方面3D表征带来的优势是 和视角无关的，这为机器人环境探索，行人重识别带来了便利。
 
-这里我主要关注的是 neural implicit functions 这一类方法，就是用神经网络来表征3D几何，它们都属于是 coordinate-based neural models，因为建立了空间中的点到某一指标（feature）的映射关系；Occupancy Field 和 SDF 是映射到 Surface 值，NeRF 是映射到 不透明度和颜色。这一类方法具有的特点是：全空间连续可导 (可以用DL，分辨率可以无限大)，表征能力强大，占用内存小。
+这里我主要关注的是 implicit neural functions 这一类方法，就是用神经网络来表征3D几何，也可以被称为 coordinate-based neural models，因为是建立了空间中的点到某一指标（feature）的映射关系；Occupancy Field 和 SDF 是映射到 Surface 值，NeRF 是映射到 不透明度和颜色。这一类方法具有的特点是：全空间连续可导 (分辨率可以无限大)，表征能力强大，占用内存小。因为是用神经网络的权重表征的，所以可以结合例如meta-learning学习一个可泛化的先验。
 
 > 对比的是一些显式表征，例如 point cloud, mesh, voxels。过去这些方法的训练是需要3D监督的，因为是和这些监督真值去对比，而隐式表征因为都是可导的，所以可以借助神经网络的反向传播直接和输入真值去对比，做到end-to-end。这需要依靠 neural rendering。
 
@@ -46,7 +54,7 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
 
 
 
-## 3D Representation
+## 2. 3D Representation
 
 首先划分为 是表征**单个物体** 还是表征**一个类别的物体**
 
@@ -63,7 +71,7 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
 而3D object，载体可以是体素值（类比像素值）voxel grids；为什么是可以是，因为还可以是point clouds，meshes。为什么呢，因为看到他们我们也可以知道这个object的形状呀。这些表征的特点是：**离散**，对complex geometry 的 fidelity **（保真度）高**。
 
 
-### Explicit
+### 2.1 Explicit
 
 
 #### PointCloud
@@ -130,27 +138,27 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
 
 
 
-SDF 和 occupancy probabulity 这一大类因为训练的 truth ground是真实的3D 数据，和后面的 without 3D supervision 还不太一样
+SDF 和 occupancy probabulity 这一大类因为训练的 truth ground是真实的3D 数据，和后面的 without 3D supervision 还不太一样。这一类可以被称为 Neural Implicit Surface。
 
-#### Signed Distance Function
+#### Occupancy and Signed Distance Function
 
 缺点：bad on sharp areas，需要3D监督信号，因为不需要differentiable renderer
 
 - [Implicit surface representations as layers in neural networks](https://openaccess.thecvf.com/content_ICCV_2019/papers/Michalkiewicz_Implicit_Surface_Representations_As_Layers_in_Neural_Networks_ICCV_2019_paper.pdf)  
   **[`ICCV 2019`] (`Queensland`)**  
   *Mateusz Michalkiewicz, Jhony K. Pontes, Dominic Jack, Mahsa Baktashmotlagh, Anders Eriksson*
-
-- [Learning Implicit Fields for Generative Shape Modeling](https://arxiv.org/pdf/1812.02822.pdf)  
+- [(IM-NET)Learning Implicit Fields for Generative Shape Modeling](https://arxiv.org/pdf/1812.02822.pdf)  
   **[`CVPR 2019`] (`Simon Fraser University`)**  
   *Zhiqin Chen, Hao Zhang*
-
 - [Occupancy Networks: Learning 3D Reconstruction in Function Space](https://arxiv.org/pdf/1812.03828.pdf)  
   **[`CVPR 2019`] (`MPI, Google`)**  
   *Lars Mescheder, Michael Oechsle, Michael Niemeyer, Sebastian Nowozin, Andreas Geiger*
-
 - [DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation](https://arxiv.org/pdf/1901.05103.pdf)  
   **[`CVPR 2019`] (`UW, MIT`)**  
   *Jeong Joon Park, Peter Florence, Julian Straub, Richard Newcombe, Steven Lovegrove*
+- [PIFu: Pixel-Aligned Implicit Function for High-Resolution Clothed Human Digitization](https://arxiv.org/pdf/1905.05172.pdf)  
+  **[`ICCV 2019`] (`USC, Pinscreen`)**  
+  *Shunsuke Saito, Zeng Huang, Ryota Natsume, Shigeo Morishima, Angjoo Kanazawa, Hao Li*
 
 ---
 
@@ -161,7 +169,7 @@ surface-based, volume-based
 $$
 F_{\theta}:(\boldsymbol{p}, \boldsymbol{v}) \rightarrow (\boldsymbol{c}, \omega)
 $$
-where $\theta$ is parameters of an underlying neural network, $\boldsymbol{p}$ is the scene color, $\omega$ is the probility density at spatial location $\boldsymbol{p}$, $\boldsymbol{v}$ is the ray direction. We can render a 2D image by shooting rays from a pin-hole camera   position $\boldsymbol{p}_0 \in \mathbb{R}^3$ to the 3D scene. The spatial location along the camera ray can be represented by $\boldsymbol{p}(z)=\boldsymbol{p}_{0}+z \cdot \boldsymbol{v}$. Note that $\omega$ is restricted only by $\boldsymbol{p}(z)$ while $\boldsymbol{c}$ is affected by both $\boldsymbol{p}$ and $\boldsymbol{v}$​ to model view-dependent color. 
+where $\theta$ is parameters of an underlying neural network, $\boldsymbol{p}$ is the scene color, $\omega$ is the probility density (opacity) at spatial location $\boldsymbol{p}$, $\boldsymbol{v}$ is the ray direction. We can render a 2D image by shooting rays from a pin-hole camera   position $\boldsymbol{p}_0 \in \mathbb{R}^3$ to the 3D scene. The spatial location along the camera ray can be represented by $\boldsymbol{p}(z)=\boldsymbol{p}_{0}+z \cdot \boldsymbol{v}$. Note that $\omega$ is restricted only by $\boldsymbol{p}(z)$ while $\boldsymbol{c}$ is affected by both $\boldsymbol{p}$ and $\boldsymbol{v}$​ to model view-dependent color. 
 
 
 
@@ -186,17 +194,13 @@ $$
 C\left(\boldsymbol{p}_{0}, \boldsymbol{v}\right)=\int_{0}^{+\infty} \omega(\boldsymbol{p}(z)) \cdot \boldsymbol{c}(\boldsymbol{p}(z), \boldsymbol{v}) d z, \quad \text { where } \int_{0}^{+\infty} \omega(\boldsymbol{p}(z)) d z=1
 $$
 
-> Volume rendering methods need to sample a high number of points along the rays for color accumulation to achieve high quality rendering.
+> Volume rendering methods need to sample a high number of points along the rays for color accumulation to achieve high quality rendering. This rendering is realized through integral projection.
 
 Neural volumes: Learning dynamic renderable volumes from images
 
 Nerf: Representing scenes as neural radiance fields for view synthesis
 
  
-
-
-
-
 
 #### Surface Reconstruction
 
@@ -271,6 +275,8 @@ fast rendering
 
 > for more details see [folder](./3-NeRF)
 
+
+
 ### Enhance NeRF
 
 data structures
@@ -320,6 +326,14 @@ fast integration
 >
 > 简单说neural rendering可以涵盖所有新的带neural的技术
 
+
+
+
+
+
+
+
+
 ### Single View Reconstruction (SVR)
 
 > 从单张图像重建整个3D场景是很重要的一个话题，more details see [file](./Single-View-Reconstruction)
@@ -367,3 +381,6 @@ standard ReLU MLPs fail to adequately represent fine details in these complex lo
 - [3D ShapeNets: A Deep Representation for Volumetric Shapes](https://arxiv.org/pdf/1406.5670.pdf)  
   **[`CVPR 2015`] (`Princeton, CUH, MIT`)**  
   *Zhirong Wu, Shuran Song, Aditya Khosla, Fisher Yu, Linguang Zhang, Xiaoou Tang, Jianxiong Xiao*
+
+
+

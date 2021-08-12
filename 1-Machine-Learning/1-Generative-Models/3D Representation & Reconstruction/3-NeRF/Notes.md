@@ -8,6 +8,12 @@
 
 - Improve Performance
   - [UNISURF](#UNISURF)
+- Dynamic
+  - NeRFies
+  - D-NeRF
+- Composition
+  - GIRAFFE
+  - 
 
 - Pose Estimation from RGB Images
   - [iNeRF](#iNeRF)
@@ -185,5 +191,208 @@ $$
 - Not so accurate as of the COLMAP when there are sufficient information.
 
 </p></details>
+
+---
+
+### GRAF
+
+[Generative Radiance Fields for 3D-Aware Image Synthesis](https://arxiv.org/pdf/2007.02442.pdf)  
+**[`NeurIPS 2020`]** **(`MPI`)** **[[Code](https://github.com/autonomousvision/graf)]**  
+*[`Katja Schwarz`, `Yiyi Liao`, `Michael Niemeyer`, `Andreas Geiger`]*
+
+<details><summary>Click to expand</summary>
+
+
+![image-20210108153435365](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210108153442.png)
+
+> **Summary**
+
+
+
+> **Details**
+
+camera matrix $$\mathbf{K}$$
+
+camera pose $$\mathbf{\xi}$$
+
+2D sampling pattern $$\nu$$
+
+
+
+shape code $$\mathbf{z}_s \in \mathbb{R}^m$$
+
+appearance code $$\mathbf{z}_a \in \mathbb{R}^n$$
+
+
+$$
+\begin{aligned}
+g_{\theta}: \mathbb{R}^{L_{\mathbf{x}}} \times \mathbb{R}^{L_{\mathbf{d}}} \times \mathbb{R}^{M_{s}} \times \mathbb{R}^{M_{a}} & \rightarrow \mathbb{R}^{+} \times \mathbb{R}^{3} \\
+\left(\gamma(\mathbf{x}), \gamma(\mathbf{d}), \mathbf{z}_{s}, \mathbf{z}_{a}\right) & \mapsto(\sigma, \mathbf{c})
+\end{aligned}
+$$
+
+
+
+
+</details>
+
+---
+
+### GIRAFFE
+
+[Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/pdf/2011.12100.pdf)
+
+**[`arxiv 2020`]**	**(`MPI`)**	
+
+**[`Michael Niemeyer`, `Andreas Geiger`]**
+
+<details><summary>Click to expand</summary>
+
+
+![image-20210109152339076](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210109152339.png)
+
+> **Summary**
+
+disentangle individual objects and allows for translating and rotating them in the scene as well as changing the camera pose.
+
+controllable images synthesis without additional supervision
+
+Our key hypothesis is that incorporating a compositional 3D scene representation into the generative model leads to more controllable image synthesis
+
+> **Details**
+
+$$
+\begin{aligned}
+h_{\theta}: \mathbb{R}^{L_{\mathbf{x}}} \times \mathbb{R}^{L_{\mathbf{d}}} \times \mathbb{R}^{M_{s}} \times \mathbb{R}^{M_{a}} & \rightarrow \mathbb{R}^{+} \times \mathbb{R}^{M_{f}} \\
+\left(\gamma(\mathbf{x}), \gamma(\mathbf{d}), \mathbf{z}_{s}, \mathbf{z}_{a}\right) & \mapsto(\sigma, \mathbf{f})
+\end{aligned}
+$$
+
+
+
+</details>
+
+---
+
+### pi-GAN
+
+[Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis](https://arxiv.org/pdf/2012.00926.pdf)
+
+**[`arxiv 2020`]**	**(`Stanford`)**	
+
+**[`Eric R. Chan`, `Marco Monteiro`, `Petr Kellnhofer`, `Jiajun Wu`, `Gordon Wetzstein`]**
+
+<details><summary>Click to expand</summary>
+
+
+> **Summary**
+
+Synthesize high-quality view consistent images a SIREN-based 3D representation 
+
+Using a method of combining sinusoidal representation networks and neural radiance fields.
+
+
+
+multi-view consistency
+
+
+
+> **Details**
+
+First represent 3D object 
+
+
+
+Density and color are defined as:
+$$
+\begin{align}
+\sigma(\mathbf{x}) &=\mathbf{W}_{\sigma} \Phi(\mathbf{x})+\mathbf{b}_{\sigma}, \\
+\mathbf{c}(\mathbf{x}, \mathbf{d}) &=\mathbf{W}_{c} \phi_{c}\left([\Phi(\mathbf{x}), \mathbf{d}]^{T}\right)+\mathbf{b}_{c},
+\end{align}
+$$
+
+
+</details>
+
+---
+
+### GRF
+
+[GRF: Learning a General Radiance Field for 3D Scene Representation and Rendering](https://arxiv.org/pdf/2010.04595.pdf)
+
+**[`ICLR 2021`]**	**(`Stanford`)**	**[[Code](https://github.com/alextrevithick/GRF)]**
+
+**[`Alex Trevithick`, `Bo Yang`]**
+
+<details><summary>Click to expand</summary>
+
+
+> **Summary**
+
+
+
+</details>
+
+---
+
+### Non-Rigid Neural Radiance Fields
+
+Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Deforming Scene from Monocular Video
+
+**[[Code](https://github.com/facebookresearch/nonrigid_nerf)]**
+
+<details><summary>Click to expand</summary>
+
+
+![Pipeline figure](https://github.com/facebookresearch/nonrigid_nerf/raw/master/misc/pipeline.png)
+
+
+
+</details>
+
+---
+
+### DietNeRF
+
+[Putting NeRF on a Diet: Semantically Consistent Few-Shot View Synthesis](https://arxiv.org/pdf/2104.00677.pdf)  
+**[`Arxiv`] (`Berkeley`)**  
+*Ajay Jain, Matthew Tancik, Pieter Abbeel*
+
+<details><summary>Click to expand</summary>
+
+
+> Why the name?
+
+
+
+
+
+> Key point
+
+can be estimated from only a few photos and can generate views with unobserved regions
+
+
+
+> 如何做到的呢？
+
+在传统NeRF的基础上，加了一个**sematic consistency loss**。后者来自于**CLIP's Vision Transformer**，用来衡量真样本，和新生成的不同pose下的是不是同一个object。
+
+
+
+> 为什么这样可以做到？
+
+没有prior knowledge的话，是很难学到没有见过的物体的。所以考虑借助一个pre-trained image encoder来guide
+
+
+
+> Details
+
+$$
+\mathcal{L}_{\mathrm{SC}, \ell_{2}}(I, \hat{I})=\frac{\lambda}{2}\|\phi(I)-\phi(\hat{I})\|_{2}^{2}
+$$
+
+
+
+</details>
 
 ---

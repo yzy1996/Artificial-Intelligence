@@ -11,104 +11,49 @@
 *Ben Mildenhall, Pratul P. Srinivasan, Matthew Tancik, Jonathan T. Barron, Ravi Ramamoorthi, Ren Ng*
 
 <div align="center">
-<img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201204115352.png"/>
+<img width=80% src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201204115352.png"/>
     <p>Figure 1</p>
 </div>
-[Code-Tensorflow](https://github.com/bmild/nerf)
 
-[Code-PyTorch](https://github.com/yenchenlin/nerf-pytorch)
+[Code-Tensorflow](https://github.com/bmild/nerf)  [Code-PyTorch](https://github.com/yenchenlin/nerf-pytorch)  [Code-PyTorch](https://github.com/krrish94/nerf-pytorch)
 
-[Code-PyTorch](https://github.com/krrish94/nerf-pytorch)
-
-spatial location $$ (x, y, z) $$ and viewing direction $(\theta, \phi)$
+NeRF represents the 3D geometry and appearance of a scene as a continuous 5D to 2D mapping function and uses volume rendering to synthesize novel views. The training process relies on multiple images with given camera poses.
 
 ## Introduction
 
 
 
-The NeRF training procedure relies on the fact that given a 3D scene, two intersecting rays from two different cameras should yield the same color.
+**The pipeline of NeRF**:
+
+Let's assume that there is a 3D cubic space with an object in it. Any coordinate $(x,y,z)$​​​​ in this space can be queried whether it is occupied by the entity parts of this object. This occupancy is represented by 'volume density' $(\sigma)$​ in NeRF. Although the density in reality is a definite value of 0 or 1, it is expressed here as a probability. We also care about the color of this object specifically the surface. This color $(r,g,b)$​​​​ depends on the camera direction, so we need to query both the coordinate and the viewing direction $(\theta, \phi)$​​​. 
+
+The above process can be formulated as a mapping function $f$ implemented by a neural network. A continuous function $f$ maps a 3D point $\mathbf{x} \in \mathbb{R}^3$ and a viewing direction $\mathbf{d} \in \mathbb{S}^2$ to a volume density $\sigma(\mathbf{x}) \in \mathbb{R}^+$ and an RGB color value $\mathbf{c}(\mathbf{x}, \mathbf{d}) \in \mathbb{R}^3$. 
+
+<div align="center">
+<img width=80% src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210811231246.svg"/>
+    <p>Figure 2</p>
+</div>
+
+After you figure out the main idea, you may naturally understand where the name-NeRF came from. **It can be seen as each point in the space emitting radiance in each direction**. The whole scene is like a radiance field (analogy with Magnetic Field).
+
+The official description of this overall pipeline is:
+
+> from a particular viewpoint, they 1) march camera rays through the scene to generate a sampled set of 3D points, 2) use those points and their corresponding 2D viewing directions as input to the neural network to produce an output set of colors and densities, and 3) use classical volume rendering techniques to accumulate those colors and densities into a 2D image. Because this process is naturally differentiable, we can use gradient descent to optimize this model by minimizing the error between each observed image and the corresponding views rendered from our representation. Minimizing this error across multiple views encourages the network to predict a coherent model of the scene by assigning high volume densities and accurate colors to the locations that contain the true
+> underlying scene content.
 
 
 
+**How to train the whole network:**
 
-
-**Computer Graphics** (CG) is a branch of computer science that deals with **generating images** with the aid of computers. 
-
-
-
-3D reconstruction from multiple images: this tech is to predict the ①**depth** from ②**length** and ③**breadth**.
-
-We try to predict a function for depth determination at various points in the image against the object itself.
-
-Here comes the Neural Radiance Fields.
+The training data is multiview images with known pose of an object. There are existing methods to render this 3D representation into a 2D image, so we can compare the difference between the reconstruction and the ground truth. Note that the whole process is differentiable.
 
 
 
-**A radiance fields**  is a continuous function $f$ which maps a 3D point $\mathbf{x} \in \mathbb{R}^3$ and a viewing direction $\mathbf{d} \in \mathbb{S}^2$ to a volume density $\sigma(\mathbf{x}) \in \mathbb{R}^+$ and an RGB color value $\mathbf{c}(\mathbf{x}, \mathbf{d}) \in \mathbb{R}^3$. 
-
-![图片1](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210811231246.svg)
-
-这样写的好处是清晰了sigma和 c 是有什么决定的，配上那个图就清晰了
-
-
-
-NeRF带来的好处是什么呢？
-
-view-independent, 因为x
-
-Conditioning on the viewing direction $\mathbf{d}$ allows for modeling view-dependent effects such as specular reflections and improves reconstruction quality in case the Lambertian assumption is violated.
-
-
-
-不需要目标的mask，
-
-While NeRF does not require object masks for training due to its volumetric radiance representation, extracting the scene geometry from the volume density requires careful tuning of the density threshold and leads to artifacts due to the ambiguity present in the density field,
-
-再怎么渲染呢
-
-
-
-
-
-NeRF represents the 3D geometry and appearance of a scene as a continuous 5D to 2D mapping function and uses volume rendering to synthesize novel views. The training process relies on multiple images with given camera poses.
-
-
-
-volume density does not admit accurate surface reconstruction
-
-
-
-NeRF use volume rendering by learning alpha-compositing of a radiance field along rays.
-
-带来的另一个好处是可解释性
-
-
-
-high fidelity
-
-
-
-
-
-我们的训练总是需要去regress一个目标的，DeepSDF regress a signed distance function, while NeRF regress 
-
-
-
-A NeRF model stores a volumetric scene representation as the weights of an MLP, trained on many
-images with known pose.
-
-
-
-
-
-如何渲染的呢
+**How to render:**
 
 integrating the density and color at regular intervals along each viewing ray.
 
-
-
 <div align="center"><img width="500" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210722155353.png" ></div>
-
 
 $$
 \begin{aligned}
@@ -117,13 +62,29 @@ T_{i} &=\exp \left(-\sum_{j<i} \sigma_{\theta}\left(\mathbf{x}_{j}\right) \delta
 \end{aligned}
 $$
 
-
-
-采样方式
-
+有多种采样方式
 
 
 
+**Advantage of NeRF:**
+
+- view-independent
+
+Conditioning on the viewing direction $\mathbf{d}$ allows for modeling view-dependent effects such as specular reflections and improves reconstruction quality in case the Lambertian assumption is violated.
+
+- no need of object's mask
+
+While NeRF does not require object masks for training due to its volumetric radiance representation, extracting the scene geometry from the volume density requires careful tuning of the density threshold and leads to artifacts due to the ambiguity present in the density field.
+
+- interpretability 可解释性
+
+
+
+volume density does not admit accurate surface reconstruction
+
+NeRF use volume rendering by learning alpha-compositing of a radiance field along rays.
+
+high fidelity
 
 
 
@@ -315,6 +276,10 @@ LSUN Churches
 FFHQ
 
 
+
+
+
+Coordinate-based Image
 
 
 

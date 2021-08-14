@@ -132,14 +132,14 @@ $$
 一般记作：$[R \mid t]$，其中 $R$ 是一个 $3 \times 3$ 的旋转矩阵，$t$ 是一个 $3 \times 1$ 的平移量。（这样的写法不是条件概率那样的意思，而只是为了便于表明这个 $3 \times 4$ 矩阵是由什么构成的。
 $$
 [\mathbf{R} \mid \mathbf{t}] = 
-\underbrace{\left(\begin{array}{c|c}
+\underbrace{\left[\begin{array}{c|c}
 I & \mathbf{t}
-\end{array}\right)}_{\text{3D Translation}} 
+\end{array}\right]}_{\text{3D Translation}} 
 \times
-\underbrace{\left(\begin{array}{c|c}
+\underbrace{\left[\begin{array}{c|c}
 R & 0 \\
 \hline 0 & 1
-\end{array}\right)}_{\text{3D Rotation}}
+\end{array}\right]}_{\text{3D Rotation}}
 $$
 
 ---
@@ -213,3 +213,60 @@ SO3， 旋转矩阵
 http://ksimek.github.io/2013/08/13/intrinsic/
 
 https://zhuanlan.zhihu.com/p/144307108
+
+
+
+
+
+
+
+
+
+ and 
+
+
+
+
+
+### SO(3)
+
+In math and geometry, the 3D rotation group is the group of all rotations about the origin of three-dimensional Euclidean space. This group is often denoted SO(3) which is the abbreviation for 'special orthogonal 3-dimensional group'. Every rotation $R$​ can be represented by a mapping from an orthonormal basis of $\mathbb{R}^3$​ to another orthonormal basis. By the way, we can fix one dimension of $R$​ which is called the axis of rotation and then specify it with an axis and an angle of rotation about this axis. For example, counterclockwise rotation about the positive z-axis by angle $\phi$​​ is given by:
+$$
+R_{z}(\phi)=
+\left[\begin{array}{ccc}
+\cos \phi & -\sin \phi & 0 \\
+\sin \phi & \cos \phi & 0 \\
+0 & 0 & 1
+\end{array}\right]
+$$
+
+### SE(3)
+
+Except rotation, 3D rigid transformation also include a translation $t \in \mathbb{R}^3$​. The group of SO(3) together with a translational part is defined as 'special Euclidean 3-dimensional group', denoted SE(3). To describe the transformation from the camera coordinate system to the world coordinate system, we express the camera extrinsic as a homogenous matrix $T=[R \mid t]$.
+
+special 3D Homography matrix $\mathbf{T}$ constructed with translation \(t\) and rotation \(R\).
+
+
+
+To summarize, the set of camera parameters we need to utilize or optimize in our method are the camera intrinsics $f_x$ and $f_y$ shared by all input images, and the camera extrinsics parameterized by $\phi_i$ and $t_i$ specific to each image.
+
+
+
+
+
+
+
+special Euclidean group
+
+
+
+
+
+
+
+
+
+
+
+
+

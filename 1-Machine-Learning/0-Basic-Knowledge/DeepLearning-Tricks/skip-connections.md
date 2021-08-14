@@ -23,3 +23,9 @@ $$
 [link](https://theaisummer.com/skip-connections/)
 
 [link](https://stats.stackexchange.com/questions/56950/neural-network-with-skip-layer-connections)
+
+
+
+
+
+训练更快？精度更高？

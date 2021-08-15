@@ -102,11 +102,7 @@ $$
 上式就建立了相机的**内参模型**：（也可以分解成两部分）
 $$
 \begin{aligned}
-K &=\left(\begin{array}{ccc}
-f_{x} & 0 & u_{0} \\
-0 & f_{y} & v_{0} \\
-0 & 0 & 1
-\end{array}\right) \\
+s
 &=\underbrace{\left(\begin{array}{ccc}
 1 & 0 & u_{0} \\
 0 & 1 & v_{0} \\

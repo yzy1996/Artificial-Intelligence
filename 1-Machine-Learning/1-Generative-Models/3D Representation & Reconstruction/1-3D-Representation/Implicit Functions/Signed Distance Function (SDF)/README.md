@@ -4,6 +4,12 @@
 
 
 
+
+
+
+
+
+
 For a volume $\mathcal{M} \sim \mathbb{R}^3$
 
 we want to get its surface $\mathcal{S}$

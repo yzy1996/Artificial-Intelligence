@@ -64,7 +64,7 @@ $$
 
 有多种采样方式
 
-
+$p \in \mathbb{R}^3$
 
 **Advantage of NeRF:**
 

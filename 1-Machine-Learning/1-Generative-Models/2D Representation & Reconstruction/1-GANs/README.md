@@ -1,9 +1,16 @@
  English | [简体中文](./README.zh-CN.md)
 
+# <p align=center>`Generative Adversarial Networks (GANs)`</p>
 
-#  Generative Adversarial Networks (GANs)
+A collection of resources on Generative Adversarial Networks (GANs).
 
-This is my  research summary on Generative Adversarial Networks and I sort them into:
+## Introduction
+
+
+
+
+
+
 
 - Traditional GAN
 - Applicational GAN

@@ -39,6 +39,14 @@ grad_fn = <AddBackward0> / <MulBackward0> / <MeanBackward0> / <SumBackward0>
 
 
 
+判断两个 tensor 相等
+
+
+
+torch.equal(x1, x2)
+
+
+
 有三种构建模型的方法：
 
 

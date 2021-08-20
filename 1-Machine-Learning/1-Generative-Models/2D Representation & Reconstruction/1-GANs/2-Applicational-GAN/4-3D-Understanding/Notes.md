@@ -46,6 +46,6 @@ ss
 ---
 
 [Image GANs meet Differentiable Rendering for Inverse Graphics and Interpretable 3D Neural Rendering](https://arxiv.org/pdf/2010.09125.pdf)  
-**[`ICLR 2021`] (NVIDIA, Toronto)**  
+**[`ICLR 2021`] (`NVIDIA, Toronto`)**  
 *Yuxuan Zhang, Wenzheng Chen, Huan Ling, Jun Gao, Yinan Zhang, Antonio Torralba, Sanja Fidler*
 

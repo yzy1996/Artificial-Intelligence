@@ -17,12 +17,26 @@ A collection of resources on Shape Correspondences and some of my reading notes.
 [Paper Name](abs/pdf link)  
 **[`Conference/Journal Year`] (`Institution`)** [[Github](link)] [[Project](link)]
 *[Author 1](homepage), Author 2, and Author 3.*  
-<details><summary>Click to expand</summary><p>
-A summary here
-</p></details>
 ```
 
-[toc]
+## Table of Contents
+
+- [Introduction](#Introduction)
+- [Impact](#Impact)
+- [Evaluation](#Evaluation)
+- [Data](#Data)
+- [Literature](#Literature)
+  - [Survey](#Survey)
+  - [Supervised](#Supervised)
+  - [2D Perspective](#2D-Perspective)
+  - [3D Perspective](#3D-Perspective)
+  - [Other domain](#Other-domain)
+
+---
+
+
+
+## Introduction
 
 Both 2D and 3D keypoint detection are long-standing problems in computer vision. 
 
@@ -36,9 +50,7 @@ The keypoints should be **geometrically** and **semantically** consistent across
 
 The model we learn often covers a collection of objects of **a specific category**.
 
-<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210707114641.png" alt="image-20210526160159027" style="zoom: 50%;" />
-
-## Definition
+<div align=center><img width="400" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210707114641.png"/></div>
 
 **Shape correspondence problem** is stated as finding a set of corresponding points between given shapes.
 
@@ -46,11 +58,7 @@ The model we learn often covers a collection of objects of **a specific category
 
 **Sparse correspondences** focus on only a few keypoints.
 
-
-
 We can use **infer/learn** xx as a predicate, and we can use <u>points with lines</u> or <u>same colors</u> to assign correspondences.
-
-
 
 **先笼统地介绍：**
 
@@ -68,11 +76,11 @@ We can use **infer/learn** xx as a predicate, and we can use <u>points with line
   - 监督和无监督，这里的监督指的是特征点标记
   - 一个模型涵盖同一类物体
 
-
-
 **Keywords**: landmark, parts, skeletons, category-specific
 
 keypoint heatmap: 关键点热力图，图中数值越大的位置，越有可能是关键点
+
+
 
 ## Impact
 
@@ -80,24 +88,18 @@ keypoint heatmap: 关键点热力图，图中数值越大的位置，越有可�
 
 主要是: detection and segmentation. 对于相关性而言，都已经知道相关性了，one-shot标注后直接就迁移到了新的object上了。传统方法主要是依靠手动标记，所以重点找一下不需要手动标记的方法。
 
-
-
 有一个最权威的人体关节点定位比赛: MS COCO Keypoint track
-
-
 
 robotics applications need 3D keypoints for control 
 
 - 2019 Keypoint affordances for category-level robotic manipulation
 - 2019 kpam-sc: Generalizable manipulation planning using keypoint affordance and shape completion
 
-
-
 直接利用/借用keypoint的工作：
 
 **Non-Rigid Structure-from-Motion (NRSfM)** methods ref:
 
-- Multiview aggregation for learning category-specific shape reconstruction
+- Multiview aggregation for learning category-specific shape reconstruction
 - Symmetric non-rigid structure from motion for category-specific object structure estimation
 
 > The key idea is that a large number of object deformations can be explained by linearly combining a smaller K number of basis shapes at some pose. 对刚体而言，只有一个基础形状，秩为3。
@@ -112,12 +114,14 @@ robotics applications need 3D keypoints for control
 - isometric prior 
   - Non-rigid structure from locally-rigid motion
   - Isometric non-rigid shape-from-motion in linear time
-
-
+  
+  
 
 ## Evaluation
 
 可以手动标然后做回归
+
+
 
 ## Data
 
@@ -128,6 +132,8 @@ annotated keypoints for:
 - hands [^ hand]
 
 - human bodies [^ body1] [^ body2]
+
+
 
 ## Literature
 
@@ -141,8 +147,6 @@ annotated keypoints for:
 - [Recent advances in shape correspondence](https://link.springer.com/content/pdf/10.1007/s00371-019-01760-0.pdf)  
   **[`The Visual Computer 2020`] (`METU`)**  
   *Yusuf Sahillioglu*
-
-
 
 ### Supervised
 
@@ -162,8 +166,6 @@ annotated keypoints for:
   **[`CVPR 2013`] (`CUHK`)**  
   *Yi Sun, Xiaogang Wang, Xiaoou Tang*
 
-
-
 下面分类是依据输入和输出数据的维度为2D还是3D
 
 ### 2D Perspective
@@ -177,8 +179,6 @@ annotated keypoints for:
 - [SURF: Speeded Up Robust Features](https://people.ee.ethz.ch/~surf/eccv06.pdf)  
   **[`ECCV 2006`] (`ETH`)**  
   *Herbert Bay, Tinne Tuytelaars, Luc Van Gool*
-
-
 
 #### local descriptor based
 
@@ -200,8 +200,6 @@ annotated keypoints for:
   **[`CVPR 2016`] (`Inria`)**  
   *Bumsub Ham, Minsu Cho, Cordelia Schmid, Jean Ponce*
 
-
-
 #### parametric warping
 
 match local feature 提取像素点的特征，然后做匹配，既可以通过学习变形的function，也可以通过学习encoder压缩到一个低维共性点
@@ -217,8 +215,6 @@ Warpnet: Weakly supervised matching for singleview reconstruction
 - [End-to-end weakly-supervised semantic alignment](https://arxiv.org/pdf/1712.06861.pdf)  
   **[`CVPR 2018`] (`DI ENS, Inria, DeepMind`)**  
   *Ignacio Rocco, Relja Arandjelovic, Josef Sivic*
-
-
 
 #### learn equivariant embeddings/decoder
 
@@ -254,20 +250,14 @@ Warpnet: Weakly supervised matching for singleview reconstruction
   **[`CVPR_2020`] (`Oxford`)**  
   *Tomas Jakab, Ankush Gupta, Hakan Bilen, Andrea Vedaldi* 
 
-
-
 除了直接找2D特征层面的相关性，还可以借助3D层面特征为中间过渡
 
 Compared with directly learning correspondence maps from 2D images, learning from 3D structures as an intermediate medium is more powerful. 
-
-
 
 #### 3D medium Template 
 
 > Plato famously remarked that while there are many cups in the world, there is only one 'idea' of a cup, which he defined as a 'cupness'. So Any particular instance of a category can thus be understood via its
 > relationship to this platonic ideal. We humans have an ability to reason 3D structure from a 2D image.
-
-
 
 - [Learning Dense Correspondence via 3D-guided Cycle Consistency](https://arxiv.org/pdf/1604.05383.pdf)  
   **[`CVPR 2016`] (`UCB`)**  
@@ -281,19 +271,13 @@ Compared with directly learning correspondence maps from 2D images, learning fro
   **[`CVPR 2020`] (`UM, CMU, Facebook`)**  
   *Nilesh Kulkarni, Abhinav Gupta, David F. Fouhey, Shubham Tulsiani*
 
-
-
 > 上面的方法需要假设存在这样一个“模板“，究竟是否真实存在呢？下面方法说可以不要模板
-
-
 
 #### 3D medium semantic transfer
 
 - [Semantic Correspondence via 2D-3D-2D Cycle](https://arxiv.org/pdf/2004.09061.pdf)  
   **[`Arxiv 2020`] (`SJTU`)**  
   *Yang You, Chengkun Li, Yujing Lou, Zhoujun Cheng, Lizhuang Ma, Cewu Lu, Weiming Wang*
-
-
 
 用带pose的2D图片
 
@@ -304,8 +288,6 @@ Compared with directly learning correspondence maps from 2D images, learning fro
 - [Implicit 3D Orientation Learning for 6D Object Detection from RGB Images](https://arxiv.org/pdf/1902.01275.pdf)  
   **[`ECCV 2018`] (`German Aerospace Center, TUM`)**  
   *Martin Sundermeyer, Zoltan-Csaba Marton, Maximilian Durner, Manuel Brucker, Rudolph Triebel*
-
-
 
 ### 3D Perspective
 
@@ -335,11 +317,9 @@ Compared with directly learning correspondence maps from 2D images, learning fro
   **[`ICCV 2019`] (`NUS`)**  
   *Jiaxin Li, Gim Hee Lee*
 
-- [Convolutional experts constrained local model for 3d facial landmark detection](https://arxiv.org/pdf/1611.08657.pdf)
+- [Convolutional experts constrained local model for 3d facial landmark detection](https://arxiv.org/pdf/1611.08657.pdf)  
   **[`CVPR-W 2017`] (`CMU`)**  
   *Amir Zadeh, Tadas BaltruĹĄaitis, Louis-Philippe Morency*
-
-
 
 ### Other domain
 
@@ -369,15 +349,15 @@ Compared with directly learning correspondence maps from 2D images, learning fro
   **[`CVPR 2017`] (`CMU`)**  
   *Tomas Simon, Hanbyul Joo, Iain Matthews, Yaser Sheikh*
 
-### Bird
+#### bird
 
-Deep Deformation Network for Object Landmark Localization
+- Deep Deformation Network for Object Landmark Localization
 
-Part Localization using Multi-Proposal Consensus for Fine-Grained Categorization
+- Part Localization using Multi-Proposal Consensus for Fine-Grained Categorization
 
-Bird part localization using exemplar-based models with enforced pose and subcategory consistency
+- Bird part localization using exemplar-based models with enforced pose and subcategory consistency
 
-### Furniture
+#### furniture
 
 - [Single Image 3D Interpreter Network](https://arxiv.org/pdf/1604.08685.pdf)  
   **[`ECCV 2016`] (`MIT`)**  
@@ -385,15 +365,7 @@ Bird part localization using exemplar-based models with enforced pose and subcat
 
 ## Knowledge
 
-
-
 **UV mapping**:
-
-
-
-
-
-
 
 [^ intro2]: Unsupervised Learning of Category-Specific Symmetric 3D Keypoints from Point Sets
 [^KeypointDeformer]: KeypointDeformer

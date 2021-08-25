@@ -14,6 +14,12 @@ related project
 
 [weihaox/awesome-neural-rendering](weihaox/awesome-neural-rendering)
 
+
+
+News: Latest 3D dataset---[CO3D](https://ai.facebook.com/datasets/co3d-downloads/) by Facebook
+
+
+
 ## Table of Contents
 
 - [3D Representation](#3D-Representation) (一些3D表征的方法)
@@ -382,5 +388,5 @@ standard ReLU MLPs fail to adequately represent fine details in these complex lo
   **[`CVPR 2015`] (`Princeton, CUH, MIT`)**  
   *Zhirong Wu, Shuran Song, Aditya Khosla, Fisher Yu, Linguang Zhang, Xiaoou Tang, Jianxiong Xiao*
 
-
+CO3D
 

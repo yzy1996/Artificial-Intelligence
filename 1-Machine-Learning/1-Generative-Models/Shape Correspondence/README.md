@@ -170,6 +170,12 @@ annotated keypoints for:
 
 ### 2D Perspective
 
+
+
+
+
+
+
 (注意里面也包含了利用3D中间体过渡的一类方法)
 
 - [SIFT: Object recognition from local scale-invariant features](https://www.cs.ubc.ca/~lowe/papers/iccv99.pdf)  

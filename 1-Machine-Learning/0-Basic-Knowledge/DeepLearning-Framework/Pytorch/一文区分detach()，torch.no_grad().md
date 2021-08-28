@@ -10,6 +10,22 @@ print(y.requires_grad) # False
 
 
 
+
+
+还可以赋值切断
+
+
+
+与 data() detach() 比较
+
+
+
+
+
+
+
+
+
 `torch.no_grad()`
 
 通常是在推断(inference)的时候，用来禁止梯度计算，仅进行前向传播

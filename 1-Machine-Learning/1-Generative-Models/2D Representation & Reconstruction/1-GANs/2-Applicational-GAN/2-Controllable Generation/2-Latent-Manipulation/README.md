@@ -97,6 +97,10 @@ the study on how a well-trained GAN is able to encode different semantics inside
 
 
 
+> interpreting well-trained GAN models
+
+
+
 orthogonal image transformation
 
 

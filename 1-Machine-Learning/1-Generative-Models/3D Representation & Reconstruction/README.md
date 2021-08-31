@@ -60,6 +60,12 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
 
 
 
+> Multi-view stereo (MVS) reconstructs the dense representation of the scene from multi-view images and corresponding camera parameters.
+
+
+
+
+
 ## 2. 3D Representation
 
 首先划分为 是表征**单个物体** 还是表征**一个类别的物体**
@@ -389,4 +395,26 @@ standard ReLU MLPs fail to adequately represent fine details in these complex lo
   *Zhirong Wu, Shuran Song, Aditya Khosla, Fisher Yu, Linguang Zhang, Xiaoou Tang, Jianxiong Xiao*
 
 CO3D
+
+
+
+**MVS Datasets**
+
+Middlebury MVS
+
+EPFL benchmark
+
+DTU dataset
+
+Tanks and Temples benchmark
+
+ETH3D benchmark
+
+
+
+数量需要足够多
+
+
+
+**Synthetic Datasets**
 

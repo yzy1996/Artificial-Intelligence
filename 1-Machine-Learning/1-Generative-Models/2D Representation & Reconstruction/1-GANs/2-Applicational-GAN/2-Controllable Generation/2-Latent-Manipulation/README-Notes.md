@@ -22,7 +22,7 @@ unsorted
 
 
 
-
+  
 
 
 
@@ -60,4 +60,13 @@ where $L^j(x)$ is the $j$-th level of the Laplacian pyramid representation of $x
 </details>
 
 ---
+
+<span id="LowRankGAN"></span>
+[Low-Rank Subspaces in GANs](https://arxiv.org/pdf/2106.04488.pdf)  
+**[`Arxiv 2021`] (`HKUST, Alibaba, USTC`)**  
+*Jiapeng Zhu, Ruili Feng, Yujun Shen, Deli Zhao, Zhengjun Zha, Jingren Zhou, Qifeng Chen*
+
+
+
+
 

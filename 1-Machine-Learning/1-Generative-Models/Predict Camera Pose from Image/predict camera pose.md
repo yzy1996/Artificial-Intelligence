@@ -108,44 +108,38 @@ Multiple view geometry in computer vision
 
 
 
-Scene Coordinate Regression Forests for Camera Relocalization in RGB-D Images
-
-[CVPR 2013]
-
+[Scene Coordinate Regression Forests for Camera Relocalization in RGB-D Images](https://openaccess.thecvf.com/content_cvpr_2013/papers/Shotton_Scene_Coordinate_Regression_2013_CVPR_paper.pdf)  
+**[`CVPR 2013`]**
 
 
-Geometric loss functions for camera pose regression with deep learning
 
-[CVPR 2017] (Cambridge)
+[Geometric loss functions for camera pose regression with deep learning](https://arxiv.org/pdf/1704.00390.pdf)  
+**[`CVPR 2017`] (`Cambridge`)**  
+*Alex Kendall, Roberto Cipolla*
 
-Alex Kendall, Roberto Cipolla
+
 
 > introduce novel loss functions to reduce the gap in accuracy 
 >
-> re-peojection error
+> re-projection error
 >
 > improve the performance of PoseNet
 
 
 
-
-
-Posenet: A convolutional network for real-time 6-dof camera relocalization
-
-[ICCV 2015]
+[PoseNet: A Convolutional Network for Real-Time 6-DOF Camera Relocalization](https://arxiv.org/pdf/1505.07427.pdf)  
+**[`ICCV 2015`]**  
+*Alex Kendall, Matthew Grimes, Roberto Cipolla*
 
 > learns to regress the 6-DOF camera pose from a single image.
 >
-> but a naive loss function brings expensivetuning
+> but a naive loss function brings expensive tuning
 
 
 
+[Deep Auxiliary Learning for Visual Localization and Odometry](https://arxiv.org/pdf/1803.03642.pdf)  
+**[`ICRA 2018`]**  
+*Abhinav Valada, Noha Radwan, Wolfram Burgard*
 
+> Multi-Task Framework
 
-
-
-Deep auxiliary learning for visual localization and odometry
-
-[ICRA 2018]
-
-> multi-task framework

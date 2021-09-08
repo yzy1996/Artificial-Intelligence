@@ -7,6 +7,7 @@
 ## Content
 
 - Improve Performance
+  - [NeRF++](#NeRF++)
   - [UNISURF](#UNISURF)
 - Dynamic
   - NeRFies
@@ -14,7 +15,6 @@
 - Composition
   - GIRAFFE
   - 
-
 - Pose Estimation from RGB Images
   - [iNeRF](#iNeRF)
   - [NeRF--](#NeRF--)
@@ -58,14 +58,6 @@ $$
 
 
 </details>
-
----
-
-
-
-
-
-
 
 ---
 
@@ -392,6 +384,32 @@ $$
 $$
 
 
+
+</details>
+
+---
+
+<span id="NeRF++"></span>
+[NeRF++: Analyzing and Improving Neural Radiance Fields](https://arxiv.org/pdf/2010.07492.pdf)  
+**[`Arxiv 2020`] (`Cornell Tech, iNTEL`)**  
+*Kai Zhang, Gernot Riegler, Noah Snavely, Vladlen Koltun*
+
+<details><summary>Click to expand</summary>
+
+<div align=center><img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210908171414.png"/></div>
+
+> **Summary**
+
+- resolve shape-radiance ambiguity (incorrect geometry bring correct rendering images because the radiance fields are degenerate), 想象不规则的体退化成一个球面，表面的颜色能够渲染出对应的图像，在一定范围内是可以过拟合学到的。**本质是缺少约束带来的过拟合问题**。
+- remedy parameterization of unbounded scenes in the case of 360° captures.
+
+> **Details**
+
+- As $\sigma$ deviates from the correct shape, c must in general become a high-frequency function with respect to d to reconstruct the input images. For the correct shape, the surface light field will generally be much smoother (in fact, constant for Lambertian materials). **The higher complexity required for incorrect shapes is more difficult to represent with a limited capacity MLP.**
+
+
+
+如何来实验验证，是重点，可以学习一下是怎么开展的。
 
 </details>
 

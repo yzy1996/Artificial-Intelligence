@@ -21,6 +21,8 @@ NeRF represents the 3D geometry and appearance of a scene as a continuous 5D to 
 
 ## Introduction
 
+因为能生成各种视角的图像，这样就能直接训练，通过多视角的RGB图像
+
 
 
 **The pipeline of NeRF**:

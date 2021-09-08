@@ -60,7 +60,19 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
 
 
 
-> Multi-view stereo (MVS) reconstructs the dense representation of the scene from multi-view images and corresponding camera parameters.
+> Multi-view stereo (MVS) reconstructs the dense representation of the scene from multi-view images and corresponding camera parameters. also summarized as ‘multi-view posed images’
+
+The application varies from robotics, 3D modeling, to virtual reality, etc.
+
+
+
+可以坐在家里，仅通过一张图片还原当时场景，不需要受限于场景空间，视角是自由的
+
+nerf++
+
+
+
+novel view synthesis task
 
 
 

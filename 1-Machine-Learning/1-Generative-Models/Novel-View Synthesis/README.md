@@ -22,6 +22,12 @@ These methods can be divided into two categories:
 
 
 
+View Synthesis: view interpolation
+
+the goal is to interpolate views within the convex hull of the initial camera positions.
+
+
+
 ## Literature
 
 [Multi-view to Novel View: Synthesizing Novel Views With Self-learned Confidence](https://openaccess.thecvf.com/content_ECCV_2018/papers/Shao-Hua_Sun_Multi-view_to_Novel_ECCV_2018_paper.pdf)  

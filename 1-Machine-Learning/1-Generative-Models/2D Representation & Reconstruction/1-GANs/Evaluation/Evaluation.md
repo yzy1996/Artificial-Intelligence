@@ -61,6 +61,9 @@ $$
 
 
 
+$$
+D_{KL}(P\|Q) = -\sum_i P(i) \ln \frac{Q(i)}{P(i)} 
+$$
 
 
 
@@ -127,3 +130,6 @@ interpolation quality and disentanglement
 
 
 
+
+
+https://github.com/GaParmar/clean-fid

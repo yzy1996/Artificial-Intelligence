@@ -48,6 +48,26 @@ d = np.c_[a,b.T]
 
 
 
+往后追加
+
+
+
+或者重新赋值
+
+```python
+a  = np.zeros((5, 2))
+# a  = np.empty((w, h))
+
+a[0:1] = 1
+a[1:2] = 2
+```
+
+
+
+
+
+
+
 
 
 ## random随机数
@@ -76,3 +96,4 @@ d = np.c_[a,b.T]
 
 
 np.linspace() 比 range() 好，因为它包含了终值
+

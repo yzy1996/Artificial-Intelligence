@@ -44,6 +44,10 @@ main method can be categorized into:
 
 
 
+
+
+
+
 ## 存在性
 
 2015 Radford et al. find GAN latent space processes semantically meaningful vector space arithmetic
@@ -153,6 +157,26 @@ Existing GAN-based approaches can be categorized roughly into two groups:
 
 
 ## 主要方法
+
+
+
+The most straightforward way is to first generate a collection of image synthesis, then label these images regarding a target attribute, and finally find the latent separation boundary through supervised training.
+
+
+
+In view of the annotation drawbacks of previous method, finding steerable directions of the latent space in an unsupervised manner is another direction, such as using PCA.
+
+
+
+The common issue of the existing approaches is the limitation of global semantics, we would like to focus on some particular image region
+
+
+
+
+
+
+
+
 
 - [Supervised]() (require human labels, pre-trained models)
 
@@ -363,4 +387,8 @@ local semantics
 [Low-Rank Subspaces in GANs](https://arxiv.org/pdf/2106.04488.pdf)  
 **[`Arxiv 2021`] (`HKUST, Alibaba, USTC`)**  
 *Jiapeng Zhu, Ruili Feng, Yujun Shen, Deli Zhao, Zhengjun Zha, Jingren Zhou, Qifeng Chen*
+
+
+
+
 

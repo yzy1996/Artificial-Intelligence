@@ -68,5 +68,13 @@ where $L^j(x)$ is the $j$-th level of the Laplacian pyramid representation of $x
 
 
 
+|      Name       |                  Symbol                  |
+| :-------------: | :--------------------------------------: |
+| the real image  | $\boldsymbol{x} \in \mathcal{R}^{d_{x}}$ |
+| the latent code |  $\boldsymbol{z} \in \mathbb{R}^{d_z}$   |
+|  the Generator  |                $G(\cdot)$                |
 
+
+
+The Jacobian matrix $\boldsymbol{J}_z$ of the $G$ with respect to $\boldsymbol{z}$ is defined as $\left(\boldsymbol{J}_{z}\right)_{j, k}=\frac{\partial G(\boldsymbol{z})_{j}}{\partial z_{k}}$
 

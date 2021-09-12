@@ -67,14 +67,43 @@ where $L^j(x)$ is the $j$-th level of the Laplacian pyramid representation of $x
 *Jiapeng Zhu, Ruili Feng, Yujun Shen, Deli Zhao, Zhengjun Zha, Jingren Zhou, Qifeng Chen*
 
 
+<div align=center><img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210911170730.png"/></div>
 
-|      Name       |                  Symbol                  |
-| :-------------: | :--------------------------------------: |
-| the real image  | $\boldsymbol{x} \in \mathcal{R}^{d_{x}}$ |
-| the latent code |  $\boldsymbol{z} \in \mathbb{R}^{d_z}$   |
-|  the Generator  |                $G(\cdot)$                |
+|      Name       |                 Symbol                  |
+| :-------------: | :-------------------------------------: |
+| the real image  | $\boldsymbol{x} \in \mathbb{R}^{d_{x}}$ |
+| the latent code |  $\boldsymbol{z} \in \mathbb{R}^{d_z}$  |
+|  the Generator  |               $G(\cdot)$                |
 
 
 
 The Jacobian matrix $\boldsymbol{J}_z$ of the $G$ with respect to $\boldsymbol{z}$ is defined as $\left(\boldsymbol{J}_{z}\right)_{j, k}=\frac{\partial G(\boldsymbol{z})_{j}}{\partial z_{k}}$
 
+$$
+\boldsymbol{x} = G(\boldsymbol{z})
+\\
+\boldsymbol{x}^{edit} = G(\boldsymbol{z} + \alpha \boldsymbol{n})
+\\
+G(\boldsymbol{z} + \alpha \boldsymbol{n}) = G(\boldsymbol{z}) + \alpha \boldsymbol{J}_z \boldsymbol{n} + o(\alpha)
+$$
+the perturbation on the attribute direction only has effect on a specific region.
+
+
+
+the low rank is $r_a$, the rest attribute vectors $d_z - r_a$
+
+
+
+
+
+attribute matrix on region $\boldsymbol{A} = [\boldsymbol{a}_1, \boldsymbol{a}_2, \dots, \boldsymbol{a}_{d_z}]$, has $r_a$ attribute vectors can change the region, the rest $d_z - r_a$ attribute vectors has no effect on region A.
+
+attribute matrix on region $\boldsymbol{B} = [\boldsymbol{b}_1, \boldsymbol{b}_2, \dots, \boldsymbol{b}_{d_z}]$, has $r_b$ attribute vectors can change the region, the rest $d_z - r_b$ attribute vectors has no effect on region B.
+
+
+
+They project the specific attribute vector $v_i$ of region A into a space where the perturbation on the attribute direction has no effect on region B yet has an influence on region.
+
+
+
+The null space 

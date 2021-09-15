@@ -1,4 +1,4 @@
-# <p align=center>`[Title]`</p>
+# <p align=center>`Neural Implicit Surfaces`</p>
 
 
 

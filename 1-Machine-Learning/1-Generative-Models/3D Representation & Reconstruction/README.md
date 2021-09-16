@@ -54,7 +54,7 @@ Our goal is to **reconstruct 3D objects or scenes** (geometry and appearance) fr
 
 > 对比的是一些显式表征，例如 point cloud, mesh, voxels。过去这些方法的训练是需要3D监督的，因为是和这些监督真值去对比，而隐式表征因为都是可导的，所以可以借助神经网络的反向传播直接和输入真值去对比，做到end-to-end。这需要依靠 neural rendering。
 
-这些神经隐式表征方法还需要额外的配套渲染技术，渲染可以简单理解为“对3D模型拍个照得到2D图像”，复杂一点讲需要涵盖 cameras pose, lights, surface geometry and material 这么多因素。
+这些神经隐式表征方法还需要额外的配套渲染技术，渲染可以简单理解为“对3D模型拍个照得到2D图像”，复杂一点讲需要涵盖 cameras pose, lights, surface geometry and material 这么多因素。神经网络的学习靠的就是渲染后的图片和原图进行对比。use a rendering method to render a 3D object into images and use the rendered images to compare against input images for supervision.
 
 通常学习的过程中很难做到单张图训练，学习到足够的先验信息后再通过逆向渲染做到对单张图的推断。在做的过程中，为了简化，我们也会使用canonical view / model。
 

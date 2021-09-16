@@ -68,6 +68,12 @@ $$
 
 $p \in \mathbb{R}^3$
 
+
+
+采样了点后再进行颜色的融合，\alpha-composition
+
+
+
 **Advantage of NeRF:**
 
 - view-independent
@@ -87,6 +93,18 @@ volume density does not admit accurate surface reconstruction
 NeRF use volume rendering by learning alpha-compositing of a radiance field along rays.
 
 high fidelity
+
+
+
+缺点：
+
+他的目的是做 novel-view synthesis，而不是 surface construction，只需要合成的照片正确就行，shape是否学的精确是不重要的，因为存在多解，找一个即可，而精确还原是只有一个解的。
+
+对于NERF怎么找表面是通过一个 level-set，等水平面，因为已经学到了 density field
+
+
+
+opacity value
 
 
 
@@ -153,6 +171,8 @@ high fidelity
 
 
 ### 2. Shape Encode
+
+里面也包含了 conditional nerf
 
 - [GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis](https://arxiv.org/pdf/2007.02442.pdf)  
   **[`NeurIPS 2020`] (`MPI`)** [[Code](https://github.com/autonomousvision/graf)]  

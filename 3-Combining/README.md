@@ -16,3 +16,4 @@ popular optimization methods can be divided into three categories:
 
 
 
+representation + manifold learning

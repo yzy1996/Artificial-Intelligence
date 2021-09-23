@@ -6,8 +6,6 @@
 
 steerable, interpretable, semantics
 
-
-
 latent space navigation
 
 

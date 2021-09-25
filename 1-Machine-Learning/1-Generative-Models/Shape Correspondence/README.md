@@ -84,6 +84,8 @@ keypoint heatmap: 关键点热力图，图中数值越大的位置，越有可�
 
 ## Impact
 
+是为了让机器能够理解一系列物体 Understanding different objects of the same category
+
 应用多 generic framework for: texture transfer \ pose and animation transfer \ statistical shape analysis \ 多视角识别
 
 主要是: detection and segmentation. 对于相关性而言，都已经知道相关性了，one-shot标注后直接就迁移到了新的object上了。传统方法主要是依靠手动标记，所以重点找一下不需要手动标记的方法。
@@ -148,33 +150,31 @@ annotated keypoints for:
   **[`The Visual Computer 2020`] (`METU`)**  
   *Yusuf Sahillioglu*
 
+
+
 ### Supervised
-
-- [Simultaneous facial landmark detection, pose and deformation estimation under facial occlusion](https://arxiv.org/pdf/1709.08130.pdf)  
-  **[`CVPR 2017`] (`Rensselaer Polytechnic Institute`)**  
-  *Yue Wu, Chao Gou, Qiang Ji*
-
-- [Deep Deformation Network for Object Landmark Localization](https://arxiv.org/pdf/1605.01014.pdf)  
-  **[`ECCV 2016`] (`NEC`)**  
-  *Xiang Yu, Feng Zhou, Manmohan Chandraker*
-
-- [Facial landmark detection by deep multi-task learning](http://personal.ie.cuhk.edu.hk/~ccloy/files/eccv_2014_deepfacealign.pdf)  
-  **[`ECCV 2014`] (`CUHK`)**  
-  *Zhanpeng Zhang, Ping Luo, Chen Change Loy, and Xiaoou Tang*
 
 - [Deep Convolutional Network Cascade for Facial Point Detection](https://www.cv-foundation.org/openaccess/content_cvpr_2013/papers/Sun_Deep_Convolutional_Network_2013_CVPR_paper.pdf)  
   **[`CVPR 2013`] (`CUHK`)**  
   *Yi Sun, Xiaogang Wang, Xiaoou Tang*
 
-下面分类是依据输入和输出数据的维度为2D还是3D
+- [Facial landmark detection by deep multi-task learning](http://personal.ie.cuhk.edu.hk/~ccloy/files/eccv_2014_deepfacealign.pdf)  
+  **[`ECCV 2014`] (`CUHK`)**  
+  *Zhanpeng Zhang, Ping Luo, Chen Change Loy, and Xiaoou Tang*
+
+- [Deep Deformation Network for Object Landmark Localization](https://arxiv.org/pdf/1605.01014.pdf)  
+  **[`ECCV 2016`] (`NEC`)**  
+  *Xiang Yu, Feng Zhou, Manmohan Chandraker*
+
+- [Simultaneous facial landmark detection, pose and deformation estimation under facial occlusion](https://arxiv.org/pdf/1709.08130.pdf)  
+  **[`CVPR 2017`] (`Rensselaer Polytechnic Institute`)**  
+  *Yue Wu, Chao Gou, Qiang Ji*
+  
+  
+
+下面分类都是无监督的，且是依据输入和输出数据的维度为2D还是3D
 
 ### 2D Perspective
-
-
-
-
-
-
 
 (注意里面也包含了利用3D中间体过渡的一类方法)
 
@@ -186,7 +186,7 @@ annotated keypoints for:
   **[`ECCV 2006`] (`ETH`)**  
   *Herbert Bay, Tinne Tuytelaars, Luc Van Gool*
 
-#### local descriptor based
+#### Local Descriptor Based
 
 用一些特征算子找，用神经网络提取特征层面的对应关系，需要有标记的数据集
 
@@ -206,7 +206,7 @@ annotated keypoints for:
   **[`CVPR 2016`] (`Inria`)**  
   *Bumsub Ham, Minsu Cho, Cordelia Schmid, Jean Ponce*
 
-#### parametric warping
+#### Parametric Warping
 
 match local feature 提取像素点的特征，然后做匹配，既可以通过学习变形的function，也可以通过学习encoder压缩到一个低维共性点
 
@@ -222,7 +222,11 @@ Warpnet: Weakly supervised matching for singleview reconstruction
   **[`CVPR 2018`] (`DI ENS, Inria, DeepMind`)**  
   *Ignacio Rocco, Relja Arandjelovic, Josef Sivic*
 
+
+
 #### learn equivariant embeddings/decoder
+
+
 
 - [Unsupervised learning of object frames by dense equivariant image labelling](https://arxiv.org/pdf/1706.02932.pdf)  
   **[`NeurIPS 2017`] (`Oxford`)**  

@@ -65,3 +65,17 @@ logistic density distribution $\phi_{s}(x)=s e^{-s x} /\left(1+e^{-s x}\right)^{
 
 ---
 
+
+
+[Neural Splines: Fitting 3D Surfaces with Infinitely-Wide Neural Networks](https://arxiv.org/pdf/2006.13782.pdf)  
+**[`CVPR 2021`] (`NYU, Amazon`)**  
+*Francis Williams, Matthew Trager, Joan Bruna, Denis Zorin*
+
+
+
+> **Problem Formulation**
+
+$$
+\min_\theta L(\theta)=\frac{1}{2} \sum_{j=1}^{s}\left|f\left(x_{j} ; \theta\right)-y_{j}\right|^{2}+\left\|\nabla_{x} f\left(x_{j} ; \theta\right)-n_{j}\right\|^{2}
+$$
+

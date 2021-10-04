@@ -37,15 +37,15 @@ internal issues is **the overfitting of the discriminator**
 *Tero Karras, Timo Aila*
 
 [On data augmentation for GAN training](https://arxiv.org/pdf/2006.05338.pdf)  
-**[`TIP 2021`] (SUTD)**  
+**[`TIP 2021`] (`SUTD`)**  
 *Ngoc-Trung Tran, Viet-Hung Tran, Ngoc-Bao Nguyen, Trung-Kien Nguyen, Ngai-Man Cheung*
 
 [Image augmentations for GAN training](https://arxiv.org/pdf/2006.02595.pdf)  
-**[`Arxiv 2020`] (UC Irvine, Google)**  
+**[`Arxiv 2020`] (`UC Irvine, Google`)**  
 *Zhengli Zhao, Zizhao Zhang, Ting Chen, Sameer Singh, Han Zhang*
 
 [Progressive Augmentation of GANs](https://arxiv.org/pdf/1901.10422.pdf)  
-**[`NeurIPS 2019`] (Bosch)**
+**[`NeurIPS 2019`] (`Bosch`)**
 *Dan Zhang, Anna Khoreva*
 
 
@@ -55,11 +55,9 @@ internal issues is **the overfitting of the discriminator**
 
 
 <span id="InsGen"></span>
-Data-Efficient Instance Generation from Instance Discrimination
-
- (CUHK, Byte)
-
-Ceyuan Yang, Yujun Shen, Yinghao Xu, Bolei Zhou
+[Data-Efficient Instance Generation from Instance Discrimination](https://arxiv.org/pdf/2106.04566.pdf)  
+**[`NeurIPS 2021`] (`CUHK, Byte`)**  
+*Ceyuan Yang, Yujun Shen, Yinghao Xu, Bolei Zhou*
 
 
 

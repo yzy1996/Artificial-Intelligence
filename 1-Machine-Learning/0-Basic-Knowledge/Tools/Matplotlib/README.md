@@ -1,4 +1,4 @@
-我们都知道matplotlib库的使用
+## matplotlib库的使用
 
 
 
@@ -38,6 +38,12 @@ plt.figure()的说明
 写可以在括号内为图命名，默认是figure1
 
 
+
+
+
+## 颜色
+
+cmp 
 
 
 

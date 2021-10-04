@@ -45,5 +45,13 @@ plt.figure()的说明
 
 cmp 
 
+https://xkcd.com/color/rgb/
 
+https://matplotlib.org/stable/gallery/color/named_colors.html
+
+https://yoksel.github.io/handy-colors/#full-palette
+
+
+
+C1 这样的是指的Tableau Color，数字代表第几个，例如C1就是 tab:orange
 

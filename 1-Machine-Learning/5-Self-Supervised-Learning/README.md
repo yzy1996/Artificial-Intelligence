@@ -20,6 +20,10 @@ New
 
 
 
+[知乎-最简单的self-supervised方法](https://zhuanlan.zhihu.com/p/355523266)
+
+![img](https://pic1.zhimg.com/80/v2-26d76f2cf52fa30a3646f3f6d0dbbea8_1440w.jpg)
+
 ## Literature
 
 ### Survey
@@ -34,6 +38,12 @@ New
 *Bingchen Liu, Yizhe Zhu, Kunpeng Song, Ahmed Elgammal*
 
 
+
+
+
+[Barlow Twins: Self-Supervised Learning via Redundancy Reduction](https://arxiv.org/pdf/2103.03230.pdf)  
+**[`ICML 2020`] (`Facebook, NYU`)**  
+*Jure Zbontar, Li Jing, Ishan Misra, Yann LeCun, Stéphane Deny*
 
 ## Main Research Group
 

@@ -1,22 +1,30 @@
- English | [简体中文](./README.zh-CN.md)
-
 # <p align=center>`Generative Adversarial Networks (GANs)`</p>
 
 A collection of resources on Generative Adversarial Networks (GANs).
 
+
+
+## Table of Contents
+
+- [Introduction](#Introduction)
+
+- [Basic GAN](#Basic-GAN)
+
+- [Applicational GAN](#Applicational-GAN)
+
+  - [Semantic image synthesis](#Semantic-image-synthesis)
+
+    the goal is to generate multi-modal photorealistic images in alignment with a given semantic label map
+
+- [Multi-Objective GAN](#Multi-Objective-GAN)
+
+
+
+
+
 ## Introduction
 
-
-
-
-
-
-
-- Traditional GAN
-- Applicational GAN
-- Multi-Objective GAN
-
-
+> Introduce the principle of GAN, for more details, see the subfile
 
 阶段1：能够
 
@@ -109,15 +117,25 @@ If intelligence was a cake, unsupervised learning would be the cake, supervised 
 
 
 
-## [Traditional GAN](1-Traditional-GAN)
+## Traditional GAN
 
 The development of some famous GAN models including <u>Vanilla GAN</u>, <u>DCGAN</u>, <u>WGAN</u>
 
-## [Applicational GAN](2-Applicational-GAN)
+## Applicational GAN
 
 Some applications of GAN including the use of defense
 
-## [Multi-Objective GAN](3-Multi-Objective-GAN)
+
+
+### Semantic image synthesis
+
+[You Only Need Adversarial Supervision for Semantic Image Synthesis](https://arxiv.org/pdf/2012.04781.pdf)  
+**[`ICLR 2021`] ()**  
+*Vadim Sushko, Edgar Schönfeld, Dan Zhang, Juergen Gall, Bernt Schiele, Anna Khoreva*
+
+
+
+## Multi-Objective GAN
 
 Add multi-objective and evolutionary algorithm into GAN
 

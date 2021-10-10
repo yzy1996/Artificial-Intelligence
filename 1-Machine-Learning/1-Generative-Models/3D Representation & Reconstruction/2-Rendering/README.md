@@ -58,3 +58,11 @@ ICCV 2019
 
 
 
+
+
+Dist: Rendering deep implicit signed distance function with differentiable sphere tracing
+
+iterative ray marching to render a DeepSDF decoder
+
+stratified random sampling 
+

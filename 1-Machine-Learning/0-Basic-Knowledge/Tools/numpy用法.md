@@ -64,6 +64,24 @@ a[1:2] = 2
 
 
 
+**增加轴**
+
+```python
+x = np.array([1, 2])
+>>> x.shape = (2,)
+y = np.expand_dims(x, axis=0)
+>>> y.shape = (1, 2)
+```
+
+**交换轴**
+
+```python
+x = np.ones((1, 2, 3))
+>>> x.shape = (1, 2, 3)
+y = np.transpose(x, (1, 0, 2))
+>>> y.shape = (2, 1, 3)
+```
+
 
 
 

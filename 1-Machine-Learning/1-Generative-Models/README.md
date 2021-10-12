@@ -1,10 +1,10 @@
-# Generative model
+# <p align=center>`Generative model`</p>
+
+A collection of resources on generative models which utilize generator functions that map low-dimensional latent codes to high-dimensional data outputs.
 
 
 
-
-
-
+We would define a prior distribution for the latent space, however this prior may not match the true and agnostic data manifold. It’s an obstacles yielding less accurate generation.
 
 
 
@@ -12,7 +12,7 @@
 
 photorealistic image synthesis
 
-- high resolution
+- high resolution cc
 - content controllable
 
 

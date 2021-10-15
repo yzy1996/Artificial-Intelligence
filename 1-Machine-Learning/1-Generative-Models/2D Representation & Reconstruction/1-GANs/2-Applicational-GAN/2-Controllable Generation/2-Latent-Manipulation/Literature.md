@@ -323,6 +323,10 @@ Based on [Paper](Unsupervised Discovery of Interpretable Directions in the GAN L
 
 Lead to steeper, more disentangled and interpretable changes.
 
+
+
+trained in an unsupervised manner and provide more complex generative factors.
+
 > 
 
 

@@ -10,6 +10,10 @@ latent space navigation
 
 
 
+都是需要 pre-trained models 
+
+
+
 > **SOTA**:
 
 
@@ -54,13 +58,25 @@ Disentanglement can be defined as the ability to control a single factor, or fea
 
 
 
+:dart:**Definition**
+
+A disentangled representation in the context of generative learning can be defined as one where single latent units are sensitive to changes in single generative factors, while being relatively invariant to changes in other factors. --- [Representation learning: A review and new perspectives.]
+
+We focus on the *disentanglement in the latent space* of a generative learning
+
+
+
 :eyes: **What can we edit/control?**
 
 Meaningful human interpretable directions can refer to either domain-specific factors (e.g., facial expressions) or domain-agnostic factors (e.g., zoom scale).
 
 
 
+:pushpin:**Problem Statement**
 
+a (<u>pretrained</u>) fixed GAN model consisting of a generator **G** and a discriminator **D**
+
+latent vector $\boldsymbol{z} \in \mathbb{R}^m$ from a known distribution $P(\boldsymbol{z})$, and sample $N$ random vectors $\mathbb{Z} = \{\boldsymbol{z}^{(1)}, \dots, \boldsymbol{z}^{(N)}\}$
 
 
 
@@ -208,35 +224,27 @@ The common issue of the existing approaches is the limitation of global semantic
 
 
 
+current methods required 
+
+- carefully designed loss functions
+
+- introduction of additional attribute labels or features
+- special architectures to train new models
 
 
 
+## Literature
 
 - [Supervised]() (require human labels, pre-trained models)
 
-  {Interpreting the latent space of gans for semantic face editing}
-
-  {Ganalyze: Toward visual definitions of cognitive image properties}
-
 - [Self-supervised]() (image augmentations) - [simple transformations]
-
-  {On the”steerability” of generative adversarial networks}
-
-  {Controlling generative models with continuos factors of variations}
 
 - [Unsupervised]() ()
 
-  {Unsupervised Discovery of Interpretable Directions in the GAN Latent Space}
-  
-  {Ganspace: Discovering interpretable gan controls}
 
 
-
-
-
->前两者can only discover researchers expectation directions. 需要想象力
+>前两者can only discover researchers expectation directions. 需要想象力；后者能实现你所想不到
 >
->后者能实现你所想不到
 
 
 
@@ -257,6 +265,8 @@ The key of interpreting the latent space of GANs is to find the meaningful subsp
 ### :one:Supervised Learning
 
 > domain-specific transformations (adding smile or glasses)
+>
+> **weakness**: need human labels or pretrained models, expensive to obtain
 
 randomly sample a large amount of latent codes, then synthesize corresponding images and annotate them with labels, and finally use these labeled samples to learn a separation boundary in the latent space.
 
@@ -264,44 +274,25 @@ randomly sample a large amount of latent codes, then synthesize corresponding im
 
 either by explicit human annotation, or by the use of pretrained semantic classifiers.
 
+improves the memorability of the output image
 
+- [Ganalyze: Toward visual definitions of cognitive image properties](https://arxiv.org/pdf/1906.10112.pdf)  
+  *Lore Goetschalckx, Alex Andonian, Aude Oliva, Phillip Isola*  
+  **[`CVPR 2019`] (`MIT, KU Leuven`)**
 
-[Interpreting the latent space of gans for semantic face editing](https://arxiv.org/pdf/1907.10786.pdf)  
-*Yujun Shen, Jinjin Gu, Xiaoou Tang, Bolei Zhou*  
-**[`CVPR 2020`] (`CUHK`)**
+- [Interpreting the latent space of gans for semantic face editing](https://arxiv.org/pdf/1907.10786.pdf)  
+  *Yujun Shen, Jinjin Gu, Xiaoou Tang, Bolei Zhou*  
+  **[`CVPR 2020`] (`CUHK`)**
 
-[Ganalyze: Toward visual definitions of cognitive image properties](https://arxiv.org/pdf/1906.10112.pdf)  
-*Lore Goetschalckx, Alex Andonian, Aude Oliva, Phillip Isola*  
-**[`CVPR 2019`] (`MIT, KU Leuven`)**
+- [Semantic hierarchy emerges in deep generative representations for scene synthesis](https://arxiv.org/pdf/1911.09267.pdf)  
+  *Ceyuan Yang, Yujun Shen, Bolei Zhou*  
+  **[`IJCV 2021`] (`CUHK`)**
 
-[A style-based generator architecture for generative adversarial networks](https://arxiv.org/pdf/1812.04948.pdf)  
-
-> Karras et al. A style-based generator architecture for generative adversarial networks
+> explores the hierarchical semantics in the deep generative representations for scene synthesis
 
 Use the classifiers pretrained on the CelebA dataset to predict certain face attributes
 
 Add labels to latent space and separate a hyperplane. A normal to this hyperplane becomes a direction that captures the corresponding attribute.
-
-
-
-> Controlling generative models with continues factors of variations
-
-solve the optimization problem in the latent space that maximizes the score of the pretrained model, predicting image memorability
-
-
-
-**weakness**: need human labels or pretrained models, expensive to obtain
-
-
-
-> - [x] Ganalyze: Toward visual definitions of cognitive image properties
->
->
-> - improves the memorability of the output image
->
-> Semantic hierarchy emerges in deep generative representations for scene synthesis
->
-> - explores the hierarchical semantics in the deep generative representations for scene synthesis
 
 
 
@@ -319,24 +310,19 @@ solve the optimization problem in the latent space that maximizes the score of t
   *Antoine Plumerault, Hervé Le Borgne, Céline Hudelot*  
   **[`ICLR 2020`] (`Université Paris-Saclay`)**
 
-
-
-> - studies the steerability of GANs concerning camera motion and image color tone.
->
-
-simple image augmentations such as zooming or translation 
+solve the optimization problem in the latent space that maximizes the score of the pretrained model, predicting image memorability
 
 
 
 ### :three:Unsupervised Learning
 
-are often less effective at providing semantic meaningful directions and all too often change image identity during an edit
+> are often less effective at providing semantic meaningful directions and all too often change image identity during an edit
+>
+> demanding training process that requires drawing large numbers of random latent codes and regressing the latent directions
+>
+> **weakness**: subjective visual inspection & laborious human labeling
 
 
-
-demanding training process that requires drawing large numbers of random latent codes and regressing the latent directions
-
-subjective visual inspection & laborious human labeling
 
 - [GANSpace: Discovering Interpretable GAN Controls](https://arxiv.org/pdf/2004.02546.pdf)  
   *Erik Härkönen, Aaron Hertzmann, Jaakko Lehtinen, Sylvain Paris*  
@@ -346,40 +332,23 @@ subjective visual inspection & laborious human labeling
   *Andrey Voynov, Artem Babenko*
   **[`ICML 2020`] (`Russia`)**  [[Code](https://github.com/anvoynov/GANLatentDiscovery)]
 
+- [WarpedGANSpace: Finding non-linear RBF paths in GAN latent space](https://arxiv.org/pdf/2109.13357.pdf)  
+  *Christos Tzelepis, Georgios Tzimiropoulos, Ioannis Patras*  
+  **[`ICCV 2021`] (`QMUL`)** [[Code](https://github.com/chi0tzp/WarpedGANSpace)]
+
+
+
 
 
 do not use any optimization
 
-[On the "steerability" of generative adversarial networks](https://arxiv.org/pdf/1907.07171.pdf)  
-*Ali Jahanian, Lucy Chai, Phillip Isola*  
-**[`ICLR 2020`] (`MIT`)**
+- [On the "steerability" of generative adversarial networks](https://arxiv.org/pdf/1907.07171.pdf)  
+  *Ali Jahanian, Lucy Chai, Phillip Isola*  
+  **[`ICLR 2020`] (`MIT`)**
 
-[GAN ”steerability” without optimization](https://arxiv.org/abs/2012.05328)  
-*Nurit Spingarn-Eliezer, Ron Banner, Tomer Michaeli*  
-**[`ICLR 2021`] (`Intel, IIT`)**
-
-
-
-conditional GAN 
-
-
-
-current methods required 
-
-- carefully designed loss functions
-
-- introduction of additional attribute labels or features
-- special architectures to train new models
-
-
-
-
-
-> Problem Statement
-
-a (<u>pretrained</u>) fixed GAN model consisting of a generator **G** and a discriminator **D**
-
-latent vector $\boldsymbol{z} \in \mathbb{R}^m$ from a known distribution $P(\boldsymbol{z})$, and sample $N$ random vectors $\mathbb{Z} = \{\boldsymbol{z}^{(1)}, \dots, \boldsymbol{z}^{(N)}\}$
+- [GAN ”steerability” without optimization](https://arxiv.org/abs/2012.05328)  
+  *Nurit Spingarn-Eliezer, Ron Banner, Tomer Michaeli*  
+  **[`ICLR 2021`] (`Intel, IIT`)**
 
 
 

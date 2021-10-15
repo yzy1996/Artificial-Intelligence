@@ -10,6 +10,22 @@ latent space navigation
 
 
 
+> **SOTA**:
+
+
+
+Limitations：
+
+- the discovered directions are independent of the latent code, i.e., paths that are linear.
+
+- their evaluation relies either on visual inspection or on laborious human labeling.
+
+  
+
+
+
+
+
 Conventional generative models excel at generating **random** realistic samples with statistics resembling the training set. However, controllable and interactive matters rather than random. Therefore, a key problem of GM is to gain explicit control of the data synthesis process.
 
 
@@ -29,6 +45,26 @@ Disentanglement can be defined as the ability to control a single factor, or fea
 
 
 ## Introduction
+
+> Despite their generative efficiency, GANs do not provide an inherent way of comprehending or controlling the underlying generative factors. 
+>
+> Related works study the structure of GAN’s latent space and attempt to find interpretable directions on it; that is, directions sampling across which are expected to generate images where only a few (ideally one) factors of variations are “activated”.
+>
+> --WarpedGANSpace
+
+
+
+:eyes: **What can we edit/control?**
+
+Meaningful human interpretable directions can refer to either domain-specific factors (e.g., facial expressions) or domain-agnostic factors (e.g., zoom scale).
+
+
+
+
+
+
+
+
 
 
 
@@ -218,7 +254,7 @@ The key of interpreting the latent space of GANs is to find the meaningful subsp
 
 
 
-### Supervised Learning
+### :one:Supervised Learning
 
 > domain-specific transformations (adding smile or glasses)
 
@@ -226,9 +262,19 @@ randomly sample a large amount of latent codes, then synthesize corresponding im
 
 存在的问题：需要预定义的语义，需要大量采样
 
+either by explicit human annotation, or by the use of pretrained semantic classifiers.
 
 
-> Shen et al. Interpreting the latent space of gans for semantic face editing
+
+[Interpreting the latent space of gans for semantic face editing](https://arxiv.org/pdf/1907.10786.pdf)  
+*Yujun Shen, Jinjin Gu, Xiaoou Tang, Bolei Zhou*  
+**[`CVPR 2020`] (`CUHK`)**
+
+[Ganalyze: Toward visual definitions of cognitive image properties](https://arxiv.org/pdf/1906.10112.pdf)  
+*Lore Goetschalckx, Alex Andonian, Aude Oliva, Phillip Isola*  
+**[`CVPR 2019`] (`MIT, KU Leuven`)**
+
+[A style-based generator architecture for generative adversarial networks](https://arxiv.org/pdf/1812.04948.pdf)  
 
 > Karras et al. A style-based generator architecture for generative adversarial networks
 
@@ -257,29 +303,62 @@ solve the optimization problem in the latent space that maximizes the score of t
 >
 > - explores the hierarchical semantics in the deep generative representations for scene synthesis
 
-### Self-supervised Learning
+
+
+### :two:Self-supervised Learning
 
 > domain agnostic transformations (zooming or translation)
 
 
 
-> Jahanian et al. On the”steerability” of generative adversarial networks
->
+- [On the "steerability" of generative adversarial networks](https://arxiv.org/pdf/1907.07171.pdf)  
+  *Ali Jahanian, Lucy Chai, Phillip Isola*  
+  **[`ICLR 2020`] (`MIT`)**
+
+- [Controlling generative models with continuous factors of variations](https://arxiv.org/pdf/2001.10238.pdf)  
+  *Antoine Plumerault, Hervé Le Borgne, Céline Hudelot*  
+  **[`ICLR 2020`] (`Université Paris-Saclay`)**
+
+
+
 > - studies the steerability of GANs concerning camera motion and image color tone.
 >
-> Plumerault et al. Controlling generative models with continuos factors of variations
 
 simple image augmentations such as zooming or translation 
 
 
 
-### Unsupervised Learning
+### :three:Unsupervised Learning
 
 are often less effective at providing semantic meaningful directions and all too often change image identity during an edit
 
 
 
-# learning-based methods
+demanding training process that requires drawing large numbers of random latent codes and regressing the latent directions
+
+subjective visual inspection & laborious human labeling
+
+- [GANSpace: Discovering Interpretable GAN Controls](https://arxiv.org/pdf/2004.02546.pdf)  
+  *Erik Härkönen, Aaron Hertzmann, Jaakko Lehtinen, Sylvain Paris*  
+  **[`NeurIPS 2020`] (`Adobe, NVIDIA`)** [[Code](https://github.com/harskish/ganspace)]
+
+- [Unsupervised Discovery of Interpretable Directions in the GAN Latent Space](https://arxiv.org/pdf/2002.03754.pdf)  
+  *Andrey Voynov, Artem Babenko*
+  **[`ICML 2020`] (`Russia`)**  [[Code](https://github.com/anvoynov/GANLatentDiscovery)]
+
+
+
+do not use any optimization
+
+[On the "steerability" of generative adversarial networks](https://arxiv.org/pdf/1907.07171.pdf)  
+*Ali Jahanian, Lucy Chai, Phillip Isola*  
+**[`ICLR 2020`] (`MIT`)**
+
+[GAN ”steerability” without optimization](https://arxiv.org/abs/2012.05328)  
+*Nurit Spingarn-Eliezer, Ron Banner, Tomer Michaeli*  
+**[`ICLR 2021`] (`Intel, IIT`)**
+
+
 
 conditional GAN 
 

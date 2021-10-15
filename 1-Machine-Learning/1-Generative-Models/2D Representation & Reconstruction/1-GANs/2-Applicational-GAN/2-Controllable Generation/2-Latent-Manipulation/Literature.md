@@ -90,7 +90,8 @@ where $\mathcal{L}_{\mathrm{reg}}$ assesses transformations performance, $\mathc
 
 > **Keywords**
 
-PCA	
+performs PCA on deep features at the early layers of the **generator** and finds directions in the latent space that best map to those deep PCA vectors, arriving at a set of nonorthogonal
+directions in the latent space.
 
 > **Goal**
 
@@ -111,11 +112,12 @@ $$
 
 ---
 
-## Unsupervised 
 
-[Unsupervised Discovery of Interpretable Directions in the GAN Latent Space](https://arxiv.org/abs/2002.03754)
 
-**`[ICML 2020]`**	**`(Russia)`**	**`[Andrey Voynov, Artem Babenko]`**	**([:memo:]())**	**[[:octocat:](https://github.com/anvoynov/GANLatentDiscovery)]**
+<span id="Unsupervised"></span>
+[Unsupervised Discovery of Interpretable Directions in the GAN Latent Space](https://arxiv.org/pdf/2002.03754.pdf)  
+*Andrey Voynov, Artem Babenko*
+**[`ICML 2020`] (`Russia`)**  [[Code](https://github.com/anvoynov/GANLatentDiscovery)]
 
 <details><summary>Click to expand</summary><p>
 
@@ -304,6 +306,25 @@ GAN model: BigGAN and StyleGAN
 
 ---
 
+<span id="WarpedGANSpace"></span>
+[WarpedGANSpace: Finding non-linear RBF paths in GAN latent space](https://arxiv.org/pdf/2109.13357.pdf)  
+*Christos Tzelepis, Georgios Tzimiropoulos, Ioannis Patras*  
+**[`ICCV 2021`] (`QMUL`)** [[Code](https://github.com/chi0tzp/WarpedGANSpace)]
+
+<details><summary>Click to expand</summary><p>
+
+<div align=center><img width="800" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20211014111653.png"/></div>
+
+> :dart:**Summary**
+
+They learn non-linear warpings on the latent space. Each warping is parameterized by a set of RBF-based latent space warping functions.
+
+Based on [Paper](Unsupervised Discovery of Interpretable Directions in the GAN Latent Space)
+
+Lead to steeper, more disentangled and interpretable changes.
+
+> 
 
 
- 
+
+> 

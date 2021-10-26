@@ -4,7 +4,11 @@ A collection of resources on Application of Energy-Based Models.
 
 ## Introduction
 
-A list of related papers: https://github.com/energy-based-model/energy-based-model
+A list of related papers: 
+
+- https://github.com/energy-based-model/energy-based-model
+
+- https://github.com/yataobian/awesome-ebm
 
 ICLR2021 Tutorial: https://iclr.cc/virtual/2021/workshop/2140
 

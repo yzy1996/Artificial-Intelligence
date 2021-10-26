@@ -66,3 +66,23 @@ iterative ray marching to render a DeepSDF decoder
 
 stratified random sampling 
 
+
+
+
+
+## Volume Rendering
+
+a set of $\mathcal{S}$ of sampled points per ray
+
+A ray $x$ emanating from a camera position c in direction v 
+
+x = c + tv 
+
+volume rendering is approximating the integrated light radiance along this ray reaching the camera.
+
+
+
+
+
+## Surface Rendering
+

@@ -2,6 +2,14 @@
 
 
 
+## Introduction
+
+一个使用SDF，一个使用occupancy network，然后对应不同的损失和正则loss
+
+
+
+
+
 [NeuS](#NeuS)
 
 [VolSDF](#VolSDF)
@@ -20,6 +28,8 @@
 > **Summary**
 
 A method to reconstruct surface with high fidelity from 2D images. NeuS uses the SDF for surface representation and uses a novel volume rendering scheme to learn. **Only focus on solid objects.**
+
+they replace the local transparency function with an occupancy network
 
 > **Details**
 
@@ -59,11 +69,27 @@ They model the volume density ($\sigma$) as a function of the geometry rather th
 $$
 \sigma = f(geometry)  \Rightarrow  geometry = f(\sigma)
 $$
+The geometry is represented by a signed distance function (SDF).
 
+They represent the desity as a funtion of the signed distance to the scene’s surface.
 
 > **Details**
 
-11
+Their model is:
+$$
+\sigma(\boldsymbol{x})=\alpha \Psi_{\beta}\left(-d_{\Omega}(\boldsymbol{x})\right)
+$$
+where $\Omega \subset \mathbb{R}^{3}$  is the space occupied by object, and $\mathcal{M}=\partial \Omega$ is its boundary surface, and $\alpha, \beta$ are learnable para.
+$$
+\text{Indicator Function: } \mathbf{1}_{\Omega}(\boldsymbol{x})= \begin{cases}1 & \text { if } \boldsymbol{x} \in \Omega \\ 0 & \text { if } \boldsymbol{x} \notin \Omega\end{cases}
+\\
+\text{SDF: } d_{\Omega}(\boldsymbol{x})=(-1)^{1_{\Omega}(\boldsymbol{x})} \min _{\boldsymbol{y} \in \mathcal{M}}\|\boldsymbol{x}-\boldsymbol{y}\|_{2}
+\\
+\text{Cumulative Distribution Function (CDF): } \Psi_{\beta}(s)= \begin{cases}\frac{1}{2} \exp \left(\frac{s}{\beta}\right) & \text { if } s \leq 0 \\ 1-\frac{1}{2} \exp \left(-\frac{s}{\beta}\right) & \text { if } s>0\end{cases}
+$$
+
+
+
 
 </details>
 

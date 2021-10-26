@@ -124,6 +124,7 @@ opacity value
   - 依赖已知的**摄像头位置** (heavily rely on known camera pose)
   - 无法**泛化**到其他场景或目标 
   - 无法做到**少样本**训练 (fail to represent or synthesize with few instances)
+  - 对**表面**的提取不够好
 
 （后续的文献工作也主要是为了解决这些问题）
 

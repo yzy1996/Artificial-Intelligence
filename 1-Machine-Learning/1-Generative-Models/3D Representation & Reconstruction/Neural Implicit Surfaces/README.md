@@ -82,20 +82,12 @@ a set of posed images $\{\mathcal{I}_k\}$ of a 3D object, goal is to reconstruct
 
 - <span id="IDR"></span>
   [Multiview Neural Surface Reconstruction by Disentangling Geometry and Appearance](https://arxiv.org/pdf/2003.09852.pdf)  
-  *Lior Yariv, Yoni Kasten, Dror Moran, Meirav Galun, Matan Atzmon, Ronen Basri, Yaron Lipman* 
+  *Lior Yariv, Yoni Kasten, Dror Moran, Meirav Galun, Matan Atzmon, Ronen Basri, Yaron Lipman*  
   **[`NeurIPS 2020`] (`Weizmann Institute of Science`)**
 
 
 
 
 
-
-
-
-
-## Main Research Group
-
 <h5 align="center"><i>If warmup is the answer, what is the question?</i></h5>
-
-
 

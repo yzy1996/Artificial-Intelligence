@@ -74,7 +74,7 @@ nerf++
 
 novel view synthesis task
 
-
+coordinate based MLPs
 
 
 
@@ -153,6 +153,8 @@ novel view synthesis task
   *Gernot Riegler, Ali Osman Ulusoy, Horst Bischof, Andreas Geiger*
 
 ---
+
+
 
 ### Neural Implicit Function
 

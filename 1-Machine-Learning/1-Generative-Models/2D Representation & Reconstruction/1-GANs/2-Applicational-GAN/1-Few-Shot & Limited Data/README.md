@@ -113,3 +113,7 @@ internal issues is **the overfitting of the discriminator**
 
 
 
+- [Diverse Generation from a Single Video Made Possible](https://arxiv.org/pdf/2109.08591.pdf)  
+  *Niv Haim, Ben Feinstein, Niv Granot, Assaf Shocher, Shai Bagon, Tali Dekel, Michal Irani*  
+  **[`Arxiv 2021`] (`Weizmann Institute of Science`)**
+

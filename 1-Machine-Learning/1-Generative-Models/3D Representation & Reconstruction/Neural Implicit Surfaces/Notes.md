@@ -87,6 +87,8 @@ $$
 \\
 \text{Cumulative Distribution Function (CDF): } \Psi_{\beta}(s)= \begin{cases}\frac{1}{2} \exp \left(\frac{s}{\beta}\right) & \text { if } s \leq 0 \\ 1-\frac{1}{2} \exp \left(-\frac{s}{\beta}\right) & \text { if } s>0\end{cases}
 $$
+They also do a disentanglement of geometry and appearance:
+
 
 
 

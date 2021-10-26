@@ -83,6 +83,22 @@ volume rendering is approximating the integrated light radiance along this ray r
 
 
 
+$$
+\text{transparency: } T(t)=\exp \left(-\int_{0}^{t} \sigma(\boldsymbol{x}(s)) d s\right)
+\\
+\text{opacity: } O(t)=1-T(t)
+\\
+\text{PDF: } \tau(t)=\frac{d O}{d t}(t)=\sigma(\boldsymbol{x}(t)) T(t)
+$$
+the volume rendering is the expected light along the ray
+$$
+I(\boldsymbol{c}, \boldsymbol{v})=\int_{0}^{\infty} L(\boldsymbol{x}(t), \boldsymbol{n}(t), \boldsymbol{v}) \tau(t) d t
+$$
+
+
+
+
+
 
 ## Surface Rendering
 

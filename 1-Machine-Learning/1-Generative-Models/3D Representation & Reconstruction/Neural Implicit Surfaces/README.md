@@ -75,16 +75,15 @@ a set of posed images $\{\mathcal{I}_k\}$ of a 3D object, goal is to reconstruct
 
 
 
-DVR
+- <span id="DVR"></span>
+  [Differentiable Volumetric Rendering: Learning Implicit 3D Representations without 3D Supervision](https://arxiv.org/pdf/1912.07372.pdf)  
+  *Michael Niemeyer, Lars Mescheder, Michael Oechsle, Andreas Geiger*  
+  **[`CVPR 2020`] (`MPI`)** [[Code](https://github.com/autonomousvision/differentiable_volumetric_rendering)]  
 
-Differentiable volumetric rendering: Learning implicit 3d representations without 3d supervision
-
-
-
-IDR
-
-[Multiview Neural Surface Reconstruction by Disentangling Geometry and Appearance](https://arxiv.org/pdf/2003.09852.pdf)  
-*Lior Yariv, Yoni Kasten, Dror Moran, Meirav Galun, Matan Atzmon, Ronen Basri, Yaron Lipman*
+- <span id="IDR"></span>
+  [Multiview Neural Surface Reconstruction by Disentangling Geometry and Appearance](https://arxiv.org/pdf/2003.09852.pdf)  
+  *Lior Yariv, Yoni Kasten, Dror Moran, Meirav Galun, Matan Atzmon, Ronen Basri, Yaron Lipman* 
+  **[`NeurIPS 2020`] (`Weizmann Institute of Science`)**
 
 
 

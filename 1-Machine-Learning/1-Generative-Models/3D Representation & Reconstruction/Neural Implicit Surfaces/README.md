@@ -52,9 +52,6 @@ a set of posed images $\{\mathcal{I}_k\}$ of a 3D object, goal is to reconstruct
 
 ## Literature
 
-### Survey
-
-
 
 - <span id="VolSDF"></span>
   [Volume Rendering of Neural Implicit Surfaces](https://arxiv.org/pdf/2106.12052.pdf)  
@@ -63,17 +60,18 @@ a set of posed images $\{\mathcal{I}_k\}$ of a 3D object, goal is to reconstruct
 
 - <span id="Neural-Splines"></span>
   [Neural Splines: Fitting 3D Surfaces with Infinitely-Wide Neural Networks](https://arxiv.org/pdf/2006.13782.pdf)  
+  *Francis Williams, Matthew Trager, Joan Bruna, Denis Zorin*  
   **[`CVPR 2021`] (`NYU, Amazon`)**  
-  *Francis Williams, Matthew Trager, Joan Bruna, Denis Zorin*
 
 - <span id="UNISURF"></span>
   [UNISURF: Unifying Neural Implicit Surfaces and Radiance Fields for Multi-View Reconstruction](https://arxiv.org/pdf/2104.10078.pdf)  
+  *Michael Oechsle, Songyou Peng, Andreas Geiger*  
   **[`ICCV 2021`] (`MPI`)**  
-  *Michael Oechsle, Songyou Peng, Andreas Geiger*
 
-- [NeuS: Learning Neural Implicit Surfaces by Volume Rendering for Multi-view Reconstruction](https://arxiv.org/pdf/2106.10689.pdf)  
+- <span id="NeuS"></span>
+  [NeuS: Learning Neural Implicit Surfaces by Volume Rendering for Multi-view Reconstruction](https://arxiv.org/pdf/2106.10689.pdf)  
+  *Peng Wang, Lingjie Liu, Yuan Liu, Christian Theobalt, Taku Komura, Wenping Wang*  
   **[`NeurIPS 2021`]  (`HKU, MIT`)**   
-  *Peng Wang, Lingjie Liu, Yuan Liu, Christian Theobalt, Taku Komura, Wenping Wang*
 
 
 
@@ -85,7 +83,8 @@ Differentiable volumetric rendering: Learning implicit 3d representations withou
 
 IDR
 
-Multiview neural surface reconstruction by disentangling geometry and appearance
+[Multiview Neural Surface Reconstruction by Disentangling Geometry and Appearance](https://arxiv.org/pdf/2003.09852.pdf)  
+*Lior Yariv, Yoni Kasten, Dror Moran, Meirav Galun, Matan Atzmon, Ronen Basri, Yaron Lipman*
 
 
 

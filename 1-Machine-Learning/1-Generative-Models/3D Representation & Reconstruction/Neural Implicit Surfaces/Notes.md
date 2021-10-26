@@ -10,7 +10,7 @@
 
 <span id="NeuS"></span>
 [NeuS: Learning Neural Implicit Surfaces by Volume Rendering for Multi-view Reconstruction](https://arxiv.org/pdf/2106.10689.pdf)  
-**[`Arxiv 2021`]  (`HKU, MIT`)**   
+**[`NeurIPS 2021`]  (`HKU, MIT`)**   
 *Peng Wang, Lingjie Liu, Yuan Liu, Christian Theobalt, Taku Komura, Wenping Wang*
 
 <details><summary>Click to expand</summary>
@@ -55,7 +55,11 @@ logistic density distribution $\phi_{s}(x)=s e^{-s x} /\left(1+e^{-s x}\right)^{
 
 > **Summary**
 
-11
+They model the volume density ($\sigma$) as a function of the geometry rather than model the geometry as a function of the volume density.
+$$
+\sigma = f(geometry)  \Rightarrow  geometry = f(\sigma)
+$$
+
 
 > **Details**
 

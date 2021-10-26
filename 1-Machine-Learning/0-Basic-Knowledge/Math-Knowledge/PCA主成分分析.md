@@ -182,3 +182,29 @@ $$
 
 
 > **最后一句总结：主成分是数据本身的一个固有性质，不是为了找而找，而是它就在那里。**
+
+
+
+
+
+背后的原理是需要数据满足
+
+对分析起重要作用的成分方差大且数目不是很多，同时噪声的方差较小
+
+
+
+
+
+最近读到ICLR2021上一篇新的论文-[EigenGame: PCA as a Nash Equilibrium](https://arxiv.org/pdf/2010.00554.pdf) (来自Deepmind)
+
+
+
+The principal components (PCs) of data are the vectors that align with the directions of maximum variance. These have two main purposes: 
+
+- as interpretable features 
+- for data compression
+
+
+
+主要亮点在于从一个新颖的角度看待了$k$-PCA，传统方法都是从优化的角度找出这k个主向量，而这篇文章将他们看成玩家，最终要达到一个纳什平衡
+

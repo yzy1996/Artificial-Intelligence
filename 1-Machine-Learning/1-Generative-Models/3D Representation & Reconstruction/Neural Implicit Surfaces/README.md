@@ -1,12 +1,12 @@
 # <p align=center>`Neural Implicit Surfaces`</p>
 
-A collection of resources on Neural Implicit Surfaces.
+A collection of resources on Neural Implicit Surfaces. The goal is to reconstruct surfaces from a sparse set of multi-view images. And then we can synthesize novel views of a scene.
 
 ## Introduction
 
 This line of research focuses on representing the scene’s geometry implicitly using a neural network, making the surface rendering process differentiable. 
 
-The goal is to synthesize novel views of a scene from a sparse set of input images.
+
 
 Previous works of neural volume rendering techniques which is modeled using a generic density function, 
 
@@ -23,6 +23,8 @@ In this research field, the main stream techniques represent both the density an
 > Chinese Description: 一个高保真的3D重建，应该保证物体表面是足够真实的，过去基于体密度的方法，是通过找体密度的一个等势面来确定表面的（这种方面会带来噪声，和低保真度）。因此更好的一种方式是
 
 
+
+Because of the lack of sufficient surface constraints in the representation.
 
 
 
@@ -63,6 +65,18 @@ requirement of masks that separate objects from the background.
 
 
 
+
+
+如果仅仅是重建表面，光线和表面就一个交点， single intersection point for each ray  这样的话梯度也只存在于这一点
+
+
+
+
+
+
+
+
+
 ### Problem Definition
 
 a set of posed images $\{\mathcal{I}_k\}$ of a 3D object, goal is to reconstruct the surface $\mathcal{S}$ of the object.
@@ -75,7 +89,7 @@ a set of posed images $\{\mathcal{I}_k\}$ of a 3D object, goal is to reconstruct
 
 
 
-#### Require Masks and Difficult to Optimize
+#### + Masks (difficult to optimize)
 
 - <span id="DVR"></span>
   [Differentiable Volumetric Rendering: Learning Implicit 3D Representations without 3D Supervision](https://arxiv.org/pdf/1912.07372.pdf)  
@@ -87,7 +101,7 @@ a set of posed images $\{\mathcal{I}_k\}$ of a 3D object, goal is to reconstruct
   *Lior Yariv, Yoni Kasten, Dror Moran, Meirav Galun, Matan Atzmon, Ronen Basri, Yaron Lipman*  
   **[`NeurIPS 2020`] (`Weizmann Institute of Science`)**
 
-- <span id="IDR"></span>
+- <span id="NLR"></span>
   [Neural Lumigraph Rendering](https://arxiv.org/pdf/2103.11571.pdf)  
   *Petr Kellnhofer, Lars Jebe, Andrew Jones, Ryan Spicer, Kari Pulli, Gordon Wetzstein*  
   **[`CVPR 2021`] (`Raxium, Stanford`)**

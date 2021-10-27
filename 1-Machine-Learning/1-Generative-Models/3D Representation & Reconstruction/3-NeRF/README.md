@@ -70,7 +70,7 @@ $p \in \mathbb{R}^3$
 
 
 
-采样了点后再进行颜色的融合，\alpha-composition
+采样了点后再进行颜色融合（$\alpha$-composition ），
 
 
 

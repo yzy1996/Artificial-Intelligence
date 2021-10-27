@@ -97,6 +97,10 @@ $$
 
 
 
+can handle abrupt depth changes 
+
+multiple points along the ray will effect the reconstruction, the gradient signals is full of the space rather than the thin surface.
+
 
 
 

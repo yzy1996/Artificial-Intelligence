@@ -28,13 +28,15 @@ Neural 3d mesh renderer
 
 CVPR 2018
 
-Differentiable monte carlo ray tracing through edge sampling
+Differentiable Monte Carlo Ray Tracing through Edge Sampling
 
 SIGGRAPH 2018
 
-Soft rasterizer: A differentiable renderer for image-based 3d reasoning
+[Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning](https://arxiv.org/pdf/1904.01786.pdf)  
+Shichen Liu, Tianye Li, Weikai Chen, Hao Li  
+[ICCV 2019] ()
 
-ICCV 2019
+
 
 Opendr: An approximate differentiable renderer
 
@@ -48,13 +50,17 @@ Neural scene representation and rendering.
 
 Science
 
-Rendernet: A deep convolutional network for differentiable rendering from 3d shapes
+[RenderNet: A deep convolutional network for differentiable rendering from 3D shapes](https://arxiv.org/pdf/1806.06575.pdf)  
+Thu Nguyen-Phuoc, Chuan Li, Stephen Balaban, Yong-Liang Yang  
+[NIPS 2018]
 
-NIPS 2018
 
-Face-to-parameter translation for game character auto-creation.
 
-ICCV 2019
+[Face-to-Parameter Translation for Game Character Auto-Creation](https://arxiv.org/pdf/1909.01064.pdf)  
+*Tianyang Shi, Yi Yuan, Changjie Fan, Zhengxia Zou, Zhenwei Shi, Yong Liu*  
+[ICCV 2019]
+
+
 
 
 

@@ -1,3 +1,4 @@
 *.pdf
 logs/
 code/
+.DS_Store

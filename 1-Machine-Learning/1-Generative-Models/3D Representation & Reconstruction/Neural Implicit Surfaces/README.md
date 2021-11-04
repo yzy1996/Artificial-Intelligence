@@ -77,9 +77,21 @@ requirement of masks that separate objects from the background.
 
 
 
-### Problem Definition
+### Problem Formulation
+
+> Surface Reconstruction
 
 a set of posed images $\{\mathcal{I}_k\}$ of a 3D object, goal is to reconstruct the surface $\mathcal{S}$ of the object.
+
+
+
+We want to find a scalar function $f: \mathbb{R}^3 \rightarrow \mathbb{R}$ 
+
+Zero level set $S = \{p: f(p) = 0 \} \sub \mathbb{R}^3$ is the estimated surface.
+
+
+
+
 
 
 

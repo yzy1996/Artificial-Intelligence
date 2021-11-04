@@ -71,3 +71,6 @@ $$
 
 # Reproducing Kernel Hilbert Space
 
+https://zhuanlan.zhihu.com/p/29527729
+
+https://cloud.tencent.com/developer/article/1547677

@@ -102,6 +102,10 @@ high fidelity
 
 对于NERF怎么找表面是通过一个 level-set，等水平面，因为已经学到了 density field
 
+can only render novel views of a particular scene.
+
+
+
 
 
 opacity value

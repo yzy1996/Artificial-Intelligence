@@ -48,9 +48,9 @@ hyperparameters
 
 
 
-The gan landscape: Losses, architectures, regularization, and normalization
+The GAN landscape: Losses, architectures, regularization, and normalization
 
-Are GANs created equal? a large-scale study
+Are GANs created equal? A large-scale study
 
 Large scale GAN training for high fidelity natural image synthesis
 

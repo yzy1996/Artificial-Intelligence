@@ -1,14 +1,6 @@
 # Principle of GANs
 
 
-
-
-
-
-
-
-
-
 About  Generative Adversarial Network (GAN), GANs (GAN and its variants)
 
 </div>
@@ -70,7 +62,7 @@ vanilla GAN
 
 ## Learning path
 
-The original paper  [Generative Adversarial Networks](https://arxiv.org/abs/1406.2661) 2014 Lan Goodfellow
+The original paper [Generative Adversarial Networks](https://arxiv.org/abs/1406.2661) 2014 Lan Goodfellow
 
 存在着训练困难、生成器和判别器的loss无法只是训练进程、生成样本缺乏多样性等问题
 
@@ -202,3 +194,4 @@ Maximum Mean Discrepancies (MMDs)
 
 
 GAN的遗忘性，真样本的作用可以看作是一种防止遗忘的效果，
+

@@ -1,4 +1,4 @@
-<span id="abdal2019image2stylegan"></span>
+<span id="image2styleGAN"></span>
 [How to Embed Images Into the StyleGAN Latent Space?](https://arxiv.org/pdf/1904.03189.pdf)  
 **[`ICCV 2019`] (`KAUST`)**	[[Code](https://github.com/NVlabs/stylegan)]
 *Rameen Abdal, Yipeng Qin, Peter Wonka*
@@ -18,4 +18,8 @@ They propose an embedding algorithm to map a given image into the latent space o
 </p></details>
 
 ---
+
+
+
+
 

@@ -6,10 +6,21 @@ which means embedding/mapping a given image into latent space.
 
 ## Introduction
 
-There are two main approaches to embed instances from the image space to the latent space
+GAN inversion aims to invert a given image back into the latent space of a pretrained GAN model.
 
-- learning based: learn an encoder (VAE) 
-- optimization based: select a random initial latent code and optimize it using gradient descent
+
+
+
+
+前提假设是：When z1; z2 2 Z are close in the Z space, the corresponding images x1; x2 2 X are visually similar.
+
+given a real image x, find a  latent representation z*, which could generate an image x’ and is close to x
+$$
+\mathbf{z}^{*}=\underset{\mathbf{z}}{\arg \min} \ \ell(G(\mathbf{z}), x)
+$$
+
+
+- 
 
 
 
@@ -19,7 +30,35 @@ deblurring, image inpainting, phase retrieval,
 
 
 
+**为什么要做 GAN inversion**
 
+给一张真实的原图，找到对应生成模型的 z*，保证生成的假图能和真实原图一致。在实现了这样的前提下，就可以对这张图做更多的操作，这是过去inversion的意义。
+
+resemble real data， be applicable to real image editing without requiring ad-hoc supervision or expensive optimization.
+
+**是怎么找 z* 的**
+
+
+
+There are two main approaches to embed instances from the image space to the latent space
+
+- learning based: learn an encoder (AE) 
+  $$
+  \theta_{E}^{*}=\underset{\theta_{E}}{\arg \min } \sum_{n} \mathcal{L}\left(G\left(E\left(x_{n} ; \theta_{E}\right)\right), x_{n}\right)
+  $$
+  
+
+- optimization based: select a random initial latent code and optimize it using gradient descent
+
+
+
+
+
+
+
+还可以怎么来做呢？
+
+GAN在这个问题里面，
 
 
 
@@ -43,29 +82,7 @@ Compressed Sensing using Generative Models
 
 2016 ECCV Generative visual manipulation on the natural image manifold.
 
-2016 Inverting The Generator Of A Generative Adversarial Network
 
----
-
-### Image2StyleGAN
-
-[How to Embed Images Into the StyleGAN Latent Space?](https://arxiv.org/pdf/1904.03189.pdf)  
-**[`ICCV 2019`] (`KAUST`)**	[[Code](https://github.com/NVlabs/stylegan)]
-*Rameen Abdal, Yipeng Qin, Peter Wonka*
-
-<details><summary>Click to expand</summary><p>
-
-> **Summary**
-
-They propose an embedding algorithm to map a given image into the latent space of StyleGAN pre-trained on the FFHQ dataset. This embedding enables semantic image editing operations that can be applied to existing photographs. They show results for *image morphing*, *style transfer*, and *expression transfer*.
-
-> **Details**
-
-<img src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210110163352.png" alt="image-20210110163352567" style="zoom:50%;" />
-
-</p></details>
-
----
 
 [Inverting the generator of a generative adversarial network](https://arxiv.org/pdf/1611.05644.pdf)  
 **[`NeurIPSW 2016`] (`Imperial College London`)**  
@@ -75,9 +92,19 @@ They propose an embedding algorithm to map a given image into the latent space o
 **[`ECCV 2016`]**  
 *Jun-Yan Zhu, Philipp Krähenbühl, Eli Shechtman, Alexei A. Efros*
 
+[Inverting The Generator of A Generative Adversarial Network](https://arxiv.org/pdf/1611.05644.pdf)  
+*Antonia Creswell, Anil Anthony Bharath*  
+**[`NIPS 2016`] (`ICL`)** 
+
+[How to Embed Images Into the StyleGAN Latent Space?](https://arxiv.org/pdf/1904.03189.pdf)  
+*Rameen Abdal, Yipeng Qin, Peter Wonka*  
+**[`ICCV 2019`] (`KAUST`)**	[[Code](https://github.com/NVlabs/stylegan)]
 
 
-Image processing using multi-code gan prior
+
+[Image Processing Using Multi-Code GAN Prior](https://arxiv.org/pdf/1912.07116.pdf)  
+*Jinjin Gu, Yujun Shen, Bolei Zhou*  
+**[CVPR 2020] (CUHK)**
 
 
 

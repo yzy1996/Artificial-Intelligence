@@ -81,7 +81,7 @@ After training, we can extra an approximate iso-surface:
 $$
 \{\boldsymbol{p} \in \mathbb{R}^3 | f_\theta(\boldsymbol{p}, x) = \tau\}
 $$
-我的疑问是，o的真值是怎么来的呢，如果输入是一张图片的话
+我的疑问是，o的真值是怎么来的呢，如果输入是一张图片的话？答案是需要3D监督信号
 
 </p></details>
 

@@ -16,9 +16,9 @@ print(y.requires_grad) # False
 
 
 
-与 data() detach() 比较
+与 .data .detach() 比较
 
-
+推荐使用 detach()
 
 
 

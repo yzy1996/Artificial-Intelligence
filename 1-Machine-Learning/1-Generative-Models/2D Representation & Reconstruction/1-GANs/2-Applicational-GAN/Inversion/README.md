@@ -2,11 +2,15 @@
 
 which means embedding/mapping a given image into latent space.
 
-
+[awesome-gan-inversion](https://github.com/weihaox/awesome-gan-inversion)
 
 ## Introduction
 
 GAN inversion aims to invert a given image back into the latent space of a pretrained GAN model.
+
+
+
+This is come from the real-world application with well-trained GANs
 
 
 
@@ -47,12 +51,21 @@ There are two main approaches to embed instances from the image space to the lat
   \theta_{E}^{*}=\underset{\theta_{E}}{\arg \min } \sum_{n} \mathcal{L}\left(G\left(E\left(x_{n} ; \theta_{E}\right)\right), x_{n}\right)
   $$
   
-
 - optimization based: select a random initial latent code and optimize it using gradient descent
 
 
 
 
+
+One is learning-based, which first synthesizes a collection of images with randomly sampled latent codes and then uses the images and codes as inputs and supervisions respectively to train a deterministic model
+
+directly optimizing the latent code to minimize the pixel-wise reconstruction loss
+
+
+
+To simplify the optimization, prior efforts also use a encoder to generate an initialization for optimization.
+
+Train stage also 
 
 
 
@@ -115,4 +128,150 @@ Compressed Sensing using Generative Models
 [Encoding in Style: a StyleGAN Encoder for Image-to-Image Translation](https://arxiv.org/pdf/2008.00951.pdf)  
 **[`CVPR 2021`]**  
 *Elad Richardson, Yuval Alaluf, Or Patashnik, Yotam Nitzan, Yaniv Azar, Stav Shapiro, Daniel Cohen-Or*
+
+
+
+### learning-based
+
+[Invertible Conditional GANs for image editing](https://arxiv.org/pdf/1611.06355.pdf)  
+*Guim Perarnau, Joost van de Weijer, Bogdan Raducanu, Jose M. Álvarez*  
+**[`NeurIPS W 2016`]**
+
+[Generative Visual Manipulation on the Natural Image Manifold](https://arxiv.org/pdf/1609.03552.pdf)  
+*Jun-Yan Zhu, Philipp Krähenbühl, Eli Shechtman, Alexei A. Efros*  
+**[`ECCV 2016`]**
+
+
+
+### optimization-based
+
+[Precise recovery of latent vectors from generative adversarial networks](https://arxiv.org/pdf/1702.04782.pdf)  
+*Zachary C. Lipton, Subarna Tripathi*  
+**[`ICLR W 2017`]**
+
+[Inverting The Generator Of A Generative Adversarial Network](https://arxiv.org/pdf/1802.05701.pdf)  
+*Antonia Creswell, Anil A Bharath*  
+**[`TNNLS 2018`]**
+
+[Invertibility of Convolutional Generative Networks from Partial Measurements](https://proceedings.neurips.cc/paper/2018/file/e0ae4561193dbf6e4cf7e8f4006948e3-Paper.pdf)  
+*Fangchang Ma, Ulas Ayaz, Sertac Karaman*  
+**[`NeurIPS 2018`]**
+
+[Image2StyleGAN: How to Embed Images Into the StyleGAN Latent Space?](https://arxiv.org/pdf/1904.03189.pdf)  
+*Rameen Abdal, Yipeng Qin, Peter Wonka*  
+**[`ICCV 2019`]**
+
+
+
+### initialization
+
+[Seeing What a GAN Cannot Generate](https://arxiv.org/pdf/1910.11626.pdf)  
+*David Bau, Jun-Yan Zhu, Jonas Wulff, William Peebles, Hendrik Strobelt, Bolei Zhou, Antonio Torralba*
+**[`ICCV 2019`]**
+
+[Inverting Layers of a Large Generator](https://debug-ml-iclr2019.github.io/cameraready/DebugML-19_paper_18.pdf)  
+*David Bau, Jun-Yan Zhu, Jonas Wulff, William Peebles, Hendrik Strobelt, Bolei Zhou, Antonio Torralba* 
+**[`ICLR W 2019`]**
+
+
+
+### Training stage
+
+[Adversarially Learned Inference](https://arxiv.org/pdf/1606.00704.pdf)  
+*Vincent Dumoulin, Ishmael Belghazi, Ben Poole, Olivier Mastropietro, Alex Lamb, Martin Arjovsky, Aaron Courville*  
+**[`ICLR 2017`] (`MILA`)**
+
+[Adversarial Feature Learning](https://arxiv.org/pdf/1605.09782.pdf)  
+*Jeff Donahue, Philipp Krähenbühl, Trevor Darrell*  
+**[`ICLR 2017`]**
+
+Latently invertible autoencoder with adversarial learning
+
+[Glow: Generative Flow with Invertible 1x1 Convolutions](https://arxiv.org/pdf/1807.03039.pdf)  
+*Diederik P. Kingma, Prafulla Dhariwal*  
+**[`NurIPS 2018`]**
+
+
+
+
+
+### others
+
+multi latent code for one image
+
+[Image Processing Using Multi-Code GAN Prior](https://arxiv.org/pdf/1912.07116.pdf)  
+*Jinjin Gu, Yujun Shen, Bolei Zhou*  
+**[`CVPR 2020`]**
+
+
+
+> optimize the generator with latent code
+
+[Exploiting Deep Generative Prior for Versatile Image Restoration and Manipulation](https://arxiv.org/pdf/2003.13659.pdf)  
+*Xingang Pan, Xiaohang Zhan, Bo Dai, Dahua Lin, Chen Change Loy, Ping Luo*  
+**[`ECCV 2020`]**
+
+
+
+focus on stylegan
+
+[Analyzing and Improving the Image Quality of StyleGAN](https://arxiv.org/pdf/1912.04958.pdf)  
+*Tero Karras, Samuli Laine, Miika Aittala, Janne Hellsten, Jaakko Lehtinen, Timo Aila*  
+**[`CVPR 2020`]**
+
+[Image2StyleGAN++: How to Edit the Embedded Images?](https://arxiv.org/pdf/1911.11544.pdf)  
+*Rameen Abdal, Yipeng Qin, Peter Wonka*  
+**[`CVPR 2020`]**
+
+
+
+
+
+
+
+
+
+### 思考
+
+仅仅用像素层面的loss不足以，还应该考虑语义的层面
+
+
+
+或者优化方式，如果仅仅由生成器来提供梯度优化，很可能产生 out-of-domain 的逆向，因为没有对 z 的任何约束；也更可能是很多的解
+
+
+
+用一个 encoder 来提取所有 3D 信息
+
+如何用一个 encoder 来提取呢
+
+
+
+如果初始点选的不好，很有可能就卡在域外的局部点了
+
+
+
+一个目标就是一个视角的
+
+
+
+训练出一个带视角的解耦器，然后用来做 
+
+看清楚 singleview 做的工作
+
+
+
+one view real image -> share latent code + view latent code -> decoder - > 3D nerf
+
+
+
+只在生成固定视角的时候需要 view code，如果只是为了生成3D nerf，是不需要的，用那一部分的共有code来做就行了。
+
+
+
+区别在什么地方呢？
+
+
+
+让一个模型，同时能在所有角度上
 

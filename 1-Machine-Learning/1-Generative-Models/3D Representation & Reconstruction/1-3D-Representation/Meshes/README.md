@@ -5,7 +5,7 @@
 
 
 
-<span id="SMR"></span>
+<span id="CMR"></span>
 [Learning Category-Specific Mesh Reconstruction from Image Collections](https://arxiv.org/pdf/1803.07549.pdf)  
 *Angjoo Kanazawa, Shubham Tulsiani, Alexei A. Efros, Jitendra Malik*  
 **[`ECCV 2018`] (`UCB`)** [[Code](https://github.com/akanazawa/cmr)]

@@ -224,21 +224,22 @@ Selected works: `Nerfies` | `DeepSDF`
 
 ## Literature
 
-`survey` State of the Art on Neural Rendering
+### survey
+
+[State of the Art on Neural Rendering](https://arxiv.org/pdf/2004.03805.pdf)  
+**[`EUROGRAPHICS 2020`]**
+
+[Advances in Neural Rendering](https://arxiv.org/pdf/2111.05849.pdf)  
+**[`arxiv 2021`]**
 
 
 
-[GQN](#GQN)
 
----
 
-### GQN
-
-[Neural scene representation and rendering](https://science.sciencemag.org/content/360/6394/1204/tab-pdf)
-
-**[`Science 2018`]**	**(`DeepMind `)**	**[[Code](https://github.com/NVlabs/stylegan)]**
-
-**[`Tero Karras`, `Samuli Laine`, `Timo Aila`]**
+<span id="GQN"></span>
+[Neural scene representation and rendering](https://science.sciencemag.org/content/360/6394/1204/tab-pdf)  
+*Tero Karras, Samuli Laine, Timo Aila*  
+**[`Science 2018`] (`DeepMind `)** [[Code](https://github.com/NVlabs/stylegan)]  
 
 <details><summary>Click to expand</summary><p>
 

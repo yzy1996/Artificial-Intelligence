@@ -1,12 +1,14 @@
-# GAN Inversion
+# <p align=center>`GAN Inversion`</p>
 
-which means embedding/mapping a given image into latent space.
+A collection of resources on GAN Inversion. 
 
-[awesome-gan-inversion](https://github.com/weihaox/awesome-gan-inversion)
+Related material: [awesome-gan-inversion](https://github.com/weihaox/awesome-gan-inversion)
+
+
 
 ## Introduction
 
-GAN inversion aims to invert a given image back into the latent space of a pretrained GAN model.
+GAN inversion aims to invert a given image back into the latent space of a pretrained GAN model. This given image is always real. This post-processing remains a challenge because standard GAN model is initially designed for synthesizing images from random noises.
 
 
 
@@ -19,12 +21,8 @@ This is come from the real-world application with well-trained GANs
 前提假设是：When z1; z2 2 Z are close in the Z space, the corresponding images x1; x2 2 X are visually similar.
 
 given a real image x, find a  latent representation z*, which could generate an image x’ and is close to x
-$$
-\mathbf{z}^{*}=\underset{\mathbf{z}}{\arg \min} \ \ell(G(\mathbf{z}), x)
-$$
 
 
-- 
 
 
 
@@ -47,13 +45,22 @@ resemble real data， be applicable to real image editing without requiring ad-h
 There are two main approaches to embed instances from the image space to the latent space
 
 - learning based: learn an encoder (AE) 
+  
+  > train an extra encoder to learn the mapping from the image space to the latent space
+  
   $$
   \theta_{E}^{*}=\underset{\theta_{E}}{\arg \min } \sum_{n} \mathcal{L}\left(G\left(E\left(x_{n} ; \theta_{E}\right)\right), x_{n}\right)
   $$
   
 - optimization based: select a random initial latent code and optimize it using gradient descent
 
+  > optimize the latent code by minimizing the reconstruction error through back-propagation.
 
+$$
+\mathbf{z}^{*}=\underset{\mathbf{z} \in \mathcal{Z}}{\arg \min} \ \mathcal{L}(G(\mathbf{z}), x)
+$$
+
+where $\mathcal{L}(\cdot, \cdot)$ denotes the objective function.
 
 
 
@@ -72,6 +79,33 @@ Train stage also
 还可以怎么来做呢？
 
 GAN在这个问题里面，
+
+
+
+multiple latent code
+
+我们希望让 latent space 表征地足够充分 over-parameterization，同时可以了解到逐层表征的每一层都代表了什么含义。
+
+
+
+### Basic Inspiration
+
+> 基于一些研究发现能做得更好
+
+
+
+- inverting a generative model from the image space to some intermediate feature space is much easier than to the 
+
+
+
+### Applications
+
+There are many real-world applications, such as: 
+
+- images colorization
+- super-resolution
+- image inpainting
+- semantic manipulation
 
 
 
@@ -131,7 +165,7 @@ Compressed Sensing using Generative Models
 
 
 
-### learning-based
+### learning-based (encoder)
 
 [Invertible Conditional GANs for image editing](https://arxiv.org/pdf/1611.06355.pdf)  
 *Guim Perarnau, Joost van de Weijer, Bogdan Raducanu, Jose M. Álvarez*  
@@ -141,7 +175,11 @@ Compressed Sensing using Generative Models
 *Jun-Yan Zhu, Philipp Krähenbühl, Eli Shechtman, Alexei A. Efros*  
 **[`ECCV 2016`]**
 
+Seeing what a gan cannot generate  
+[ICCV 2019]
 
+Inverting layers of a large generator  
+[ICLR 2019]
 
 ### optimization-based
 
@@ -161,9 +199,14 @@ Compressed Sensing using Generative Models
 *Rameen Abdal, Yipeng Qin, Peter Wonka*  
 **[`ICCV 2019`]**
 
+Precise recovery of latent vectors from generative adversarial networks  
+
 
 
 ### initialization
+
+Semantic photo manipulation with a generative image prior  
+[SIGGRAPH 2019]
 
 [Seeing What a GAN Cannot Generate](https://arxiv.org/pdf/1910.11626.pdf)  
 *David Bau, Jun-Yan Zhu, Jonas Wulff, William Peebles, Hendrik Strobelt, Bolei Zhou, Antonio Torralba*

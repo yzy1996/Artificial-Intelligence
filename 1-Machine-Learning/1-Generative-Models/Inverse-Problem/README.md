@@ -44,7 +44,7 @@ sensible supervised loss
 
 <span id="Fastgan"></span>
 
-
+[Survey of Deep Learning Methods for Inverse Problems](https://arxiv.org/pdf/2111.04731.pdf)
 
 
 
@@ -54,7 +54,7 @@ sensible supervised loss
 
 
 
-## Main Research Group
+
 
 <h5 align="center"><i>If warmup is the answer, what is the question?</i></h5>
 

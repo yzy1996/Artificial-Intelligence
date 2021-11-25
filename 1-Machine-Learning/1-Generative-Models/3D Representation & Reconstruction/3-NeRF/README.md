@@ -141,6 +141,9 @@ opacity value
 - [3. Dynamic & Deformable](#Dynamic-&-Deformable)
 - [4. Composition](Composition)
 - [5. Pose Estimation](#Pose-Estimation)
+- [6. Fast-Convergence](#Fast-Convergence)
+- [7. Few-Samples](#Few-Samples)
+- [8. Multiscale](#Multiscale)
 
 
 
@@ -149,29 +152,30 @@ opacity value
 **data structures**
 
 - [PlenOctrees for real-time rendering of neural radiance fields](https://arxiv.org/pdf/2103.14024.pdf)  
+  *Alex Yu, Ruilong Li, Matthew Tancik, Hao Li, Ren Ng, Angjoo Kanazawa*  
   **[`Arxiv 2021`] (`UCB`)**  
-  *Alex Yu, Ruilong Li, Matthew Tancik, Hao Li, Ren Ng, Angjoo Kanazawa*
+  
 - [Baking neural radiance fields for real-time view synthesis](https://arxiv.org/pdf/2103.14645.pdf)  
+  *Peter Hedman, Pratul P. Srinivasan, Ben Mildenhall, Jonathan T. Barron, Paul Debevec*  
   **[`Arxiv 2021`] (`Google`)**  
-  *Peter Hedman, Pratul P. Srinivasan, Ben Mildenhall, Jonathan T. Barron, Paul Debevec*
 
 **pruning**
 
 - [Neural sparse voxel fields](https://arxiv.org/pdf/2007.11571.pdf)  
+  *Lingjie Liu, Jiatao Gu, Kyaw Zaw Lin, Tat-Seng Chua, Christian Theobalt*  
   **[`NeurIPS 2020`] (`MPI`)**  
-  *Lingjie Liu, Jiatao Gu, Kyaw Zaw Lin, Tat-Seng Chua, Christian Theobalt*
 
 **importance sampling**
 
 - [DONeRF: Towards Real-Time Rendering of Compact Neural Radiance Fields using Depth Oracle Networks](https://arxiv.org/pdf/2103.03231.pdf)  
+  *Thomas Neff, Pascal Stadlbauer, Mathias Parger, Andreas Kurz, Joerg H. Mueller, Chakravarty R. Alla Chaitanya, Anton Kaplanyan, Markus Steinberger*  
   **[`EGSR 2021`] (`Graz University of Technology`)**  
-  *Thomas Neff, Pascal Stadlbauer, Mathias Parger, Andreas Kurz, Joerg H. Mueller, Chakravarty R. Alla Chaitanya, Anton Kaplanyan, Markus Steinberger*
 
 **fast integration**
 
 - [Autoint: Automatic integration for fast neural volume rendering](https://arxiv.org/pdf/2012.01714.pdf)  
+  *David B. Lindell, Julien N. P. Martel, Gordon Wetzstein*  
   **[`CVPR 2021`] (`Stanford`)**  
-  *David B. Lindell, Julien N. P. Martel, Gordon Wetzstein*
 
 
 
@@ -180,50 +184,56 @@ opacity value
 里面也包含了 conditional nerf
 
 - [GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis](https://arxiv.org/pdf/2007.02442.pdf)  
+  *Katja Schwarz, Yiyi Liao, Michael Niemeyer, Andreas Geiger*  
   **[`NeurIPS 2020`] (`MPI`)** [[Code](https://github.com/autonomousvision/graf)]  
-  *Katja Schwarz, Yiyi Liao, Michael Niemeyer, Andreas Geiger*
+
 - [pi-GAN: Periodic Implicit Generative Adversarial Networks for 3D-Aware Image Synthesis](https://arxiv.org/pdf/2012.00926.pdf)  
+  *Eric R. Chan, Marco Monteiro, Petr Kellnhofer, Jiajun Wu, Gordon Wetzstein*  
   **[`CVPR 2021`] (`Stanford`)**  
-  *Eric R. Chan, Marco Monteiro, Petr Kellnhofer, Jiajun Wu, Gordon Wetzstein*
+
 - [pixelNeRF: Neural Radiance Fields from One or Few Images](https://arxiv.org/pdf/2012.02190.pdf)  
+  *Alex Yu, Vickie Ye, Matthew Tancik, Angjoo Kanazawa*  
   **[`CVPR 2021`] (`UCB`)**  
-  *Alex Yu, Vickie Ye, Matthew Tancik, Angjoo Kanazawa*
+
 - [GRF: Learning a General Radiance Field for 3D Scene Representation and Rendering](https://arxiv.org/pdf/2010.04595.pdf)  
+  *Alex Trevithick, Bo Yang*  
   **[`ICCV 2021`] (`Williams, Oxford, PolyU`)**  
-  *Alex Trevithick, Bo Yang*
 
 
 
 ### 3. Dynamic & Deformable
 
 - [Nerfies: Deformable Neural Radiance Fields](https://arxiv.org/pdf/2011.12948.pdf)  
+  *Keunhong Park, Utkarsh Sinha, Jonathan T. Barron, Sofien Bouaziz, Dan B Goldman, Steven M. Seitz, Ricardo Martin-Brualla*  
   **[`Arxiv 2020`] (`Washington, Google`)** [[Code](https://github.com/google/nerfies)]  
-  *Keunhong Park, Utkarsh Sinha, Jonathan T. Barron, Sofien Bouaziz, Dan B Goldman, Steven M. Seitz, Ricardo Martin-Brualla*
+
 - [D-NeRF: Neural Radiance Fields for Dynamic Scenes](https://arxiv.org/pdf/2011.13961.pdf)  
+  *Albert Pumarola, Enric Corona, Gerard Pons-Moll, Francesc Moreno-Noguer*  
   **[`CVPR 2021`] (`CSIC-UPC, MPI`)**  
-  *Albert Pumarola, Enric Corona, Gerard Pons-Moll, Francesc Moreno-Noguer*
+
 - [Dynamic Neural Radiance Fields for Monocular 4D Facial Avatar Reconstruction](https://arxiv.org/pdf/2012.03065.pdf)  
+  *Guy Gafni, Justus Thies, Michael Zollhöfer, Matthias Nießner*  
   **[`CVPR 2021`] (`Technical University of Munich, Facebook`)**  
-  *Guy Gafni, Justus Thies, Michael Zollhöfer, Matthias Nießner*
+
 - [Neural Scene Graphs for Dynamic Scenes](https://arxiv.org/pdf/2011.10379.pdf)  
+  *Julian Ost, Fahim Mannan, Nils Thuerey, Julian Knodt, Felix Heide*  
   **[`CVPR 2021`] (`Algolux, Technical University of Munich`)**  
-  *Julian Ost, Fahim Mannan, Nils Thuerey, Julian Knodt, Felix Heide*
+
 - [Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Dynamic Scene From Monocular Video](https://arxiv.org/abs/2012.12247)  
+  *Edgar Tretschk, Ayush Tewari, Vladislav Golyanik, Michael Zollhöfer, Christoph Lassner, Christian Theobalt*  
   **[`ICCV 2021`] (`MPI, Facebook`)** [[Code](https://github.com/facebookresearch/nonrigid_nerf)]  
-  *Edgar Tretschk, Ayush Tewari, Vladislav Golyanik, Michael Zollhöfer, Christoph Lassner, Christian Theobalt*
 
 
 
 ### 4. Composition
 
 - [NeRF++: Analyzing and Improving Neural Radiance Fields](https://arxiv.org/pdf/2010.07492.pdf)  
+  *Kai Zhang, Gernot Riegler, Noah Snavely, Vladlen Koltun*  
   **[`Arxiv 2020`] (`Cornell Tech, Intel`)** [[Code](https://github.com/Kai-46/nerfplusplus)]  
-  *Kai Zhang, Gernot Riegler, Noah Snavely, Vladlen Koltun*
 
 - [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/pdf/2011.12100.pdf)  
+  *Michael Niemeyer, Andreas Geiger*  
   **[`CVPR 2021`] (`MPI`)**   
-  *Michael Niemeyer, Andreas Geiger*
-
 
 
 
@@ -240,24 +250,42 @@ iNeRF and NeRF-- optimize camera pose along with other parameters when training 
 
 
 - [iNeRF: Inverting Neural Radiance Fields for Pose Estimation](https://arxiv.org/pdf/2012.05877.pdf)  
+  *Lin Yen-Chen, Pete Florence, Jonathan T. Barron, Alberto Rodriguez, Phillip Isola, Tsung-Yi Lin*  
   **[`IROS 2021`] (`MIT, Google`)**  
-  *Lin Yen-Chen, Pete Florence, Jonathan T. Barron, Alberto Rodriguez, Phillip Isola, Tsung-Yi Lin*
 
 - [NeRF--: Neural Radiance Fields Without Known Camera Parameters](https://arxiv.org/pdf/2102.07064.pdf)  
+  *Zirui Wang, Shangzhe Wu, Weidi Xie, Min Chen, Victor Adrian Prisacariu*  
   **[`Arxiv 2021`] (`Oxford`)** [[Code](https://github.com/ActiveVisionLab/nerfmm)]  
-  *Zirui Wang, Shangzhe Wu, Weidi Xie, Min Chen, Victor Adrian Prisacariu*
 
 - [GNeRF: GAN-based Neural Radiance Field without Posed Camera](https://arxiv.org/pdf/2103.15606.pdf)  
+  *Quan Meng, Anpei Chen, Haimin Luo, Minye Wu, Hao Su, Lan Xu, Xuming He, Jingyi Yu*  
   **[`Arxiv 2021`] (`ShanghaiTech`)**  
-  *Quan Meng, Anpei Chen, Haimin Luo, Minye Wu, Hao Su, Lan Xu, Xuming He, Jingyi Yu*
-
-
 
 补充：其实谈到相机位置估计，不可避免会和 Structure-from-Motion (SfM) 去比较，他们的开源包叫COLMAP：
 
 - [Structure-from-Motion Revisited](https://demuc.de/papers/schoenberger2016sfm.pdf)  
+  *Johannes L. Schonberger, Jan-Michael Frahm*  
   **[`CVPR 2016`] (`UNC, ETH`)** [[Code](https://github.com/colmap/colmap)]  
-  *Johannes L. Schonberger, Jan-Michael Frahm*
+
+
+
+### 6. Fast-Convergence
+
+
+
+### 7. Few-Samples
+
+
+
+### 8. Multiscale
+
+- [Mip-NeRF: A Multiscale Representation for Anti-Aliasing Neural Radiance Fields](https://arxiv.org/pdf/2103.13415.pdf)  
+  *Jonathan T. Barron, Ben Mildenhall, Matthew Tancik, Peter Hedman, Ricardo Martin-Brualla, Pratul P. Srinivasan*  
+  **[`CVPR 2021`] (`Google`)**
+
+- [Mip-NeRF 360: Unbounded Anti-Aliased Neural Radiance Fields](https://arxiv.org/pdf/2111.12077.pdf)  
+  *Jonathan T. Barron, Ben Mildenhall, Dor Verbin, Pratul P. Srinivasan, Peter Hedman*  
+  **[`arXiv 2021`] (`Google`)**
 
 
 

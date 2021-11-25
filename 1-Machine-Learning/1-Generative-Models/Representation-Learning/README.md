@@ -30,10 +30,6 @@ In the case of probabilistic models, a good representation is often one that cap
 
 
 
-
-
-
-
 traditional feature extraction need human ingenuity and prior knowledge. It would be highly desirable to make ML algorithms less dependent on this manual process. We hope it could automatically extract the discriminative information from the data.
 
 
@@ -59,6 +55,14 @@ learn to identify and disentangle the underlying explanatory factors hidden in t
 **解耦**
 
 Complex data arise from the rich interaction of many sources. These factors interact in a complex web that can complicate AI-related tasks such as object classification
+
+
+
+Disentanglement can be defined as the ability to control a single factor, or feature, without affecting other ones [Locatello et al. 2018] A properly disentangled representation can benefit semantic data mixing [Johnson et al. 2016; Xiao et al. 2019], transfer learning for downstream tasks [Bengio et al. 2013; Tschannen et al. 2018], or even interpretability [Mathieu et al. 2018].
+
+
+
+A disentangled representation in the context of generative learning can be defined as one where single latent units are sensitive to changes in single generative factors, while being relatively invariant to changes in other factors. --- [Representation learning: A review and new perspectives.]
 
 
 

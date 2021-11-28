@@ -27,3 +27,11 @@ Yen-Chi Cheng, Chieh Hubert Lin, Hsin-Ying Lee, Jian Ren, Sergey Tulyakov, Ming-
 
 [Generative Face Completion](https://openaccess.thecvf.com/content_cvpr_2017/papers/Li_Generative_Face_Completion_CVPR_2017_paper.pdf)  
 [CVPR 2017]
+
+
+
+
+
+Paint by Word
+
+Text-Guided Neural Image Inpainting

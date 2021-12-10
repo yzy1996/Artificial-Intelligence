@@ -1,4 +1,26 @@
-# 对比 AutoEncoder 和 AutoDecoder
+# Autoencoder (AE) & Autodecoder (AD)
+
+reduces data dimensions by learning how to ignore the noise in the data
+
+目前自编码器的应用主要有两个方面，第一是数据去噪，第二是为进行可视化而降维。配合适当的维度和稀疏约束，自编码器可以学习到比PCA等技术更有意思的数据投影。
+
+对于2D的数据可视化，[t-SNE](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding)（读作tee-snee）或许是目前最好的算法，但通常还是需要原数据的维度相对低一些。所以，可视化高维数据的一个好办法是首先使用自编码器将维度降低到较低的水平（如32维），然后再使用t-SNE将其投影在2D平面上
+
+自编码器并不是一个真正的无监督学习的算法，而是一个自监督的算法。自监督学习是监督学习的一个实例，其标签产生自输入数据。
+
+![img](https://miro.medium.com/max/700/1*P7aFcjaMGLwzTvjW3sD-5Q.jpeg)
+
+find the function that maps $x$ to $x$, Mathematically,
+
+
+
+
+
+自编码结构通常作假设：潜在空间应该是具有匹配对应先验的概率分布的；而现有的SOTA的GAN（比如StyleGAN）表明中间的潜在空间，它与直接输入距离得足够远，往往可以（学习）到更好的解耦属性；
+
+
+
+[toc]
 
 
 
@@ -32,6 +54,12 @@ Autoencoder 是用一个参数化的模型 $f:\mathcal{X} \mapsto \mathcal{Z}$�
 首先分别介绍两者结构，以下将用AE和AD分别指代全称
 
 ## AutoEncoder
+
+Autoencoder represent an effective approach for computing the underlying factors characterizing datasets of different types.
+
+autoencoder can be seen as an unsupervised learning method to reveal/expose the underlying factors controlling a given dataset.
+
+
 
 ![AutoEncoder](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210329100645.svg)
 
@@ -75,13 +103,9 @@ AE是欠拟合的
 
 
 
-
-
 - AD可以做到增量学习
 
 知识库可以做到更新，训练数据不固定
-
-
 
 
 
@@ -97,7 +121,73 @@ AE是欠拟合的
 
 
 
-VAD 
+## VAE 
+
+> Variational Auto-Encoder，来自论文 
+> 
+> [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114.pdf)  
+> *Diederik P Kingma, Max Welling*  
+> **[`ICLR 2014`] (`Universiteit van Amsterdam`)**
+
+首先我们有一批数据样本 $\mathbf{x}= \{x_1, x_2, \dots, x_n\}$，现要估计它的分布 $p(x)$。
+
+我们想借助隐变量 $z$ 来描述 $\mathbf{x}$ 的分布，建模成：
+$$
+q(x)=\int q(x, z) d z, \quad q(x, z)=q(x \mid z) q(z)
+$$
+  $x$ 和 $z$ 的联合分布还可以写成 $p(x,z) = p(z|x) p(x)$。因此我们想用 $q(x,z)$ 来近似 $p(x,z)$。因此直接用KL散度来衡量（KL散度越小越好）：
+$$
+\begin{aligned}
+K L(p(x, z) \| q(x, z)) &=
+\iint p(x,z) \ln \frac{p(x,z)}{q(x,z)} dzdx\\
+&=\int p(x)\left[\int p(z \mid x) \ln \frac{p(x) p(z \mid x)}{q(x, z)} d z\right] d x \\
+&=\mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x) \ln \frac{p(x) p(z \mid x)}{q(x, z)} d z\right]\\
+&=\mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x) \left(\ln p(x) + \ln \frac{p(z \mid x)}{q(x,z)} \right)dz\right]\\
+&=\mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x) \ln p(x) dz\right] + \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x)\ln \frac{p(z \mid x)}{q(x,z)} dz\right]\\
+&=\mathbb{E}_{x \sim p(x)}\left[\ln p(x) \int p(z \mid x) dz\right] + \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x)\ln \frac{p(z \mid x)}{q(x,z)} dz\right]\\
+&=\mathbb{E}_{x \sim p(x)}\left[\ln p(x) \right] + \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x)\ln \frac{p(z \mid x)}{q(x,z)} dz\right]\\
+\end{aligned}
+$$
+注意第一项可以看成是一个常数。因此我们可以将求KL散度的问题转化为一个新的损失函数为：
+$$
+\begin{aligned}
+\mathcal{L} 
+&= \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x)\ln \frac{p(z \mid x)}{q(x,z)} dz\right]\\
+&= \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x)\ln \frac{p(z \mid x)}{q(x \mid z)q(z)} dz\right]\\
+&= \mathbb{E}_{x \sim p(x)}\left[-\int p(z \mid x)\ln q(x \mid z)dz + \int p(z \mid x) \ln \frac{p(z \mid x)}{q(z)} dz\right]\\
+&= \mathbb{E}_{x \sim p(x)}\left[\mathbb{E}_{z \sim p(z \mid x)}[-\ln q(x \mid z)]+KL\left(p(z \mid x) \| q(z)\right)\right]
+\end{aligned}
+$$
+最终目的就是优化 $q(x \mid z), q(z)$ 让 $\mathcal{L}$ 最小。
+
+
+
+（先休息一下）
+
+
+
+现在我们有 $q(z), q(x|z), p(z|x)$ 是未知的，因此实验中我们要确定他们的形式。
+
+- $q(z)$：我们直接假设 $z \sim N(0, I)$
+- $p(z|x)$：也假设是正态分布，均值和方差是可学习的参数。
+- $q(x|z)$： 也假设是正态分布，均值和方差是可学习的参数。
+
+
+
+因为要计算 $\mathbb{E}_{z \sim p(z \mid x)}[-\ln q(x \mid z)]$，就需要对 $z \sim p(z|x)$ 进行采样，VAE论文说只需要每次采样一个就够了，每个循环都是随机的，因此采样是足够充分的。所以最终 $\mathcal{L}$ 变成了：
+$$
+\mathcal{L}=\mathbb{E}_{x \sim p(x)}[-\ln q(x \mid z)+K L(p(z \mid x) \| q(z))], \quad z \sim p(z \mid x)
+$$
+MSE, 
+
+
+
+
+
+
+
+
+## VAD 
 
 
 
@@ -128,3 +218,74 @@ $$
 
 
 其实就是希望在常规AE基础上，加上一个高斯噪声，使得decoder能够具有鲁棒性，重构过程希望无噪声，KL希望有噪声，所以也有一个对抗性在里面。
+
+
+
+
+
+
+
+一点原理性的理解：
+
+The original AE only obtain a reduced representation space - latent space
+
+
+
+Some efforts provide frameworks that attempt to shape the latent space to be efficient with respect to factor disentanglement or to make it conducive to latent space interpolation. Especially the variational autoencoder (VAE) and its derivatives.
+
+> Principle: For multimodal distributions, such as MNIST. The KL term tends to cluster the modes in the latent space close to each other.  
+
+[Avoiding Latent Variable Collapse With Generative Skip Models](https://arxiv.org/pdf/1807.04863.pdf)  
+Adji B. Dieng, Yoon Kim, Alexander M. Rush, David M. Blei  
+**[`AISTATS 2019`] (`Columbia, Harvard`)**
+
+**multimodal distribution 本身就是混合的，因此每个单峰里面取样本插值本身就有意义**
+
+如果分布本身是单峰的，unimodal distribution / the generating factors are continuous ; 会导致 KL Loss 驱使 manifold 折叠起来，变得很稠密|非凸。
+
+
+
+
+
+
+
+
+
+Auto-encoding variational bayes
+
+Multi-level variational autoencoder: Learning disentangled representations from grouped observations
+
+Extracting and composing robust features with denoising autoencoders
+
+Semantic facial expression editing using autoencoded flow
+
+betavae: Learning basic visual concepts with a constrained variational framework
+
+
+
+
+
+
+
+
+
+
+
+## Denoising Autoencoder(DAE)
+
+参考 https://blog.keras.io/building-autoencoders-in-keras.html
+https://www.tensorflow.org/tutorials/generative/cvae
+
+
+
+
+
+
+
+
+
+## 参考链接
+
+[苏剑林-变分自编码器（一）：原来是这么一回事](https://kexue.fm/archives/5253)
+
+[苏剑林-变分自编码器（二）：从贝叶斯观点出发](https://kexue.fm/archives/5343)

@@ -14,14 +14,13 @@
 <img width=80% src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20201204115352.png"/>
     <p>Figure 1</p>
 </div>
-
 [Code-Tensorflow](https://github.com/bmild/nerf)  [Code-PyTorch](https://github.com/yenchenlin/nerf-pytorch)  [Code-PyTorch](https://github.com/krrish94/nerf-pytorch)
 
-NeRF represents the 3D geometry and appearance of a scene as a continuous 5D to 2D mapping function and uses volume rendering to synthesize novel views. The training process relies on multiple images with given camera poses.
+**In a nutshell / Short and sweet**: A Neural Radiance Field captures a volumetric representation of a specific scene within the weights of a neural network. NeRF represents the 3D geometry and appearance of a scene as a continuous 5D to 2D mapping function and uses volume rendering to synthesize novel views. The training process relies on multiple images with given camera poses.
 
 ## Introduction
 
-因为能生成各种视角的图像，这样就能直接训练，通过多视角的RGB图像
+因为能生成各种视角的图像，这样就能通过多视角的RGB图像构成重建Loss直接训练。
 
 
 
@@ -96,7 +95,7 @@ high fidelity
 
 
 
-缺点：
+**Disadvantage of NeRF:**
 
 他的目的是做 novel-view synthesis，而不是 surface construction，只需要合成的照片正确就行，shape是否学的精确是不重要的，因为存在多解，找一个即可，而精确还原是只有一个解的。
 
@@ -149,6 +148,14 @@ opacity value
 
 ### 1. Improve Performance
 
+- [NeRF in the Wild: Neural Radiance Fields for Unconstrained Photo Collections](https://arxiv.org/pdf/2008.02268.pdf)  
+  *Ricardo Martin-Brualla, Noha Radwan, Mehdi S. M. Sajjadi, Jonathan T. Barron, Alexey Dosovitskiy, Daniel Duckworth*  
+  **[`CVPR 2021`]**
+
+- [NeRF++: Analyzing and Improving Neural Radiance Fields](https://arxiv.org/pdf/2010.07492.pdf)  
+  *Kai Zhang, Gernot Riegler, Noah Snavely, Vladlen Koltun*  
+  **[`Arxiv 2020`] (`Cornell Tech, Intel`)** [[Code](https://github.com/Kai-46/nerfplusplus)]  
+
 **data structures**
 
 - [PlenOctrees for real-time rendering of neural radiance fields](https://arxiv.org/pdf/2103.14024.pdf)  
@@ -177,11 +184,15 @@ opacity value
   *David B. Lindell, Julien N. P. Martel, Gordon Wetzstein*  
   **[`CVPR 2021`] (`Stanford`)**  
 
+**surface**
+
+
+
 
 
 ### 2. Shape Encode
 
-里面也包含了 conditional nerf
+> Including conditional nerf,  e.g. a single model to be used for multiple scenes.
 
 - [GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis](https://arxiv.org/pdf/2007.02442.pdf)  
   *Katja Schwarz, Yiyi Liao, Michael Niemeyer, Andreas Geiger*  
@@ -205,7 +216,7 @@ opacity value
 
 - [Nerfies: Deformable Neural Radiance Fields](https://arxiv.org/pdf/2011.12948.pdf)  
   *Keunhong Park, Utkarsh Sinha, Jonathan T. Barron, Sofien Bouaziz, Dan B Goldman, Steven M. Seitz, Ricardo Martin-Brualla*  
-  **[`Arxiv 2020`] (`Washington, Google`)** [[Code](https://github.com/google/nerfies)]  
+  **[`ICCV 2021`] (`Washington, Google`)** [[Code](https://github.com/google/nerfies)]  
 
 - [D-NeRF: Neural Radiance Fields for Dynamic Scenes](https://arxiv.org/pdf/2011.13961.pdf)  
   *Albert Pumarola, Enric Corona, Gerard Pons-Moll, Francesc Moreno-Noguer*  
@@ -223,13 +234,62 @@ opacity value
   *Edgar Tretschk, Ayush Tewari, Vladislav Golyanik, Michael Zollhöfer, Christoph Lassner, Christian Theobalt*  
   **[`ICCV 2021`] (`MPI, Facebook`)** [[Code](https://github.com/facebookresearch/nonrigid_nerf)]  
 
+- [HyperNeRF: A Higher-Dimensional Representation for Topologically Varying Neural Radiance Fields](https://arxiv.org/pdf/2106.13228.pdf)  
+  *Keunhong Park, Utkarsh Sinha, Peter Hedman, Jonathan T. Barron, Sofien Bouaziz, Dan B Goldman, Ricardo Martin-Brualla, Steven M. Seitz*  
+  **[`SIGGRAPH Asia 2021`] (`Washington, Google`)**
+
+
+
+### Controllability & Edit
+
+> compositional control of object location
+
+- [Learning Object-Compositional Neural Radiance Field for Editable Scene Rendering](https://arxiv.org/pdf/2109.01847.pdf)  
+  Bangbang Yang, Yinda Zhang, Yinghao Xu, Yijin Li, Han Zhou, Hujun Bao, Guofeng Zhang, Zhaopeng Cui  
+  **[`ICCV 2021`] (`Zhejiang, Google, CUHK`)**
+
+- [Unsupervised Discovery of Object Radiance Fields](https://arxiv.org/pdf/2107.07905.pdf)  
+  *Hong-Xing Yu, Leonidas J. Guibas, Jiajun Wu*  
+  **[`arXiv 2021`] (`Stanford`)**
+
+
+
+> modifying the shape and appearance encoding, require a curated dataset of objects viewed
+> under different views and colors
+
+- [CodeNeRF: Disentangled Neural Radiance Fields for Object Categories](https://arxiv.org/pdf/2109.01750.pdf)  
+  *Wonbong Jang, Lourdes Agapito*  
+  **[`ICCV 2021`] (`UCL`)**
+
+- [Editing Conditional Radiance Fields](https://arxiv.org/pdf/2105.06466.pdf)  
+  *Steven Liu, Xiuming Zhang, Zhoutong Zhang, Richard Zhang, Jun-Yan Zhu, Bryan Russell*  
+  **[`ICCV 2021`] (`MIT, Adobe`)**
+
+
+
+- [FiG-NeRF: Figure-Ground Neural Radiance Fields for 3D Object Category Modelling](https://arxiv.org/pdf/2104.08418.pdf)  
+  *Christopher Xie, Keunhong Park, Ricardo Martin-Brualla, Matthew Brown*  
+  **[`arXiv 2021`] (`Washington, Google`)**
+
+> edit material
+
+- [NeRFactor: Neural Factorization of Shape and Reflectance Under an Unknown Illumination](https://arxiv.org/pdf/2106.01970.pdf)  
+  Xiuming Zhang, Pratul P. Srinivasan, Boyang Deng, Paul Debevec, William T. Freeman, Jonathan T. Barron  
+  **[`arXiv 2021`] (`MIT, Google`)**
+
+
+
+- [CoNeRF: Controllable Neural Radiance Fields](https://arxiv.org/pdf/2112.01983.pdf)  
+  Kacper Kania, Kwang Moo Yi, Marek Kowalski, Tomasz Trzciński, Andrea Tagliasacchi  
+  [British Columbia, ]
+
+
+
 
 
 ### 4. Composition
 
-- [NeRF++: Analyzing and Improving Neural Radiance Fields](https://arxiv.org/pdf/2010.07492.pdf)  
-  *Kai Zhang, Gernot Riegler, Noah Snavely, Vladlen Koltun*  
-  **[`Arxiv 2020`] (`Cornell Tech, Intel`)** [[Code](https://github.com/Kai-46/nerfplusplus)]  
+
 
 - [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/pdf/2011.12100.pdf)  
   *Michael Niemeyer, Andreas Geiger*  
@@ -289,6 +349,14 @@ iNeRF and NeRF-- optimize camera pose along with other parameters when training 
 
 
 
+### Human
+
+[A-NeRF: Articulated Neural Radiance Fields for Learning Human Shape, Appearance, and Pose](https://arxiv.org/pdf/2102.06199.pdf)  
+*Shih-Yang Su, Frank Yu, Michael Zollhoefer, Helge Rhodin*  
+**[`NeurIPS 2021`] (`British Columbia, Facebook`)**
+
+
+
 ## Trick
 
 **(1) positional encoding**
@@ -338,3 +406,10 @@ Coordinate-based Image
 
 
 
+
+
+
+
+To be sorted
+
+Object-Centric Neural Scene Rendering

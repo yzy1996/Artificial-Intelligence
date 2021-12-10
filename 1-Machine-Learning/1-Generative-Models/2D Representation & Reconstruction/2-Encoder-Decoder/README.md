@@ -1,4 +1,4 @@
-# Autoencoder (AE) & Autodecoder (AD)
+### Autoencoder (AE) & Autodecoder (AD)
 
 reduces data dimensions by learning how to ignore the noise in the data
 
@@ -182,7 +182,29 @@ MSE,
 
 
 
+## VAE++
 
+提到
+
+
+
+我们可以统一VAE以及变种的模型，第一项保证重建的准确率高，第二项保证编码到的latent 分布和先验的是一致的。
+$$
+L_{\text{VAE}} (\theta, \phi) = L_{\text{recons}}(\theta, \phi) + L_{\text{KLD}}(\theta, \phi)
+$$
+The reconstruction loss is:
+$$
+L_{\text{recons}}(\theta, \phi) = \frac{1}{N} \sum_{i=1}^N \| \hat{\mathbf{x}_i} - \mathbf{x}_i \|_2^2
+$$
+The regularization loss is:
+$$
+L_{\text{KLD}}(\theta, \phi) = D_{\text{KL}} \left(q_\phi(\mathbf{z}|\mathbf{x}) \| p(\mathbf{z}) \right)
+$$
+another $\beta$-VAE uses the following formulation:
+$$
+L_{\text{VAE}} (\theta, \phi) = L_{\text{recons}}(\theta, \phi) + \beta L_{\text{KLD}}(\theta, \phi)
+$$
+$\beta > 1$ would encourages the independence of the dimensions of the latent space and leads to better disentanglement.
 
 
 

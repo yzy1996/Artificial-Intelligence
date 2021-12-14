@@ -190,9 +190,11 @@ opacity value
 
 
 
-### 2. Shape Encode
+### 2. Shape/Texture Encode/Disentangle
 
 > Including conditional nerf,  e.g. a single model to be used for multiple scenes.
+>
+> 同时encode的还有texture 或者叫 appearance，只是为了将他们解耦表征出来，然后做一点简单的替换就好了。
 
 - [GRAF: Generative Radiance Fields for 3D-Aware Image Synthesis](https://arxiv.org/pdf/2007.02442.pdf)  
   *Katja Schwarz, Yiyi Liao, Michael Niemeyer, Andreas Geiger*  

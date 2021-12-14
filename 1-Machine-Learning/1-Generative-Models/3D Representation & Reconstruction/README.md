@@ -1,12 +1,12 @@
 # <p align=center>`3D representation & reconstruction` </p>
 
-A collection of resources on 3D representation and reconstruction from multi-view images.
+A collection of resources on 3D representation and reconstruction from multi-view images. Finding a proper way to capture and store 3D scene.
 
-> 表征是为了干什么，那肯定是为了重建，所以两者不分家。其中表征就是一个Encoder，重建就是一个Decoder。
+> 表征是为了干什么，那肯定是为了重建，所以两者不分家。其中表征就是一个Encoder，重建就是一个Decoder。仅仅重建又不是不够的，还需要能够生成新的
 
 
 
-related project
+**Related project:**
 
 [vsitzmann/awesome-implicit-representations](https://github.com/vsitzmann/awesome-implicit-representations)
 
@@ -16,7 +16,9 @@ related project
 
 
 
-News: Latest 3D dataset---[CO3D](https://ai.facebook.com/datasets/co3d-downloads/) by Facebook
+**News:** 
+
+Latest 3D dataset---[CO3D](https://ai.facebook.com/datasets/co3d-downloads/) by Facebook
 
 
 

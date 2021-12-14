@@ -125,7 +125,7 @@ Zero level set $S = \{p: f(p) = 0 \} \sub \mathbb{R}^3$ is the estimated surface
 - <span id="VolSDF"></span>
   [Volume Rendering of Neural Implicit Surfaces](https://arxiv.org/pdf/2106.12052.pdf)  
   *Lior Yariv, Jiatao Gu, Yoni Kasten, Yaron Lipman*  
-  **[`Arxiv 2021`] (`Weizmann Institute of Science, Facebook`)**  
+  **[`NeurIPS 2021`] (`Weizmann Institute of Science, Facebook`)**  
 
 - <span id="Neural-Splines"></span>
   [Neural Splines: Fitting 3D Surfaces with Infinitely-Wide Neural Networks](https://arxiv.org/pdf/2006.13782.pdf)  

@@ -151,3 +151,11 @@ combine VAE with GAN
 
 
 
+## Inverse Rendering / Graphics
+
+Given 2D image observations, these approaches aim to infer a 3D-structure-aware representation of the underlying scene that enables prior-based predictions about occluded parts.
+
+
+
+
+

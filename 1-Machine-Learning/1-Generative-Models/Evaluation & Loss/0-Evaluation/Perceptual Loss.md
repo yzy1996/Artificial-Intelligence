@@ -91,3 +91,23 @@ d = loss_fn_alex(img0, img1)
 
 ![img](https://github.com/boschresearch/OASIS/raw/master/iclr2021_oasis_poster.png)
 
+
+
+[Perceptual Losses for Real-Time Style Transfer and Super-Resolution](https://arxiv.org/pdf/1603.08155.pdf)  
+*Justin Johnson, Alexandre Alahi, Li Fei-Fei*  
+**[`ECCV 2016`] ()**
+
+[Generating Images with Perceptual Similarity Metrics based on Deep Networks](https://arxiv.org/pdf/1602.02644.pdf)  
+*Alexey Dosovitskiy, Thomas Brox*  
+**[`NeurIPS 2016`] ()**
+
+
+
+
+
+measure the low-level (pixel space) & high-level (feature space) similarity between two images 
+
+different layers of the VGG neural network extract the image features at different scales and can be separated into content and style.
+
+
+

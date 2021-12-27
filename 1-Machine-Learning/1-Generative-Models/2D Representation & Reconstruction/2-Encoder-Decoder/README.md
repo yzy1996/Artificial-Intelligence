@@ -131,11 +131,13 @@ AE是欠拟合的
 
 首先我们有一批数据样本 $\mathbf{x}= \{x_1, x_2, \dots, x_n\}$，现要估计它的分布 $p(x)$。
 
+我们要得到的结果是 $p_\theta (x|z)$ 然后都在讲 怎么推断 后验分布 p(z|x)
+
 我们想借助隐变量 $z$ 来描述 $\mathbf{x}$ 的分布，建模成：
 $$
 q(x)=\int q(x, z) d z, \quad q(x, z)=q(x \mid z) q(z)
 $$
-  $x$ 和 $z$ 的联合分布还可以写成 $p(x,z) = p(z|x) p(x)$。因此我们想用 $q(x,z)$ 来近似 $p(x,z)$。因此直接用KL散度来衡量（KL散度越小越好）：
+$x$ 和 $z$ 的联合分布还可以写成 $p(x,z) = p(z|x) p(x)$。因此我们想用 $q(x,z)$ 来近似 $p(x,z)$。因此直接用KL散度来衡量（KL散度越小越好）：
 $$
 \begin{aligned}
 K L(p(x, z) \| q(x, z)) &=
@@ -179,6 +181,38 @@ $$
 \mathcal{L}=\mathbb{E}_{x \sim p(x)}[-\ln q(x \mid z)+K L(p(z \mid x) \| q(z))], \quad z \sim p(z \mid x)
 $$
 MSE, 
+
+
+$$
+\begin{gathered}
+D_{K L}(q(Z \mid X) \| p(Z \mid X))=\mathbb{E}[\log (q(Z \mid X))-\log (p(Z \mid X))] \\
+=\mathbb{E}\left[\log (q(Z \mid X))-\log \left(\frac{p(X \mid Z) p(Z)}{p(X)}\right)\right] \\
+=\mathbb{E}[\log (q(Z \mid X))-\log (p(X \mid Z)-\log (p(Z)))]+\log (p(X)) \\
+=\mathbb{E}\left[\log \left(\frac{q(Z \mid X)}{p(Z)}\right)-\log (p(X \mid Z))\right]+\log (p(X)) \\
+=D_{K L}[q(Z \mid X)|| p(Z)]-\mathbb{E}[\log (p(X \mid Z))]+\log (p(X))
+\end{gathered}
+$$
+等号右边第一项不就是似然值吗？第二项只要实现把先验概率 ![[公式]](https://www.zhihu.com/equation?tex=p%28Z%29) 定义好之后，也可以进行计算。
+
+
+
+因为 $p(x|z)$ 形如 decoder，而 $q(z|x)$ 形如 Encoder，因此得名 VAE。和 Auto-Encoder 并没有那么大的关系
+
+
+
+
+
+
+
+重参数化的作用
+
+如果直接从多元正态分布去采样，破坏了连续性，
+
+
+
+![img](https://pic1.zhimg.com/80/v2-f60be7abe507be3c176135d875864280_1440w.jpg?source=1940ef5c)
+
+
 
 
 

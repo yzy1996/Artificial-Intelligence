@@ -2,6 +2,49 @@
 
 > Evidence Lower Bound
 
+首先是问题的设定：针对带有隐变量的概率模型
+
+我们有随机变量 $X, Z$，他们服从一个联合分布 $p(X,Z;\theta)$，我们的数据只有对 $X$ 实现的观测，对 $Z$ 是不知道的。因此一般我们有两个任务想要实现：
+
+- 给定 $\theta$ ，计算后验分布 $p(Z|X;\theta)$
+- 用最大似然估计 $\theta$，$\arg \max_\theta \{ \log p(x;\theta) = \log \int_z p(x,z;\theta) dz\}$
+
+
+
+变分推断就是用在任务1上。
+
+
+
+Evidence (证据) 定义的就是 似然函数 $\log p(x;\theta)$。之所以被称为 证据，是因为它能反应我们对模型的估计好坏程度。如果我们知道了 $Z$ 服从的分布 $q$，(在后面的表示中，为了简化我们省去了 $\theta$)
+
+
+$$
+\begin{align}
+\log p(x) 
+&= \log \int p(x,z) dz \\
+&= \log \int p(x,z) \frac{q(z)}{q(z)} dz \\
+&= \log \mathbb{E}_{z \sim \mathcal{Z}} \left[ \frac{p(x, z)}{q(z)} \right] \\
+&\ge \mathbb{E}_{z \sim \mathcal{Z}} \log \left[ \frac{p(x, z)}{q(z)} \right]
+\end{align}
+$$
+
+$$
+ELBO := \mathbb{E}_{z \sim \mathcal{Z}} \log \left[ \frac{p(x, z)}{q(z)} \right]
+$$
+
+
+The gap between the evidence and the ELBO is the Kullback-Leibler Divergence between $p(z|x)$ and $q(z)$:
+$$
+\begin{aligned}
+KL(q(z) \| p(z \mid x)) 
+&:= \mathbb{E}_{z \sim \mathcal{Z}} \log \left[ \frac{q(z)}{p(z \mid x)} \right] \\
+&= \mathbb{E}_{z \sim \mathcal{Z}} \left[\log q(z)\right] - \mathbb{E}_{z \sim \mathcal{Z}} \left[\log p(x,z)\right] + \mathbb{E}_{z \sim \mathcal{Z}} \left[\log p(x)\right] \\
+&= \log p(x) - \mathbb{E}_{z \sim \mathcal{Z}} \log \left[ \frac{p(x, z)}{q(z)} \right] \\
+&= \text{Evidence} - \text{ELBO}
+\end{aligned}
+$$
+
+
 
 
 Background: 
@@ -43,6 +86,10 @@ $$
 
 
 最小化KL散度等价于最大化ELBO
+
+
+
+杰森不等式 Jensen's Inequality
 
 
 

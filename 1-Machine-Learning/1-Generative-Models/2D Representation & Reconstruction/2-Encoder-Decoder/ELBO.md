@@ -169,3 +169,11 @@ Variational Bayes is a particular variational method which aims to find some app
 $$
 \log p(x)=E L B O+K L D
 $$
+
+
+
+
+先说结论，
+$$
+\text{ELBO} = E_{q} \log p(\theta, \beta, z, w \mid \alpha, \eta)-E_{q} \log q(\beta, z, \theta \mid \lambda, \phi, \gamma)
+$$

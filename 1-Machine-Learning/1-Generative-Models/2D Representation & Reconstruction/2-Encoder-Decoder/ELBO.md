@@ -2,16 +2,22 @@
 
 > Evidence Lower Bound
 
+
+
+先说结论，
+
+
+
 首先是问题的设定：针对带有隐变量的概率模型
 
 我们有随机变量 $X, Z$，他们服从一个联合分布 $p(X,Z;\theta)$，我们的数据只有对 $X$ 实现的观测，对 $Z$ 是不知道的。因此一般我们有两个任务想要实现：
 
-- 给定 $\theta$ ，计算后验分布 $p(Z|X;\theta)$
+- 给定 $\theta$ ，计算后验分布 $p(Z|X;\theta)$。变分推断就是用在这个任务上。
 - 用最大似然估计 $\theta$，$\arg \max_\theta \{ \log p(x;\theta) = \log \int_z p(x,z;\theta) dz\}$
 
 
 
-变分推断就是用在任务1上。
+
 
 
 

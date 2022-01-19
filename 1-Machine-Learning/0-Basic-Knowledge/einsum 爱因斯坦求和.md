@@ -95,3 +95,31 @@ print(c)
 ```
 
 > 相当于先乘，然后沿着j维求和
+
+
+
+
+
+PyTorch尝试
+
+```python
+import torch
+A = torch.randn(16, 8, 5, 128, 128)
+B = torch.randn(16, 8, 5, 128, 128)
+print('A:', A.size())
+print('B:', B.size())
+A = A.unsqueeze(3)
+B = B.unsqueeze(2)
+print('Viewed A:', A.size())
+print('Viewed B:', B.size())
+C = torch.einsum('ijklno,ijlmno->ijkmno', [A, B])
+print('C:', C.size())
+
+Output：
+A: torch.Size([16, 8, 5, 128, 128])
+B: torch.Size([16, 8, 5, 128, 128])
+Viewed A: torch.Size([16, 8, 5, 1, 128, 128])
+Viewed B: torch.Size([16, 8, 1, 5, 128, 128])
+C: torch.Size([16, 8, 5, 5, 128, 128])
+```
+

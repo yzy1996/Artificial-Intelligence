@@ -1,5 +1,7 @@
 # 2D Representation
 
+There models try to model the real world by generating realistic samples from latent representations.
+
 
 
 likelihood-based frameworks for deep generative learning:

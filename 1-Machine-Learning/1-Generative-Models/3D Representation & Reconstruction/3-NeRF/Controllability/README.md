@@ -14,3 +14,15 @@ For category-level NeRF, conditional NeRF
 
 from CoNeRF
 
+
+
+- [CodeNeRF: Disentangled Neural Radiance Fields for Object Categories](https://arxiv.org/pdf/2109.01750.pdf)  
+  *Wonbong Jang, Lourdes Agapito*  
+  **[`ICCV 2021`] (`UCL`)**
+
+- [Editing Conditional Radiance Fields](https://arxiv.org/pdf/2105.06466.pdf)  
+  *Steven Liu, Xiuming Zhang, Zhoutong Zhang, Richard Zhang, Jun-Yan Zhu, Bryan Russell*  
+  **[`ICCV 2021`] (`MIT, Adobe`)**
+
+
+

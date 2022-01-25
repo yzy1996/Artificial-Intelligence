@@ -188,6 +188,10 @@ opacity value
 
 
 
+[CityNeRF: Building NeRF at City Scale](https://arxiv.org/pdf/2112.05504.pdf)  
+*Yuanbo Xiangli, Linning Xu, Xingang Pan, Nanxuan Zhao, Anyi Rao, Christian Theobalt, Bo Dai, Dahua Lin*  
+**[`arXiv 2021`]**
+
 
 
 ### 2. Shape/Texture Encode/Disentangle

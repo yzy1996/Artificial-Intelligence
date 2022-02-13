@@ -14,6 +14,14 @@ likelihood-based frameworks for deep generative learning:
 
 
 
+adversarial game:
+
+generative adversarial networks (GAN)
+
+
+
+Details of GANs please see the [file]()
+
 
 
 ## VAE

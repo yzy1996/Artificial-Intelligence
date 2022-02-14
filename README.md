@@ -16,14 +16,11 @@
 
 # 机器学习
 
-
+[Machine Learning](./1-Machine-Learning)
 
 # 优化
 
-
-
-
-
+[Optimization](./2-Optimization)
 
 
 

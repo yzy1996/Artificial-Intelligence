@@ -2,6 +2,10 @@
 
 Recently, **GANPaint** [8] proposes to change the semantics of an input image by first projecting an image into GANs, then fine-tuning the GANs to reproducing the details, and finally modifying the intermediate activations based on user [inputs](Gan dissection: Visualizing and understanding generative adversarial networks). 
 
+
+
+
+
 ## iGAN(aka. interactive GAN)
 
 Generative Visual Manipulation on the Natural Image Manifold

@@ -404,13 +404,17 @@ standard ReLU MLPs fail to adequately represent fine details in these complex lo
 
 ## Datasets
 
-> for more details see [folder](./6-Datasets) 
-
-- [3D ShapeNets: A Deep Representation for Volumetric Shapes](https://arxiv.org/pdf/1406.5670.pdf)  
+- [**ShapeNets**](https://shapenet.org/)  
+  [3D ShapeNets: A Deep Representation for Volumetric Shapes](https://arxiv.org/pdf/1406.5670.pdf)  
   **[`CVPR 2015`] (`Princeton, CUH, MIT`)**  
   *Zhirong Wu, Shuran Song, Aditya Khosla, Fisher Yu, Linguang Zhang, Xiaoou Tang, Jianxiong Xiao*
 
-CO3D
+- [**CO3D**](https://github.com/facebookresearch/co3d)  
+  [Common Objects in 3D: Large-Scale Learning and Evaluation of Real-life 3D Category Reconstruction](https://arxiv.org/pdf/2109.00512)  
+  *Jeremy Reizenstein, Roman Shapovalov, Philipp Henzler, Luca Sbordone, Patrick Labatut, David Novotny*  
+  **[` ICCV 2021`] (``)**
+
+
 
 
 

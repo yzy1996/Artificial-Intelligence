@@ -18,3 +18,9 @@
 
 
 
+[AKB-48: A Real-World Articulated Object Knowledge Base](https://arxiv.org/pdf/2202.08432)  
+*Liu Liu, Wenqiang Xu, Haoyuan Fu, Sucheng Qian, Yang Han, Cewu Lu*  
+**[` 2022`] (``)**
+
+
+

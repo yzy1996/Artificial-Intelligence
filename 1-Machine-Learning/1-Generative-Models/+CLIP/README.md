@@ -26,5 +26,6 @@ CLIP original paper -
 ### CLIP + NeRF
 
 [(DietNeRF)-Putting NeRF on a Diet Semantically Consistent Few-Shot View Synthesis](https://arxiv.org/pdf/2104.00677.pdf)  
-**[`Arxiv 2021`] (`UCB`)** *Ajay Jain, Matthew Tancik, Pieter Abbeel*
+*Ajay Jain, Matthew Tancik, Pieter Abbeel*  
+**[`ICCV 2021`] (`UCB`)** 
 

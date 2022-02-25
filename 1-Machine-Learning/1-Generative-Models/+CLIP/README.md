@@ -1,6 +1,6 @@
 [with Notes](./README-Notes.md) | without Notes
 
-# # <p align=center>`CLIP` </p>
+# <p align=center>`CLIP` </p>
 
 CLIP original paper - 
 

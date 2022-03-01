@@ -10,8 +10,20 @@
 
 像GAN一样，VAE也是想要学习一个生成模型以实现一个从低维 latent vector $z \in \mathbb{R}^d$ 到高维 $x \in \mathbb{D}$ 的映射 $g: \mathcal{Z} \rightarrow \mathcal{X}$。VAE的优化目标是最大化数据集数据的似然：
 $$
-\log p(X) = \sum_{i=1}^N \log \sim
+\log p(X) = \sum_{i=1}^N \log \int p\left(x_{i}, z\right) dz
 $$
+
+但这个目标很难去优化，因此采用最大化每个样本点边际似然的证据下界的方式：
+$$
+\log p(x_i) \ge \mathcal{L}(x_i) = \mathbb{E}_{z\sim q_\phi(z|x_i)} [-\log q_\phi(z|x_i) + \log p_\theta(x_i, z)]
+$$
+其中 $q_\phi(z \mid x)$ 是真实后验的变分近似。
+
+利用重参数化的方式，将随机隐式变量 $z$ 用一个确定方程表示 $z = h_\phi(x, \epsilon)$ ，这其中的 $\epsilon$ 是一个任意分布的辅助变量。$p_\theta (z)$ 是零均值的正态分布，因此鼓励了隐变量都是在原点附近的。
+
+关于似然 $p_\theta (x \mid z)$ ，根据前人工作，可以选择一个各相同性的正态分布，它的均值由decoder网络 $g_\theta(z)$ 提供，而方差是固定的。
+
+
 
 
 

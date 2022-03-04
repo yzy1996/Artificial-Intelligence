@@ -223,26 +223,26 @@ opacity value
 - [Nerfies: Deformable Neural Radiance Fields](https://arxiv.org/pdf/2011.12948.pdf)  
   *Keunhong Park, Utkarsh Sinha, Jonathan T. Barron, Sofien Bouaziz, Dan B Goldman, Steven M. Seitz, Ricardo Martin-Brualla*  
   **[`ICCV 2021`] (`Washington, Google`)** [[Code](https://github.com/google/nerfies)]  
-
+- [Neural Scene Flow Fields for Space-Time View Synthesis of Dynamic Scenes](https://openaccess.thecvf.com/content/CVPR2021/papers/Li_Neural_Scene_Flow_Fields_for_Space-Time_View_Synthesis_of_Dynamic_CVPR_2021_paper.pdf)  
+  *Zhengqi Li, Simon Niklaus, Noah Snavely, Oliver Wang*  
+  **[`CVPR 2021`] (`Cornell`)**
 - [D-NeRF: Neural Radiance Fields for Dynamic Scenes](https://arxiv.org/pdf/2011.13961.pdf)  
   *Albert Pumarola, Enric Corona, Gerard Pons-Moll, Francesc Moreno-Noguer*  
   **[`CVPR 2021`] (`CSIC-UPC, MPI`)**  
-
 - [Dynamic Neural Radiance Fields for Monocular 4D Facial Avatar Reconstruction](https://arxiv.org/pdf/2012.03065.pdf)  
   *Guy Gafni, Justus Thies, Michael Zollhöfer, Matthias Nießner*  
   **[`CVPR 2021`] (`Technical University of Munich, Facebook`)**  
-
 - [Neural Scene Graphs for Dynamic Scenes](https://arxiv.org/pdf/2011.10379.pdf)  
   *Julian Ost, Fahim Mannan, Nils Thuerey, Julian Knodt, Felix Heide*  
   **[`CVPR 2021`] (`Algolux, Technical University of Munich`)**  
-
 - [Non-Rigid Neural Radiance Fields: Reconstruction and Novel View Synthesis of a Dynamic Scene From Monocular Video](https://arxiv.org/abs/2012.12247)  
   *Edgar Tretschk, Ayush Tewari, Vladislav Golyanik, Michael Zollhöfer, Christoph Lassner, Christian Theobalt*  
   **[`ICCV 2021`] (`MPI, Facebook`)** [[Code](https://github.com/facebookresearch/nonrigid_nerf)]  
-
 - [HyperNeRF: A Higher-Dimensional Representation for Topologically Varying Neural Radiance Fields](https://arxiv.org/pdf/2106.13228.pdf)  
   *Keunhong Park, Utkarsh Sinha, Peter Hedman, Jonathan T. Barron, Sofien Bouaziz, Dan B Goldman, Ricardo Martin-Brualla, Steven M. Seitz*  
   **[`SIGGRAPH Asia 2021`] (`Washington, Google`)**
+
+
 
 
 

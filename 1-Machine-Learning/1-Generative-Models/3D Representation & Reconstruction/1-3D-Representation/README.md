@@ -24,7 +24,7 @@ encode **geometry** and **appearance**
 
 
 
-
+Unlike explicit representations of geometry, neural implicit methods are memory efficient and are able to capture impressive levels of geometric detail.
 
 
 

@@ -18,6 +18,8 @@
 
 [Machine Learning](./1-Machine-Learning)
 
+Awesome Artificial Intelligence (AI) https://github.com/owainlewis/awesome-artificial-intelligence
+
 # 优化
 
 [Optimization](./2-Optimization)

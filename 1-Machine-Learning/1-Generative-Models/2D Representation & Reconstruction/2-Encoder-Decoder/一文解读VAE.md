@@ -34,7 +34,7 @@ $$
 
 首先我们有一批数据样本 $\mathbf{x}= \{x_1, x_2, \dots, x_n\}$，现要估计它的分布 $p(x)$。
 
-我们要得到的结果是 $p_\theta (x|z)$ 然后都在讲 怎么推断 后验分布 p(z|x)
+我们要得到的结果是 $p_\theta (x|z)$ 然后都在讲 怎么推断 后验分布 $p(z|x)$
 
 我们想借助隐变量 $z$ 来描述 $\mathbf{x}$ 的分布，建模成：
 $$
@@ -95,15 +95,11 @@ D_{K L}(q(Z \mid X) \| p(Z \mid X))=\mathbb{E}[\log (q(Z \mid X))-\log (p(Z \mid
 =D_{K L}[q(Z \mid X)|| p(Z)]-\mathbb{E}[\log (p(X \mid Z))]+\log (p(X))
 \end{gathered}
 $$
-等号右边第一项不就是似然值吗？第二项只要实现把先验概率 ![[公式]](https://www.zhihu.com/equation?tex=p%28Z%29) 定义好之后，也可以进行计算。
+等号右边第一项不就是似然值吗？第二项只要实现把先验概率$p(Z)$定义好之后，也可以进行计算。
 
 
 
 因为 $p(x|z)$ 形如 decoder，而 $q(z|x)$ 形如 Encoder，因此得名 VAE。和 Auto-Encoder 并没有那么大的关系
-
-
-
-
 
 
 

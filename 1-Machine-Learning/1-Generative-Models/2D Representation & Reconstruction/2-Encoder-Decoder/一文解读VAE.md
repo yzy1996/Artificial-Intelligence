@@ -8,7 +8,35 @@
 
 
 
-像GAN一样，VAE也是想要学习一个生成模型以实现一个从低维 latent vector $z \in \mathbb{R}^d$ 到高维 $x \in \mathbb{D}$ 的映射 $g: \mathcal{Z} \rightarrow \mathcal{X}$。VAE的优化目标是最大化数据集数据的似然：
+背景介绍，VAE是属于【基于似然函数】的一类方法，还包括了有normalizing flows，EBM
+
+VAEs maximize the mutual information between the input and latent variables,
+
+
+
+首先我们有一批数据样本 $\mathbf{x}= \{x_1, x_2, \dots, x_n\}$，假设这些数据是独立同分布的，只是我们不知道这个分布的参数化形式。就像高斯分布我们要估计它的$(\mu, \sigma)$一样，现在要估计这批数据的分布参数，记作：$p(\mathbf{x};\theta)$，其中 $\theta$ 就是我们要估计的参数。
+
+那么很自然，我们可以用极大似然估计来求解：
+$$
+p(\mathbf{x};\theta) = \prod_{i=1}^{n} p\left(x_{i} ; \theta\right)
+$$
+一般实际使用的是求解一个极小化对数似然的问题：
+$$
+\theta^* = \arg\min_\theta -\sum_{i=1}^n \log p (\mathbf{x};\theta)
+$$
+但是 $\theta$ 是会很复杂的，不再像高斯分布那样可以数学描述，因此引入隐变量模型，记作：
+$$
+p(\mathbf{x}) = \int p\left(\mathbf{x}, z;\theta\right) dz = \int p\left(\mathbf{x}| z;\theta\right) p(z)dz
+$$
+其中，$z$ 就是隐变量，通常假设 $z \sim \mathcal{N}(0, I)$，数据 $x$ 依赖 $z$ 生成：$x = f(z;\theta)$ 。这样就将一个概率密度估计问题转化成函数逼近问题，利用一个隐变量模型将一个简单的概率分布映射到一个更复杂的任意分布上。
+
+
+
+
+
+
+
+像GAN一样（假设阅读的你已经很熟悉GAN了），VAE也是想要学习一个生成模型以实现一个从低维 latent vector $z \in \mathbb{R}^d$ 到高维 $x \in \mathbb{D}$ 的映射 $g: \mathcal{Z} \rightarrow \mathcal{X}$。VAE的优化目标是最大化数据集数据的似然：
 $$
 \log p(X) = \sum_{i=1}^N \log \int p\left(x_{i}, z\right) dz
 $$
@@ -32,13 +60,13 @@ $$
 
 
 
-首先我们有一批数据样本 $\mathbf{x}= \{x_1, x_2, \dots, x_n\}$，现要估计它的分布 $p(x)$。
+
 
 我们要得到的结果是 $p_\theta (x|z)$ 然后都在讲 怎么推断 后验分布 $p(z|x)$
 
 我们想借助隐变量 $z$ 来描述 $\mathbf{x}$ 的分布，建模成：
 $$
-q(x)=\int q(x, z) d z, \quad q(x, z)=q(x \mid z) q(z)
+q(x)=\int q(x, z) d z, \quad q(x, z)=q(x | z) q(z)
 $$
 $x$ 和 $z$ 的联合分布还可以写成 $p(x,z) = p(z|x) p(x)$。因此我们想用 $q(x,z)$ 来近似 $p(x,z)$。因此直接用KL散度来衡量（KL散度越小越好）：
 $$
@@ -103,6 +131,14 @@ $$
 
 
 
+
+$$
+KL(N(\mu, \sigma), N(0, 1)) = \log \frac{1}{\sigma} + \frac{\sigma^2 + \mu^2}{2} - \frac{1}{2}
+$$
+
+
+
+
 重参数化的作用
 
 如果直接从多元正态分布去采样，破坏了连续性，
@@ -163,7 +199,7 @@ betavae: Learning basic visual concepts with a constrained variational framework
 
 
 
-
+VAE有一个总体指标，这个总指标越小效果就越好
 
 
 

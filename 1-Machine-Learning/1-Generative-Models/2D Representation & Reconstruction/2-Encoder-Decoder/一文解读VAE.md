@@ -79,8 +79,35 @@ K L(p(x, z) \| q(x, z)) &=
 &=\mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x) \ln p(x) dz\right] + \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x)\ln \frac{p(z \mid x)}{q(x,z)} dz\right]\\
 &=\mathbb{E}_{x \sim p(x)}\left[\ln p(x) \int p(z \mid x) dz\right] + \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x)\ln \frac{p(z \mid x)}{q(x,z)} dz\right]\\
 &=\mathbb{E}_{x \sim p(x)}\left[\ln p(x) \right] + \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x)\ln \frac{p(z \mid x)}{q(x,z)} dz\right]\\
+&=\mathbb{E}_{x \sim p(x)}\left[\ln p(x) \right] +  \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x)\ln \frac{p(z \mid x)}{q(x \mid z)q(z)} dz\right]\\
+&=\mathbb{E}_{x \sim p(x)}\left[\ln p(x) \right] +  \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x) \ln \frac{p(z \mid x)}{q(z)} dz -\int p(z \mid x)\ln q(x \mid z)dz \right]\\
+&=\mathbb{E}_{x \sim p(x)}\left[\ln p(x) \right] +  \mathbb{E}_{x \sim p(x)}\left[KL\left(p(z \mid x) \| q(z)\right) - \mathbb{E}_{z \sim p(z \mid x)}[\ln q(x \mid z)]\right]
 \end{aligned}
 $$
+移项后得到：
+$$
+K L(p(x, z) \| q(x, z)) - \mathbb{E}_{x \sim p(x)}\left[\ln p(x) \right] = \mathbb{E}_{x \sim p(x)}\left[KL\left(p(z \mid x) \| q(z)\right) - \mathbb{E}_{z \sim p(z \mid x)}[\ln q(x \mid z)]\right]
+$$
+左边的第一项是要最小化，第二项是要最大化（取负号后也是最小化），因此最小化左侧，等价于最小化右侧，所以我们的优化目标函数就是：
+$$
+\mathcal{L} = 
+$$
+而右侧又被称为 ELBO Evidence lower bound，证据下界
+$$
+ELBO =
+$$
+最终要优化的是两个网络的参数，
+
+
+
+
+
+
+
+
+
+因为开头的 $KL\left(p(x,z) \| q(x,z)\right) \geq 0$ ，因此
+
 注意第一项可以看成是一个常数。因此我们可以将求KL散度的问题转化为一个新的损失函数为：
 $$
 \begin{aligned}

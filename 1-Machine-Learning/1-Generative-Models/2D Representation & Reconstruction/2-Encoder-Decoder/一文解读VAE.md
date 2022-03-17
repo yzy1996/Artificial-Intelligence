@@ -90,11 +90,11 @@ K L(p(x, z) \| q(x, z)) - \mathbb{E}_{x \sim p(x)}\left[\ln p(x) \right] = \math
 $$
 左边的第一项是要最小化，第二项是要最大化（取负号后也是最小化），因此最小化左侧，等价于最小化右侧，所以我们的优化目标函数就是：
 $$
-\mathcal{L} = 
+\mathcal{L} = \mathbb{E}_{x \sim p(x)}\left[KL\left(p(z \mid x) \| q(z)\right) - \mathbb{E}_{z \sim p(z \mid x)}[\ln q(x \mid z)]\right]
 $$
-而右侧又被称为 ELBO Evidence lower bound，证据下界
+而右侧取负号会被称为 ELBO Evidence lower bound，证据下界
 $$
-ELBO =
+ELBO = 
 $$
 最终要优化的是两个网络的参数，
 

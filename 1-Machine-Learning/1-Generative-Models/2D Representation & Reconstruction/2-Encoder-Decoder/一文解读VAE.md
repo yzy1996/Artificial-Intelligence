@@ -92,37 +92,31 @@ $$
 $$
 \mathcal{L} = \mathbb{E}_{x \sim p(x)}\left[KL\left(p(z \mid x) \| q(z)\right) - \mathbb{E}_{z \sim p(z \mid x)}[\ln q(x \mid z)]\right]
 $$
-而右侧取负号会被称为 ELBO Evidence lower bound，证据下界
+而右侧取负号会被称为 证据下界 Evidence lower bound (ELBO)，
+
+> 因为 $p(x)$ 通常被称为 evidence，
+
+是需要被最大化的
 $$
-ELBO = 
+ELBO = \mathbb{E}_{x \sim p(x)}\left[\mathbb{E}_{z \sim p(z \mid x)}[\ln q(x \mid z)] - KL\left(p(z \mid x) \| q(z)\right)\right]
 $$
 最终要优化的是两个网络的参数，
 
 
 
+当我们希望$p(z|x)$ 是服从标准正态分布$\mathcal{N}(0, I)$时
 
 
-
-
-
-
-因为开头的 $KL\left(p(x,z) \| q(x,z)\right) \geq 0$ ，因此
-
-注意第一项可以看成是一个常数。因此我们可以将求KL散度的问题转化为一个新的损失函数为：
 $$
-\begin{aligned}
-\mathcal{L} 
-&= \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x)\ln \frac{p(z \mid x)}{q(x,z)} dz\right]\\
-&= \mathbb{E}_{x \sim p(x)}\left[\int p(z \mid x)\ln \frac{p(z \mid x)}{q(x \mid z)q(z)} dz\right]\\
-&= \mathbb{E}_{x \sim p(x)}\left[-\int p(z \mid x)\ln q(x \mid z)dz + \int p(z \mid x) \ln \frac{p(z \mid x)}{q(z)} dz\right]\\
-&= \mathbb{E}_{x \sim p(x)}\left[\mathbb{E}_{z \sim p(z \mid x)}[-\ln q(x \mid z)]+KL\left(p(z \mid x) \| q(z)\right)\right]
-\end{aligned}
+p(z)=\int p(z \mid x) p(x) \mathrm{d} x=\int \mathcal{N}(0, I) p(x) \mathrm{d} x=\mathcal{N}(0, I) \int p(x) \mathrm{d} x=\mathcal{N}(0, I)
 $$
-最终目的就是优化 $q(x \mid z), q(z)$ 让 $\mathcal{L}$ 最小。
+
+
+KL实现，如果没有这一项，网络会倾向于使得方差为0，
 
 
 
-（先休息一下）
+我们假设后验分布也是服从高斯的，encoder网络预测的就是高斯分布的均值和方差，（实际中预测的是 log ）
 
 
 
@@ -157,16 +151,15 @@ $$
 因为 $p(x|z)$ 形如 decoder，而 $q(z|x)$ 形如 Encoder，因此得名 VAE。和 Auto-Encoder 并没有那么大的关系
 
 
-
-
 $$
 KL(N(\mu, \sigma), N(0, 1)) = \log \frac{1}{\sigma} + \frac{\sigma^2 + \mu^2}{2} - \frac{1}{2}
 $$
 
 
 
-
 重参数化的作用
+
+从 $q(z| x)$ 采样是无法计算梯度的
 
 如果直接从多元正态分布去采样，破坏了连续性，
 
@@ -232,6 +225,18 @@ VAE有一个总体指标，这个总指标越小效果就越好
 
 
 
+两个多元高斯分布的KL散度计算：
+$$
+KL(p_1 \| p_2) = \frac{1}{2}\left(\operatorname{tr}\left(\boldsymbol{\Sigma}_{2}^{-1} \boldsymbol{\Sigma}_{1}\right)+\left(\boldsymbol{\mu}_{\mathbf{2}}-\boldsymbol{\mu}_{\mathbf{1}}\right)^{\top} \boldsymbol{\Sigma}_{1}^{-1}\left(\boldsymbol{\mu}_{\mathbf{2}}-\boldsymbol{\mu}_{\mathbf{1}}\right)-n+\log \frac{\operatorname{det}\left(\boldsymbol{\Sigma}_{\mathbf{2}}\right)}{\operatorname{det}\left(\boldsymbol{\Sigma}_{\mathbf{1}}\right)}\right)
+$$
+
+$$
+D_{\mathrm{KL}}\left(q_{\phi}\left(\mathbf{z} \mid \mathbf{x}^{(i)}\right) \| p_{\theta}(\mathbf{z})\right)=\frac{1}{2} \sum_{j=0}^{n}\left(\left(\sigma_{j}^{(i)}\right)^{2}+\left(\mu_{j}^{(i)}\right)^{2}-1-\log \left(\left(\sigma_{j}^{(i)}\right)^{2}\right)\right)
+$$
+
+
+
+
 
 
 
@@ -241,3 +246,9 @@ VAE有一个总体指标，这个总指标越小效果就越好
 [苏剑林-变分自编码器（一）：原来是这么一回事](https://kexue.fm/archives/5253)
 
 [苏剑林-变分自编码器（二）：从贝叶斯观点出发](https://kexue.fm/archives/5343)
+
+
+
+https://zhuanlan.zhihu.com/p/249296925
+
+https://zhuanlan.zhihu.com/p/452743042

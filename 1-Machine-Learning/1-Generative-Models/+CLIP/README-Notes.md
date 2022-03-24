@@ -65,7 +65,7 @@ They explore three ways for text-driven image manipulation:
 
 > **Details**
 
-something
+
 
 </details>
 

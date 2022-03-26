@@ -4,6 +4,8 @@
 
 
 
+数据集的训练流程是：1.创建Dataset，2.Dataset传递给DataLoader
+
 ## Dataset
 
 以图片为例，我们通常理解的数据集是放在文件夹里的一系列图片，而要转换为Pytorch所能处理的，需要借助 `torch.utils.data.Dataset()` 这样一个类，这个类表示了一个从 索引(index) 到 样本(sample) 的映射(map)。
@@ -72,21 +74,11 @@ dest_sub = Subset(dset, indices)
 
 
 
-
-
-
-
 有了这样一个映射后，我们就只需要决定如何采样index，就能获取图像数据；而这样的采样需要 `Sampler` 完成，可以有顺序的，也可以有乱序的等等
 
 
 
-
-
-
-
 torch.utils.data.DataLoader()
-
-
 
 ```python
 torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False, sampler=None,
@@ -97,3 +89,16 @@ torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False, sampler=None,
 ```
 
 - dataset 支持 `[ | ]` 两种，
+
+
+
+```python
+for i in range(epoch):
+  for index, (img, label) in enumerate(dataloader):
+    pass
+```
+
+实际上dataloader按照其参数sampler规定的策略调用其dataset的getitem
+
+而shuffle就决定了是顺序采样还是乱序采样，然后再将采样的结果组成一个batch，
+

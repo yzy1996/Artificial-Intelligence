@@ -8,13 +8,13 @@
 
 **1. mapping network**
 
-![image-20210204223007146](C:\Users\zhiyuyang4\AppData\Roaming\Typora\typora-user-images\image-20210204223007146.png)
+
 
 
 
 **2. FiLM SIREN**
 
-<img src="C:\Users\zhiyuyang4\AppData\Roaming\Typora\typora-user-images\image-20210204223036123.png" alt="image-20210204223036123" style="zoom:50%;" />
+
 
 
 

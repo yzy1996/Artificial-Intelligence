@@ -109,7 +109,11 @@ According to the modeling purpose and the problem, machine learning algorithms c
 
 《MIT Deep Learning Book》Ian Goodfellow et al [book](http://www.deeplearningbook.org/)
 
+[Dive into Deep Learning](http://d2l.ai/index.html) 
 
+> **Interactive** deep learning book with code, math, and discussions
+>
+> Implemented with **NumPy/MXNet**, **PyTorch**, and **TensorFlow**
 
 
 

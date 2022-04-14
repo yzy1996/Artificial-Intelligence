@@ -4,19 +4,29 @@ There models try to model the real world by generating realistic samples from la
 
 
 
-likelihood-based frameworks for deep generative learning:
+<Generating images with sparse representations> divide deep generative models broadly into three categories:
 
-- normalizing flows
-- autoregressive models
-- Variational autoencoder (VAE)
-  - :yum: fast | tractable sampling | easy-to-access encoding networks 
-- deep Energy-based models
+- Generative Adversarial Networks
+
+  > use discriminator networks that are trained to distinguish samples from generator networks and real examples
+
+- Likelihood-based Model
+
+  > directly optimize the model log-likelihood or the evidence lower bound.
+
+  - Variational autoencoder (VAE) 
+
+    > :yum: fast | tractable sampling | easy-to-access encoding networks 
+
+  - normalizing flows
+
+  - autoregressive models
+
+- Energy-based Models
+
+  > estimate a scalar energy for each example that corresponds to an unnormalized log-probability
 
 
-
-adversarial game:
-
-generative adversarial networks (GAN)
 
 
 

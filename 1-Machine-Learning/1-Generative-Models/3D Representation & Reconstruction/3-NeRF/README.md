@@ -2,6 +2,14 @@
 
 > 这一个笔记主要围绕NeRF相关展开，通过相关文献，整理从为什么NeRF会诞生，到NeRF还存在的问题。
 >
+> 学nerf不得不看的几个链接
+>
+> https://dellaert.github.io/NeRF/
+>
+> https://paperswithcode.com/method/nerf
+>
+> https://github.com/vsitzmann/awesome-implicit-representations
+>
 > related link yenchen's [awesome-NeRF](https://github.com/yenchenlin/awesome-NeRF)
 
 

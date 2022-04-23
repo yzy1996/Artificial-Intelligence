@@ -1,30 +1,16 @@
-# SDFs
+# signed distance functions (SDFs)
 
-> signed distance functions
-
-
+> 
 
 
 
-
-
-
-
-For a volume $\mathcal{M} \sim \mathbb{R}^3$
-
-we want to get its surface $\mathcal{S}$
-
-
-
-SDFs are functions $f: \mathbb{R}^3 \mapsto \mathbb{R}$ where $d = f(x)$ is the shortest signed distance from a point $\mathbf{x}$ to the surface
-
-sign indicates whether $\mathbf{x}$ is inside or outside of 
+zero level-set
 
 
 
 学出很多等高面，然后0登高面就是表面
 
-zero level-set
+
 
 
 

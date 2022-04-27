@@ -8,3 +8,8 @@
 
 Ethan Perez, Florian Strub, Harm de Vries, Vincent Dumoulin, Aaron Courville
 
+
+
+
+
+Fourier Features Let Networks LearnHigh Frequency Functions in Low Dimensional Domains

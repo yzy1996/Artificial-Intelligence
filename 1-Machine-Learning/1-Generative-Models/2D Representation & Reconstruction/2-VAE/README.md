@@ -1,5 +1,11 @@
 # Variational Auto-Encoder (VAE)
 
+学习资料
+
+https://jaan.io/what-is-variational-autoencoder-vae-tutorial/
+
+
+
 The goal of VAEs is to train a genrative model in the form of $p(x, z) = p(z) p(x|z)$ where $p(z)$ is a prior distribution over latent variables $z$ and $p(x|z)$ is the likelihood function or decoder that generates data $x$ given latent variables $z$. 
 
 Since the true posterior $p(z|x)$ is in general intractable, the generative model is trained with the aid of an approximate posterior distribution or encoder $q(z|x)$.

@@ -12,6 +12,8 @@
 
 [GRF](#GRF)
 
+[NeRF-Editing](#NeRF-Editing)
+
 ---
 
 <span id="GRAF"></span>
@@ -107,28 +109,24 @@ $$
 
 ---
 
-<span id="NeRF++"></span>
-[Editing Conditional Radiance Fields](https://arxiv.org/pdf/2105.06466.pdf)  
-**[`Arxiv 2021`] (`MIT`)**  
-*Steven Liu, Xiuming Zhang, Zhoutong Zhang, Richard Zhang, Jun-Yan Zhu, Bryan Russell*
+<span id="NeRF-Editing"></span>
+[NeRF-Editing: Geometry Editing of Neural Radiance Fields](https://arxiv.org/abs/2205.04978)  
+*Yu-Jie Yuan, Yang-Tian Sun, Yu-Kun Lai, Yuewen Ma, Rongfei Jia, Lin Gao*  
+**[`CVPR 2022`] (`CAS`)**
 
 <details><summary>Click to expand</summary>
-
-<div align=center><img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/20210908171414.png"/></div>
+<div align=center><img width="700" src="https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/image-20220512084132617.png"/></div>
 
 > **Summary**
 
-- resolve shape-radiance ambiguity (incorrect geometry bring correct rendering images because the radiance fields are degenerate), 想象不规则的体退化成一个球面，表面的颜色能够渲染出对应的图像，在一定范围内是可以过拟合学到的。**本质是缺少约束带来的过拟合问题**。
-- remedy parameterization of unbounded scenes in the case of 360° captures.
+- Establish a correspondence between the extracted explicit mesh representation and the implicit neural representation of the target scene.
+- Users first deform the mesh representation of the scene (well developed mesh-based deformation methods) and then bend the camera rays by introducing a tetragedra (四面体) mesh as a proxy.
 
 > **Details**
 
-- As $\sigma$ deviates from the correct shape, c must in general become a high-frequency function with respect to d to reconstruct the input images. For the correct shape, the surface light field will generally be much smoother (in fact, constant for Lambertian materials). **The higher complexity required for incorrect shapes is more difficult to represent with a limited capacity MLP.**
-
-
-
-如何来实验验证，是重点，可以学习一下是怎么开展的。
+- 
 
 </details>
 
 ---
+

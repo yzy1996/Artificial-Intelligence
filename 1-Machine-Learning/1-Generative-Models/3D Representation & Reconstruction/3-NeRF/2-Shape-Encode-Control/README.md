@@ -62,4 +62,8 @@ Category-Level NeRF
   *Yu-Jie Yuan, Yang-Tian Sun, Yu-Kun Lai, Yuewen Ma, Rongfei Jia, Lin Gao*  
   **[`CVPR 2022`] (`CAS`)**
   
+- [SPAGHETTI: Editing Implicit Shapes Through Part Aware Generation](https://arxiv.org/abs/2201.13168)  
+  *Amir Hertz, Or Perel, Raja Giryes, Olga Sorkine-Hornung, Daniel Cohen-Or*  
+  **[`arXiv 2022`] (`Tel Aviv University`)**
+  
 

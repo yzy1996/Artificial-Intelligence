@@ -34,7 +34,7 @@ VQ (Vector Quantisation) 指的是
 
 
 
-z空间是由一个codebook（例如m个 $e_1, \dots, e_m$）构成的，输入图片经过encoder得到z，然后找到最接近的e，然后将这个e输入decoder。那如何通过有限个e来重建x呢？特别的是ecoder会输出多个向量z
+z空间是由一个codebook（例如m个 $e_1, \dots, e_m$）构成的，输入图片经过encoder得到z，然后找到最接近的e，然后将这个e输入decoder。那如何通过有限个e来重建x呢？特别的是encoder会输出多个向量z
 
 ![image-20220503213714623](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/image-20220503213714623.png)
 
@@ -58,7 +58,7 @@ $$
 \sum_j^{n_i} \|z_{i,j} - e_i\|
 \\
 e_i = \frac{1}{n_i} \sum_j^{n_i} z_{i,j}
-\\
+\\
 $$
 当使用minibatches训练时，由于数据量不足，这么更新是不准确的，因此使用指数滑动平均来更新 e_i
 

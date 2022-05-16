@@ -18,7 +18,11 @@ A collection of resources on 3D representation and reconstruction from multi-vie
 
 **News:** 
 
-Latest 3D dataset---[CO3D](https://ai.facebook.com/datasets/co3d-downloads/) by Facebook
+Latest 3D dataset:
+
+[CO3D](https://ai.facebook.com/datasets/co3d-downloads/) by Facebook
+
+[Google Scanned Objects](https://app.gazebosim.org/GoogleResearch/fuel/collections/Google%20Scanned%20Objects) by Google
 
 
 

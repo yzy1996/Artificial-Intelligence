@@ -1,6 +1,6 @@
 # Reconstruct Avatars
 
-> human digs虚拟形象
+> human digitization虚拟形象
 
 
 

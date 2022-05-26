@@ -251,8 +251,6 @@ opacity value
 
 
 
-
-
 ### Controllability & Edit
 
 > compositional control of object location
@@ -290,19 +288,13 @@ opacity value
   Xiuming Zhang, Pratul P. Srinivasan, Boyang Deng, Paul Debevec, William T. Freeman, Jonathan T. Barron  
   **[`arXiv 2021`] (`MIT, Google`)**
 
-
-
 - [CoNeRF: Controllable Neural Radiance Fields](https://arxiv.org/pdf/2112.01983.pdf)  
   Kacper Kania, Kwang Moo Yi, Marek Kowalski, Tomasz Trzciński, Andrea Tagliasacchi  
   [British Columbia, ]
 
 
 
-
-
 ### 4. Composition
-
-
 
 - [GIRAFFE: Representing Scenes as Compositional Generative Neural Feature Fields](https://arxiv.org/pdf/2011.12100.pdf)  
   *Michael Niemeyer, Andreas Geiger*  
@@ -344,9 +336,31 @@ iNeRF and NeRF-- optimize camera pose along with other parameters when training 
 
 ### 6. Fast-Convergence
 
+- [FastNeRF: High-Fidelity Neural Rendering at 200FPS](https://arxiv.org/abs/2103.10380)  
+  *Stephan J. Garbin, Marek Kowalski, Matthew Johnson, Jamie Shotton, Julien Valentin*  
+  **[`arXiv 2021`] (``)** 
+- [KiloNeRF: Speeding up Neural Radiance Fields with Thousands of Tiny MLPs](https://arxiv.org/abs/2103.13744)  
+  *Christian Reiser, Songyou Peng, Yiyi Liao, Andreas Geiger*  
+  **[`ICCV 2021`] (``)** 
+- [TensoRF: Tensorial Radiance Fields](https://arxiv.org/abs/2203.09517)  
+  *Anpei Chen, Zexiang Xu, Andreas Geiger, Jingyi Yu, Hao Su*  
+  **[`arXiv 2022`] (``)** 
+
 
 
 ### 7. Few-Samples
+
+- [Putting NeRF on a Diet: Semantically Consistent Few-Shot View Synthesis](https://arxiv.org/abs/2104.00677)  
+  *Ajay Jain, Matthew Tancik, Pieter Abbeel*  
+  **[`ICCV 2021`] (``)**
+
+- [InfoNeRF: Ray Entropy Minimization for Few-Shot Neural Volume Rendering]()  
+  *Mijeong Kim, Seonguk Seo, Bohyung Han*  
+  **[`CVPR 2022`]**
+
+- [SinNeRF: Training Neural Radiance Fields on Complex Scenes from a Single Image](https://arxiv.org/abs/2204.00928)  
+  *Dejia Xu, Yifan Jiang, Peihao Wang, Zhiwen Fan, Humphrey Shi, Zhangyang Wang*  
+  **[`arXiv 2022`] (``)** 
 
 
 
@@ -380,8 +394,6 @@ $$
 $$
 where $t$ is a scalar input, and $L$ the number of frequency octaves.
 
-
-
 **(2) SIREN**
 
 
@@ -413,13 +425,7 @@ FFHQ
 
 
 
-
-
 Coordinate-based Image
-
-
-
-
 
 
 

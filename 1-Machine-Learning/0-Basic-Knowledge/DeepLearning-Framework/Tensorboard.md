@@ -16,3 +16,15 @@ tensorboard --logdir [folder]
 http://localhost:6006/
 ```
 
+
+
+
+
+服务器端使用
+
+```
+ssh -L 16006:127.0.0.1:6006 username@remote_server_ip
+tensorboard --logdir=XXX --port=6006
+127.0.0.1:16006/
+```
+

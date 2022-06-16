@@ -38,7 +38,7 @@ z空间是由一个codebook（例如m个 $e_1, \dots, e_m$）构成的，输入�
 
 ![image-20220503213714623](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/image-20220503213714623.png)
 
-> CNN输出 $m \times n$ 个 D 维向量 (用z表示)，codebook 是 $K$ 个 D 维向量 (用e表示)。然后通过算法找到这 $m \times n$ 个最接近的 e，图中用数字标注出来了对应关系。总共有 $K^{(m\times n)}$ 种组合方式，也就是可以重建出 $K^{(m\times n)}$ 个不同的图像结果。
+> CNN输出 $m \times n$ 个 D 维向量 (用z表示)，codebook 是 $K$ 个 D 维向量 (用e表示)。然后通过算法找到这 $m \times n$ 个最接近的 e，图中用数字标注出来了对应关系。总共有 $K^{(m\times n)}$ 种组合方式，也就是可以重建出 $K^{(m\times n)}$ 个不同的图像局部结果。
 
 $$
 z_{q}(x)=e_{k}, \quad \text { where } \quad k=\operatorname{argmin}_{j}\left\|z_{e}(x)-e_{j}\right\|_{2}
@@ -71,6 +71,8 @@ $$
 在训练过程中，隐向量满足均匀分布。训练完成后，可以重新学习一个分布来生成有意义的结果。也就是说codebook是杂乱的，你怎么选择一个序列出来生成呢。训练一个自回归模型，一个接一个的来生成z，这样最后的 $m \times n$ 个 z 就是有关联的，然后能生成想要的图片。
 
 
+
+他的好处是：
 
 
 

@@ -1,6 +1,8 @@
 # <p align=center>`3D Object Manipulation` </p>
 
-A collection of resources on 3D object manipulation.
+A collection of resources on 3D object manipulation with neural radiance field.
+
+
 
 ## Contributing
 
@@ -12,7 +14,7 @@ Feedback and contributions are welcome! If you think I have missed out on someth
 **[`Conference/Journal Year`] (`Institution`)** [[Github](link)] [[Project](link)]
 ```
 
-:exclamation: Now you can use this [script](https://github.com/yzy1996/Python-Code/tree/master/Python%2BarXiv) to automatically generate the above text.
+:smile: Now you can use this [script](https://github.com/yzy1996/Python-Code/tree/master/Python%2BarXiv) to automatically generate the above text.
 
 :warning: To better display the formula, you'd better local download this file and view it.
 
@@ -20,33 +22,37 @@ Feedback and contributions are welcome! If you think I have missed out on someth
 
 ## Introduction
 
+**[Background]** The recently rising advances of implicit volumetric representation blew us away in capturing 3D structures. Among these works, neural radiance fields (NeRF) utilize a volume rendering technique to render implicit neural representations (INR) for high-quality novel view synthesis, providing an ideal representation for 3D content.
 
+**[Task]** Editing NeRF (e.g., deforming the shape or changing the appearance color) is an extraordinarily challenging but valuable task that energizes more exciting applications (e.g., 3D content re-creation). Hope to support users editing the attributes of 3D shape, and resulting photo-realistic rendering from novel views.
 
-We hope to enable users to perform user-controlled shape deformation in the scene.
-
-our control should be operated on the whole 3D shape, thus we can synthesizes the novel view images of the edited scene without re-training the network.
-
-
-
-support user to edit the attributes of 3D shape, and resulting photo realistic rendering from novel views.
+**[Obstacles]** Unlike 2D image manipulation, multi-view dependency of 3D objects makes it more difficult. The editing or control will be directly operated on the whole 3D representation, thus we can synthesize the novel view images of the edited scene without re-training the network.
 
 
 
-What we can control:
+## Methods & Literature
 
-- color editing 
-- object translation and rotation
-- shape deformation 
+The core is to disentangle the latent shape and appearance code, different code determines different result.
+
+To be solved:
+
+- more freedom in shape manipulation
+- fast inference
+- friendly interactive manner
+
+
+
+Conditional NeRF: train NeRF on a category of shapes and enables manipulation via latent space interpolations utilizing the pre-trained models.
 
 
 
 
 
+### CLIP
 
 
-核心是解耦出shape and appearance，用不同的 latent code来表示，这样就可以做到根据code生成。
 
-Category-Level NeRF
+
 
 
 
@@ -89,3 +95,10 @@ Category-Level NeRF
   **[`arXiv 2022`] (`Tel Aviv University`)**
   
 
+
+
+
+
+[CLIP-NeRF: Text-and-Image Driven Manipulation of Neural Radiance Fields](https://arxiv.org/abs/2112.05139)  
+*Can Wang, Menglei Chai, Mingming He, Dongdong Chen, Jing Liao*  
+**[`CVPR 2022`] (`CityU`)**

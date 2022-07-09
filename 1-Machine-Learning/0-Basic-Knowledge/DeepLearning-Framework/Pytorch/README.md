@@ -195,3 +195,49 @@ tensor([ 1,  2,  3])
 array([1,  2,  3])
 ```
 
+
+
+
+
+model.named_parameters()
+
+会输出 weight and bias
+
+
+
+net.parameters()
+
+
+
+model.state_dict() 带括号和不带括号
+
+model.parameters()
+
+
+
+_latents.z.weight
+
+
+
+
+
+for var_name in optimizer.state_dict():
+    print(var_name,'\t',optimizer.state_dict()[var_name])
+
+，不同的是，model.parameters()方法返回的是一个生成器generator，每一个元素是从开头到结尾的参数，parameters没有对应的key名称，是一个由纯参数组成的generator，而state_dict是一个字典，包含了一个key。
+
+
+
+for para in model.named_parameters(): # 返回的每一个元素是一个元组 tuple 
+    '''
+    是一个元组 tuple ,元组的第一个元素是参数所对应的名称，第二个元素就是对应的参数值
+
+
+
+named_parameters，而且parameters正是通过named_parameters来实现的，
+
+
+
+
+
+https://blog.csdn.net/qq_27825451/article/details/95888267

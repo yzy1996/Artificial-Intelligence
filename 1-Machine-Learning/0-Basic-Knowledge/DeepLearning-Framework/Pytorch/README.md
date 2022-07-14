@@ -241,3 +241,23 @@ named_parameters，而且parameters正是通过named_parameters来实现的，
 
 
 https://blog.csdn.net/qq_27825451/article/details/95888267
+
+
+
+
+
+
+
+模型搭建好后，初始化的参数有 weight 和 bias (如果你设定了的话)。
+
+model1.parameters()
+
+for name, param in model1.named_parameters():
+    print(name, param)
+
+
+
+self.name确定了
+
+
+

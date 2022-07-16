@@ -4,7 +4,7 @@ Max, N.: Optical models for direct volume rendering. IEEE Transactions on Visual
 
 
 
-
+![image-20220715163557865](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/image-20220715163557865.png)
 
 NeRF 原文中将 volume density $\sigma(\boldsymbol{x})$ 解释为：
 
@@ -84,6 +84,8 @@ https://www.youtube.com/watch?v=otly9jcZ0Jg&ab_channel=NeuralRendering
 
 P(hit at t) = $\sigma(t)dt$
 
+> 为什么会有dt，是看成在t周围有一个小区间。这样才从概率密度到了概率，因为概率是概率密度的积分，一小点上的概率
+
 为了判断t是不是第一次被打到，就需要知道在t之前一次都没有被打到的概率，称为透射率(transmittance)，
 
 P(no hits before t) = $T(t)$
@@ -98,7 +100,58 @@ $$
 T(t+dt) &= T(t) \times (1 - \sigma(t)dt) \\
 \text{Split up differential} \quad T(t) + T^\prime(t)dt &= T(t) - T(t)\sigma(t)dt \\
 \text{Rearange} \quad \frac{T^\prime(t)}{T(t)} &= - \sigma(t) \\
-\text{Intergrate} \quad \log T(t) &= \int_{t_0}^t - \sigma(s)ds \\
-\text{Exponential} \quad T(t) &= \exp(\int_{t_0}^t - \sigma(s)ds)
+\text{Intergrate} \quad \log T(t) &= \int_{t_0}^t - \sigma(t)dt \\
+\text{Exponential} \quad T(t) &= \exp(\int_{t_0}^t - \sigma(t)dt) 
 \end{align}
 $$
+P(first hit at t) = P(no hits before t) * P(hit at t) = $T(t)\sigma(t)dt$
+
+点 t 处是有颜色的，加上去就是 $\int_{t_{0}}^{t_{1}} T(t) \sigma(t) \mathbf{c}(t) d t$
+
+
+
+前面的会遮挡后面的。
+
+
+
+
+$$
+\begin{align}
+\int T(t) \sigma(t) \mathrm{c}(t) d t &\approx \sum_{i=1}^{n} \int_{t_{i}}^{t_{i+1}} T(t) \sigma_{i} \mathrm{c}_{i} d t \\
+\text{Substitute} &= \sum_{i=1}^{n} T_{i} \sigma_{i} \mathbf{c}_{i} \int_{t_{i}}^{t_{i+1}} \exp \left(-\sigma_{i}\left(t-t_{i}\right)\right) d t \\
+&=\sum_{i=1}^{n} T_{i} \sigma_{i} \mathbf{c}_{i} \frac{\exp \left(-\sigma_{i}\left(t_{i+1}-t_{i}\right)\right)-1}{-\sigma_{i}} \\
+&=\sum_{i=1}^{n} T_{i} \mathbf{c}_{i}\left(1-\exp \left(-\sigma_{i} \delta_{i}\right)\right)
+\end{align}
+$$
+
+$$
+\text { For } t \in\left[t_{i}, t_{i+1}\right], T(t)=\exp \left(-\int_{t_{1}}^{t_{i}} \sigma_{i} d s\right) \exp \left(-\int_{t_{i}}^{t} \sigma_{i} d s\right)
+$$
+
+$$
+\exp \left(-\sum_{j=1}^{i-1} \sigma_{j} \delta_{j}\right)=T_{i} \quad \exp \left(-\sigma_{i}\left(t-t_{i}\right)\right)
+$$
+
+衡量被前面部分遮挡的有多少 | 又有多少被现在这块遮挡了
+
+
+
+
+
+可以单独拎出来看 $\alpha_i = 1 - \exp(-\sigma_i \delta_i)$
+
+这样我们前面的表达式，substitute that back into the equations we jus tderived 可以写成
+$$
+\text{color} =\sum_{i=1}^{n} T_{i} \alpha_{i} \mathbf{c}_{i}=\sum_{i=1}^{n} T_{i} \mathbf{c}_{i}\left(1-\exp \left(-\sigma_{i} \delta_{i}\right)\right)
+\\
+T_{i}=\prod_{j=1}^{i-1}\left(1-\alpha_{j}\right)=\exp \left(-\sum_{j=1}^{i-1} \sigma_{j} \delta_{j}\right)
+$$
+这样是可以和很多其他渲染技术统一的
+
+
+
+
+
+
+
+本来是要对光束上每一个点进行积分，

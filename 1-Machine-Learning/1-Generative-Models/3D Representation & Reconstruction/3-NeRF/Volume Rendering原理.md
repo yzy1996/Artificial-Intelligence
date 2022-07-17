@@ -1,3 +1,5 @@
+**相关文献**
+
 Kajiya, J.T., Herzen, B.P.V.: Ray tracing volume densities. Computer Graphics (SIGGRAPH) (1984)
 
 Max, N.: Optical models for direct volume rendering. IEEE Transactions on Visualization and Computer Graphics (1995)
@@ -6,9 +8,27 @@ Max, N.: Optical models for direct volume rendering. IEEE Transactions on Visual
 
 ![image-20220715163557865](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/image-20220715163557865.png)
 
+
+
+首先原文中出现的公式有这样两个：
+$$
+\begin{gather}
+C(\mathbf{r})=\int_{t_{n}}^{t_{f}} T(t) \sigma(\mathbf{r}(t)) \mathbf{c}(\mathbf{r}(t), \mathbf{d}) d t, \text { where } T(t)=\exp \left(-\int_{t_{n}}^{t} \sigma(\mathbf{r}(s)) d s\right)
+\\
+\hat{C}(\mathbf{r})=\sum_{i=1}^{N} T_{i}\left(1-\exp \left(-\sigma_{i} \delta_{i}\right)\right) \mathbf{c}_{i}, \text { where } T_{i}=\exp \left(-\sum_{j=1}^{i-1} \sigma_{j} \delta_{j}\right)
+\end{gather}
+$$
+
+
+
+
+
+
+
+
 NeRF 原文中将 volume density $\sigma(\boldsymbol{x})$ 解释为：
 
-> The volume density $\sigma(\boldsymbol{x})$ can be interpreted as the differential probability of a ray terminating at an infinitesimal particle at location x. 体积密度$\sigma(\boldsymbol{x})$ 可以解释为在位置x处无穷小粒子终止的射线的微分概率。
+> The volume density $\sigma(\boldsymbol{x})$ can be interpreted as the differential probability of a ray terminating at an infinitesimal particle at location x. 体积密度$\sigma(\boldsymbol{x})$ 可以解释为在位置x处无穷小粒子终止的射线的微分概率密度。
 
 
 $$
@@ -144,7 +164,7 @@ $$
 $$
 \text{color} =\sum_{i=1}^{n} T_{i} \alpha_{i} \mathbf{c}_{i}=\sum_{i=1}^{n} T_{i} \mathbf{c}_{i}\left(1-\exp \left(-\sigma_{i} \delta_{i}\right)\right)
 \\
-T_{i}=\prod_{j=1}^{i-1}\left(1-\alpha_{j}\right)=\exp \left(-\sum_{j=1}^{i-1} \sigma_{j} \delta_{j}\right)
+T_{i}=\prod_{j=1}^{i-1}\left(1-\alpha_{j}\right)=\exp \left(-\sum_{j=1}^{i-1} \sigma_{j} \delta_{j}\right)
 $$
 这样是可以和很多其他渲染技术统一的
 

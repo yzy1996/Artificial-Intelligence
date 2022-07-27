@@ -93,9 +93,10 @@ Conditional NeRF: train NeRF on a category of shapes and enables manipulation vi
 - [SPAGHETTI: Editing Implicit Shapes Through Part Aware Generation](https://arxiv.org/abs/2201.13168)  
   *Amir Hertz, Or Perel, Raja Giryes, Olga Sorkine-Hornung, Daniel Cohen-Or*  
   **[`arXiv 2022`] (`Tel Aviv University`)**
-  
 
-
+- [AE-NeRF: Auto-Encoding Neural Radiance Fields for 3D-Aware Object Manipulation](https://arxiv.org/abs/2204.13426)  
+  *Mira Kim, Jaehoon Ko, Kyusun Cho, Junmyeong Choi, Daewon Choi, Seungryong Kim*  
+  **[`arXiv 2022`] (`Korea University`)**
 
 
 

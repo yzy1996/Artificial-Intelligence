@@ -115,3 +115,14 @@ y = np.transpose(x, (1, 0, 2))
 
 np.linspace() 比 range() 好，因为它包含了终值
 
+
+
+
+
+
+
+
+
+排序使用：argpartition
+
+unravel_index

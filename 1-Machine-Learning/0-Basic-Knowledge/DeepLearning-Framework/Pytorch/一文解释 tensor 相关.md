@@ -103,6 +103,8 @@ xx.reshape()
 
 ### 维度变换
 
+使用einops
+
 ```python
 # 数据不变，增加一维
 

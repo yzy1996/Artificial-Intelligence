@@ -2,6 +2,8 @@
 
 > Evidence Lower Bound
 
+论证什么是，以及为什么要用ELBO，
+
 
 
 先说结论，
@@ -183,3 +185,97 @@ $$
 $$
 \text{ELBO} = E_{q} \log p(\theta, \beta, z, w \mid \alpha, \eta)-E_{q} \log q(\beta, z, \theta \mid \lambda, \phi, \gamma)
 $$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+我们有可以观察到的有限个样本 $\boldsymbol{x}$ ，我们希望最大化它的似然 $p(x)$
+
+表示似然有两种方式，
+$$
+p(x) = \int p(x, z) dz
+\\
+p(x) = \frac{p(x,z)}{p(z|x)}
+$$
+但这两种都无法直接求解
+
+因此我们引入一个新的 $q_\phi(z|x)$ 来拟合真实的后验 $p(z|x)$ 
+
+
+$$
+\begin{aligned}
+\log p(\boldsymbol{x}) &=\log p(\boldsymbol{x}) \int q_\phi(\boldsymbol{z} \mid \boldsymbol{x}) d z & &\text { (Multiply by } \left.1=\int q_\phi(\boldsymbol{z} \mid \boldsymbol{x}) d \boldsymbol{z}\right) \\
+&=\int q_\phi(\boldsymbol{z} \mid \boldsymbol{x})(\log p(\boldsymbol{x})) d z & & \text { (Bring evidence into integral) } \\
+&=\mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}[\log p(\boldsymbol{x})] & & \text { (Definition of Expectation) } \\
+&=\mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log \frac{p(\boldsymbol{x}, \boldsymbol{z})}{p(\boldsymbol{z} \mid \boldsymbol{x})}\right] & & \text { (Apply Equation 2) } \\
+&=\mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log \frac{p(\boldsymbol{x}, \boldsymbol{z}) q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}{p(\boldsymbol{z} \mid \boldsymbol{x}) q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\right] & &\text { (Multiply by } \left.1=\frac{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\right) \\
+&=\mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log \frac{p(\boldsymbol{x}, \boldsymbol{z})}{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\right]+\mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log \frac{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}{p(\boldsymbol{z} \mid \boldsymbol{x})}\right] & & \text { (Split the Expectation) } \\
+&=\mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log \frac{p(\boldsymbol{x}, \boldsymbol{z})}{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\right]+D_{\mathrm{KL}}\left(q_\phi(\boldsymbol{z} \mid \boldsymbol{x}) \| p(\boldsymbol{z} \mid \boldsymbol{x})\right) & & \text { (Definition of KL Divergence) } \\
+&\geq \mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log \frac{p(\boldsymbol{x}, \boldsymbol{z})}{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\right] & &\text { (KL Divergence always } \geq 0)
+\end{aligned}
+$$
+
+
+其实我们是想要最小化KL散度的，因此最大化ELBO其实就是间接最小化了KL散度，因为他们的和是一个定植，与优化目标以及参数无关
+
+
+
+This approach is variational, because we optimize for the best q φ(z | x) amongst a family of potential posterior distributions parameterized by φ .
+
+
+
+
+$$
+\begin{aligned}
+\text{ELBO} &:= \mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log \frac{p(\boldsymbol{x}, \boldsymbol{z})}{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\right] \\&=\mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log \frac{p_{\boldsymbol{\theta}}(\boldsymbol{x} \mid \boldsymbol{z}) p(\boldsymbol{z})}{q_{\boldsymbol{\phi}}(\boldsymbol{z} \mid \boldsymbol{x})}\right] \\
+&=\mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log p_{\boldsymbol{\theta}}(\boldsymbol{x} \mid \boldsymbol{z})\right]+\mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log \frac{p(\boldsymbol{z})}{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\right] \quad \text { (Split the Expectation) } \\
+&=\underbrace{\mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log p_{\boldsymbol{\theta}}(\boldsymbol{x} \mid \boldsymbol{z})\right]}_{\text {reconstruction term }}-\underbrace{D_{K L}\left(q_\phi(\boldsymbol{z} \mid \boldsymbol{x}) \| p(\boldsymbol{z})\right)}_{\text {prior matching term }} \quad \text { (Definition of KL Divergence) }
+\end{aligned}
+$$
+
+
+the encoder of VAE is commonly chosen to model a multivariate Gaussian with diagonal covariance, and the prior is often selected to be a standard multivariate Gaussian:
+$$
+\begin{aligned}
+q_{\boldsymbol{\phi}}(\boldsymbol{z} \mid \boldsymbol{x}) &=\mathcal{N}\left(\boldsymbol{z} ; \boldsymbol{\mu}_{\boldsymbol{\phi}}(\boldsymbol{x}), \boldsymbol{\sigma}_{\boldsymbol{\phi}}^2(\boldsymbol{x}) \mathbf{I}\right) \\
+p(\boldsymbol{z}) &=\mathcal{N}(\boldsymbol{z} ; \mathbf{0}, \mathbf{I})
+\end{aligned}
+$$
+
+
+用 Monte Carlo 采样是可以计算重建项的
+$$
+\underset{\phi, \boldsymbol{\theta}}{\arg \max } \mathbb{E}_{q_\phi(\boldsymbol{z} \mid \boldsymbol{x})}\left[\log p_{\boldsymbol{\theta}}(\boldsymbol{x} \mid \boldsymbol{z})\right]-D_{\mathrm{KL}}\left(q_\phi(\boldsymbol{z} \mid \boldsymbol{x}) \| p(\boldsymbol{z})\right) \approx \underset{\phi, \boldsymbol{\theta}}{\arg \max } \sum_{l=1}^L \log p_{\boldsymbol{\theta}}\left(\boldsymbol{x} \mid \boldsymbol{z}^{(l)}\right)-D_{\mathrm{KL}}\left(q_\phi(\boldsymbol{z} \mid \boldsymbol{x}) \| p(\boldsymbol{z})\right)
+$$
+其中 latent $\{z^{l}\}$ 是从 $q_\phi(z|x)$ 中采样的
+
+
+
+重参数化
+$$
+\boldsymbol{z}=\boldsymbol{\mu}_\phi(\boldsymbol{x})+\boldsymbol{\sigma}_\phi(\boldsymbol{x}) \odot \boldsymbol{\epsilon} \quad \text { with } \boldsymbol{\epsilon} \sim \mathcal{N}(\boldsymbol{\epsilon} ; \mathbf{0}, \mathbf{I})
+$$
+
+
+
+
+
+
+
+
+
+
+
+

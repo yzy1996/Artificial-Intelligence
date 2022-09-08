@@ -13,3 +13,16 @@
 
 Trilinear interpolation
 
+
+
+
+
+
+
+
+
+replace MLP modules by caching the whole scene in voxels
+
+
+
+tree-based 

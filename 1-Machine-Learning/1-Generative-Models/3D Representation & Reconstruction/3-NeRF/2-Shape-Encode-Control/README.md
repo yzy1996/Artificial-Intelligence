@@ -6,7 +6,7 @@ A collection of resources on 3D object manipulation with neural radiance field.
 
 ## Contributing
 
-Feedback and contributions are welcome! If you think I have missed out on something (or) have any suggestions (papers, implementations and other resources), feel free to pull a request or leave an issue. I will release the [latex-pdf version]() in the future. :arrow_down:markdown format:
+Feedback and contributions are welcome! If you think I have missed out on something (or) have any suggestions (papers, implementations and other resources), feel free to pull a request or submit an issue. I will release the [latex-pdf version]() in the future. :arrow_down:markdown format:
 
 ``` markdown
 [Paper Name](abs link)  
@@ -15,8 +15,6 @@ Feedback and contributions are welcome! If you think I have missed out on someth
 ```
 
 :smile: Now you can use this [script](https://github.com/yzy1996/Python-Code/tree/master/Python%2BarXiv) to automatically generate the above text.
-
-:warning: To better display the formula, you'd better local download this file and view it.
 
 
 

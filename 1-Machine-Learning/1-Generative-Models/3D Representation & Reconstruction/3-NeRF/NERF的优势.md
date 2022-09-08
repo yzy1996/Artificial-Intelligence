@@ -63,3 +63,6 @@ just for computing independently per-pixel, such as l1\l2 loss
 
 
 for the deferred back-propagation, 
+
+
+

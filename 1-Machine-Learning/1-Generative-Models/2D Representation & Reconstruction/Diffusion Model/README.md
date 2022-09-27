@@ -1,5 +1,23 @@
 # Diffusion Model
 
+
+
+
+
+## Introduction
+
+From DDPM, a diffusion probabilistic model (which we call ‘diffusion model’ for brevity) is a **parameterized Markov chain trained using variational inference to produce samples matching the data after finite time**.
+
+> 
+
+diffusion models are straightforward to define and efficient to train, but are not capble of generating high quality samples.
+
+
+
+
+
+
+
 [Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2006.11239)  
 *Jonathan Ho, Ajay Jain, Pieter Abbeel*  
 **[`NeurIPS 2020`] (``)** 
@@ -16,3 +34,12 @@
 
 围绕他的改进
 
+
+
+
+
+
+
+综述
+
+https://github.com/YangLing0818/Diffusion-Models-Papers-Survey-Taxonomy

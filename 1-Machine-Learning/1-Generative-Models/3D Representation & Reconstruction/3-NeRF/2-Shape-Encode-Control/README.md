@@ -101,3 +101,7 @@ Conditional NeRF: train NeRF on a category of shapes and enables manipulation vi
 [CLIP-NeRF: Text-and-Image Driven Manipulation of Neural Radiance Fields](https://arxiv.org/abs/2112.05139)  
 *Can Wang, Menglei Chai, Mingming He, Dongdong Chen, Jing Liao*  
 **[`CVPR 2022`] (`CityU`)**
+
+[LOLNeRF: Learn from One Look](https://arxiv.org/abs/2111.09996)  
+*Daniel Rebain, Mark Matthews, Kwang Moo Yi, Dmitry Lagun, Andrea Tagliasacchi*  
+**[`CVPR 2022`]**

@@ -1,4 +1,4 @@
-### 一文解读VAE
+### 一文解读VAE+ELBO
 
 > Variational Auto-Encoder，来自论文 
 > 
@@ -8,27 +8,54 @@
 
 
 
+![image-20221001170252672](https://raw.githubusercontent.com/yzy1996/Image-Hosting/master/image-20221001170252672.png)
+
+
+
 背景介绍，VAE是属于【基于似然函数】的一类方法，还包括了有normalizing flows，EBM
 
 VAEs maximize the mutual information between the input and latent variables,
 
 
 
-首先我们有一批数据样本 $\mathbf{x}= \{x_1, x_2, \dots, x_n\}$，假设这些数据是独立同分布的，只是我们不知道这个分布的参数化形式。就像高斯分布我们要估计它的$(\mu, \sigma)$一样，现在要估计这批数据的分布参数，记作：$p(\mathbf{x};\theta)$，其中 $\theta$ 就是我们要估计的参数。
+首先我们有一批数据样本 $X= \{x_1, x_2, \dots, x_n\}$，假设这些数据是独立同分布的。我们的最终目的是生成更多也服从这个分布的新数据，因此我们想估计这个分布。对于所熟知的高斯分布，我们已经知道了它的表达式，对于来源于一个未知高斯分布的数据，我们只需要去估计出它的参数 $(\mu, \sigma)$ ，采样的方法就是极大化似然估计。
 
-那么很自然，我们可以用极大似然估计来求解：
+而对于一批任意数据（生成模型中主要是图像，一幅图像也可以看成是从一个分布中采样的结果），但现在我们甚至都不知道这个分布的参数化形式，因此直接对它估计是几乎不可能的。
+
+我们先对这个问题进行数学建模，将数据分布记作：$p(x;\theta) \text{ or } p_\theta(x)$，其中 $\theta$ 就是我们要估计的参数。
+
+那么很自然，我们可以用极大似然估计来求解（参考）：
 $$
-p(\mathbf{x};\theta) = \prod_{i=1}^{n} p\left(x_{i} ; \theta\right)
+p(x;\theta) = \prod_{i=1}^{n} p\left(x_{i} ; \theta\right) \tag{1}
 $$
-一般实际使用的是求解一个极小化对数似然的问题：
+一般实际使用的是求解一个极小化负的对数似然的问题：
 $$
-\theta^* = \arg\min_\theta -\sum_{i=1}^n \log p (\mathbf{x};\theta)
+\theta^* = \arg\min_\theta -\sum_{i=1}^n \log p (x_i;\theta) \tag{2}
 $$
-但是 $\theta$ 是会很复杂的，不再像高斯分布那样可以数学描述，因此引入隐变量模型，记作：
+但是这里的 $\theta$ 是会很复杂的，不再像高斯分布那样可以简单地用数学表达式来描述，因此我们引入一个新的变量来帮我们求解，称它为隐变量模型，同时也将上面的离散化形式改成连续化形式，记作：
 $$
-p(\mathbf{x}) = \int p\left(\mathbf{x}, z;\theta\right) dz = \int p\left(\mathbf{x}| z;\theta\right) p(z)dz
+p(x) = \int p_\theta\left(x, z\right) dz = \int p\left(x| z;\theta\right) p(z)dz \tag{3}
 $$
-其中，$z$ 就是隐变量，通常假设 $z \sim \mathcal{N}(0, I)$，数据 $x$ 依赖 $z$ 生成：$x = f(z;\theta)$ 。这样就将一个概率密度估计问题转化成函数逼近问题，利用一个隐变量模型将一个简单的概率分布映射到一个更复杂的任意分布上。
+其中，$z$ 就是隐变量，通常假设 $z \sim \mathcal{N}(0, I)$，数据 $x$ 依赖 $z$ 生成：$x = f(z;\theta)$ 。这样就将一个概率密度估计问题转化成函数逼近问题，利用一个隐变量模型将一个简单的概率分布（高斯分布）映射到一个更复杂的任意分布（图像数据分布）上。实现一个从低维 latent vector $z \in \mathbb{R}^d$ 到高维 $x \in \mathbb{D}$ 的映射 $g: \mathcal{Z} \rightarrow \mathcal{X}$。
+
+
+
+
+
+通过式子()我们可以发现，现在我们想得到 $p(x)$，我们可以先通过一个已知的简单模型分布，以及一个z到x的映射分布就行了。
+
+借由贝叶斯定理，我们将所有定义写出来
+
+- 先验分布 $p(z)$
+
+- 后验分布 $p(z|x)$
+- 似然分布 $p(x|z)$
+- 证据分布 $p(x)$
+
+
+$$
+\text{posterior} = \frac{\text{likelihood} \times \text{prior}}{\text{evidence}} \quad p(z|x) = \frac{p(x|z) p(z)}{p(x)}
+$$
 
 
 
@@ -36,7 +63,12 @@ $$
 
 
 
-像GAN一样（假设阅读的你已经很熟悉GAN了），VAE也是想要学习一个生成模型以实现一个从低维 latent vector $z \in \mathbb{R}^d$ 到高维 $x \in \mathbb{D}$ 的映射 $g: \mathcal{Z} \rightarrow \mathcal{X}$。VAE的优化目标是最大化数据集数据的似然：
+
+
+
+
+
+像GAN一样（假设你已经很熟悉GAN了），VAE也是想要学习一个生成模型以VAE的优化目标是最大化数据集数据的似然：
 $$
 \log p(X) = \sum_{i=1}^N \log \int p\left(x_{i}, z\right) dz
 $$
@@ -66,9 +98,9 @@ $$
 
 我们想借助隐变量 $z$ 来描述 $\mathbf{x}$ 的分布，建模成：
 $$
-q(x)=\int q(x, z) d z, \quad q(x, z)=q(x | z) q(z)
+q(x)=\int q(x, z) d z, \quad p(x, z)=p(x | z) p(z)
 $$
-$x$ 和 $z$ 的联合分布还可以写成 $p(x,z) = p(z|x) p(x)$。因此我们想用 $q(x,z)$ 来近似 $p(x,z)$。因此直接用KL散度来衡量（KL散度越小越好）：
+$x$ 和 $z$ 的联合分布还可以写成 $q(x,z) = q(z|x) p(x)$。因此我们想用 $q(x,z)$ 来近似 $p(x,z)$。因此直接用KL散度来衡量（KL散度越小越好）：
 $$
 \begin{aligned}
 K L(p(x, z) \| q(x, z)) &=

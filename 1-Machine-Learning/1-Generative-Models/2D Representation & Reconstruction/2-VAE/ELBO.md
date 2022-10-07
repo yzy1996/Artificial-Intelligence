@@ -1,12 +1,44 @@
-# ELBO
+# Evidence Lower Bound (ELBO)
 
-> Evidence Lower Bound
+> 
 
 论证什么是，以及为什么要用ELBO，
 
 
 
-先说结论，
+
+
+边缘分布，也就意味着不只有一个变量，这两个变量的联合概率密度为 $p(z,y)$，其中一个变量的边缘分布则为给定其他变量的条件概率分布$p(x) = \sum_y p(x,y) = \sum_y p(x|y)p(y)$
+
+
+
+给出一组独立同分布的样本点 $X= \{x_1, x_2, \dots, x_n\}$，其中$x_i \sim p(x;\theta)$，而 $\theta$ 也可以被看成是一个随机变量，服从一个分布 $\theta \sim p(\theta; \phi)$，边缘似然是在刻画 $p(X;\phi)$
+$$
+p(X;\phi) = \int_\theta p(X;\theta)p(\theta;\phi) d\theta
+$$
+
+
+贝叶斯理论
+
+边缘似然 (Marginal likelihood)，也被叫做模型证据 (Model Evidence)：
+
+
+
+
+
+Given a set of independent identically distributed data points: $X= \{x_1, x_2, \dots, x_n\}$, where $x_i \sim p_(x;\theta)$. 
+
+
+$$
+0< b_t <1
+$$
+
+
+
+
+
+
+
 
 
 
@@ -23,8 +55,13 @@
 
 
 
-Evidence (证据) 定义的就是 似然函数 $\log p(x;\theta)$。之所以被称为 证据，是因为它能反应我们对模型的估计好坏程度。如果我们知道了 $Z$ 服从的分布 $q$，(在后面的表示中，为了简化我们省去了 $\theta$)
+**Evidence (证据)** 定义的就是 似然函数 $\log p(x;\theta)$。之所以被称为 证据，是因为它能反应我们对模型的估计好坏程度。
 
+
+
+
+
+如果我们知道了 $Z$ 服从的分布 $q$，(在后面的表示中，为了简化我们省去了 $\theta$)
 
 $$
 \begin{align}
@@ -53,13 +90,6 @@ KL(q(z) \| p(z \mid x))
 $$
 
 
-
-
-Background: 
-
-variable 
-
-latent variables
 
 
 
@@ -117,7 +147,7 @@ $$
 
 
 
-因此我们想引入一个参数化模型 p(z;\lambda) 来近似 p(z|x)，相当于是用一个简单分布去拟合了一个复杂分布
+因此我们想引入一个参数化模型 $p(z;\lambda)$ 来近似 p(z|x)，相当于是用一个简单分布去拟合了一个复杂分布
 $$
 \lambda^{*}=\arg \min _{\lambda} \text { divergence }(p(z \mid x), q(z ; \lambda))
 $$
@@ -228,7 +258,7 @@ $$
 $$
 
 
-其实我们是想要最小化KL散度的，因此最大化ELBO其实就是间接最小化了KL散度，因为他们的和是一个定植，与优化目标以及参数无关
+其实我们是想要最小化KL散度的，因此最大化ELBO其实就是间接最小化了KL散度，因为他们的和是一个定值，与优化目标以及参数无关
 
 
 
@@ -274,8 +304,33 @@ $$
 
 
 
+边缘似然
 
 
 
 
+
+
+
+
+
+我们看参数估计里的贝叶斯公式，是我们想得到一个模型来刻画我们的观测数据，这里面是有两部分在的，一步是确定模型（是高斯模型，还是伯努利模型…），第二步是确定模型的参数（是标准高斯，还是非标准高斯…）。
+$$
+p(\theta|x) = \frac{p(x|\theta) p(\theta)}{p(x)} \quad \text{posterior} = \frac{\text{likelihood} \times \text{prior}}{\text{model evidence}}
+$$
+
+
+
+
+
+
+
+
+右边分子部分的含义是：用特定参数 $\theta$ 能多好地刻画数据
+
+右边分母部分的含义是：用所有的参数能多好地刻画数据，也即与参数无关，你建的模型好不好。
+$$
+p(x) = \int p(x|\phi) p(\phi) d\phi
+$$
+它也叫 marginal likelihood or model evidence 是需要使用所有参数的，由先验进行加权。因此放在分母，起到一个归一化的作用，因为分母是分子加权求和后的结果，而对于一个最佳参数，它的后验概率应该是最大的。
 

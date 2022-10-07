@@ -24,6 +24,9 @@ c = torch.tensor(a).float()
 
 # 另外，如果需要转到 GPU，as_tensor也可以使用，因为只有cpu上的数据是共享的
 d = torch.as_tensor(a).float().cuda()
+
+
+torch.from_numpy(np_array)
 ```
 
 

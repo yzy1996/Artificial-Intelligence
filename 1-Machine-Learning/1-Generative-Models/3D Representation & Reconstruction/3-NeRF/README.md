@@ -432,3 +432,11 @@ Coordinate-based Image
 To be sorted
 
 Object-Centric Neural Scene Rendering
+
+
+
+
+
+## Code
+
+https://github.com/Jittor/JNeRF

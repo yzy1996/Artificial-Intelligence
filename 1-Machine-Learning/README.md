@@ -120,3 +120,13 @@ According to the modeling purpose and the problem, machine learning algorithms c
 
 
 [谷歌发起的一个AI奖项:AI GRANT](https://aigrant.org/)
+
+
+
+
+
+Fast.AI courses
+
+https://www.fast.ai/posts/part2-2022.html
+
+https://course.fast.ai/Lessons/lesson1.html

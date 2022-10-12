@@ -2,7 +2,7 @@
 
 
 
-
+https://github.com/heejkoo/Awesome-Diffusion-Models
 
 ## Introduction
 
@@ -24,7 +24,7 @@ diffusion models are straightforward to define and efficient to train, but are n
 
 [Improved Denoising Diffusion Probabilistic Models](https://arxiv.org/abs/2102.09672)  
 *Alex Nichol, Prafulla Dhariwal*  
-**[`ICML 2021`] (``)** 
+**[`ICML 2021`]** 
 
 [High-Resolution Image Synthesis with Latent Diffusion Models](https://arxiv.org/abs/2112.10752)  
 *Robin Rombach, Andreas Blattmann, Dominik Lorenz, Patrick Esser, Björn Ommer*  

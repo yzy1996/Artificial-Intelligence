@@ -96,70 +96,67 @@ However, the testing time of the above methods is as long as the original NeRF.
 
 gives a hybrid scene representation that combines NeRF with sparse voxels structure. The generated sparse voxels guide and reduce sampling. It improves the inference speed to around . 
 
-[KiloNeRF: Speeding up Neural Radiance Fields with Thousands of Tiny MLPs](https://arxiv.org/abs/2103.13744)  
-*Christian Reiser, Songyou Peng, Yiyi Liao, Andreas Geiger*  
-**[`ICCV 2021`]** 
+
 
 reduced the inference time by adopting around 1,000 tiny MLPs, where each MLP takes care of a speciﬁc 3D area. The running speed is over 10 FPS. 
 
-[PlenOctrees for Real-time Rendering of Neural Radiance Fields](https://arxiv.org/abs/2103.14024)  
-*Alex Yu, Ruilong Li, Matthew Tancik, Hao Li, Ren Ng, Angjoo Kanazawa*  
-**[`ICCV 2021`]** 
+
 
 [168 FPS] PlenOctree [35] and 
-
-
-
-
-
-[PlenOctrees for Real-time Rendering of Neural Radiance Fields](https://arxiv.org/abs/2103.14024)  
-*Alex Yu, Ruilong Li, Matthew Tancik, Hao Li, Ren Ng, Angjoo Kanazawa*  
-**[`ICCV 2021`]** 
 
 [200 FPS] FastNeRF [4] achieved inference speed over  and  respectively by caching the whole 3D scenes. We note that their training is still heavy. 
 
 EfﬁcientNeRF achieves faster per-image inference speed along with far less training time.
 
-[Neural Sparse Voxel Fields](https://arxiv.org/abs/2007.11571)  
-*Lingjie Liu, Jiatao Gu, Kyaw Zaw Lin, Tat-Seng Chua, Christian Theobalt*  
-**[`arXiv 2020`]** 
+
 
 
 [ACORN: Adaptive Coordinate Networks for Neural Scene Representation](https://arxiv.org/abs/2105.02788)  
 *Julien N. P. Martel, David B. Lindell, Connor Z. Lin, Eric R. Chan, Marco Monteiro, Gordon Wetzstein*  
-**[`arXiv 2021`]** 
-
-
-[Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://arxiv.org/abs/2201.05989)  
-*Thomas Müller, Alex Evans, Christoph Schied, Alexander Keller*  
-**[`arXiv 2022`]** 
+**[`SIGGRAPH 2021`]** 
 
 
 
+[Neural Sparse Voxel Fields](https://arxiv.org/abs/2007.11571)  
+*Lingjie Liu, Jiatao Gu, Kyaw Zaw Lin, Tat-Seng Chua, Christian Theobalt*  
+**[`NeurIPS 2020`]** 
 
+[Neural Geometric Level of Detail: Real-time Rendering with Implicit 3D Shapes](https://arxiv.org/abs/2101.10994)  
+*Towaki Takikawa, Joey Litalien, Kangxue Yin, Karsten Kreis, Charles Loop, Derek Nowrouzezahrai, Alec Jacobson, Morgan McGuire, Sanja Fidler*  
+**[`CVPR 2021`]** 
+
+[FastNeRF: High-Fidelity Neural Rendering at 200FPS](https://arxiv.org/abs/2103.10380)  
+*Stephan J. Garbin, Marek Kowalski, Matthew Johnson, Jamie Shotton, Julien Valentin*  
+**[`ICCV 2021`]** 
+
+[PlenOctrees for Real-time Rendering of Neural Radiance Fields](https://arxiv.org/abs/2103.14024)  
+*Alex Yu, Ruilong Li, Matthew Tancik, Hao Li, Ren Ng, Angjoo Kanazawa*  
+**[`ICCV 2021`]** 
+
+[KiloNeRF: Speeding up Neural Radiance Fields with Thousands of Tiny MLPs](https://arxiv.org/abs/2103.13744)  
+*Christian Reiser, Songyou Peng, Yiyi Liao, Andreas Geiger*  
+**[`ICCV 2021`]** 
 
 [Plenoxels: Radiance Fields without Neural Networks](https://arxiv.org/abs/2112.05131)  
 *Alex Yu, Sara Fridovich-Keil, Matthew Tancik, Qinhong Chen, Benjamin Recht, Angjoo Kanazawa*  
-**[`arXiv 2021`]** 
+**[`CVPR 2022`]** 
 
 
 [Direct Voxel Grid Optimization: Super-fast Convergence for Radiance Fields Reconstruction](https://arxiv.org/abs/2111.11215)  
 *Cheng Sun, Min Sun, Hwann-Tzong Chen*  
-**[`arXiv 2021`]** 
-
-
-[FastNeRF: High-Fidelity Neural Rendering at 200FPS](https://arxiv.org/abs/2103.10380)  
-*Stephan J. Garbin, Marek Kowalski, Matthew Johnson, Jamie Shotton, Julien Valentin*  
-**[`arXiv 2021`]** 
-
-
-
-
-
-[Neural Geometric Level of Detail: Real-time Rendering with Implicit 3D Shapes](https://arxiv.org/abs/2101.10994)  
-*Towaki Takikawa, Joey Litalien, Kangxue Yin, Karsten Kreis, Charles Loop, Derek Nowrouzezahrai, Alec Jacobson, Morgan McGuire, Sanja Fidler*  
-**[`arXiv 2021`]** 
+**[`CVPR 2022`]** 
 
 [TensoRF: Tensorial Radiance Fields](https://arxiv.org/abs/2203.09517)  
 *Anpei Chen, Zexiang Xu, Andreas Geiger, Jingyi Yu, Hao Su*  
-**[`arXiv 2022`]** 
+**[`ECCV 2022`]** 
+
+[Instant Neural Graphics Primitives with a Multiresolution Hash Encoding](https://arxiv.org/abs/2201.05989)  
+*Thomas Müller, Alex Evans, Christoph Schied, Alexander Keller*  
+**[`SIGGRAPH 2022`]** 
+
+
+
+
+
+
+

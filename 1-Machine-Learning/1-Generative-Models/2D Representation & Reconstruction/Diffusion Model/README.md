@@ -36,7 +36,11 @@ diffusion models are straightforward to define and efficient to train, but are n
 
 
 
+## Speed
 
+[Improving Diffusion Model Efficiency Through Patching](https://arxiv.org/abs/2207.04316)  
+*Troy Luhman, Eric Luhman*  
+**[`arXiv 2022`]** 
 
 
 

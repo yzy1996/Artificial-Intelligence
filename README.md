@@ -20,6 +20,8 @@
 
 Awesome Artificial Intelligence (AI) https://github.com/owainlewis/awesome-artificial-intelligence
 
+[机器学习算法Python实现](https://github.com/lawlite19/MachineLearning_Python)  ![stars](https://img.shields.io/github/stars/lawlite19/MachineLearning_Python?style=social)
+
 # 优化
 
 [Optimization](./2-Optimization)

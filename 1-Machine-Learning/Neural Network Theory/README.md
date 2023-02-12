@@ -1,8 +1,0 @@
-Gaussian process (GP)
-
-
-
-
-
-
-
